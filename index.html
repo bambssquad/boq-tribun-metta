@@ -1574,10 +1574,18 @@ function draw(){
 }
 const hud=document.getElementById('hudCount');
 
-// satu gambar per frame layar, bukan per event pointer
-let pend=false;
-function render(){ if(pend) return; pend=true;
-  requestAnimationFrame(()=>{pend=false; draw();}); }
+// satu gambar per frame layar, bukan per event pointer.
+// rAF bisa tidak pernah dijalankan kalau halaman dimuat di latar atau di-prerender,
+// jadi selalu disiapkan jaring pengaman berbasis timer.
+let pend=0, guard=0;
+function render(){
+  if(pend) return;
+  pend=requestAnimationFrame(()=>{pend=0; clearTimeout(guard); guard=0; draw();});
+  if(!guard) guard=setTimeout(()=>{
+    guard=0;
+    if(pend){ cancelAnimationFrame(pend); pend=0; draw(); }
+  }, 400);
+}
 function reflow(){ dirty=true; render(); }
 
 let lowQ=false, qTimer=0;
@@ -1588,7 +1596,7 @@ function resize(){
   const w=Math.round(r.width*dpr), h=Math.round(r.height*dpr);
   if(cv.width!==w||cv.height!==h){cv.width=w; cv.height=h;}
   cv.style.width=r.width+'px'; cv.style.height=r.height+'px';
-  render();
+  if(booted) draw(); else render();
 }
 // saat diputar/di-pinch, turunkan resolusi piksel — di HP ini bedanya 4-9x jumlah piksel
 function quality(low){
@@ -1746,13 +1754,37 @@ if(tgl) tgl.addEventListener('click',()=>{
 
 // render pertama ditunda sampai panggung mendekati layar → halaman ringan saat dibuka
 let booted=false;
-const boot=()=>{if(booted)return;booted=true;resize();};
-window.__boot3d=boot; window.__resize3d=()=>{if(booted)resize();};
+const boot=()=>{ if(booted) return; booted=true; resize(); draw(); };
+window.__boot3d=boot; window.__resize3d=()=>{ if(booted){ resize(); draw(); } };
+
+const stageEl=document.querySelector('.v3-stage');
+function near(){
+  if(!stageEl) return false;
+  const r=stageEl.getBoundingClientRect();
+  return r.height>0 && r.top < innerHeight+280 && r.bottom > -280;
+}
+function maybeBoot(){
+  if(booted){ cleanupBoot(); return; }
+  if(near()){ boot(); cleanupBoot(); }
+}
+function cleanupBoot(){
+  removeEventListener('scroll', maybeBoot);
+  removeEventListener('resize', maybeBoot);
+  removeEventListener('load', maybeBoot);
+  document.removeEventListener('visibilitychange', maybeBoot);
+  if(io) io.disconnect();
+}
+let io=null;
 if('IntersectionObserver' in window){
-  const io=new IntersectionObserver((es,o)=>{if(es.some(e=>e.isIntersecting)){boot();o.disconnect();}},
-    {rootMargin:'240px'});
-  io.observe(document.querySelector('.v3-stage'));
-}else boot();
+  io=new IntersectionObserver(es=>{ if(es.some(e=>e.isIntersecting)) maybeBoot(); }, {rootMargin:'280px'});
+  if(stageEl) io.observe(stageEl);
+}
+// cadangan: observer tidak selalu memicu kalau halaman dimuat di latar
+addEventListener('scroll', maybeBoot, {passive:true});
+addEventListener('resize', maybeBoot);
+addEventListener('load', maybeBoot);
+document.addEventListener('visibilitychange', maybeBoot);
+setTimeout(maybeBoot, 300);
 })();
 </script>
 </body>
