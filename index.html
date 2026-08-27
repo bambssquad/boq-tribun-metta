@@ -1504,6 +1504,28 @@ const GROUPS=[
 const G={}; GROUPS.forEach(g=>{g.boxes=[];G[g.id]=g;});
 const B=(g,x,y,z,dx,dy,dz)=>G[g].boxes.push([x,y,z,dx,dy,dz]);
 
+// kolom beton eksisting + lubang (void 50 mm keliling) yang harus dihindari pelat & balok
+const CONC=[[-150,2938],[5850,2938],[11850,2938],[17850,2938]];
+const VOID=50;
+const CUT=CONC.map(([cx,cy])=>[cx-300-VOID, cy-250-VOID, cx+300+VOID, cy+250+VOID]);
+function Bcut(g,x,y,z,dx,dy,dz){
+  let parts=[[x,y,dx,dy]];
+  CUT.forEach(([x0,y0,x1,y1])=>{
+    const out=[];
+    parts.forEach(([px,py,pdx,pdy])=>{
+      const ax=px, ay=py, bx=px+pdx, by=py+pdy;
+      if(x1<=ax||x0>=bx||y1<=ay||y0>=by){ out.push([px,py,pdx,pdy]); return; }
+      if(y0>ay) out.push([ax,ay,pdx,y0-ay]);
+      if(y1<by) out.push([ax,y1,pdx,by-y1]);
+      const m0=Math.max(ay,y0), m1=Math.min(by,y1);
+      if(x0>ax) out.push([ax,m0,x0-ax,m1-m0]);
+      if(x1<bx) out.push([x1,m0,bx-x1,m1-m0]);
+    });
+    parts=out;
+  });
+  parts.forEach(q=>{ if(q[2]>1&&q[3]>1) B(g,q[0],q[1],z,q[2],q[3],dz); });
+}
+
 // base plate
 const BP=(x,y)=>{B('baseplate',x-75,y-75,-18,150,150,10); B('baseplate',x-75,y-75,-8,150,150,8);};
 PORTAL.forEach(x=>ROWS.forEach(y=>BP(x,y)));
@@ -1513,9 +1535,9 @@ PORTAL.forEach(x=>ROWS.forEach(y=>B('kolom',x-25,y-50,0,50,100,colTop(y))));
 [AB[0],AB[1],SC[0],SC[1]].forEach(x=>ROWS.slice(0,5).forEach(y=>B('kolom',x-25,y-50,0,50,100,colTop(y))));
 // balok + stiffener
 for(let t=1;t<=TIERS;t++){const yf=(t-1)*TIER_D, z=t*RISER;
-  SEG.forEach(([a,b])=>{B('balok',a,yf-25,z-100,b-a,50,100);
-                        B('stiffener',a,yf+TIER_D/2-25,z-100,b-a,50,100);});}
-SEG.forEach(([a,b])=>B('balok',a,DEPTH-25,2500-100,b-a,50,100));
+  SEG.forEach(([a,b])=>{Bcut('balok',a,yf-25,z-100,b-a,50,100);
+                        Bcut('stiffener',a,yf+TIER_D/2-25,z-100,b-a,50,100);});}
+SEG.forEach(([a,b])=>Bcut('balok',a,DEPTH-25,2500-100,b-a,50,100));
 // bracing (batang miring didekati sbg rangkaian kubus kecil)
 function diag(x1,y1,z1,x2,y2,z2,w){
   const n=26; for(let i=0;i<n;i++){const u=i/n;
@@ -1525,8 +1547,8 @@ function diag(x1,y1,z1,x2,y2,z2,w){
 // bracing sisi diganti ikatan langsung ke kolom beton ujung (lihat catatan)
 // dek + pinus
 for(let t=1;t<=TIERS;t++){const yf=(t-1)*TIER_D,z=t*RISER;
-  SEG.forEach(([a,b])=>{B('dek',a,yf,z,b-a,TIER_D,8);
-                        B('pinus',a,yf,z+8,b-a,400,40);});}
+  SEG.forEach(([a,b])=>{Bcut('dek',a,yf,z,b-a,TIER_D,8);
+                        Bcut('pinus',a,yf,z+8,b-a,400,40);});}
 // tangga + nosing
 [AB,SC].forEach(([a,b])=>{
   for(let t=1;t<=TIERS;t++){const yf=(t-1)*TIER_D, z0=t*RISER-RISER;
@@ -1535,16 +1557,17 @@ for(let t=1;t<=TIERS;t++){const yf=(t-1)*TIER_D,z=t*RISER;
       B('tangga',a,y0-4,z0+k*ST_R,b-a,4,ST_R);
       B('nosing',a,y0,z0+(k+1)*ST_R+4,b-a,50,1);}}});
 // kolom beton eksisting (600 x 500) + kerah void + strut anchor
-const CONC=[[-150,2938],[5850,2938],[11850,2938],[17850,2938]];
 CONC.forEach(([cx,cy])=>B('beton',cx-300,cy-250,-200,600,500,3800));
-// kerah void 50 mm di dek yang ditembus kolom dalam (tier 3 & 4)
-[[5850,2938],[11850,2938]].forEach(([cx,cy])=>{
+// kerah void 50 mm di dek yang ditembus kolom beton
+CONC.forEach(([cx,cy])=>{
   [1500,2000].forEach(z=>{
-    const x0=cx-350,x1=cx+350,y0=cy-300,y1=cy+300;
+    const x0=Math.max(0,cx-350),x1=Math.min(SPAN,cx+350),y0=cy-300,y1=cy+300;
+    if(x1-x0<80) return;
+    if(cx>AB[0]&&cx<AB[1]) return;
     B('void',x0,y0,z,x1-x0,50,6);
     B('void',x0,y1-50,z,x1-x0,50,6);
-    B('void',x0,y0+50,z,50,y1-y0-100,6);
-    B('void',x1-50,y0+50,z,50,y1-y0-100,6);
+    if(cx-350>=0) B('void',x0,y0+50,z,50,y1-y0-100,6);
+    if(cx+350<=SPAN) B('void',x1-50,y0+50,z,50,y1-y0-100,6);
   });
 });
 // strut anchor: 2 kolom dalam x 2 level x 3 arah
@@ -1597,10 +1620,10 @@ for(let i=0;i<NSEG;i++){
 
 // penutup muka tier (plat riser 2 mm) + panel samping ujung
 for(let t=1;t<=TIERS;t++){const yf=(t-1)*TIER_D, z0=(t-1)*RISER;
-  SEG.forEach(([a,b])=>B('riser',a,yf-2,z0,b-a,2,RISER));}
+  SEG.forEach(([a,b])=>Bcut('riser',a,yf-2,z0,b-a,2,RISER));}
 [0,SPAN].forEach((x,i)=>{const xo = i===0 ? -2 : 0;
   for(let t=1;t<=TIERS;t++){const yf=(t-1)*TIER_D;
-    B('riser',x+xo,yf,0,2,TIER_D,t*RISER);}});
+    Bcut('riser',x+xo,yf,0,2,TIER_D,t*RISER);}});
 // skirt kolong: menutup rongga di bawah dek pada sisi jalur tangga
 [AB,SC].forEach(([a,b])=>{
   for(let t=1;t<=TIERS;t++){const yf=(t-1)*TIER_D, z=t*RISER;
