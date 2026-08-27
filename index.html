@@ -1790,6 +1790,15 @@ document.addEventListener('visibilitychange', maybeBoot);
 let poll=setInterval(maybeBoot, 350);
 function cleanupPoll(){ if(poll){ clearInterval(poll); poll=0; } }
 setTimeout(maybeBoot, 200);
+
+// Patokan terakhir. Di sebagian lingkungan (tab yang dikendalikan otomasi, timer
+// yang di-throttle, halaman di-prerender) tidak ada satu pun pemicu di atas yang
+// jalan, dan penonton cuma melihat kanvas kosong. Lebih baik gambar sekali setelah
+// halaman selesai dimuat daripada berisiko tidak muncul sama sekali; konten utama
+// sudah tampil duluan, jadi halaman tetap terasa ringan saat dibuka.
+function forceBoot(){ setTimeout(()=>{ if(!booted){ boot(); cleanupBoot(); } }, 1200); }
+if(document.readyState==='complete') forceBoot();
+else addEventListener('load', forceBoot);
 })();
 </script>
 </body>
