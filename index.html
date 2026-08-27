@@ -1768,6 +1768,7 @@ function maybeBoot(){
   if(near()){ boot(); cleanupBoot(); }
 }
 function cleanupBoot(){
+  cleanupPoll();
   removeEventListener('scroll', maybeBoot);
   removeEventListener('resize', maybeBoot);
   removeEventListener('load', maybeBoot);
@@ -1779,12 +1780,16 @@ if('IntersectionObserver' in window){
   io=new IntersectionObserver(es=>{ if(es.some(e=>e.isIntersecting)) maybeBoot(); }, {rootMargin:'280px'});
   if(stageEl) io.observe(stageEl);
 }
-// cadangan: observer tidak selalu memicu kalau halaman dimuat di latar
+// Cadangan berlapis. Observer dan event scroll ternyata tidak selalu memicu
+// (halaman dimuat di latar, lompat anchor, gulir terprogram), jadi patokan
+// terakhirnya adalah pemeriksaan berkala yang berhenti sendiri begitu menyala.
 addEventListener('scroll', maybeBoot, {passive:true});
 addEventListener('resize', maybeBoot);
 addEventListener('load', maybeBoot);
 document.addEventListener('visibilitychange', maybeBoot);
-setTimeout(maybeBoot, 300);
+let poll=setInterval(maybeBoot, 350);
+function cleanupPoll(){ if(poll){ clearInterval(poll); poll=0; } }
+setTimeout(maybeBoot, 200);
 })();
 </script>
 </body>
