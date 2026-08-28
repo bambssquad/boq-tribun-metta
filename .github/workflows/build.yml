@@ -1,0 +1,39 @@
+name: build-site
+on:
+  push:
+    branches: [main]
+    paths: ['src/**', 'bootstrap/**', '.github/workflows/build.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: build-site
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Bongkar sumber bootstrap (sekali saja)
+        run: |
+          if [ -f bootstrap/src.txz.b64 ]; then
+            mkdir -p src
+            base64 -d bootstrap/src.txz.b64 > /tmp/src.txz
+            tar -xJf /tmp/src.txz -C src
+            rm -rf bootstrap
+          fi
+      - name: Bangun index.html
+        run: |
+          DEPLOY_OUT="$PWD/_site" DEPLOY_ZIP="-" python src/deploybuild.py
+          cp _site/index.html index.html
+          touch .nojekyll
+          rm -rf _site
+      - name: Commit hasil build
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || (git commit -m "CI: rebuild index.html dari src/" && git push)
