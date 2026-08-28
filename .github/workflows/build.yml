@@ -2,7 +2,7 @@ name: build-site
 on:
   push:
     branches: [main]
-    paths: ['src/**', 'bootstrap/**', '.github/workflows/build.yml']
+    paths: ['src/**', 'src-tribun.zip', '.github/workflows/build.yml']
   workflow_dispatch:
 permissions:
   contents: write
@@ -17,20 +17,22 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Bongkar sumber bootstrap (sekali saja)
+      - name: Bongkar sumber (sekali saja)
         run: |
-          if [ -f bootstrap/src.txz.b64 ]; then
+          if [ -f src-tribun.zip ]; then
             mkdir -p src
-            base64 -d bootstrap/src.txz.b64 > /tmp/src.txz
-            tar -xJf /tmp/src.txz -C src
-            rm -rf bootstrap
+            unzip -o src-tribun.zip -d src
+            rm -f src-tribun.zip
+            echo "sumber dibongkar ke src/"
           fi
+          ls -la src || true
       - name: Bangun index.html
         run: |
           DEPLOY_OUT="$PWD/_site" DEPLOY_ZIP="-" python src/deploybuild.py
           cp _site/index.html index.html
           touch .nojekyll
           rm -rf _site
+          ls -la index.html
       - name: Commit hasil build
         run: |
           git config user.name "github-actions[bot]"
