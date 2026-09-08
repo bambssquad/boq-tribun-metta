@@ -5,3 +5,25 @@ body[data-view=surf] .archive-logo,body[data-view=index] .archive-logo,body[data
 @media(prefers-reduced-transparency:reduce){#archive-menu,.archive-footer nav{background:#f5f5f5;backdrop-filter:none;-webkit-backdrop-filter:none}#sheet-dialog::backdrop,#archive-menu::backdrop{backdrop-filter:none;-webkit-backdrop-filter:none}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.entry-mask{display:none}.logo-line>span{transform:none}.page-out{opacity:1;transform:none}}
 
 .card-open img,#sheet-image,.flip-ghost{filter:grayscale(1)}
+
+/* SAP identity: full company name at entry, compact mark during exploration. */
+.archive-logo{top:clamp(92px,14vh,150px);font-size:clamp(30px,7.2vw,116px);line-height:1;letter-spacing:-.055em}
+.sap-wordmark{font-size:clamp(26px,6.6vw,106px);margin-bottom:.24em;max-height:1.4em;opacity:1;transform:translateY(0);transition:opacity .45s ease,transform .65s var(--ease),max-height .65s var(--ease),margin .65s var(--ease)}
+.archive-project-title{white-space:nowrap}
+.archive-project-date{font-size:.57em;letter-spacing:-.035em;margin-top:.22em}
+.archive-header .small-brand{opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .45s ease,transform .65s var(--ease),visibility .45s;letter-spacing:-.06em;font-size:28px}
+body[data-brand-compact=true] .archive-header .small-brand{opacity:1;visibility:visible;transform:none}
+body[data-brand-compact=true] .archive-logo{top:22px;font-size:clamp(14px,1.65vw,25px);width:52vw}
+body[data-brand-compact=true] .sap-wordmark{opacity:0;max-height:0;margin-bottom:0;transform:translateY(-30px)}
+body:not([data-view=timeline]) .archive-logo .logo-line.archive-project-title{display:block}
+body[data-brand-compact=true] .archive-project-date{font-size:.7em}
+body[data-brand-compact=true] .header-edition{opacity:0;visibility:hidden}
+.header-edition{transition:opacity .4s ease;max-width:45vw;text-align:right}
+@media(max-width:800px){
+ .archive-logo{top:98px;font-size:7.2vw;width:96vw}
+ .sap-wordmark{font-size:6.6vw;margin-bottom:.4em}
+ .archive-header .small-brand{font-size:25px}
+ body[data-brand-compact=true] .archive-logo{top:23px;font-size:clamp(10px,2.5vw,20px);width:56vw}
+ .archive-project-date{font-size:.72em}
+}
+@media(prefers-reduced-motion:reduce){.sap-wordmark,.archive-header .small-brand,.archive-logo,.header-edition{transition:none!important}}

@@ -33,3 +33,5 @@ Commit sumber beserta hasil publikasi. GitHub Pages memakai berkas statis di roo
 Referensi visual: https://tlb.betteroff.studio/. Implementasi interaksi dan konten METTA dibuat terpisah; musik, font komersial dan kode referensi tidak disertakan.
 
 R03: seluruh 12 gambar kini memiliki 136 dimensi CAD dan label LOD 200. Dimensi terdaftar pada assets/technical/dimensions-R03.json; python check_dimensions.py memeriksa entitas CAD, satuan, PDF dan dasar angka. Jalankan python technical.py untuk memperbarui gambar, lalu build_preview.py. URL unduhan R02 dipertahankan agar tautan lama tetap berfungsi; isi dokumennya telah direvisi R03. Geometri dan harga BOQ tetap. Revit menerima anotasi garis/teks native dan skema dimensi pendamping; belum berupa dimensi asosiatif ke model.
+
+SAP branding: nama lengkap SELARAS ADHI PERKASA tampil pada awal, lalu beralih menjadi SAP ketika scroll dan navigasi; scroll balik mengembalikan nama lengkap. Judul proyek dua baris: ARSIP DESAIN METTA dan (09/2026). Header halaman teknis memakai SAP. Pengujian meliputi wheel, touch, keyboard, menu dan navigasi.

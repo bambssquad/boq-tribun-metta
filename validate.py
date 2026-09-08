@@ -51,6 +51,11 @@ print('PASS: JavaScript syntax, internal links, model counts, deck area, BOQ and
 # Validate the archive entry and its links to the preserved working page.
 home=BeautifulSoup((p/'dist/index.html').read_text(encoding='utf-8'),'html.parser')
 assert len(home.select('.archive-card'))==12
+assert home.select_one('.sap-wordmark').get_text(strip=True)=='SELARAS ADHI PERKASA'
+assert home.select_one('.archive-project-title').get_text(strip=True)=='ARSIP DESAIN METTA'
+assert home.select_one('.archive-project-date').get_text(strip=True)=='(09/2026)'
+assert home.select_one('.small-brand').get_text(strip=True)=='SAP'
+assert s.select_one('.look-brand').get_text(strip=True)=='SAP'
 assert len(home.select('.timeline-scale button'))==12
 assert not home.select('audio,video'),'Archive must have no soundtrack or media player'
 assert 'AudioContext' not in (p/'lookback.js').read_text(encoding='utf-8')

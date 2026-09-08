@@ -24,12 +24,24 @@ const reduced={matches:false,addEventListener(){}};const context={document,locat
 vm.runInNewContext(fs.readFileSync('lookback.js','utf8'),context);
 function settle(){for(let i=0;frames.length&&i<1000;i++){const batch=frames;frames=[];batch.forEach(f=>f())}assert.equal(frames.length,0)}
 settle();assert.equal(get('#current-sheet').textContent,'S-01');
+assert.equal(body.dataset.brandCompact,'false');
+events.wheel({deltaY:120,deltaMode:0,target:new El()});assert.equal(body.dataset.brandCompact,'true');
+events.wheel({deltaY:-200,deltaMode:0,target:new El()});assert.equal(body.dataset.brandCompact,'false');
+events.wheel({deltaY:200,deltaMode:0,ctrlKey:true,target:new El()});assert.equal(body.dataset.brandCompact,'false');
+events.touchstart({touches:[{clientY:300}]});events.touchmove({touches:[{clientY:150}]});assert.equal(body.dataset.brandCompact,'true');
+events.touchmove({touches:[{clientY:350}]});assert.equal(body.dataset.brandCompact,'false');events.touchend();
+events.keydown({key:'PageDown',target:new El(),preventDefault(){}});assert.equal(body.dataset.brandCompact,'true');
+events.keydown({key:'Home',target:new El(),preventDefault(){}});assert.equal(body.dataset.brandCompact,'false');
 jumps[11].onclick();settle();assert.equal(get('#current-sheet').textContent,'S-12');
+assert.equal(body.dataset.brandCompact,'true');
 get('#next').onclick();settle();assert.equal(get('#current-sheet').textContent,'S-01');
 get('#previous').onclick();settle();assert.equal(get('#current-sheet').textContent,'S-12');
 location.hash='#index';events.hashchange();settle();assert.equal(body.dataset.view,'index');get('#category').onchange({target:{value:'Detail'}});assert.equal(cards.filter(c=>!c.hidden).length,5);
 cards[7].button.onclick();settle();assert.equal(get('#sheet-dialog').open,true);assert.match(get('#sheet-title').textContent,/S-08/);get('#sheet-next').onclick();assert.match(get('#sheet-title').textContent,/S-09/);get('#sheet-close').onclick();assert.equal(get('#sheet-dialog').open,false);
 location.hash='#surf';events.hashchange();settle();assert.equal(cards.filter(c=>!c.hidden).length,12);assert.equal(body.dataset.view,'surf');
 const stage=get('.archive-carousel');stage.emit('pointerdown',{button:0,isPrimary:true,pointerId:1,clientX:100});stage.emit('pointermove',{pointerId:1,clientX:150});stage.emit('pointerup',{pointerId:1});settle();assert.equal(stage.pointer,null);
+location.hash='#timeline';events.hashchange();settle();assert.equal(body.dataset.brandCompact,'false');
+get('#menu-toggle').onclick();assert.equal(body.dataset.brandCompact,'true');get('#menu-close').onclick();
 location.hash='#boq';events.hashchange();assert.equal(location.redirect,'tools.html#boq');
+console.log('PASS: SAP identity on wheel, touch, keyboard, menu and navigation; scroll back restores the full company name.');
 console.log('PASS: circular forward/back, last-to-first wrap, index filter, sheet navigation, pointer capture release, surf and legacy BOQ route.');
