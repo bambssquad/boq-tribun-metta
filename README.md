@@ -31,3 +31,5 @@ python publish_public.py
 Commit sumber beserta hasil publikasi. GitHub Pages memakai berkas statis di root. Workflow memeriksa bahwa halaman terbit sesuai hasil build. Generator `src/` dipertahankan; `build_preview.py` menerapkan data model revisi, `kg_pricing.py` menambahkan tarif jasa, dan `lookback.py` membuat halaman arsip terpisah. `data/` mencatat kuantitas dan asal geometri. `assets/technical/` memuat 12 DXF/SVG, PDF gabungan dan ekspor sheet Revit.
 
 Referensi visual: https://tlb.betteroff.studio/. Implementasi interaksi dan konten METTA dibuat terpisah; musik, font komersial dan kode referensi tidak disertakan.
+
+R03: seluruh 12 gambar kini memiliki 136 dimensi CAD dan label LOD 200. Dimensi terdaftar pada assets/technical/dimensions-R03.json; python check_dimensions.py memeriksa entitas CAD, satuan, PDF dan dasar angka. Jalankan python technical.py untuk memperbarui gambar, lalu build_preview.py. URL unduhan R02 dipertahankan agar tautan lama tetap berfungsi; isi dokumennya telah direvisi R03. Geometri dan harga BOQ tetap. Revit menerima anotasi garis/teks native dan skema dimensi pendamping; belum berupa dimensi asosiatif ke model.

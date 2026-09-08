@@ -11,7 +11,7 @@ from reportlab.lib.colors import HexColor
 ROOT=Path(__file__).parent
 OUT=ROOT/'assets'/'technical'; OUT.mkdir(parents=True,exist_ok=True)
 MODEL=json.loads((ROOT/'data/model.json').read_text())
-COLORS={'dek':'#657f45','kolom':'#1c292c','balok':'#31596b','stiffener':'#698491','bracing':'#b64a45','baseplate':'#746052','dim':'#526e80','detail':'#303330','context':'#90948d'}
+COLORS={'dek':'#444444','kolom':'#111111','balok':'#333333','stiffener':'#666666','bracing':'#111111','baseplate':'#555555','dim':'#222222','detail':'#303030','context':'#999999','grid':'#b5b5b5'}
 EDGES=[(0,1),(1,2),(2,3),(3,0),(4,5),(5,6),(6,7),(7,4),(0,4),(1,5),(2,6),(3,7)]
 TITLES=['Denah tribun','Rencana tumpuan','Rencana rangka & X','Tampak depan','Tampak samping','Potongan portal','Potongan tangga','Detail anak tangga','Railing & balustrade','Base plate & karet','Sambungan D1-D4','Urutan pemasangan']
 NOTES=[
@@ -29,7 +29,7 @@ NOTES=[
  ['Urutan: survei beton / marking > karet & dudukan > kolom > balok & X > dek > tangga & railing.', 'Gunakan penyangga sementara; lepas setelah stabilitas dan semua sambungan diperiksa.']]
 
 class Drawing:
- def __init__(self,idx): self.idx=idx;self.code=f'S-{idx:02}';self.title=TITLES[idx-1];self.lines=[];self.labels=[]
+ def __init__(self,idx): self.idx=idx;self.code=f'S-{idx:02}';self.title=TITLES[idx-1];self.lines=[];self.labels=[];self.dimensions=[]
  def line(self,a,b,g='detail'):
   a=tuple(map(float,a));b=tuple(map(float,b))
   if math.dist(a,b)>.001:self.lines.append((a,b,g))
@@ -103,24 +103,32 @@ def write_outputs(ds):
   pdf.setFillColor(HexColor('#f5f3ed'));pdf.rect(0,0,1191,842,stroke=0,fill=1)
   doc=ezdxf.new('R2010');doc.units=4;ms=doc.modelspace()
   for layer,color in COLORS.items():doc.layers.new(layer,dxfattribs={'color':7,'true_color':int(color[1:],16)})
-  for a,b,g in d.lines:
+  # Editable dimension entities accompany the shared vector annotation geometry.
+  for q in d.dimensions:
+   ms.add_aligned_dim(p1=q['a'],p2=q['b'],distance=q['offset'],text=q['label'],dxfattribs={'layer':'dim'},override={'dimtxt':q['height'],'dimasz':q['height']*.35,'dimtad':1}).render()
+  dim_lines={i for q in d.dimensions for i in q['vector_lines']};dim_labels={q['vector_label'] for q in d.dimensions}
+  for line_index,(a,b,g) in enumerate(d.lines):
    x,y=xy(a);X,Y=xy(b);col=COLORS[g]
    pdf.setStrokeColor(HexColor(col));pdf.setLineWidth(.7);pdf.line(x,y,X,Y)
    parts.append(f'<path d="M{x:.2f},{842-y:.2f}L{X:.2f},{842-Y:.2f}" stroke="{col}" fill="none" stroke-width=".8"/>')
-   ms.add_line(a,b,dxfattribs={'layer':g})
-  for x,y,t,h in d.labels:
+   if line_index not in dim_lines:ms.add_line(a,b,dxfattribs={'layer':g})
+  for label_index,(x,y,t,h) in enumerate(d.labels):
    X,Y=xy((x,y));size=max(8,min(14,h*scale));pdf.setFillColor(HexColor('#26302b'));pdf.setFont('Helvetica',size);pdf.drawString(X,Y,t)
    parts.append(f'<text x="{X:.2f}" y="{842-Y:.2f}" font-family="Arial" font-size="{size:.2f}" fill="#26302b">{html.escape(t)}</text>')
-   ms.add_text(t,dxfattribs={'height':h,'insert':(x,y),'layer':'dim'})
-  for x,y,t,size in [(38,792,'METTA / LT 04',20),(38,752,d.code+'   '+d.title.upper(),24),(905,796,'R02 / 07.09.2026',12),(905,775,'KOORDINASI',12),(38,36,'SATUAN DXF: mm | PDF: FIT / NTS | DIMENSI TERTULIS YANG BERLAKU | BUKAN UNTUK FABRIKASI',10)]:
+   if label_index not in dim_labels:ms.add_text(t,dxfattribs={'height':h,'insert':(x,y),'layer':'dim'})
+  for x,y,t,size in [(38,792,'METTA / LT 04',20),(38,752,d.code+'   '+d.title.upper(),24),(905,796,'R03 / 08.09.2026',12),(905,775,'LOD 200 / KOORDINASI',11),(38,36,'SATUAN: mm | PDF: FIT / NTS | DIMENSI NOMINAL KOORDINASI | DETAIL TERSEDIA DIPERTAHANKAN',10)]:
    pdf.setFillColor(HexColor('#1c292c'));pdf.setFont('Helvetica',size);pdf.drawString(x,y,t)
    parts.append(f'<text x="{x}" y="{842-y}" font-family="Arial" font-size="{size}" fill="#1c292c">{html.escape(t)}</text>')
   for n,t in enumerate(NOTES[d.idx-1]):
    y=115-n*22;pdf.setFont('Helvetica',11);pdf.drawString(38,y,t)
    parts.append(f'<text x="38" y="{842-y}" font-family="Arial" font-size="11">{html.escape(t)}</text>')
+  lod='LOD 200: bentuk, ukuran dan posisi perkiraan. Detail sambungan mengikuti status masing-masing.'
+  pdf.setFont('Helvetica',10);pdf.drawString(38,64,lod)
+  parts.append(f'<text x="38" y="778" font-family="Arial" font-size="10">{lod}</text>')
+  ms.add_text('R03 / LOD 200 / mm / KOORDINASI',dxfattribs={'height':max(10,span[0]*.009),'insert':(float(lo[0]),float(hi[1]+span[1]*.12)),'layer':'dim'})
   parts.append('</svg>');(OUT/(d.code+'.svg')).write_text(''.join(parts),encoding='utf8')
   doc.saveas(OUT/(d.code+'.dxf'));pdf.showPage()
-  manifest.append(dict(code=d.code,title=d.title,notes=NOTES[d.idx-1],svg='assets/technical/'+d.code+'.svg',dxf='assets/technical/'+d.code+'.dxf',category='Denah' if d.idx<=3 else 'Potongan' if d.idx<=7 else 'Detail'))
+  manifest.append(dict(code=d.code,title=d.title,revision='R03',lod=200,dimension_count=len(d.dimensions),dimension_basis='Nominal koordinasi; lihat status setiap dimensi',notes=NOTES[d.idx-1]+[lod],svg='assets/technical/'+d.code+'.svg',dxf='assets/technical/'+d.code+'.dxf',category='Denah' if d.idx<=3 else 'Potongan' if d.idx<=7 else 'Detail'))
   # Paper-coordinate line and text data for native Revit sheet drafting, if needed.
   if d.idx in [1,2,3,8,9,10,11]:native.append(dict(code=d.code,title=d.title,lines=[(xy(a),xy(b)) for a,b,g in d.lines],labels=[(*xy((x,y)),t) for x,y,t,h in d.labels]))
  pdf.save();(OUT/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False),encoding='utf8')
@@ -139,5 +147,6 @@ def calculations():
  return result
 
 if __name__=='__main__':
- ds=make_drawings();write_outputs(ds);c=calculations()
+ from dimensioning import annotate
+ ds=make_drawings();annotate(ds);write_outputs(ds);c=calculations()
  print(json.dumps(dict(drawings=len(ds),deck=c['deck'],deck_area=MODEL['deck_area_m2'])))

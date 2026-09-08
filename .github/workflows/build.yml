@@ -28,6 +28,7 @@ jobs:
       - name: Check quantities, exports and interactions
         run: |
           python validate.py
+          python check_dimensions.py
           node kg_pricing.test.cjs
           node lookback.test.cjs
           node panzoom.test.cjs

@@ -6,10 +6,10 @@ def present(s):
  def fragment(value):return BeautifulSoup(value,'html.parser')
  mast=s.select_one('.look-mast')
  mast.select_one('.look-brand')['href']='#konsep'
- mast.select('a')[1]['href']='#konsep';mast.select('a')[1].string='USULAN TEKNIS / R02'
+ mast.select('a')[1]['href']='#konsep';mast.select('a')[1].string='USULAN TEKNIS / R03'
  mast.select_one('nav').clear()
  mast.select_one('nav').append(fragment('<a href="#konsep">01 Konsep</a><a href="#tiga-d">02 Model</a><a href="#gambar">03 Gambar</a><a href="#material">04 Material</a><a href="#anggaran">05 Biaya</a>'))
- hero=fragment('''<section class="pitch-hero" id="konsep"><div class="pitch-kicker"><span>METTA / TRIBUN LT 04</span><span>USULAN DESAIN · R02</span></div><h1>TRIBUN METTA<br><em>DEK BORDES 4 MM</em></h1><div class="pitch-intro"><p>Usulan tribun lima tingkat dengan rangka baja RHS, dek bordes 4 mm, pengaku silang X, dan papan pinus pada bidang duduk.</p><a class="pitch-link" href="#tiga-d">Tinjau model 3D <span>↘</span></a></div><div class="pitch-metrics"><div><b>17,70 × 5,00</b><span>meter · ukuran tribun</span></div><div><b>04 mm</b><span>usulan ketebalan dek</span></div><div><b>05 tingkat</b><span>susunan area duduk</span></div><div><b>08 X</b><span>konfigurasi pengaku rangka</span></div></div></section>
+ hero=fragment('''<section class="pitch-hero" id="konsep"><div class="pitch-kicker"><span>METTA / TRIBUN LT 04</span><span>USULAN DESAIN · R03</span></div><h1>TRIBUN METTA<br><em>DEK BORDES 4 MM</em></h1><div class="pitch-intro"><p>Usulan tribun lima tingkat dengan rangka baja RHS, dek bordes 4 mm, pengaku silang X, dan papan pinus pada bidang duduk.</p><a class="pitch-link" href="#tiga-d">Tinjau model 3D <span>↘</span></a></div><div class="pitch-metrics"><div><b>17,70 × 5,00</b><span>meter · ukuran tribun</span></div><div><b>04 mm</b><span>usulan ketebalan dek</span></div><div><b>05 tingkat</b><span>susunan area duduk</span></div><div><b>08 X</b><span>konfigurasi pengaku rangka</span></div></div></section>
  <section class="pitch-value" id="nilai-desain"><p class="eyebrow">SISTEM KONSTRUKSI</p><div class="pitch-value-grid"><article><span>01</span><h2>Spesifikasi dek</h2><p>Ketebalan 4 mm mengurangi massa baja dasar dek sebesar 50% dibanding 8 mm pada luas yang sama. Rangka dan motif bordes dihitung terpisah.</p></article><article><span>02</span><h2>Modul rangka</h2><p>Satu profil utama dan pengelompokan potongan menjadi dasar untuk menyederhanakan pengadaan serta perakitan.</p></article><article><span>03</span><h2>Pengadaan material</h2><p>Kandidat pemasok di Surabaya mencakup baja, papan pinus, karet dudukan, dan pelapis. Pilihan dapat disesuaikan dengan anggaran proyek.</p></article></div></section>''')
  mast.insert_after(hero)
  hero_section=s.select_one('.pitch-hero')
@@ -18,7 +18,7 @@ def present(s):
  copy.append(hero_section.select_one('h1').extract())
  copy.append(hero_section.select_one('.pitch-intro').extract())
  layout.append(copy)
- layout.append(fragment('''<figure class="hero-drawing"><figcaption><span>R02 / SISTEM RANGKA BAJA</span><span>S-04</span></figcaption><a href="#gambar" class="hero-sheet" aria-label="Buka galeri gambar teknis tribun"><img src="assets/technical/S-04.svg" alt="Proyeksi tampak depan rangka tribun METTA, panjang 17.700 mm" width="1191" height="842" fetchpriority="high" decoding="async"></a><div class="hero-drawing-info"><span><b>161</b> elemen rangka</span><span><b>80</b> kolom</span><span><b>16</b> diagonal</span></div><a class="hero-sheet-link" href="#tiga-d">Model koordinasi interaktif ↗</a></figure>'''))
+ layout.append(fragment('''<figure class="hero-drawing"><figcaption><span>R03 / SISTEM RANGKA BAJA</span><span>S-04</span></figcaption><a href="#gambar" class="hero-sheet" aria-label="Buka galeri gambar teknis tribun"><img src="assets/technical/S-04.svg" alt="Proyeksi tampak depan rangka tribun METTA, panjang 17.700 mm" width="1191" height="842" fetchpriority="high" decoding="async"></a><div class="hero-drawing-info"><span><b>161</b> elemen rangka</span><span><b>80</b> kolom</span><span><b>16</b> diagonal</span></div><a class="hero-sheet-link" href="#tiga-d">Model koordinasi interaktif ↗</a></figure>'''))
  hero_section.select_one('.pitch-kicker').insert_after(layout)
  gallery=s.select_one('#gambar');title=gallery.select_one('.look-title');title.clear()
  for img in gallery.select('img'):
@@ -72,7 +72,7 @@ def present(s):
  footer=s.select_one('.look-footer')
  footer.insert_before(fragment('<p class="pitch-stage">Konsep desain untuk pembahasan klien. Validasi struktur dan sambungan diselesaikan sebelum pelaksanaan. <a href="#lampiran">Dasar perencanaan ↗</a></p>'))
  footer.insert_before(appendix)
- footer.select_one('p').clear();footer.select_one('p').append(fragment('METTA / R02<br>DOKUMEN USULAN TEKNIS.'))
+ footer.select_one('p').clear();footer.select_one('p').append(fragment('METTA / R03<br>DOKUMEN USULAN TEKNIS.'))
  note=s.select_one('#drawing-note');note.extract()
  note_wrap=fragment('<details class="drawing-notes"><summary>Catatan gambar</summary></details>');note_wrap.select_one('details').append(note)
  s.select_one('.dialog-actions').insert_before(note_wrap)
