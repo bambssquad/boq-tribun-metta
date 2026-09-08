@@ -1,0 +1,54 @@
+{
+  "status": "Penyaringan satu arah; bukan verifikasi SNI lengkap",
+  "assumptions": {
+    "E_MPa": 200000,
+    "Fy_MPa": 240,
+    "D_kPa": 1.2,
+    "L_kPa": 4.79,
+    "live_load_status": "Input pembanding, kategori dan pasal SNI belum dikunci",
+    "service_kPa": 5.99,
+    "ultimate_kPa": 9.104000000000001
+  },
+  "deck": [
+    {
+      "span_mm": 250,
+      "stress_MPa": 26.67,
+      "yield_ratio": 0.123,
+      "deflection_mm": 0.286,
+      "L360_mm": 0.694,
+      "pass_screen": true
+    },
+    {
+      "span_mm": 333.33,
+      "stress_MPa": 47.42,
+      "yield_ratio": 0.22,
+      "deflection_mm": 0.903,
+      "L360_mm": 0.926,
+      "pass_screen": true
+    },
+    {
+      "span_mm": 500,
+      "stress_MPa": 106.69,
+      "yield_ratio": 0.494,
+      "deflection_mm": 4.57,
+      "L360_mm": 1.389,
+      "pass_screen": false
+    }
+  ],
+  "deck_base_mass_kg": 2585.634542405218,
+  "deck_mass_reduction_kg": 2585.634542405218,
+  "stock_frame_cost": 32587500,
+  "stock_frame_bars": 75,
+  "deck_area_lower_bound_sheets": 29,
+  "plate_catalog_price": 1273000,
+  "plate_stock_status": "Batas bawah luas; bukan hasil nesting, belum boleh dipakai sebagai jumlah pesanan",
+  "unverified": [
+    "beban titik dan distribusi dua arah",
+    "getaran dan kenyamanan",
+    "tekuk lokal RHS, torsi dan gaya gabungan",
+    "las/gusset/baut/angkur",
+    "geser dan angkat dudukan",
+    "kapasitas beton LT4 dan tulangan",
+    "gempa, angin, beban pagar dan evakuasi"
+  ]
+}

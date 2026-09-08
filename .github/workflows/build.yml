@@ -1,41 +1,37 @@
-name: build-site
+name: verify-site
 on:
   push:
     branches: [main]
-    paths: ['src/**', 'src-tribun.zip', '.github/workflows/build.yml']
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 concurrency:
-  group: build-site
+  group: verify-site-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Bongkar sumber (sekali saja)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install build dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Build the archive and working page
+        run: python build_preview.py
+      - name: Check quantities, exports and interactions
         run: |
-          if [ -f src-tribun.zip ]; then
-            mkdir -p src
-            unzip -o src-tribun.zip -d src
-            rm -f src-tribun.zip
-            echo "sumber dibongkar ke src/"
-          fi
-          ls -la src || true
-      - name: Bangun index.html
+          python validate.py
+          node kg_pricing.test.cjs
+          node lookback.test.cjs
+          node panzoom.test.cjs
+      - name: Verify the published files match the source
         run: |
-          DEPLOY_OUT="$PWD/_site" DEPLOY_ZIP="-" python src/deploybuild.py
-          cp _site/index.html index.html
-          touch .nojekyll
-          rm -rf _site
-          ls -la index.html
-      - name: Commit hasil build
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --cached --quiet || (git commit -m "CI: rebuild index.html dari src/" && git push)
+          python publish_public.py
+          git diff --exit-code -- index.html tools.html lookback.css lookback.js panzoom.js assets

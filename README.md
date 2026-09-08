@@ -1,53 +1,33 @@
-# BOQ & RAB Tribun Baja Hollow — Gedung METTA
+# METTA — arsip desain, BOQ dan penawaran
 
-Satu berkas `index.html` yang berdiri sendiri: gambar kerja, model 3D, spesifikasi,
-bill of quantity, RAB, dan daftar potong. Tidak butuh server, database, atau proses build.
+Web: https://bambssquad.github.io/boq-tribun-metta/
 
-## Cara memasang di GitHub Pages
+Halaman utama memuat Timeline, Surf, Indeks dan Proyek dalam hitam-putih tanpa musik. Menu membuka model 3D, gambar teknik interaktif, BOQ dan penawaran pada `tools.html`.
 
-1. Buat repository baru di GitHub, misalnya `boq-tribun-metta`. Boleh **Public**
-   (kalau isinya mau bisa dibuka siapa saja) atau **Private** — Pages tetap jalan
-   di akun berbayar; untuk akun gratis, repo harus Public.
-2. Klik **Add file → Upload files**, lalu seret **`index.html`**, **`.nojekyll`**,
-   dan **`README.md`** dari folder ini. Klik **Commit changes**.
-3. Masuk ke **Settings → Pages**.
-4. Bagian *Build and deployment*: **Source** pilih **Deploy from a branch**,
-   **Branch** pilih **main** dan folder **/ (root)**. Klik **Save**.
-5. Tunggu 1–2 menit. Alamatnya muncul di halaman yang sama:
-   `https://<namauser>.github.io/boq-tribun-metta/`
+## BOQ dan jasa per kg
 
-Berkas `.nojekyll` penting supaya GitHub tidak memproses ulang isi folder.
+Buka **Menu → BOQ & biaya**, lalu aktifkan **Hitung jasa per kg**. Tarif awal Rp6.000/kg mencakup jasa fabrikasi dan pemasangan; material dihitung terpisah. Tarif dapat diubah. Menonaktifkan toggle mengeluarkan jasa dari total tanpa mengubah kuantitas atau harga material.
 
-## Memakai domain sendiri
+Dasar penagihan adalah berat pembelian: jumlah lonjor dibulatkan × panjang stok × kg/m, ditambah jumlah lembar dibulatkan × luas lembar × kg/m². Sisa potong termasuk sekali melalui jumlah stok. Saat input R02 dan allowance bawaan digunakan: 7.940,076 kg × Rp6.000 = Rp47.640.456 sebelum material, overhead dan pajak. Rincian setiap komponen dapat dibuka di panel jasa. Berat motif bordes belum terukur; sebagian item masih estimasi sebagaimana catatan BOQ.
 
-1. Di **Settings → Pages → Custom domain**, isi misalnya `rab.namadomainmu.com`,
-   lalu **Save**.
-2. Di panel DNS penyedia domainmu, tambahkan record **CNAME**:
-   `rab` → `<namauser>.github.io`
-3. Kembali ke Settings → Pages, centang **Enforce HTTPS** setelah sertifikatnya terbit
-   (biasanya di bawah 15 menit).
+**Buka template penawaran** menampilkan surat yang dapat diisi nama perusahaan, klien, nomor, tanggal, lingkup dan termin pembayaran. Nilai jasa mengikuti BOQ. Menu Ekspor menyediakan Excel berumus dengan lembar PENAWARAN, REKAP, INPUT, BOQ dan BERAT; sakelar Excel ada di INPUT!B14 (1 aktif, 0 nonaktif) dan tarif di INPUT!B13. PDF dibuat melalui dialog cetak browser.
 
-Setelah domain terpasang, alamat `github.io` tidak lagi terlihat oleh pengunjung.
+Harga material yang kosong belum masuk total. Overhead dan pajak adalah input terpisah; tarif Rp6.000/kg bukan harga material. Spesifikasi dan validasi struktur tetap berada dalam lampiran teknis.
 
-## Memperbarui isinya
+## Pengembangan
 
-Unggah ulang `index.html` yang baru ke repo yang sama (Add file → Upload files →
-pilih *Replace*). Pages akan menerbitkan ulang otomatis dalam satu-dua menit.
+Gunakan Python 3.12+ dan Node 22+:
 
-## Yang perlu diketahui pemakai
+```sh
+python -m pip install -r requirements.txt
+python build_preview.py
+python validate.py
+node kg_pricing.test.cjs
+node lookback.test.cjs
+node panzoom.test.cjs
+python publish_public.py
+```
 
-- **Isi harga** menampilkan kolom harga satuan, rekap, overhead, PPN, dan total.
-- **Edit tabel** membuat seluruh sel bisa diubah, termasuk menambah atau menghapus baris.
-- **Ekspor** berisi **Unduh Excel (.xlsx)** — berkas Excel asli dengan rumus hidup —
-  dan **Simpan PDF** lewat dialog cetak browser.
-- Semua ketikan tersimpan di browser masing-masing pemakai (localStorage). Tidak ada
-  data yang dikirim ke server mana pun; berkas Excel dibuat di dalam browser.
-- Tombol **Reset ke default** mengembalikan seluruh angka ke kuantitas model.
+Commit sumber beserta hasil publikasi. GitHub Pages memakai berkas statis di root. Workflow memeriksa bahwa halaman terbit sesuai hasil build. Generator `src/` dipertahankan; `build_preview.py` menerapkan data model revisi, `kg_pricing.py` menambahkan tarif jasa, dan `lookback.py` membuat halaman arsip terpisah. `data/` mencatat kuantitas dan asal geometri. `assets/technical/` memuat 12 DXF/SVG, PDF gabungan dan ekspor sheet Revit.
 
-## Catatan teknis
-
-- Satu-satunya sumber luar adalah Google Fonts. Kalau ingin benar-benar tanpa panggilan
-  keluar, hapus baris `<link ... fonts.googleapis.com ...>` di dalam `index.html`;
-  halaman tetap jalan dengan huruf bawaan sistem.
-- Semua kuantitas berasal dari model Revit `METTA.rvt`. Kalau modelnya berubah,
-  angka di halaman ini harus dibangun ulang.
+Referensi visual: https://tlb.betteroff.studio/. Implementasi interaksi dan konten METTA dibuat terpisah; musik, font komersial dan kode referensi tidak disertakan.
