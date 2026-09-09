@@ -22,7 +22,9 @@ class Element{
  vm.runInContext(fs.readFileSync('budget-editor.js','utf8'),c);
  vm.runInContext(fs.readFileSync('r04_app.js','utf8'),c);
  await new Promise(r=>setImmediate(r));
- assert.equal((get('rows').innerHTML.match(/<tr>/g)||[]).length,data.rows.length);
+ assert.equal((get('rows').innerHTML.match(/data-amount=/g)||[]).length,data.rows.length);
+ assert.ok(get('rows').innerHTML.includes('Rincian fabrikasi & pemasangan'));
+ assert.ok(get('rows').innerHTML.includes('<details>'));
  assert.ok(get('totals').innerHTML.includes('TOTAL ANGGARAN'));
  assert.ok(get('offer-fields').innerHTML.includes('SELARAS ADHI PERKASA'));assert.ok(get('offer-print').innerHTML.includes('Lampiran — Rincian RAB'));
  assert.equal(get('offer-preview').innerHTML,get('offer-print').innerHTML);
@@ -32,9 +34,9 @@ class Element{
  get('offer-terms').events.input({target:{dataset:{term:'0',field:'pct'},value:'20'}});assert.ok(get('offer-term-total').textContent.includes('90.00%'));assert.equal(get('offer-preview').innerHTML,get('offer-print').innerHTML);
  get('offer-terms').events.change({target:{dataset:{term:'0',field:'pct'},value:'25'}});assert.ok(get('offer-term-total').textContent.includes('95.00%'));
  get('offer-default-terms').click();assert.ok(get('offer-term-total').textContent.includes('100.00%'));
- filters[2].click();assert.ok((get('rows').innerHTML.match(/<tr>/g)||[]).length<data.rows.length);
+ filters[2].click();assert.ok((get('rows').innerHTML.match(/data-amount=/g)||[]).length<data.rows.length);
  get('service').checked=false;get('service').change();assert.ok(get('offer-note').textContent.includes('nonaktif'));
- get('print').click();assert.ok(printed);assert.equal((get('rows').innerHTML.match(/<tr>/g)||[]).length,data.rows.length);
+ get('print').click();assert.ok(printed);assert.equal((get('rows').innerHTML.match(/data-amount=/g)||[]).length,data.rows.length);
  assert.equal(filters[0].attrs['aria-pressed'],'true');
  drawings[5].click();assert.equal(get('sheet-image').src,'assets/r04/T-06.svg');assert.ok(get('drawing-dialog').open);
  get('close').click();assert.equal(get('drawing-dialog').open,false);
@@ -47,7 +49,7 @@ class Element{
  assert.ok(bytes.includes(Buffer.from('REKAP')));assert.ok(bytes.includes(Buffer.from('PENGATURAN')));
  assert.ok(bytes.includes(Buffer.from('U01')));assert.ok(bytes.includes(Buffer.from('TOTAL ANGGARAN')));
  assert.ok(bytes.includes(Buffer.from('Sentral Mur Baut Surabaya')));assert.ok(bytes.includes(Buffer.from('PT Jaya Metal Surabaya')));
- formats[1].click();assert.equal(get('rab-download-action').textContent,'Simpan PDF');printed=false;get('rab-download-action').click();assert.ok(printed);assert.equal((get('rows').innerHTML.match(/<tr>/g)||[]).length,data.rows.length);
+ formats[1].click();assert.equal(get('rab-download-action').textContent,'Simpan PDF');printed=false;get('rab-download-action').click();assert.ok(printed);assert.equal((get('rows').innerHTML.match(/data-amount=/g)||[]).length,data.rows.length);
  formats[0].click();assert.equal(formats[0].attrs['aria-pressed'],'true');
  get('offer-scope').value='labor';get('offer-scope').change();assert.ok(window.MettaOffer.getScope().items.every(r=>r.category==='Upah'));
  assert.ok(window.MettaOffer.getScope().items.find(r=>r.code==='U01').amount>0);

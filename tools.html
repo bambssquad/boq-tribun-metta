@@ -1063,24 +1063,10 @@ const REDUCE = matchMedia('(prefers-reduced-motion:reduce)').matches;
 const ODO={};
 const odo=(k,txt)=>`<span class="odo" data-k="${k}">${esc(txt)}</span>`;
 function paintOdo(){
-  const els=[...document.querySelectorAll('.odo')];
-  els.forEach((el,n)=>{
-    const k=el.dataset.k, txt=el.textContent, prev=ODO[k];
-    ODO[k]=txt;
-    if(REDUCE || prev===undefined || prev===txt || n>24) return;
-    const pad=prev.length<txt.length ? prev.padStart(txt.length,' ') : prev.slice(-txt.length);
-    let h='';
-    for(let i=0;i<txt.length;i++){
-      const a=pad[i]||' ', b=txt[i];
-      h += (a===b) ? `<span class="oc">${esc(b)}</span>`
-                   : `<span class="oc roll"><b><i>${esc(a)}</i><i>${esc(b)}</i></b></span>`;
-    }
-    el.innerHTML=h;
-    const rolls=el.querySelectorAll('.roll');
-    requestAnimationFrame(()=>rolls.forEach((r,i)=>{
-      r.style.transitionDelay=(i*26)+'ms'; r.classList.add('go');}));
-  });
+  // Currency remains one text node: digit animations obscure totals during edits.
+  document.querySelectorAll('.odo').forEach(el=>{ODO[el.dataset.k]=el.textContent;});
 }
+
 const vbar=(v,g)=>`<span class="vb" data-v="${v}" data-g="${g}"></span>`;
 function paintBars(){
   ['H','P'].forEach(g=>{
@@ -1253,16 +1239,15 @@ document.addEventListener('input',e=>{
   if(el.classList && el.classList.contains('pin')){
     const r=arr(el.dataset.t)[+el.dataset.i];
     if(r){ r.p=el.value===''?null:+el.value; save();
-      const keep=document.activeElement; render();
-      const again=document.querySelector(`.pin[data-t="${el.dataset.t}"][data-i="${el.dataset.i}"]`);
-      if(again && keep===el) again.focus();
+      // Keep the focused input and caret intact until the edit is committed.
     }
     return;
   }
   if(['wH','wP','bar','ohp','ppn'].indexOf(el.id)>=0){
-    S[el.id]=+el.value||0; save(); render();
+    S[el.id]=+el.value||0; save();
   }
 });
+document.addEventListener('change',e=>{const el=e.target;if(el.classList?.contains('pin')||['wH','wP','bar','ohp','ppn'].includes(el.id))render();});
 document.addEventListener('blur',e=>{
   const el=e.target;
   if(!el.classList || !el.classList.contains('cel')) return;
