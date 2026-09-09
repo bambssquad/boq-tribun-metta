@@ -29,10 +29,14 @@ jobs:
         run: |
           python validate.py
           python check_dimensions.py
+          python check_r04.py
+          python check_r04_web.py
           node kg_pricing.test.cjs
           node lookback.test.cjs
           node panzoom.test.cjs
+          node r04.test.cjs
+          node r04_controller.test.cjs
       - name: Verify the published files match the source
         run: |
           python publish_public.py
-          git diff --exit-code -- index.html tools.html lookback.css lookback.js panzoom.js assets
+          git diff --exit-code -- index.html tools.html r04.html lookback.css lookback.js panzoom.js assets

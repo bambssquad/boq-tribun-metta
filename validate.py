@@ -13,14 +13,15 @@ script='\n'.join(x.get_text() for x in s.select('script') if not x.get('src'))
 tmp=p/'check.generated.js';tmp.write_text(script,encoding='utf-8')
 node=shutil.which('node') or r'C:\Users\adigh\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe'
 subprocess.run([node,'--check',str(tmp)],check=True);tmp.unlink()
-m=json.loads((p/'data/model.json').read_text())
-assert len(m['rhs'])==161 and len(m['columns'])==80
-assert len([i for i in m['items'] if i['group']=='bracing'])==16
+from r04_model import load_model
+m=load_model()
+assert len(m['rhs'])==165 and len(m['columns'])==80
+assert len([i for i in m['items'] if i['group']=='bracing'])==20
 assert len([i for i in m['items'] if i['group']=='baseplate'])==160
 assert abs(m['deck_area_m2']-82.34504912118528)<1e-8
 assert all(len(i['vertices'])==8 for i in m['items'])
 basis=re.search(r'function basisH\(r\)\{(.*?)\n\}',script,re.S).group(0)
-test="const assert=require('node:assert/strict'); let S={wH:5,bar:6,mode:'satuan'};"+basis+"\n"+'''const r={nm:'Rangka RHS — hasil model',n:161,L:415.19,kg:32.5/6};
+test="const assert=require('node:assert/strict'); let S={wH:5,bar:6,mode:'satuan'};"+basis+"\n"+'''const r={nm:'Rangka RHS — hasil model',n:165,L:418.74,kg:32.5/6};
 assert.equal(basisH(r).bars,75);assert.equal(basisH(r).kg,2437.5);
 S.wH=10;assert.equal(basisH(r).bars,77);
 S.wH=5;r.L=100;assert.equal(basisH(r).bars,18);
@@ -50,13 +51,13 @@ print('PASS: 12 editable DXFs (mm), 12 PDF pages, 12 Revit exports, local assets
 print('PASS: JavaScript syntax, internal links, model counts, deck area, BOQ and Excel formula rule.')
 # Validate the archive entry and its links to the preserved working page.
 home=BeautifulSoup((p/'dist/index.html').read_text(encoding='utf-8'),'html.parser')
-assert len(home.select('.archive-card'))==12
+assert len(home.select('.archive-card'))==18
 assert home.select_one('.sap-wordmark').get_text(strip=True)=='SELARAS ADHI PERKASA'
 assert home.select_one('.archive-project-title').get_text(strip=True)=='ARSIP DESAIN METTA'
 assert home.select_one('.archive-project-date').get_text(strip=True)=='(09/2026)'
 assert home.select_one('.small-brand').get_text(strip=True)=='SAP'
 assert s.select_one('.look-brand').get_text(strip=True)=='SAP'
-assert len(home.select('.timeline-scale button'))==12
+assert len(home.select('.timeline-scale button'))==18
 assert not home.select('audio,video'),'Archive must have no soundtrack or media player'
 assert 'AudioContext' not in (p/'lookback.js').read_text(encoding='utf-8')
 for el in home.select('[src],a[href],link[href]'):
@@ -68,4 +69,4 @@ for el in home.select('[src],a[href],link[href]'):
 for script_path in ['lookback.js','panzoom.js']:
     subprocess.run([node,'--check',str(p/'dist'/script_path)],check=True)
 assert 'const METTA_DRAWINGS=[{' in str(home)
-print('PASS: archive routes, 12 drawings, tool deep links, no audio, and controller syntax.')
+print('PASS: archive routes, 6 R04 + 12 archived R03 drawings, tool deep links, no audio, and controller syntax.')

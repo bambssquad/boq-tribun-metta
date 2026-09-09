@@ -1,0 +1,32 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+class Element{
+ constructor(){this.events={};this.dataset={};this.attrs={};this.value='';this.checked=false;this.innerHTML='';}
+ addEventListener(k,f){this.events[k]=f;}setAttribute(k,v){this.attrs[k]=v;}
+ showModal(){this.open=true;}close(){this.open=false;}
+ click(){this.events.click?.({target:this});}change(){this.events.change?.({target:this});}
+}
+(async()=>{
+ const data=JSON.parse(fs.readFileSync('assets/r04/data.json','utf8'));
+ const els={},get=id=>els[id]??=new Element();
+ const filters=['Semua','Material','Bahan habis pakai','Upah','Peralatan dan logistik'].map(f=>{const b=new Element();b.dataset.filter=f;return b;});
+ const drawings=Array.from({length:6},(_,i)=>{const b=new Element();b.dataset.sheet='T-0'+(i+1);b.innerText=b.dataset.sheet;return b;});
+ const document={getElementById:get,querySelectorAll:q=>q==='[data-filter]'?filters:q==='[data-sheet]'?drawings:[],createElement:()=>new Element()};
+ let saved={},blob,printed=false;
+ const window={addEventListener(){},print(){printed=true;}};
+ const c={document,window,Intl,Date,Number,Math,JSON,Promise,structuredClone,Blob,console,setTimeout,URL:{createObjectURL:b=>(blob=b,'blob:test'),revokeObjectURL(){}},localStorage:{getItem:()=>null,setItem:(k,v)=>saved[k]=v},fetch:async()=>({ok:true,json:async()=>structuredClone(data)}),createDrawingPanZoom:()=>({reset(){}})};
+ vm.runInNewContext(fs.readFileSync('r04_app.js','utf8'),c);
+ await new Promise(r=>setImmediate(r));
+ assert.equal((get('rows').innerHTML.match(/<tr>/g)||[]).length,data.rows.length);
+ assert.ok(get('totals').innerHTML.includes('TOTAL ANGGARAN'));
+ filters[2].click();assert.ok((get('rows').innerHTML.match(/<tr>/g)||[]).length<data.rows.length);
+ get('service').checked=false;get('service').change();assert.ok(get('offer-note').textContent.includes('nonaktif'));
+ get('print').click();assert.ok(printed);assert.equal((get('rows').innerHTML.match(/<tr>/g)||[]).length,data.rows.length);
+ assert.equal(filters[0].attrs['aria-pressed'],'true');
+ drawings[5].click();assert.equal(get('sheet-image').src,'assets/r04/T-06.svg');assert.ok(get('drawing-dialog').open);
+ get('close').click();assert.equal(get('drawing-dialog').open,false);
+ get('csv').click();const csv=await blob.text();assert.ok(csv.includes('Total'));assert.ok(csv.includes('Fabrikasi + pemasangan baja'));
+ get('json').click();const offer=JSON.parse(await blob.text());assert.equal(offer.items.find(r=>r.code==='U01').amount,0);assert.ok(offer.total>0);
+ get('reset').click();assert.equal(get('service').checked,true);assert.equal(get('rate').value,6000);
+ assert.ok(Object.keys(saved).length);
+ console.log('PASS: R04 fetch/render, category filter, service toggle, complete print, six-sheet zoom dialog, CSV/JSON and reset.');
+})().catch(e=>{console.error(e);process.exitCode=1;});

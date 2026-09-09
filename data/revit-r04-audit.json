@@ -1,0 +1,296 @@
+{
+  "origin_mm": [
+    71795,
+    24948,
+    16000
+  ],
+  "removed_ids": [
+    1686919,
+    1686927,
+    1686930,
+    1686932,
+    1686939,
+    1686943,
+    1686947,
+    1686950,
+    1690366,
+    1690371,
+    1690376,
+    1690381
+  ],
+  "braces": [
+    {
+      "id": 1694599,
+      "props": {
+        "Cross-Section Rotation": 1.570796,
+        "Cut Length": 5,
+        "Elevation at Bottom": 56.840551,
+        "Elevation at Top": 57.004593,
+        "End Level Offset": 4.429134,
+        "Mark": "R04-XH1-A",
+        "Reference Level": 1674136,
+        "Start Level Offset": 4.429134,
+        "System Length": 5.357612,
+        "Volume": 0.035263,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694607,
+      "props": {
+        "Cross-Section Rotation": 1.570796,
+        "Cut Length": 5,
+        "Elevation at Bottom": 56.643701,
+        "Elevation at Top": 56.807743,
+        "End Level Offset": 4.232283,
+        "Mark": "R04-XH1-B",
+        "Reference Level": 1674136,
+        "Start Level Offset": 4.232283,
+        "System Length": 5.357612,
+        "Volume": 0.035263,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694611,
+      "props": {
+        "Cross-Section Rotation": 1.570796,
+        "Cut Length": 5,
+        "Elevation at Bottom": 56.840551,
+        "Elevation at Top": 57.004593,
+        "End Level Offset": 4.429134,
+        "Mark": "R04-XH2-A",
+        "Reference Level": 1674136,
+        "Start Level Offset": 4.429134,
+        "System Length": 5.357612,
+        "Volume": 0.035263,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694615,
+      "props": {
+        "Cross-Section Rotation": 1.570796,
+        "Cut Length": 5,
+        "Elevation at Bottom": 56.643701,
+        "Elevation at Top": 56.807743,
+        "End Level Offset": 4.232283,
+        "Mark": "R04-XH2-B",
+        "Reference Level": 1674136,
+        "Start Level Offset": 4.232283,
+        "System Length": 5.357612,
+        "Volume": 0.035263,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694619,
+      "props": {
+        "Cross-Section Rotation": 0,
+        "Cut Length": 7.398294,
+        "Elevation at Bottom": 0,
+        "Elevation at Top": 0,
+        "End Level Offset": 7.709974,
+        "Mark": "R04-XR1-A",
+        "Reference Level": 1674136,
+        "Start Level Offset": 0.492126,
+        "System Length": 8.369423,
+        "Volume": 0.052178,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694624,
+      "props": {
+        "Cross-Section Rotation": 0,
+        "Cut Length": 7.080052,
+        "Elevation at Bottom": 0,
+        "Elevation at Top": 0,
+        "End Level Offset": 0.492126,
+        "Mark": "R04-XR1-B",
+        "Reference Level": 1674137,
+        "Start Level Offset": -5.413386,
+        "System Length": 7.26378,
+        "Volume": 0.049933,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694628,
+      "props": {
+        "Cross-Section Rotation": 0,
+        "Cut Length": 8.015092,
+        "Elevation at Bottom": 0,
+        "Elevation at Top": 0,
+        "End Level Offset": 7.709974,
+        "Mark": "R04-XR2-A",
+        "Reference Level": 1674136,
+        "Start Level Offset": 0.492126,
+        "System Length": 8.848425,
+        "Volume": 0.056528,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694633,
+      "props": {
+        "Cross-Section Rotation": 0,
+        "Cut Length": 7.644357,
+        "Elevation at Bottom": 0,
+        "Elevation at Top": 0,
+        "End Level Offset": 0.492126,
+        "Mark": "R04-XR2-B",
+        "Reference Level": 1674137,
+        "Start Level Offset": -5.413386,
+        "System Length": 7.81168,
+        "Volume": 0.053913,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694637,
+      "props": {
+        "Cross-Section Rotation": 0,
+        "Cut Length": 8.507218,
+        "Elevation at Bottom": 0,
+        "Elevation at Top": 0,
+        "End Level Offset": 7.709974,
+        "Mark": "R04-XR3-A",
+        "Reference Level": 1674136,
+        "Start Level Offset": 0.492126,
+        "System Length": 9.261811,
+        "Volume": 0.059998,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694642,
+      "props": {
+        "Cross-Section Rotation": 0,
+        "Cut Length": 8.120079,
+        "Elevation at Bottom": 0,
+        "Elevation at Top": 0,
+        "End Level Offset": 0.492126,
+        "Mark": "R04-XR3-B",
+        "Reference Level": 1674137,
+        "Start Level Offset": -5.413386,
+        "System Length": 8.28084,
+        "Volume": 0.057268,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694646,
+      "props": {
+        "Cross-Section Rotation": 0,
+        "Cut Length": 8.133202,
+        "Elevation at Bottom": 0,
+        "Elevation at Top": 0,
+        "End Level Offset": 7.709974,
+        "Mark": "R04-XR4-A",
+        "Reference Level": 1674136,
+        "Start Level Offset": 0.492126,
+        "System Length": 8.94685,
+        "Volume": 0.057361,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694651,
+      "props": {
+        "Cross-Section Rotation": 0,
+        "Cut Length": 7.755906,
+        "Elevation at Bottom": 0,
+        "Elevation at Top": 0,
+        "End Level Offset": 0.492126,
+        "Mark": "R04-XR4-B",
+        "Reference Level": 1674137,
+        "Start Level Offset": -5.413386,
+        "System Length": 7.919948,
+        "Volume": 0.0547,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694655,
+      "props": {
+        "Cross-Section Rotation": 0,
+        "Cut Length": 7.398294,
+        "Elevation at Bottom": 0,
+        "Elevation at Top": 0,
+        "End Level Offset": 7.709974,
+        "Mark": "R04-XR5-A",
+        "Reference Level": 1674136,
+        "Start Level Offset": 0.492126,
+        "System Length": 8.366142,
+        "Volume": 0.052178,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694660,
+      "props": {
+        "Cross-Section Rotation": 0,
+        "Cut Length": 7.080052,
+        "Elevation at Bottom": 0,
+        "Elevation at Top": 0,
+        "End Level Offset": 0.492126,
+        "Mark": "R04-XR5-B",
+        "Reference Level": 1674137,
+        "Start Level Offset": -5.413386,
+        "System Length": 7.26378,
+        "Volume": 0.049933,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694664,
+      "props": {
+        "Cross-Section Rotation": 0,
+        "Cut Length": 8.507218,
+        "Elevation at Bottom": 0,
+        "Elevation at Top": 0,
+        "End Level Offset": 7.709974,
+        "Mark": "R04-XR6-A",
+        "Reference Level": 1674136,
+        "Start Level Offset": 0.492126,
+        "System Length": 9.261811,
+        "Volume": 0.059998,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    },
+    {
+      "id": 1694669,
+      "props": {
+        "Cross-Section Rotation": 0,
+        "Cut Length": 8.120079,
+        "Elevation at Bottom": 0,
+        "Elevation at Top": 0,
+        "End Level Offset": 0.492126,
+        "Mark": "R04-XR6-B",
+        "Reference Level": 1674137,
+        "Start Level Offset": -5.413386,
+        "System Length": 8.28084,
+        "Volume": 0.057268,
+        "y Offset Value": 0,
+        "z Justification": 0
+      }
+    }
+  ],
+  "status": "native_saved_connections_pending"
+}

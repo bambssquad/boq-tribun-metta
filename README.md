@@ -1,5 +1,11 @@
 # METTA — arsip desain, BOQ dan penawaran
 
+R04 (9 September 2026): `r04.html` is the selected all-in budget, with material, consumables, labor, logistics, overhead, profit and configurable output tax. Its purchasing-weight basis drives the Rp6,000/kg service toggle. Net theoretical and catalog purchasing weights have separate ledgers; unmeasured backing and concrete ties remain explicit provisional sums. Connections and stair supports are design proposals, not a fabrication release.
+
+The current 3D projection contains 165 RHS members, 80 columns, 20 diagonals (10 X sets), 176 native stair plate parts and 310 native 2-mm cover parts. R04 overlays use saved Revit IDs/cut-length readbacks and common plate geometry; R03 source snapshots are retained unchanged. Rear/bottom covers are excluded. Four concrete columns are clipped from the 2-mm panel layout with 3-mm clearance. The archive opens on six current R04 CAD/PDF sheets followed by twelve clearly labeled R03 sheets. Revit sheet previews are under `assets/r04/revit/`.
+
+R04 nesting compares 160 deterministic guillotine heuristics with 10-mm trim and 3-mm kerf: eight 3-mm sheets and twenty-six 2-mm sheets for the fixed current part list. This is the best searched arrangement, not a global optimality proof. `check_r04.py` verifies coverage, kerf/trim, stock capacity, native plate/cover dimensions and mass; `check_r04_web.py` verifies published IDs/counts and links. `r04_controller.test.cjs` checks loading, filters, service toggle, complete printing, sheet dialogs, exports and reset. Run these along with the existing validation and interaction tests. Browser visual parity is not asserted.
+
 Web: https://bambssquad.github.io/boq-tribun-metta/
 
 Halaman utama memuat Timeline, Surf, Indeks dan Proyek dalam hitam-putih tanpa musik. Menu membuka model 3D, gambar teknik interaktif, BOQ dan penawaran pada `tools.html`.

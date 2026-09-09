@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1674360,
+    "name": "M_Concrete-Rectangular-Column:600 x 500mm:1674360",
+    "lo": [
+      -449.93060000000696,
+      2688.155039999998,
+      0.0
+    ],
+    "hi": [
+      150.0682000000088,
+      3188.1489599999986,
+      6500.0
+    ],
+    "source": "IFC audit; geometry only, concrete capacity unverified"
+  },
+  {
+    "id": 1674369,
+    "name": "M_Concrete-Rectangular-Column:600 x 500mm:1674369",
+    "lo": [
+      17550.033399999986,
+      2688.155039999998,
+      0.0
+    ],
+    "hi": [
+      18150.0322,
+      3188.1489599999986,
+      6500.0
+    ],
+    "source": "IFC audit; geometry only, concrete capacity unverified"
+  },
+  {
+    "id": 1675818,
+    "name": "M_Concrete-Rectangular-Column:600 x 500mm:1675818",
+    "lo": [
+      5550.057400000005,
+      2688.155039999998,
+      0.0
+    ],
+    "hi": [
+      6150.056200000006,
+      3188.1489599999986,
+      6500.0
+    ],
+    "source": "IFC audit; geometry only, concrete capacity unverified"
+  },
+  {
+    "id": 1675819,
+    "name": "M_Concrete-Rectangular-Column:600 x 500mm:1675819",
+    "lo": [
+      11550.045400000003,
+      2688.155039999998,
+      0.0
+    ],
+    "hi": [
+      12150.044200000018,
+      3188.1489599999986,
+      6500.0
+    ],
+    "source": "IFC audit; geometry only, concrete capacity unverified"
+  }
+]
