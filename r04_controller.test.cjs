@@ -1,7 +1,7 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 class Element{
  constructor(){this.events={};this.dataset={};this.attrs={};this.value='';this.checked=false;this.innerHTML='';}
- addEventListener(k,f){this.events[k]=f;}setAttribute(k,v){this.attrs[k]=v;}
+ addEventListener(k,f){const prior=this.events[k];this.events[k]=e=>{prior?.(e);f(e);};}setAttribute(k,v){this.attrs[k]=v;}
  showModal(){this.open=true;}close(){this.open=false;}
  click(){this.events.click?.({target:this});}change(){this.events.change?.({target:this});}
 }
@@ -13,12 +13,13 @@ class Element{
  const formats=['xlsx','pdf'].map(f=>{const b=new Element();b.dataset.rabFormat=f;return b;});
  const document={getElementById:get,querySelectorAll:q=>q==='[data-filter]'?filters:q==='[data-sheet]'?drawings:q==='[data-rab-format]'?formats:[],createElement:()=>new Element()};
  let saved={},blob,printed=false;
- const window={addEventListener(){},print(){printed=true;}};
- const c={document,window,Intl,Date,Number,Math,JSON,Promise,structuredClone,Blob,console,setTimeout,URL:{createObjectURL:b=>(blob=b,'blob:test'),revokeObjectURL(){}},localStorage:{getItem:()=>null,setItem:(k,v)=>saved[k]=v},fetch:async()=>({ok:true,json:async()=>structuredClone(data)}),createDrawingPanZoom:()=>({reset(){}})};
+ const window={MettaPDF:{async download(){printed=true;}},events:{},addEventListener(k,f){this.events[k]=f;},dispatchEvent(e){this.events[e.type]?.(e);},print(){printed=true;}};
+ const c={Event,document,window,Intl,Date,Number,Math,JSON,Promise,structuredClone,Blob,console,setTimeout,URL:{createObjectURL:b=>(blob=b,'blob:test'),revokeObjectURL(){}},localStorage:{getItem:()=>null,setItem:(k,v)=>saved[k]=v},fetch:async()=>({ok:true,json:async()=>structuredClone(data)}),createDrawingPanZoom:()=>({reset(){}})};
  c.TextEncoder=TextEncoder;c.Uint8Array=Uint8Array;c.Uint32Array=Uint32Array;c.DataView=DataView;
  vm.createContext(c);vm.runInContext(fs.readFileSync('dist/assets/r04/xlsx.js','utf8'),c);
  vm.runInContext(fs.readFileSync('offer-scope.js','utf8'),c);
  vm.runInContext(fs.readFileSync('client-offer.js','utf8'),c);
+ vm.runInContext(fs.readFileSync('budget-editor.js','utf8'),c);
  vm.runInContext(fs.readFileSync('r04_app.js','utf8'),c);
  await new Promise(r=>setImmediate(r));
  assert.equal((get('rows').innerHTML.match(/<tr>/g)||[]).length,data.rows.length);
@@ -57,5 +58,22 @@ class Element{
  get('offer-excel').click();const scoped=Buffer.from(await blob.arrayBuffer());assert.ok(scoped.includes(Buffer.from('>U01<')));assert.ok(!scoped.includes(Buffer.from('>M01<')));
  get('offer-scope').value='custom';get('offer-scope').change();assert.equal(get('offer-pdf').disabled,true);
  get('offer-scope-categories').events.change({target:{dataset:{offerCategory:'Bahan habis pakai'},checked:true}});assert.ok(window.MettaOffer.getScope().items.every(r=>r.category==='Bahan habis pakai'));assert.equal(get('offer-pdf').disabled,false);
+
+ get('offer-scope').value='labor';get('offer-scope').change();
+ const mainBefore=JSON.stringify(window.MettaRAB.get());
+ get('labor-layout').value='component';get('labor-layout').change();
+ assert.ok(window.MettaOffer.getScope().items.some(r=>r.code.startsWith('UK-')));
+ assert.ok(!window.MettaOffer.getScope().items.some(r=>r.code==='U01'));
+ let editRows=window.MettaOffer.getRows(),idx=editRows.findIndex(r=>r.code.startsWith('UK-'));
+ get('budget-editor-rows').events.change({target:{dataset:{row:String(idx),col:'qty'},value:'12'}});
+ get('budget-editor-rows').events.change({target:{dataset:{row:String(idx),col:'price'},value:'2000'}});
+ assert.equal(window.MettaOffer.getScope().items.find(r=>r.code===editRows[idx].code).amount,24000);
+ assert.equal(JSON.stringify(window.MettaRAB.get()),mainBefore);
+ get('labor-layout').value='activity';get('labor-layout').change();
+ assert.equal(window.MettaOffer.getScope().items.filter(r=>r.code.startsWith('UA')).length,4);
+ get('labor-layout').value='component';get('labor-layout').change();
+ assert.equal(window.MettaOffer.getScope().items.find(r=>r.code===editRows[idx].code).amount,24000);
+ get('term-detail').checked=true;get('term-detail').change();assert.ok(get('offer-preview').innerHTML.includes('Rincian termin per pekerjaan'));
+ get('offer-detail').checked=false;get('offer-detail').change();assert.ok(!get('offer-preview').innerHTML.includes('Lampiran — Rincian RAB'));
  console.log('PASS: R04 fetch/render, category filter, service toggle, complete print, six-sheet zoom dialog, CSV/JSON and reset.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

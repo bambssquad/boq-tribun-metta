@@ -1,0 +1,12 @@
+const assert=require('node:assert/strict');
+global.OfferDocument=require('./client-offer.js');
+const E=require('./budget-editor.js'),{r04Totals}=require('./r04_app.js');
+const rows=[{code:'M',category:'Material',name:'RHS',qty:3,kg_per_unit:5,price:100},{code:'U01',category:'Upah',qty:0,price:6000},{code:'U02',category:'Upah',qty:2,price:10}];
+const c=E.labor(rows,'component');assert.equal(c.find(r=>r.code==='UK-M').qty,15);assert.equal(c.filter(r=>r.code==='U01').length,0);
+assert.equal(E.labor(c,'activity').filter(r=>r.laborTemplate).length,4);
+const t=r04Totals([{code:'a',category:'Upah',qty:2,price:8,manualAmount:5},{code:'b',category:'Upah',qty:3,price:11}],{overhead:0,profit:0,tax:0});
+assert.equal(t.total,38);assert.equal(t.items[0].amount,5);
+const terms=OfferDocument.terms(),matrix=E.termRows(t,terms),targets=OfferDocument.amounts(t.total,terms).values;
+for(let j=0;j<3;j++)assert.equal(matrix.reduce((sum,r)=>sum+r[j+2],0),targets[j]);
+assert.ok(matrix.flatMap(r=>r.slice(2)).every(x=>x>=0));
+console.log('PASS: editable labor templates, manual totals, exact payment allocation.');

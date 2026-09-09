@@ -34,6 +34,7 @@ jobs:
           node kg_pricing.test.cjs
           node lookback.test.cjs
           node panzoom.test.cjs
+          node budget-editor.test.cjs
           node r04.test.cjs
           node r04_controller.test.cjs
           node execution_timeline.test.cjs
