@@ -41,6 +41,18 @@ if(typeof document!=='undefined'){
   const beforePrint=()=>{filter='Semua';document.querySelectorAll('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.filter==='Semua')));render();};
   window.addEventListener('beforeprint',beforePrint);
   $('print').addEventListener('click',()=>{beforePrint();window.print();});$('reset').addEventListener('click',()=>{rows=structuredClone(data.rows);settings={...data.defaults,rate:6000};for(const k of ['rate','overhead','profit','tax'])$(k).value=settings[k];$('service').checked=settings.service;save();render();});render();
+  let format='xlsx';
+  document.querySelectorAll('[data-rab-format]').forEach(b=>b.addEventListener('click',()=>{format=b.dataset.rabFormat;document.querySelectorAll('[data-rab-format]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));$('rab-download-action').textContent=format==='xlsx'?'Unduh Excel':'Simpan PDF';$('rab-download-hint').textContent=format==='xlsx'?'Menggunakan harga dan pengaturan saat ini.':'Pada dialog cetak, pilih Simpan sebagai PDF.';}));
+  $('rab-download-action').addEventListener('click',()=>{
+   if(format==='pdf'){beforePrint();window.print();return;}
+   summary();
+   const cell=v=>typeof v==='number'?{n:v}:{t:String(v??'')},table=rs=>rs.map(r=>r.map(cell));
+   const rab=[['SAP / SELARAS ADHI PERKASA — METTA R04'],['RAB sesuai harga saat ekspor; nilai merupakan snapshot.'],['Kode','Kategori','Uraian','Volume','Satuan','Harga satuan','Jumlah','Dasar kuantitas','Status'],...totals.items.map(r=>[r.code,r.category,r.name,r.qty,r.unit,r.price,r.amount,r.basis,r.status])];
+   const rekap=[['METTA R04 — REKAP RAB'],...Object.entries(totals.groups),['Biaya langsung',totals.direct],['Overhead',totals.oh],['Laba',totals.profit],['Sebelum pajak',totals.pretax],['Pajak',totals.tax],['TOTAL ANGGARAN',totals.total]];
+   const config=[['Pengaturan','Nilai'],['Tarif jasa Rp/kg',settings.rate],['Jasa aktif',settings.service?1:0],['Berat pembelian jasa kg',totals.kg],['Overhead %',settings.overhead],['Laba %',settings.profit],['Pajak %',settings.tax],['Waktu ekspor',new Date().toISOString()]];
+   const bytes=XL.book([{name:'REKAP',rows:table(rekap),cols:[58,26]},{name:'RAB',rows:table(rab),cols:[14,26,60,18,15,22,24,90,40]},{name:'PENGATURAN',rows:table(config),cols:[38,34]}]);
+   download('METTA-R04-RAB.xlsx',bytes,'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+  });
  }).catch(()=>{$('load-status').textContent='Rincian belum berhasil dimuat. Muat ulang halaman; salinan CSV tersedia di tautan unduhan.';});
  const viewer=createDrawingPanZoom($('viewport'),$('sheet-image'),{plus:$('plus'),minus:$('minus'),reset:$('fit'),level:$('scale')});
  document.querySelectorAll('[data-sheet]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.sheet;$('sheet-title').textContent=b.innerText;$('sheet-image').src='assets/r04/'+id+'.svg';$('sheet-image').alt=b.innerText;$('dxf').href='assets/r04/'+id+'.dxf';$('drawing-dialog').showModal();viewer.reset();}));$('close').addEventListener('click',()=>$('drawing-dialog').close());
