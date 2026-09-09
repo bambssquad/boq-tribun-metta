@@ -11,6 +11,7 @@ SOURCES={
  'plate':('SMS Perkasa / pelat hitam 07.09.2026','https://www.smsperkasa.com/produk/plat-besi-hitam'),
  'deck':('Duta Merpati / bordes 4 mm; harga acuan audit 07.09.2026','https://dutamerpati.com/distributor/plat-bordes-40mm-1200x-2400-di-babat'),
  'bolts':('Sentral Mur Baut Surabaya / mutu 8.8 tersedia, harga allowance','https://www.sentralmurbaut.com/product-detail?name=hexagonal-bolts-nuts'),
+ 'screws':('PT Jaya Metal Surabaya / produsen SDS dan drilling wood; harga estimasi','https://www.ptjayametal.com/'),
  'paint':('Nippon Paint / Bodelac 2-in-1, 2 lapis, 10-13 m2/L/lapis','https://www.nipponpaint-indonesia.com/products/kayu-besi/decorative/bodelac-2-in-1-anti-karat'),
  'paintshop':('Artha Kencana Jaya Surabaya / produk tersedia; harga CALL tidak dipakai','https://www.tokocatsurabaya.com/'),
  'load':('BSN / SNI 1727:2020 / beban','https://pesta.bsn.go.id/produk/detail/12927-sni17272020'),
@@ -100,11 +101,14 @@ def build_data():
  bolts=math.ceil(nends*2*1.05)
  add('M11','Material','Baut M12 kelas8.8 panjang40 / tangga',bolts,'bh',4500,f'{nends} titik x2 baut +5% cadangan; grip2pelat6mm, verifikasi panjang.','bolts')
  add('M12','Material','Mur M12 kelas8 / tangga',bolts,'bh',1500,'Satu mur per baut; sudah terpisah dari harga batang baut.','bolts');add('M13','Material','Ring datar keras M12 / tangga',bolts*2,'bh',750,'Dua ring per baut.','bolts')
- add('M14','Material','Baut+mur+2ring rangka dan X / allowance',math.ceil(len(live_rhs)*2*2*1.05),'set',7500,'165framing termasuk20diagonal;2ujung x2baut +5%cadangan. Diagonal tidak dihitung dua kali. Sesuaikan bagian las setelah joint ditetapkan.','bolts')
- add('M15','Material','Sekrup kayu ke baja + ring / panjang60',500,'set',1500,'Papan40mm: panjang40mm arsip tidak cukup menembus rangka;500set allowance, pola final mengikuti tumpuan.','bolts')
+ frame_bolts=math.ceil(len(live_rhs)*2*2*1.05)
+ add('M14B','Material','Baut hex M12 x40 kelas 8.8 / rangka dan X',frame_bolts,'bh',4500,'165framing termasuk20diagonal;2ujung x2baut +5%cadangan. Menggantikan komponen baut paket M14; bagian yang dilas dikurangi setelah joint ditetapkan.','bolts')
+ add('M14N','Material','Mur hex M12 kelas 8 / rangka dan X',frame_bolts,'bh',1500,'Satu mur per baut M14B; bukan tambahan terhadap paket M14 lama.','bolts')
+ add('M14W','Material','Ring datar keras M12 / rangka dan X',frame_bolts*2,'bh',750,'Dua ring per baut M14B; paket M14 lama dihapus agar tidak dihitung ganda.','bolts')
+ add('M15','Material','Sekrup drilling wood ke baja #12 x65 + ring / usulan',500,'set',1500,'Papan40mm ke RHS2,3mm;500set allowance. Tipe wood-to-steel, kapasitas bor dan panjang ulir harus sesuai katalog produsen; ukuran65mm adalah usulan pengadaan, bukan stok terkonfirmasi.','screws')
  screw_panels=[p for p in enclosure['panels'] if p['plane']!='xy' and min(p['width'],p['height'])>=30]
  screws_net=sum(2*(math.ceil(max(0,p['width']-30)/300)+math.ceil(max(0,p['height']-30)/300)) for p in screw_panels)
- add('M16','Material','Sekrup penutup SDS + ring',math.ceil(screws_net*1.05),'set',800,f'{len(screw_panels)}panel vertikal, kisi perimeter<=300mm, inset15mm: {screws_net}titik +5%cadangan. Return dan potongan kecil dilas. Pola tumpuan/backing masih koordinasi.','bolts')
+ add('M16','Material','Sekrup SDS hex #12 x32 + ring EPDM / usulan',math.ceil(screws_net*1.05),'set',800,f'{len(screw_panels)}panel vertikal, kisi perimeter<=300mm, inset15mm: {screws_net}titik +5%cadangan. Return dan potongan kecil dilas. Panel2mm + RHS2,3mm: minta kapasitas bor minimal4,3mm dan data pull-out. Ukuran32mm usulan, stok belum dikonfirmasi.','screws')
  add('M17','Material','Ikatan ke kolom beton / provisional sum',1,'ls',5000000,'Cadangan desain, pelat, angkur dan pemasangan16titik; jumlah/diameter/kapasitas belum dipilih. Tidak ke pelat lantai.')
  add('M18','Material','Cat alkyd 2-in-1 hitam / 2 lapis',paintL,'L',130000,f'{coatingA:.2f} m2 x2lapis /10m2/L x1,25loss, bulat2,5L. Menggantikan primer+finish terpisah.','paint','Konsumsi produsen / harga allowance')
  add('M19','Material','Thinner kompatibel + pembersih',math.ceil(paintL*.1),'L',35000,'Allowance10%volume cat; pengenceran akhir mengikuti TDS produk.','paintshop')
@@ -126,14 +130,21 @@ def build_data():
  net_mass={'M01':mainL*32.5/6,'M02':(crossL+8.4254)*15.07/6,'M03':97.498388*21.1/6,'M04':82.345049121*31.4,'M05':net_flat*23.55,'M06':enclosure['net_kg'],'M07':plate6A*47.1,'M08':plate8A*62.8}
  data['mass_ledger']=[dict(code=r['code'],name=r['name'],net_kg=net_mass[r['code']],purchase_kg=r['qty']*r['kg_per_unit'],stock_qty=r['qty'],unit=r['unit'],basis='Berat bersih teoritis; pembelian katalog/nominal. Motif bordes belum termasuk.' if r['code']=='M04' else 'Berat bersih dari dimensi; pembelian dari massa katalog stok. Penyangga/sambungan usulan termasuk sesuai basis item.') for r in rows if r['code'] in net_mass]
  data['fastener_basis']=dict(cover_vertical_panels=len(screw_panels),cover_screws_net=screws_net,cover_screws_purchase=math.ceil(screws_net*1.05),frame_members=len(live_rhs),frame_bolts_net=len(live_rhs)*4,stair_joint_points=nends,stair_bolts_net=nends*2)
+ for r in rows:
+  if r['source'] in ['bolts','screws']:
+   r['supplier']='Sentral Mur Baut Surabaya' if r['source']=='bolts' else 'PT Jaya Metal Surabaya'
+   r['supplier_contact']='031 3535022' if r['source']=='bolts' else '0812-3033-1188 / Jl. Margomulyo 66F Kav.2 Surabaya'
+   r['price_basis']='Estimasi anggaran per '+r['unit']+'; bukan harga penawaran pemasok. Ditinjau 09.09.2026.'
+   r['specification']='Baja karbon; lapis seng untuk pengadaan indoor. Baut kelas8.8, mur kelas8 dan ring keras kompatibel; panjang/grip, sertifikat dan detail joint harus dicocokkan.' if r['source']=='bolts' else 'Baja karbon dikeraskan, lapis antikarat; mutu dan kapasitas mengikuti datasheet SDS produsen. Bukan pengganti baut struktural. Jenis produk pemasok tersedia; ukuran dan kapasitas pilihan belum terverifikasi.'
+   r['status']='Usulan spesifikasi / harga estimasi'
  data['native_counts']=dict(rhs=165,columns=80,diagonals=20,x_sets=10,stair_fields=56,stair_parts=176,cover_parts=len(enclosure['panels']))
  OUT.mkdir(parents=True,exist_ok=True);(OUT/'data.json').write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf8')
  with (OUT/'berat-R04.csv').open('w',newline='',encoding='utf-8-sig') as out:
   wr=csv.writer(out);wr.writerow(['Kode','Material','Berat_bersih_teoritis_kg','Berat_pembelian_katalog_kg','Stok','Satuan','Basis'])
   for r in data['mass_ledger']:wr.writerow([r['code'],r['name'],round(r['net_kg'],6),round(r['purchase_kg'],6),r['stock_qty'],r['unit'],r['basis']])
  with (OUT/'rab-R04.csv').open('w',newline='',encoding='utf-8-sig') as out:
-  wr=csv.writer(out);wr.writerow(['Kode','Kategori','Uraian','Volume','Satuan','Harga','Jumlah','Basis','Status','Sumber'])
-  for r in rows:wr.writerow([r['code'],r['category'],r['name'],r['qty'],r['unit'],r['price'],round(r['qty']*r['price']),r['basis'],r['status'],SOURCES.get(r['source'],['',''])[1]])
+  wr=csv.writer(out);wr.writerow(['Kode','Kategori','Uraian','Volume','Satuan','Harga','Jumlah','Basis','Status','Sumber','Pemasok','Spesifikasi','Dasar harga'])
+  for r in rows:wr.writerow([r['code'],r['category'],r['name'],r['qty'],r['unit'],r['price'],round(r['qty']*r['price']),r['basis'],r['status'],SOURCES.get(r['source'],['',''])[1],r.get('supplier',''),r.get('specification',''),r.get('price_basis','')])
  with (OUT/'potong-R04.csv').open('w',newline='',encoding='utf-8-sig') as out:
   wr=csv.writer(out);wr.writerow(['Profil','Stok','ID','Panjang_mm','Kerf_mm'])
   for profile,bins in [('RHS50x100',mainbins),('SHS40x40',crossbins)]:

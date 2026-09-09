@@ -1,0 +1,22 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const p=require('./execution_timeline.js');
+assert.equal(p.day('2026-09-11',1,5),'2026-09-14');
+assert.equal(p.day('2026-09-11',1,6),'2026-09-12');
+assert.equal(p.day('2026-09-12',0,5),'2026-09-14');
+assert.equal(p.day('2028-02-28',1,5),'2028-02-29');
+assert.equal(p.valid('2026-02-30'),false);
+assert.equal(p.offset('2026-09-11','2026-09-14',5),1);
+assert.equal(p.offset('2026-09-11','2026-09-12',5),1);
+assert.equal(p.offset('2026-09-14','2026-09-11',5),0);
+class El{constructor(){this.events={};this.dataset={};this.attrs={};this.scrollLeft=0;this.clientWidth=800;this.scrollWidth=3000;}addEventListener(k,f){this.events[k]=f;}setAttribute(k,v){this.attrs[k]=v;}setPointerCapture(){}focus(){}querySelector(){return new El();}scrollBy(v){this.scrollLeft+=v.left;}}
+const els={},get=x=>els[x]??=new El(),views=['both','cards','gantt'].map(v=>{let e=new El();e.dataset.planView=v;return e;});let saved;
+const c={document:{getElementById:get,querySelectorAll:()=>views},localStorage:{getItem:()=>null,setItem:(k,v)=>saved=JSON.parse(v)},Date,JSON,Math,Number,module:{exports:{}}};
+vm.runInNewContext(fs.readFileSync('execution_timeline.js','utf8'),c);
+get('plan-start').events.change({target:{value:'2026-09-14'}});assert.equal(saved.start,'2026-09-14');
+get('plan-cards').events.change({target:{dataset:{task:'0',field:'duration'},value:'3'}});assert.equal(saved.tasks[0].duration,3);assert.ok(get('plan-cards').innerHTML.includes('2026-09-16'));
+views[2].events.click();assert.equal(get('plan-card-panel').hidden,true);assert.equal(get('plan-gantt-panel').hidden,false);
+const bar=new El();bar.dataset.bar='0';const event={target:{closest:()=>bar},pointerId:1,clientX:100};
+get('plan-gantt').events.pointerdown(event);get('plan-gantt').events.pointerup({...event,clientX:100+2*get('plan-gantt').dataset.scale});assert.equal(saved.tasks[0].offset,2);
+get('plan-gantt').events.keydown({target:{closest:()=>bar},key:'ArrowLeft',preventDefault(){}});assert.equal(saved.tasks[0].offset,1);
+get('plan-cards').events.change({target:{dataset:{task:'0',field:'name'},value:'<script>test</script>'}});assert.ok(get('plan-cards').innerHTML.includes('&lt;script&gt;'));
+console.log('PASS: calendar weekends/leap year, editable schedule, persistence, view toggle, Gantt drag/keyboard and escaping.');
