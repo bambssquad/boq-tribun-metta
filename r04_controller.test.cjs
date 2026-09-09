@@ -10,11 +10,14 @@ class Element{
  const els={},get=id=>els[id]??=new Element();
  const filters=['Semua','Material','Bahan habis pakai','Upah','Peralatan dan logistik'].map(f=>{const b=new Element();b.dataset.filter=f;return b;});
  const drawings=Array.from({length:6},(_,i)=>{const b=new Element();b.dataset.sheet='T-0'+(i+1);b.innerText=b.dataset.sheet;return b;});
- const document={getElementById:get,querySelectorAll:q=>q==='[data-filter]'?filters:q==='[data-sheet]'?drawings:[],createElement:()=>new Element()};
+ const formats=['xlsx','pdf'].map(f=>{const b=new Element();b.dataset.rabFormat=f;return b;});
+ const document={getElementById:get,querySelectorAll:q=>q==='[data-filter]'?filters:q==='[data-sheet]'?drawings:q==='[data-rab-format]'?formats:[],createElement:()=>new Element()};
  let saved={},blob,printed=false;
  const window={addEventListener(){},print(){printed=true;}};
  const c={document,window,Intl,Date,Number,Math,JSON,Promise,structuredClone,Blob,console,setTimeout,URL:{createObjectURL:b=>(blob=b,'blob:test'),revokeObjectURL(){}},localStorage:{getItem:()=>null,setItem:(k,v)=>saved[k]=v},fetch:async()=>({ok:true,json:async()=>structuredClone(data)}),createDrawingPanZoom:()=>({reset(){}})};
- vm.runInNewContext(fs.readFileSync('r04_app.js','utf8'),c);
+ c.TextEncoder=TextEncoder;c.Uint8Array=Uint8Array;c.Uint32Array=Uint32Array;c.DataView=DataView;
+ vm.createContext(c);vm.runInContext(fs.readFileSync('dist/assets/r04/xlsx.js','utf8'),c);
+ vm.runInContext(fs.readFileSync('r04_app.js','utf8'),c);
  await new Promise(r=>setImmediate(r));
  assert.equal((get('rows').innerHTML.match(/<tr>/g)||[]).length,data.rows.length);
  assert.ok(get('totals').innerHTML.includes('TOTAL ANGGARAN'));
@@ -28,5 +31,11 @@ class Element{
  get('json').click();const offer=JSON.parse(await blob.text());assert.equal(offer.items.find(r=>r.code==='U01').amount,0);assert.ok(offer.total>0);
  get('reset').click();assert.equal(get('service').checked,true);assert.equal(get('rate').value,6000);
  assert.ok(Object.keys(saved).length);
+ filters[2].click();get('rab-download-action').click();
+ const bytes=Buffer.from(await blob.arrayBuffer());assert.equal(bytes.readUInt16LE(0),0x4b50);
+ assert.ok(bytes.includes(Buffer.from('REKAP')));assert.ok(bytes.includes(Buffer.from('PENGATURAN')));
+ assert.ok(bytes.includes(Buffer.from('U01')));assert.ok(bytes.includes(Buffer.from('TOTAL ANGGARAN')));
+ formats[1].click();assert.equal(get('rab-download-action').textContent,'Simpan PDF');printed=false;get('rab-download-action').click();assert.ok(printed);assert.equal((get('rows').innerHTML.match(/<tr>/g)||[]).length,data.rows.length);
+ formats[0].click();assert.equal(formats[0].attrs['aria-pressed'],'true');
  console.log('PASS: R04 fetch/render, category filter, service toggle, complete print, six-sheet zoom dialog, CSV/JSON and reset.');
 })().catch(e=>{console.error(e);process.exitCode=1;});
