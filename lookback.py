@@ -15,7 +15,14 @@ def build(dist):
     tools.select_one('.look-footer').insert(0,BeautifulSoup('<p class="sap-company-credit">SAP / SELARAS ADHI PERKASA</p>','html.parser'))
     style=tools.new_tag('style');style.string=(ROOT/'monochrome.css').read_text(encoding='utf-8');tools.body.append(style)
     (dist/'tools.html').write_text(str(tools),encoding='utf-8')
-    drawings=json.loads((ROOT/'assets/technical/manifest.json').read_text(encoding='utf-8'))
+    archived=json.loads((ROOT/'assets/technical/manifest.json').read_text(encoding='utf-8'))
+    for d in archived:
+        d['title']='Arsip R03 / '+d['title'];d['revision']='R03';d['pdf']='assets/technical/METTA-R02-gambar-koordinasi.pdf'
+        d['notes']=['Arsip R03. Tangga, penutup dan posisi X digantikan gambar R04.']+d.get('notes',[])
+    current=json.loads((ROOT/'assets/r04/drawings.json').read_text(encoding='utf8'))
+    for d in current:
+        d.update(svg='assets/r04/'+d['code']+'.svg',dxf='assets/r04/'+d['code']+'.dxf',pdf='assets/r04/METTA-R04-tangga-detail.pdf',category='Denah' if d['code'] in ['T-01','T-06'] else 'Detail',revision='R04')
+    drawings=current+archived
     e=html.escape
     cards=[]
     for i,d in enumerate(drawings):
@@ -34,5 +41,9 @@ def build(dist):
 <dialog id="sheet-dialog" aria-labelledby="sheet-title"><div class="sheet-top"><h2 id="sheet-title">Gambar koordinasi</h2><button id="sheet-close">Tutup ×</button></div><div id="sheet-viewport" tabindex="0" aria-label="Gambar interaktif. Geser untuk pan, scroll untuk zoom."><img id="sheet-image" alt="" draggable="false"></div><div class="sheet-controls"><button id="sheet-minus" aria-label="Perkecil">−</button><output id="sheet-scale">100%</output><button id="sheet-plus" aria-label="Perbesar">+</button><button id="sheet-reset">Fit</button><span>GESER / ZOOM</span><button id="sheet-prev" aria-label="Lembar sebelumnya">←</button><button id="sheet-next" aria-label="Lembar berikutnya">→</button></div><details><summary>Catatan gambar</summary><p id="sheet-notes"></p></details><div class="sheet-download"><a id="sheet-dxf" download>DXF ↓</a><a id="sheet-svg" download>SVG ↓</a><a href="assets/technical/METTA-R02-gambar-koordinasi.pdf" target="_blank" rel="noopener">PDF lengkap ↗</a><a href="tools.html#revit-native">Lembar Revit ↗</a></div></dialog>
 <noscript><style>.entry-mask{display:none}.archive-carousel{position:relative;overflow:auto;margin-top:45vh}.archive-track{position:relative;display:flex;gap:20px}.archive-card{position:relative!important;flex:0 0 75vw}.archive-footer{position:relative}</style><p>JavaScript diperlukan untuk rotasi galeri dan zoom. <a href="tools.html">Buka dokumen METTA</a></p></noscript>
 <script>const METTA_DRAWINGS=DRAWINGS;</script><script src="panzoom.js"></script><script src="lookback.js"></script></body></html>'''.replace('CARDS',''.join(cards)).replace('TICKS',ticks).replace('DRAWINGS;',json.dumps(drawings,ensure_ascii=False)+';')
+    body=body.replace('12 gambar koordinasi','6 gambar R04 dan 12 arsip R03').replace('INDEKS / 12 LEMBAR','INDEKS / 18 LEMBAR').replace(' / 12</span>',' / 18</span>').replace('id="current-sheet">S-01','id="current-sheet">T-01')
+    body=body.replace('delapan pengaku silang X','sepuluh pengaku silang X').replace('Dokumen R03 memuat model koordinasi, gambar teknik, serta kuantitas pekerjaan.','Revisi R04 memakai tangga pelat tekuk 3 mm dan penutup 2 mm; model, gambar dan RAB terurai tersedia bersama arsip R03.').replace('161 batang','165 batang').replace('80 / 16 batang','80 / 20 batang').replace('USULAN TEKNIS / KOORDINASI R03','USULAN TEKNIS / KOORDINASI R04').replace('8 PENGAKU X','10 PENGAKU X')
+    body=body.replace('<a href="assets/technical/METTA-R02-gambar-koordinasi.pdf" target="_blank" rel="noopener">PDF lengkap','<a id="sheet-pdf" href="assets/r04/METTA-R04-tangga-detail.pdf" target="_blank" rel="noopener">PDF revisi terkait')
+    body=body.replace('href="tools.html#anggaran"','href="r04.html#rab"').replace('href="tools.html#penawaran"','href="r04.html#penawaran-r04"').replace('href="tools.html#boq"','href="r04.html#rab"')
     (dist/'index.html').write_text(body,encoding='utf-8')
     for name in ['lookback.css','lookback.js','panzoom.js']:(dist/name).write_bytes((ROOT/name).read_bytes())

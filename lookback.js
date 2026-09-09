@@ -53,7 +53,7 @@ function route(){
  if(view==='index'||view==='proyek')window.scrollTo(0,0);
  requestAnimationFrame(layout);
 }
-function loadSheet(i){zoomAnimation?.cancel();active=wrap(i,METTA_DRAWINGS.length);const d=METTA_DRAWINGS[active];$('#sheet-title').textContent=d.code+' / '+d.title;image.src=d.svg;image.alt=d.title;$('#sheet-notes').textContent=d.notes.join(' ');$('#sheet-dxf').href=d.dxf;$('#sheet-svg').href=d.svg;pan.reset();}
+function loadSheet(i){zoomAnimation?.cancel();active=wrap(i,METTA_DRAWINGS.length);const d=METTA_DRAWINGS[active];$('#sheet-title').textContent=d.code+' / '+d.title;image.src=d.svg;image.alt=d.title;$('#sheet-notes').textContent=d.notes.join(' ');$('#sheet-dxf').href=d.dxf;$('#sheet-svg').href=d.svg;if($('#sheet-pdf'))$('#sheet-pdf').href=d.pdf||'assets/technical/METTA-R02-gambar-koordinasi.pdf';pan.reset();}
 function flip(from,to,src,reverse=false){
  if(reduced.matches||!Element.prototype.animate||!from.width||!to.width)return;
  zoomAnimation?.cancel();

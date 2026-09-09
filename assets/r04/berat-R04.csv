@@ -1,0 +1,9 @@
+﻿Kode,Material,Berat_bersih_teoritis_kg,Berat_pembelian_katalog_kg,Stok,Satuan,Basis
+M01,"RHS 50x100x2,3 / 6 m",3196.581975,3282.5,101,btg,Berat bersih dari dimensi; pembelian dari massa katalog stok. Penyangga/sambungan usulan termasuk sesuai basis item.
+M02,SHS 40x40x2 / 6 m,380.33013,437.03,29,btg,Berat bersih dari dimensi; pembelian dari massa katalog stok. Penyangga/sambungan usulan termasuk sesuai basis item.
+M03,"SHS 40x40x2,8 / 6 m",342.869331,379.8,18,btg,Berat bersih dari dimensi; pembelian dari massa katalog stok. Penyangga/sambungan usulan termasuk sesuai basis item.
+M04,Bordes dek 4 mm / 1200x2400,2585.634542,2893.824,32,lbr,Berat bersih teoritis; pembelian katalog/nominal. Motif bordes belum termasuk.
+M05,Pelat tekuk tangga 3 mm / 1200x2400,375.885201,560,8,lbr,Berat bersih dari dimensi; pembelian dari massa katalog stok. Penyangga/sambungan usulan termasuk sesuai basis item.
+M06,Pelat penutup seluruh riser dan sisi 2 mm,988.74982,1222,26,lbr,Berat bersih dari dimensi; pembelian dari massa katalog stok. Penyangga/sambungan usulan termasuk sesuai basis item.
+M07,Pelat sambungan 6 mm,590.14416,700,5,lbr,Berat bersih dari dimensi; pembelian dari massa katalog stok. Penyangga/sambungan usulan termasuk sesuai basis item.
+M08,Base plate 8 mm / stok,113.04,187,1,lbr,Berat bersih dari dimensi; pembelian dari massa katalog stok. Penyangga/sambungan usulan termasuk sesuai basis item.

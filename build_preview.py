@@ -4,21 +4,25 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).parent;sys.path.insert(0,str(ROOT/'src'))
 import build,boq,three_d,experience,pitch,kg_pricing
-model=json.loads((ROOT/'data/model.json').read_text())
+import revision04,r04_model
+r04=revision04.build_data()
+model=r04_model.load_model()
 fin=json.loads((ROOT/'data/finishes-audit.json').read_text())
 fgeom=json.loads((ROOT/'data/finishes-geometry.json').read_text())
 rhs=model['rhs'];cut=sum(r['props']['Cut Length']*304.8 for r in rhs)/1000
+frame_stock=revision04.pack_bars([(str(r['id']),r['props']['Cut Length']*304.8) for r in rhs])
+frame_bars=len(frame_stock);frame_stock_m=frame_bars*6
 collen=sum(c['length_mm'] for c in model['columns'])/1000
 build.HOLLOW['100x50x2.3']=32.5/6
 build.SHEET_A=1.2*2.4
 build.HOLLOW_ITEMS=[
- ('Rangka RHS — hasil model','RHS 50×100×2,3',161,cut,'100x50x2.3','161 framing; 75 stok 6 m dari optimasi bersama. Belum allowance sambungan.'),
+ ('Rangka RHS — hasil model','RHS 50×100×2,3',len(rhs),cut,'100x50x2.3',f'165 framing termasuk20diagonal;{frame_bars}stok6m, kerf3mm, pola FFD. Kolom dipisahkan pada kalkulator ini.'),
  ('Kolom — hasil model','RHS 50×100×2,3',80,collen,'100x50x2.3','80 kolom, dasar +18 mm. Jumlah beli masih perkiraan, bukan pola potong.'),
  ('Rail atas — hasil model','HOLLOW 40x40x2',10,sum(r['length_mm'] for r in fin['rail'] if 'RAILING HITAM' in r['type'])/1000,'40x40x2','10 elemen; tipe Revit lama masih memakai keluarga W, penampang fisik harus diperiksa.'),
  ('Tiang railing — hasil model','HOLLOW 40x40x2,8',85,sum(r['length_mm'] for r in fin['rail'] if 'TIANG RAILING' in r['type'])/1000,'40x40x2.8','85 tiang dari System Length model aktif; berat profil masih estimasi katalog lama.')]
 build.PLATE_ITEMS=[('Dek bordes 4 mm — hasil model',4,model['deck_area_m2'],0,'Jumlah Area 30 elemen Revit; 28 berluas positif. Berat baja dasar saja; motif belum terukur.'),
- *[(a,b,c,d,'Estimasi web lama, belum diukur ulang. '+e) for a,b,c,d,e in boq.PLATE_ITEMS if a not in ['Plat dek bordes 8 mm','Base plate','Plat tekuk tangga + stringer']],
- ('Pelat tangga 4 mm — hasil model',4,sum(r['area_m2'] for r in fin['floor'] if 'TEKUK' in r['type']),0,'56 floor. Bentangan tekuk akhir, sambungan dan motif belum termasuk.'),
+ ('Penutup riser, fascia dan sisi 2 mm — R04',2,r04['enclosure']['area'],0,'310bagian native, takikan beton dan return tepi termasuk; belakang/bawah terbuka. Pola beli aktual di RAB R04.'),
+ ('Pelat tekuk tangga 3 mm — R04',3,r04['net_flat_area'],0,'56bidang; luas bersih termasuk tekukan dan takikan. Pembelian mengikuti pola nesting, lihat RAB R04.'),
  ('Base plate',8,80*.15*.15,0,'80 dudukan 150×150. Tanpa angkur ke pelat lantai.')]
 build.OTHER_ITEMS=[r for r in build.OTHER_ITEMS if r['nm'].startswith(('Papan pinus','Panel kayu','Finish clear'))]
 for r in build.OTHER_ITEMS:r['note']='Estimasi web lama; belum diukur ulang. '+r['note']
@@ -28,7 +32,7 @@ for r in build.OTHER_ITEMS:
 build.OTHER_ITEMS.append(dict(nm='Cat nosing — luas model',q=sum(x['area_m2'] for x in fin['floor'] if 'NOSING' in x['type']),un='m²',note='31 elemen representasi cat; konsumsi liter mengikuti produk dan jumlah lapis.'))
 build.OTHER_ITEMS.append(dict(nm='Karet dudukan 150×150×10',q=80,un='bh',note='Jumlah dudukan model; grade bantalan belum terverifikasi.'))
 build.SHEETS=[];build.RASIO=[];build.SPEK=[]
-build.REV='R02-1200x2400-'+hashlib.sha1(json.dumps([model,fin],sort_keys=True).encode()).hexdigest()[:10]
+build.REV='R04-1200x2400-'+hashlib.sha1(json.dumps([model,fin,r04['flat_area']],sort_keys=True).encode()).hexdigest()[:10]
 # Same renderer, now fed 80 supports and 161 frame objects from the audited model.
 js=three_d.JS_3D
 js=js.replace('const ST_R=167,','const ST_R=500/3,')
@@ -43,14 +47,15 @@ js=js.replace('WX[o]=x;   WY[o]=y;    WZ[o]=z;', 'if(b.length===24){for(let k=0;
 js=js.replace("const G={};", "GROUPS.forEach(g=>{g.note='Representasi koordinasi; profil dan sambungan disederhanakan. Bukan hasil pemeriksaan kekuatan.';if(['kolom','balok','stiffener','bracing'].includes(g.id))g.prof='RHS 50 × 100 × 2,3 mm';if(g.id==='dek')g.prof='Bordes 4 mm; tebal dasar menunggu sertifikat';if(['dinding','jendela','kusen','riser','skirt'].includes(g.id))g.off=true;});\nconst G={};")
 build.JS_3D=js
 pos=build.JS_3D.index("const cv=document.getElementById('cv3')")
-finish_js="['pinus','tangga','nosing','railing'].forEach(k=>G[k].boxes=[]);\nconst FINISH_GEOMETRY="+json.dumps(fgeom['items'],separators=(',',':'))+";\nFINISH_GEOMETRY.forEach(e=>G[e.group].boxes.push(e.vertices.flat()));\n"
+finish_items=[e for e in fgeom['items'] if e['group']!='tangga']+r04['stair_geometry']+r04_model.cover_geometry()
+finish_js="['pinus','tangga','nosing','railing','riser','skirt'].forEach(k=>G[k].boxes=[]);\nconst FINISH_GEOMETRY="+json.dumps(finish_items,separators=(',',':'))+";\nFINISH_GEOMETRY.forEach(e=>G[e.group].boxes.push(e.vertices.flat()));\nGROUPS.find(g=>g.id==='tangga').prof='Pelat tekuk3mm / 176bagian native / 56bidang';\nGROUPS.filter(g=>['riser','skirt'].includes(g.id)).forEach(g=>{g.off=false;g.mat='Pelat baja2mm / cat hitam';g.prof='Pelat penutup2mm / dicat';g.name=g.id==='riser'?'Riser, fascia dan return2mm':'Penutup kedua sisi2mm';g.note='310bagian total; belakang/bawah terbuka. Luas dan berat di RAB R04.';});\n"
 build.JS_3D=build.JS_3D[:pos]+finish_js+build.JS_3D[pos:]
 build.JS_3D=build.JS_3D.replace('if(j){','if(j && document.getElementById(j[0])){')
 build.JS_3D=build.JS_3D.replace('type="checkbox" checked><span class="sw"', 'type="checkbox" ${g.off?\'\':\'checked\'}><span class="sw"')
 build.JS_3D=build.JS_3D.replace("mat:'Baja BJ 37", "mat:'Baja — mutu belum diverifikasi")
 # For the unchanged framing row, use the verified combined stock result. User edits
 # deliberately revert to an estimate; column and railing quantities stay separate.
-build.JS=build.JS.replace("const Lw=r.L*(1+S.wH/100), kg=Lw*(r.kg||0), bars=Math.ceil(Lw/(S.bar||6));",f"const verified=r.n===161 && r.nm==='Rangka RHS — hasil model' && Math.abs(r.L-{round(cut,2)})<.005 && S.bar===6 && S.wH===5; const Lw=verified?450:r.L*(1+S.wH/100), kg=Lw*(r.kg||0), bars=verified?75:Math.ceil(Lw/(S.bar||6));")
+build.JS=build.JS.replace("const Lw=r.L*(1+S.wH/100), kg=Lw*(r.kg||0), bars=Math.ceil(Lw/(S.bar||6));",f"const verified=r.n===165 && r.nm==='Rangka RHS — hasil model' && Math.abs(r.L-{round(cut,2)})<.005 && S.bar===6 && S.wH===5; const Lw=verified?{frame_stock_m}:r.L*(1+S.wH/100), kg=Lw*(r.kg||0), bars=verified?{frame_bars}:Math.ceil(Lw/(S.bar||6));")
 build.JS=build.JS.replace('ppn:11','ppn:0').replace("$('ppn').value=11", "$('ppn').value=0")
 build.JS=build.JS.replace('load();', '''load();
 document.getElementById('catalog-prices')?.addEventListener('click',()=>{
@@ -60,7 +65,7 @@ document.getElementById('catalog-prices')?.addEventListener('click',()=>{
  S.price=true;document.getElementById('tgPrice').checked=true;save();render();document.getElementById('catalog-price-status').textContent=n+' harga kosong diisi. Harga termasuk PPN pemasok; periksa pajak rekap agar tidak dihitung dua kali.';
 });''')
 old_formula='{f:`E${R}*(1+${W_H})`,s:s.n2}'
-new_formula='{f:`IF(AND(B${R}="Rangka RHS — hasil model",D${R}=161,ABS(E${R}-'+str(round(cut,2))+')<0.005,${BARC}=6,${W_H}=0.05),450,E${R}*(1+${W_H}))`,s:s.n2}'
+new_formula='{f:`IF(AND(B${R}="Rangka RHS — hasil model",D${R}=165,ABS(E${R}-'+str(round(cut,2))+')<0.005,${BARC}=6,${W_H}=0.05),'+str(frame_stock_m)+',E${R}*(1+${W_H}))`,s:s.n2}'
 assert old_formula in build.JS
 build.JS=build.JS.replace(old_formula,new_formula)
 build.JS=build.JS.replace("const byT={};\n  S.rows.plate.forEach(r=>{byT[r.t]=(byT[r.t]||0)+(+r.A||0)});\n  Object.entries(byT).forEach(([t,A])=>{", "S.rows.plate.forEach(r=>{const t=r.t,A=+r.A||0;")
@@ -93,4 +98,6 @@ dist=ROOT/'dist';dist.mkdir(exist_ok=True);(dist/'index.html').write_text(html,e
 if (ROOT/'assets').exists():shutil.copytree(ROOT/'assets',dist/'assets',dirs_exist_ok=True)
 import lookback
 lookback.build(dist)
+import r04_web
+r04_web.build(dist,r04)
 print(json.dumps(dict(bytes=len(html),frame_count=len(rhs),column_count=len(model['columns']),frame_cut_m=cut,column_m=collen,deck_area_m2=model['deck_area_m2'])))
