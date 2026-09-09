@@ -20222,8 +20222,12 @@
       "price": 4500,
       "basis": "232 titik x2 baut +5% cadangan; grip2pelat6mm, verifikasi panjang.",
       "source": "bolts",
-      "status": "Allowance anggaran",
-      "kg_per_unit": 0
+      "status": "Usulan spesifikasi / harga estimasi",
+      "kg_per_unit": 0,
+      "supplier": "Sentral Mur Baut Surabaya",
+      "supplier_contact": "031 3535022",
+      "price_basis": "Estimasi anggaran per bh; bukan harga penawaran pemasok. Ditinjau 09.09.2026.",
+      "specification": "Baja karbon; lapis seng untuk pengadaan indoor. Baut kelas8.8, mur kelas8 dan ring keras kompatibel; panjang/grip, sertifikat dan detail joint harus dicocokkan."
     },
     {
       "code": "M12",
@@ -20234,8 +20238,12 @@
       "price": 1500,
       "basis": "Satu mur per baut; sudah terpisah dari harga batang baut.",
       "source": "bolts",
-      "status": "Allowance anggaran",
-      "kg_per_unit": 0
+      "status": "Usulan spesifikasi / harga estimasi",
+      "kg_per_unit": 0,
+      "supplier": "Sentral Mur Baut Surabaya",
+      "supplier_contact": "031 3535022",
+      "price_basis": "Estimasi anggaran per bh; bukan harga penawaran pemasok. Ditinjau 09.09.2026.",
+      "specification": "Baja karbon; lapis seng untuk pengadaan indoor. Baut kelas8.8, mur kelas8 dan ring keras kompatibel; panjang/grip, sertifikat dan detail joint harus dicocokkan."
     },
     {
       "code": "M13",
@@ -20246,44 +20254,92 @@
       "price": 750,
       "basis": "Dua ring per baut.",
       "source": "bolts",
-      "status": "Allowance anggaran",
-      "kg_per_unit": 0
+      "status": "Usulan spesifikasi / harga estimasi",
+      "kg_per_unit": 0,
+      "supplier": "Sentral Mur Baut Surabaya",
+      "supplier_contact": "031 3535022",
+      "price_basis": "Estimasi anggaran per bh; bukan harga penawaran pemasok. Ditinjau 09.09.2026.",
+      "specification": "Baja karbon; lapis seng untuk pengadaan indoor. Baut kelas8.8, mur kelas8 dan ring keras kompatibel; panjang/grip, sertifikat dan detail joint harus dicocokkan."
     },
     {
-      "code": "M14",
+      "code": "M14B",
       "category": "Material",
-      "name": "Baut+mur+2ring rangka dan X / allowance",
+      "name": "Baut hex M12 x40 kelas 8.8 / rangka dan X",
       "qty": 693,
-      "unit": "set",
-      "price": 7500,
-      "basis": "165framing termasuk20diagonal;2ujung x2baut +5%cadangan. Diagonal tidak dihitung dua kali. Sesuaikan bagian las setelah joint ditetapkan.",
+      "unit": "bh",
+      "price": 4500,
+      "basis": "165framing termasuk20diagonal;2ujung x2baut +5%cadangan. Menggantikan komponen baut paket M14; bagian yang dilas dikurangi setelah joint ditetapkan.",
       "source": "bolts",
-      "status": "Allowance anggaran",
-      "kg_per_unit": 0
+      "status": "Usulan spesifikasi / harga estimasi",
+      "kg_per_unit": 0,
+      "supplier": "Sentral Mur Baut Surabaya",
+      "supplier_contact": "031 3535022",
+      "price_basis": "Estimasi anggaran per bh; bukan harga penawaran pemasok. Ditinjau 09.09.2026.",
+      "specification": "Baja karbon; lapis seng untuk pengadaan indoor. Baut kelas8.8, mur kelas8 dan ring keras kompatibel; panjang/grip, sertifikat dan detail joint harus dicocokkan."
+    },
+    {
+      "code": "M14N",
+      "category": "Material",
+      "name": "Mur hex M12 kelas 8 / rangka dan X",
+      "qty": 693,
+      "unit": "bh",
+      "price": 1500,
+      "basis": "Satu mur per baut M14B; bukan tambahan terhadap paket M14 lama.",
+      "source": "bolts",
+      "status": "Usulan spesifikasi / harga estimasi",
+      "kg_per_unit": 0,
+      "supplier": "Sentral Mur Baut Surabaya",
+      "supplier_contact": "031 3535022",
+      "price_basis": "Estimasi anggaran per bh; bukan harga penawaran pemasok. Ditinjau 09.09.2026.",
+      "specification": "Baja karbon; lapis seng untuk pengadaan indoor. Baut kelas8.8, mur kelas8 dan ring keras kompatibel; panjang/grip, sertifikat dan detail joint harus dicocokkan."
+    },
+    {
+      "code": "M14W",
+      "category": "Material",
+      "name": "Ring datar keras M12 / rangka dan X",
+      "qty": 1386,
+      "unit": "bh",
+      "price": 750,
+      "basis": "Dua ring per baut M14B; paket M14 lama dihapus agar tidak dihitung ganda.",
+      "source": "bolts",
+      "status": "Usulan spesifikasi / harga estimasi",
+      "kg_per_unit": 0,
+      "supplier": "Sentral Mur Baut Surabaya",
+      "supplier_contact": "031 3535022",
+      "price_basis": "Estimasi anggaran per bh; bukan harga penawaran pemasok. Ditinjau 09.09.2026.",
+      "specification": "Baja karbon; lapis seng untuk pengadaan indoor. Baut kelas8.8, mur kelas8 dan ring keras kompatibel; panjang/grip, sertifikat dan detail joint harus dicocokkan."
     },
     {
       "code": "M15",
       "category": "Material",
-      "name": "Sekrup kayu ke baja + ring / panjang60",
+      "name": "Sekrup drilling wood ke baja #12 x65 + ring / usulan",
       "qty": 500,
       "unit": "set",
       "price": 1500,
-      "basis": "Papan40mm: panjang40mm arsip tidak cukup menembus rangka;500set allowance, pola final mengikuti tumpuan.",
-      "source": "bolts",
-      "status": "Allowance anggaran",
-      "kg_per_unit": 0
+      "basis": "Papan40mm ke RHS2,3mm;500set allowance. Tipe wood-to-steel, kapasitas bor dan panjang ulir harus sesuai katalog produsen; ukuran65mm adalah usulan pengadaan, bukan stok terkonfirmasi.",
+      "source": "screws",
+      "status": "Usulan spesifikasi / harga estimasi",
+      "kg_per_unit": 0,
+      "supplier": "PT Jaya Metal Surabaya",
+      "supplier_contact": "0812-3033-1188 / Jl. Margomulyo 66F Kav.2 Surabaya",
+      "price_basis": "Estimasi anggaran per set; bukan harga penawaran pemasok. Ditinjau 09.09.2026.",
+      "specification": "Baja karbon dikeraskan, lapis antikarat; mutu dan kapasitas mengikuti datasheet SDS produsen. Bukan pengganti baut struktural. Jenis produk pemasok tersedia; ukuran dan kapasitas pilihan belum terverifikasi."
     },
     {
       "code": "M16",
       "category": "Material",
-      "name": "Sekrup penutup SDS + ring",
+      "name": "Sekrup SDS hex #12 x32 + ring EPDM / usulan",
       "qty": 2449,
       "unit": "set",
       "price": 800,
-      "basis": "234panel vertikal, kisi perimeter<=300mm, inset15mm: 2332titik +5%cadangan. Return dan potongan kecil dilas. Pola tumpuan/backing masih koordinasi.",
-      "source": "bolts",
-      "status": "Allowance anggaran",
-      "kg_per_unit": 0
+      "basis": "234panel vertikal, kisi perimeter<=300mm, inset15mm: 2332titik +5%cadangan. Return dan potongan kecil dilas. Panel2mm + RHS2,3mm: minta kapasitas bor minimal4,3mm dan data pull-out. Ukuran32mm usulan, stok belum dikonfirmasi.",
+      "source": "screws",
+      "status": "Usulan spesifikasi / harga estimasi",
+      "kg_per_unit": 0,
+      "supplier": "PT Jaya Metal Surabaya",
+      "supplier_contact": "0812-3033-1188 / Jl. Margomulyo 66F Kav.2 Surabaya",
+      "price_basis": "Estimasi anggaran per set; bukan harga penawaran pemasok. Ditinjau 09.09.2026.",
+      "specification": "Baja karbon dikeraskan, lapis antikarat; mutu dan kapasitas mengikuti datasheet SDS produsen. Bukan pengganti baut struktural. Jenis produk pemasok tersedia; ukuran dan kapasitas pilihan belum terverifikasi."
     },
     {
       "code": "M17",
@@ -20594,6 +20650,10 @@
     "bolts": [
       "Sentral Mur Baut Surabaya / mutu 8.8 tersedia, harga allowance",
       "https://www.sentralmurbaut.com/product-detail?name=hexagonal-bolts-nuts"
+    ],
+    "screws": [
+      "PT Jaya Metal Surabaya / produsen SDS dan drilling wood; harga estimasi",
+      "https://www.ptjayametal.com/"
     ],
     "paint": [
       "Nippon Paint / Bodelac 2-in-1, 2 lapis, 10-13 m2/L/lapis",

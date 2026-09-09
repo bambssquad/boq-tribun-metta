@@ -102,4 +102,6 @@ import r04_web
 r04_web.build(dist,r04)
 import rab_download
 rab_download.build(dist)
+import execution_timeline
+execution_timeline.build(dist)
 print(json.dumps(dict(bytes=len(html),frame_count=len(rhs),column_count=len(model['columns']),frame_cut_m=cut,column_m=collen,deck_area_m2=model['deck_area_m2'])))

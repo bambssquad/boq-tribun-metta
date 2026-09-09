@@ -35,6 +35,7 @@ class Element{
  const bytes=Buffer.from(await blob.arrayBuffer());assert.equal(bytes.readUInt16LE(0),0x4b50);
  assert.ok(bytes.includes(Buffer.from('REKAP')));assert.ok(bytes.includes(Buffer.from('PENGATURAN')));
  assert.ok(bytes.includes(Buffer.from('U01')));assert.ok(bytes.includes(Buffer.from('TOTAL ANGGARAN')));
+ assert.ok(bytes.includes(Buffer.from('Sentral Mur Baut Surabaya')));assert.ok(bytes.includes(Buffer.from('PT Jaya Metal Surabaya')));
  formats[1].click();assert.equal(get('rab-download-action').textContent,'Simpan PDF');printed=false;get('rab-download-action').click();assert.ok(printed);assert.equal((get('rows').innerHTML.match(/<tr>/g)||[]).length,data.rows.length);
  formats[0].click();assert.equal(formats[0].attrs['aria-pressed'],'true');
  console.log('PASS: R04 fetch/render, category filter, service toggle, complete print, six-sheet zoom dialog, CSV/JSON and reset.');
