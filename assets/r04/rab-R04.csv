@@ -1,4 +1,4 @@
-Kode,Kategori,Uraian,Volume,Satuan,Harga,Jumlah,Basis,Status,Sumber,Pemasok,Spesifikasi,Dasar harga
+﻿Kode,Kategori,Uraian,Volume,Satuan,Harga,Jumlah,Basis,Status,Sumber,Pemasok,Spesifikasi,Dasar harga
 M01,Material,"RHS 50x100x2,3 / 6 m",101,btg,434500,43884500,Rangka native165 termasuk20diagonal + kolom80 + usulan stringer tangga; pola potong gabungan FFD.,Katalog / penyangga tangga usulan,https://www.smsperkasa.com/produk/besi-hollow-hitam,,,
 M02,Material,SHS 40x40x2 / 6 m,29,btg,194800,5649200,"27 stok pengaku tapak + 2 stok rail atas 8,425 m.",Katalog,https://www.smsperkasa.com/produk/besi-hollow-hitam,,,
 M03,Material,"SHS 40x40x2,8 / 6 m",18,btg,277000,4986000,"85 tiang railing 97,498 m + pembulatan dan sisa.",Katalog,https://www.smsperkasa.com/produk/besi-hollow-hitam,,,
