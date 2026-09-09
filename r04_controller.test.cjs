@@ -17,10 +17,14 @@ class Element{
  const c={document,window,Intl,Date,Number,Math,JSON,Promise,structuredClone,Blob,console,setTimeout,URL:{createObjectURL:b=>(blob=b,'blob:test'),revokeObjectURL(){}},localStorage:{getItem:()=>null,setItem:(k,v)=>saved[k]=v},fetch:async()=>({ok:true,json:async()=>structuredClone(data)}),createDrawingPanZoom:()=>({reset(){}})};
  c.TextEncoder=TextEncoder;c.Uint8Array=Uint8Array;c.Uint32Array=Uint32Array;c.DataView=DataView;
  vm.createContext(c);vm.runInContext(fs.readFileSync('dist/assets/r04/xlsx.js','utf8'),c);
+ vm.runInContext(fs.readFileSync('client-offer.js','utf8'),c);
  vm.runInContext(fs.readFileSync('r04_app.js','utf8'),c);
  await new Promise(r=>setImmediate(r));
  assert.equal((get('rows').innerHTML.match(/<tr>/g)||[]).length,data.rows.length);
  assert.ok(get('totals').innerHTML.includes('TOTAL ANGGARAN'));
+ assert.ok(get('offer-fields').innerHTML.includes('SELARAS ADHI PERKASA'));assert.ok(get('offer-print').innerHTML.includes('Lampiran — Rincian RAB'));
+ get('offer-terms').events.change({target:{dataset:{term:'0',field:'pct'},value:'25'}});assert.ok(get('offer-term-total').textContent.includes('95.00%'));
+ get('offer-default-terms').click();assert.ok(get('offer-term-total').textContent.includes('100.00%'));
  filters[2].click();assert.ok((get('rows').innerHTML.match(/<tr>/g)||[]).length<data.rows.length);
  get('service').checked=false;get('service').change();assert.ok(get('offer-note').textContent.includes('nonaktif'));
  get('print').click();assert.ok(printed);assert.equal((get('rows').innerHTML.match(/<tr>/g)||[]).length,data.rows.length);
