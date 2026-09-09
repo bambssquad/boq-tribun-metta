@@ -40,6 +40,7 @@ jobs:
           node fastener.test.cjs
           node unified-rab.test.cjs
           node client-offer.test.cjs
+          node offer-scope.test.cjs
       - name: Verify the published files match the source
         run: |
           python publish_public.py
