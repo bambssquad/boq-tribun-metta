@@ -16,7 +16,7 @@ class Element{
  const window={MettaPDF:{async download(){printed=true;}},events:{},addEventListener(k,f){this.events[k]=f;},dispatchEvent(e){this.events[e.type]?.(e);},print(){printed=true;}};
  const c={Event,document,window,Intl,Date,Number,Math,JSON,Promise,structuredClone,Blob,console,setTimeout,URL:{createObjectURL:b=>(blob=b,'blob:test'),revokeObjectURL(){}},localStorage:{getItem:()=>null,setItem:(k,v)=>saved[k]=v},fetch:async()=>({ok:true,json:async()=>structuredClone(data)}),createDrawingPanZoom:()=>({reset(){}})};
  c.TextEncoder=TextEncoder;c.Uint8Array=Uint8Array;c.Uint32Array=Uint32Array;c.DataView=DataView;
- vm.createContext(c);vm.runInContext(fs.readFileSync('dist/assets/r04/xlsx.js','utf8'),c);
+ vm.createContext(c);vm.runInContext(fs.readFileSync('boq-groups.js','utf8'),c);vm.runInContext(fs.readFileSync('dist/assets/r04/xlsx.js','utf8'),c);
  vm.runInContext(fs.readFileSync('offer-scope.js','utf8'),c);
  vm.runInContext(fs.readFileSync('client-offer.js','utf8'),c);
  vm.runInContext(fs.readFileSync('budget-editor.js','utf8'),c);

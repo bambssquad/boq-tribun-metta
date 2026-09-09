@@ -12,6 +12,8 @@ def build(dist):
     tools.select_one('title').string='SAP — METTA | Model 3D, gambar dan BOQ'
     brand=tools.select_one('.look-brand');brand.clear();brand.string='SAP';brand['aria-label']='Selaras Adhi Perkasa — proyek METTA'
     brand['title']='Selaras Adhi Perkasa'
+    fontfix=tools.new_tag('style');fontfix.string='.sap-company-credit,#anggaran,#anggaran h1,#anggaran h2,#anggaran h3,#anggaran p,#anggaran td,#anggaran th,#anggaran input,#anggaran select,#anggaran button{font-family:Arial,Helvetica,sans-serif!important}.sap-company-credit{font-weight:700;letter-spacing:-.035em}'
+    tools.head.append(fontfix)
     tools.select_one('.look-footer').insert(0,BeautifulSoup('<p class="sap-company-credit">SAP / SELARAS ADHI PERKASA</p>','html.parser'))
     style=tools.new_tag('style');style.string=(ROOT/'monochrome.css').read_text(encoding='utf-8');tools.body.append(style)
     (dist/'tools.html').write_text(str(tools),encoding='utf-8')

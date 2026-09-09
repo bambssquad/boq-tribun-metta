@@ -1,3 +1,4 @@
+global.BOQGroups=require('./boq-groups.js');
 const assert=require('node:assert/strict'),o=require('./client-offer.js'),{r04Totals}=require('./r04_app.js'),d=require('./assets/r04/data.json');
 const state=o.defaults({co:{nm:'SAP Test',addr:'Alamat lama'},cl:{nm:'Klien lama'},sign:{nm:'Penanda tangan'}});
 assert.equal(state.company,'SAP Test');assert.equal(state.client,'Klien lama');assert.deepEqual(state.terms.map(t=>t.pct),[30,40,30]);

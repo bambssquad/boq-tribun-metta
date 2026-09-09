@@ -1,3 +1,4 @@
+global.BOQGroups=require('./boq-groups.js');
 const assert=require('node:assert/strict');
 global.OfferDocument=require('./client-offer.js');
 const E=require('./budget-editor.js'),{r04Totals}=require('./r04_app.js');
