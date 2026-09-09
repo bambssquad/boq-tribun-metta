@@ -104,4 +104,6 @@ import rab_download
 rab_download.build(dist)
 import execution_timeline
 execution_timeline.build(dist)
+import unified_rab
+unified_rab.build(dist)
 print(json.dumps(dict(bytes=len(html),frame_count=len(rhs),column_count=len(model['columns']),frame_cut_m=cut,column_m=collen,deck_area_m2=model['deck_area_m2'])))

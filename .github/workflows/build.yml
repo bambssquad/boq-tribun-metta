@@ -38,6 +38,7 @@ jobs:
           node r04_controller.test.cjs
           node execution_timeline.test.cjs
           node fastener.test.cjs
+          node unified-rab.test.cjs
       - name: Verify the published files match the source
         run: |
           python publish_public.py
