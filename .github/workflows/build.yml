@@ -34,6 +34,8 @@ jobs:
           node kg_pricing.test.cjs
           node lookback.test.cjs
           node panzoom.test.cjs
+          node labor-quote-controller.test.cjs
+          node labor-quote.test.cjs
           node boq-groups.test.cjs
           node numeric-input.test.cjs
           node budget-editor.test.cjs
