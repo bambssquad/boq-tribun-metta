@@ -23,6 +23,11 @@ class Element{
  assert.equal((get('rows').innerHTML.match(/<tr>/g)||[]).length,data.rows.length);
  assert.ok(get('totals').innerHTML.includes('TOTAL ANGGARAN'));
  assert.ok(get('offer-fields').innerHTML.includes('SELARAS ADHI PERKASA'));assert.ok(get('offer-print').innerHTML.includes('Lampiran — Rincian RAB'));
+ assert.equal(get('offer-preview').innerHTML,get('offer-print').innerHTML);
+ const beforeInput=get('offer-terms').innerHTML;
+ get('offer-terms').events.input({target:{dataset:{term:'0',field:'name'},value:'DP setelah kontrak'}});
+ assert.ok(get('offer-preview').innerHTML.includes('DP setelah kontrak'));assert.equal(get('offer-terms').innerHTML,beforeInput);
+ get('offer-terms').events.input({target:{dataset:{term:'0',field:'pct'},value:'20'}});assert.ok(get('offer-term-total').textContent.includes('90.00%'));assert.equal(get('offer-preview').innerHTML,get('offer-print').innerHTML);
  get('offer-terms').events.change({target:{dataset:{term:'0',field:'pct'},value:'25'}});assert.ok(get('offer-term-total').textContent.includes('95.00%'));
  get('offer-default-terms').click();assert.ok(get('offer-term-total').textContent.includes('100.00%'));
  filters[2].click();assert.ok((get('rows').innerHTML.match(/<tr>/g)||[]).length<data.rows.length);
