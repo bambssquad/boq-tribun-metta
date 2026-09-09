@@ -3,8 +3,8 @@ function r04Totals(rows,settings){
  const safe=x=>Number.isFinite(+x)?Math.max(0,+x):0;
  const groups={};let kg=0;
  rows.forEach(r=>{kg+=safe(r.qty)*safe(r.kg_per_unit);});
- const items=rows.map(r=>({...r,qty:r.code==='U01'?kg:safe(r.qty),price:r.code==='U01'?(settings.service?safe(settings.rate):0):safe(r.price)}));
- items.forEach(r=>{r.amount=Math.round(r.qty*r.price);groups[r.category]=(groups[r.category]||0)+r.amount;});
+ const items=rows.map(r=>({...r,qty:r.code==='U01'&&r.autoWeight!==false?kg:safe(r.qty),price:r.code==='U01'&&r.autoWeight!==false?(settings.service?safe(settings.rate):0):safe(r.price)}));
+ items.forEach(r=>{r.amount=Math.round(r.manualAmount!==undefined&&r.manualAmount!==null?safe(r.manualAmount):r.qty*r.price);groups[r.category]=(groups[r.category]||0)+r.amount;});
  const direct=Object.values(groups).reduce((a,b)=>a+b,0),oh=Math.round(direct*safe(settings.overhead)/100),profit=Math.round((direct+oh)*safe(settings.profit)/100),pretax=direct+oh+profit,tax=Math.round(pretax*safe(settings.tax)/100);
  return {items,groups,kg,direct,oh,profit,pretax,tax,total:pretax+tax};
 }
@@ -13,12 +13,12 @@ if(typeof document!=='undefined'){
  const $=x=>document.getElementById(x),num=(n,d=0)=>new Intl.NumberFormat('id-ID',{maximumFractionDigits:d,minimumFractionDigits:d}).format(n),rp=n=>'Rp '+num(n),esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  let data,rows,settings,filter='Semua',totals;
  const key='metta-r04-allin-v1';
- function save(){try{localStorage.setItem(key,JSON.stringify({prices:Object.fromEntries(rows.map(r=>[r.code,r.price])),settings}));}catch{}}
+ function save(){try{localStorage.setItem(key,JSON.stringify({rows,prices:Object.fromEntries(rows.map(r=>[r.code,r.price])),settings}));}catch{}}
  function summary(){
   totals=r04Totals(rows,settings);
   window.MettaOffer?.update(totals,settings);
   $('totals').innerHTML=[...Object.entries(totals.groups),['Biaya langsung',totals.direct],['Overhead '+settings.overhead+'%',totals.oh],['Laba '+settings.profit+'%',totals.profit],['Sebelum pajak',totals.pretax],['Pajak keluaran '+settings.tax+'%',totals.tax],['TOTAL ANGGARAN',totals.total]].map(([k,v],i,a)=>`<div class="${i===a.length-1?'grand':''}"><dt>${esc(k)}</dt><dd>${rp(v)}</dd></div>`).join('');
-  $('offer-note').textContent='Basis jasa: '+num(totals.kg,3)+' kg pembelian stok × '+rp(settings.rate)+'/kg'+(settings.service?'':' (upah per kg nonaktif)')+'. Fastener dihitung per buah/set dan belum memiliki berat sertifikat; massanya tidak ditambahkan secara fiktif ke dasar jasa.';
+  $('offer-note').textContent=rows.some(r=>r.code==='U01'&&r.autoWeight!==false)?'Basis jasa: '+num(totals.kg,3)+' kg pembelian stok × '+rp(settings.rate)+'/kg'+(settings.service?'':' (upah per kg nonaktif)')+'. Fastener dihitung per buah/set dan belum memiliki berat sertifikat; massanya tidak ditambahkan secara fiktif ke dasar jasa.':'Upah dirinci per pekerjaan: volume × tarif satuan, atau jumlah manual. Baris kosong dihitung nol.';
   $('load-status').textContent=rows.length+' item · harga dan asumsi tersimpan pada perangkat ini.';
  }
  function render(){
@@ -28,7 +28,7 @@ if(typeof document!=='undefined'){
  function download(name,content,type){const url=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
  fetch('assets/r04/data.json').then(r=>{if(!r.ok)throw Error('load');return r.json();}).then(d=>{
   data=d;rows=structuredClone(d.rows);settings={...d.defaults,rate:6000};
-  try{const s=JSON.parse(localStorage.getItem(key));if(s){if(s.prices&&Number.isFinite(+s.prices.M14)&&s.prices.M14B===undefined){s.prices.M14B=+s.prices.M14*.6;s.prices.M14N=+s.prices.M14*.2;s.prices.M14W=+s.prices.M14*.1;}rows.forEach(r=>{if(Number.isFinite(+s.prices?.[r.code])&&+s.prices[r.code]>=0)r.price=+s.prices[r.code];});for(const k of ['rate','overhead','profit','tax'])if(Number.isFinite(+s.settings?.[k]))settings[k]=Math.max(0,+s.settings[k]);if(typeof s.settings?.service==='boolean')settings.service=s.settings.service;}}catch{}
+  try{const s=JSON.parse(localStorage.getItem(key));if(s){if(Array.isArray(s.rows)&&s.rows.length<=1000)rows=s.rows;if(s.prices&&Number.isFinite(+s.prices.M14)&&s.prices.M14B===undefined){s.prices.M14B=+s.prices.M14*.6;s.prices.M14N=+s.prices.M14*.2;s.prices.M14W=+s.prices.M14*.1;}rows.forEach(r=>{if(Number.isFinite(+s.prices?.[r.code])&&+s.prices[r.code]>=0)r.price=+s.prices[r.code];});for(const k of ['rate','overhead','profit','tax'])if(Number.isFinite(+s.settings?.[k]))settings[k]=Math.max(0,+s.settings[k]);if(typeof s.settings?.service==='boolean')settings.service=s.settings.service;}}catch{}
   for(const k of ['rate','overhead','profit','tax'])$(k).value=settings[k];$('service').checked=settings.service;
   for(const k of ['service','rate','overhead','profit','tax'])$(k).addEventListener('change',()=>{settings[k]=k==='service'?$(k).checked:Math.max(0,Number($(k).value)||0);save();render();});
   $('rows').addEventListener('change',e=>{const code=e.target.dataset.price;if(!code)return;rows.find(r=>r.code===code).price=Math.max(0,Number(e.target.value)||0);save();render();});
@@ -41,11 +41,12 @@ if(typeof document!=='undefined'){
   $('json').addEventListener('click',()=>download('METTA-R04-penawaran.json',JSON.stringify({revision:'R04',generated:new Date().toISOString(),settings,...totals},null,2),'application/json'));
   const beforePrint=()=>{filter='Semua';document.querySelectorAll('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.filter==='Semua')));render();};
   window.addEventListener('beforeprint',beforePrint);
-  $('print').addEventListener('click',()=>{beforePrint();window.print();});$('reset').addEventListener('click',()=>{rows=structuredClone(data.rows);settings={...data.defaults,rate:6000};for(const k of ['rate','overhead','profit','tax'])$(k).value=settings[k];$('service').checked=settings.service;save();render();});render();
+  $('print').addEventListener('click',()=>{beforePrint();window.MettaOffer.downloadPDF();});$('reset').addEventListener('click',()=>{rows=structuredClone(data.rows);settings={...data.defaults,rate:6000};for(const k of ['rate','overhead','profit','tax'])$(k).value=settings[k];$('service').checked=settings.service;save();render();});render();
+  window.MettaRAB={get:()=>structuredClone(totals.items),set(next){rows=structuredClone(next);save();render();}};window.dispatchEvent?.(new Event('rab-ready'));
   let format='xlsx';
-  document.querySelectorAll('[data-rab-format]').forEach(b=>b.addEventListener('click',()=>{format=b.dataset.rabFormat;document.querySelectorAll('[data-rab-format]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));$('rab-download-action').textContent=format==='xlsx'?'Unduh Excel':'Simpan PDF';$('rab-download-hint').textContent=format==='xlsx'?'Menggunakan harga dan pengaturan saat ini.':'Pada dialog cetak, pilih Simpan sebagai PDF.';}));
+  document.querySelectorAll('[data-rab-format]').forEach(b=>b.addEventListener('click',()=>{format=b.dataset.rabFormat;document.querySelectorAll('[data-rab-format]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));$('rab-download-action').textContent=format==='xlsx'?'Unduh Excel':'Simpan PDF';$('rab-download-hint').textContent=format==='xlsx'?'Menggunakan harga dan pengaturan saat ini.':'PDF A4 diunduh langsung sesuai rincian RAB.';}));
   $('rab-download-action').addEventListener('click',()=>{
-   if(format==='pdf'){beforePrint();window.print();return;}
+   if(format==='pdf'){beforePrint();window.MettaOffer.downloadPDF(totals,settings);return;}
    summary();
    const cell=v=>typeof v==='number'?{n:v}:{t:String(v??'')},table=rs=>rs.map(r=>r.map(cell));
    const rab=[['SAP / SELARAS ADHI PERKASA — METTA R04'],['RAB sesuai harga saat ekspor; nilai merupakan snapshot.'],['Kode','Kategori','Uraian','Volume','Satuan','Harga satuan','Jumlah','Dasar kuantitas','Status','Pemasok','Spesifikasi','Dasar harga','Tautan pemasok'],...totals.items.map(r=>[r.code,r.category,r.name,r.qty,r.unit,r.price,r.amount,r.basis,r.status,r.supplier||'',r.specification||'',r.price_basis||'',data.sources[r.source]?.[1]||''])];

@@ -26,5 +26,15 @@ def build(dist):
  js=s.new_tag('script',src='assets/client-offer.js');s.select_one('script[src="assets/r04/app.js"]').insert_before(js)
  s.select_one('#print').string='Penawaran + lampiran / PDF'
  s.select_one('#json').string='Simpan data RAB (JSON)'
+
+ editor=BeautifulSoup('''<section class="budget-editor"><h3>Edit rincian pekerjaan</h3><div class="downloads"><label>Terapkan ke <select id="budget-target"><option value="offer">Penawaran ini saja</option><option value="main">RAB utama + penawaran</option></select></label><label>Tabel <select id="budget-category"><option>Upah</option><option>Semua</option><option>Material</option><option>Bahan habis pakai</option><option>Peralatan dan logistik</option></select></label><label>Dasar upah <select id="labor-layout"><option value="">Pilih template</option><option value="activity">Rincian aktivitas</option><option value="component">Berat per komponen</option></select></label><button id="budget-add">Tambah pekerjaan</button></div><p>Volume × harga satuan = jumlah. Isi jumlah manual untuk borongan atau nilai kontrak. Template mengganti upah gabungan saja; tekuk, cat dan kayu tetap terpisah. Seluruh kolom dapat diedit. Data kosong dihitung nol dan perlu dilengkapi.</p><datalist id="budget-units"><option>kg</option><option>m²</option><option>unit</option><option>borongan</option><option>hari</option><option>m</option></datalist><div class="table-wrap"><table><thead><tr>'''+''.join('<th>'+x+'</th>' for x in ['Kode','Uraian','Kategori','Volume','Satuan','Harga satuan','Jumlah manual','Pemasok','Spesifikasi','Catatan','Status','Kontak','Dasar harga','kg per satuan','Jumlah','Aksi'])+'''</tr></thead><tbody id="budget-editor-rows"></tbody></table></div><div class="downloads"><label><input id="offer-detail" type="checkbox" checked> Lampiran rincian pekerjaan</label><label><input id="term-detail" type="checkbox"> Termin per pekerjaan</label></div></section>''','html.parser')
+ s.select_one('#offer-fields').insert_before(editor)
+ for name in ['budget-editor.js','offer-pdf.js']:
+  tag=s.new_tag('script',src='assets/'+name);s.body.append(tag);(dist/'assets'/name).write_bytes((ROOT/name).read_bytes())
+ tag=s.new_tag('link',rel='stylesheet',href='assets/budget-editor.css');s.head.append(tag);(dist/'assets/budget-editor.css').write_bytes((ROOT/'budget-editor.css').read_bytes())
+ import shutil
+ shutil.copytree(ROOT/'vendor',dist/'assets/vendor',dirs_exist_ok=True)
+ for el in s.select('p.small'):
+  if 'dialog cetak' in el.get_text():el.string='PDF A4 diunduh langsung. Rincian mengikuti pilihan tampilan dan nilai penawaran saat ini.'
  p.write_text(str(s),encoding='utf-8')
  for ext in ['js','css']:(dist/'assets'/('client-offer.'+ext)).write_bytes((ROOT/('client-offer.'+ext)).read_bytes())
