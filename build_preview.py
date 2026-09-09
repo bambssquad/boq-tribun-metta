@@ -53,6 +53,8 @@ build.JS_3D=build.JS_3D[:pos]+finish_js+build.JS_3D[pos:]
 build.JS_3D=build.JS_3D.replace('if(j){','if(j && document.getElementById(j[0])){')
 build.JS_3D=build.JS_3D.replace('type="checkbox" checked><span class="sw"', 'type="checkbox" ${g.off?\'\':\'checked\'}><span class="sw"')
 build.JS_3D=build.JS_3D.replace("mat:'Baja BJ 37", "mat:'Baja — mutu belum diverifikasi")
+import exploded_explorer
+build.JS_3D,build.HTML_3D=exploded_explorer.apply(build.JS_3D,build.HTML_3D)
 # For the unchanged framing row, use the verified combined stock result. User edits
 # deliberately revert to an estimate; column and railing quantities stay separate.
 build.JS=build.JS.replace("const Lw=r.L*(1+S.wH/100), kg=Lw*(r.kg||0), bars=Math.ceil(Lw/(S.bar||6));",f"const verified=r.n===165 && r.nm==='Rangka RHS — hasil model' && Math.abs(r.L-{round(cut,2)})<.005 && S.bar===6 && S.wH===5; const Lw=verified?{frame_stock_m}:r.L*(1+S.wH/100), kg=Lw*(r.kg||0), bars=verified?{frame_bars}:Math.ceil(Lw/(S.bar||6));")

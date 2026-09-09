@@ -34,6 +34,8 @@ jobs:
           node kg_pricing.test.cjs
           node lookback.test.cjs
           node panzoom.test.cjs
+          node exploded-catalog.test.cjs
+          node exploded-controller.test.cjs
           node labor-quote-controller.test.cjs
           node labor-quote.test.cjs
           node boq-groups.test.cjs
