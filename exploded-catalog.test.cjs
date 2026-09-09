@@ -1,0 +1,3 @@
+const assert=require('node:assert/strict'),C=require('./exploded-catalog.js');
+for(const n of [1,20,800])for(const [w,h]of [[1200,700],[360,550]]){const g=C.layout(n,w,h);assert.ok(g.cols*g.rows>=n);const seen=new Set();for(let i=0;i<n;i++){const p=C.target(i,[0,0,100,50],g,w,h);assert.ok(p.s>0&&Number.isFinite(p.x));seen.add(p.x+','+p.y);}assert.equal(seen.size,n);}
+assert.deepEqual(C.dimensions([0,0,0,100,50,3]),[100,50,3]);const verts=[0,0,0,3,4,0,3,4,2,0,0,2,0,6,0,3,10,0,3,10,2,0,6,2];assert.deepEqual(C.dimensions(verts),[5,2,6]);console.log('PASS: nonoverlapping catalog slots across mobile/desktop counts and real edge dimensions.');
