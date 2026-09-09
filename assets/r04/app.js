@@ -16,6 +16,7 @@ if(typeof document!=='undefined'){
  function save(){try{localStorage.setItem(key,JSON.stringify({prices:Object.fromEntries(rows.map(r=>[r.code,r.price])),settings}));}catch{}}
  function summary(){
   totals=r04Totals(rows,settings);
+  window.MettaOffer?.update(totals,settings);
   $('totals').innerHTML=[...Object.entries(totals.groups),['Biaya langsung',totals.direct],['Overhead '+settings.overhead+'%',totals.oh],['Laba '+settings.profit+'%',totals.profit],['Sebelum pajak',totals.pretax],['Pajak keluaran '+settings.tax+'%',totals.tax],['TOTAL ANGGARAN',totals.total]].map(([k,v],i,a)=>`<div class="${i===a.length-1?'grand':''}"><dt>${esc(k)}</dt><dd>${rp(v)}</dd></div>`).join('');
   $('offer-note').textContent='Basis jasa: '+num(totals.kg,3)+' kg pembelian stok × '+rp(settings.rate)+'/kg'+(settings.service?'':' (upah per kg nonaktif)')+'. Fastener dihitung per buah/set dan belum memiliki berat sertifikat; massanya tidak ditambahkan secara fiktif ke dasar jasa.';
   $('load-status').textContent=rows.length+' item · harga dan asumsi tersimpan pada perangkat ini.';

@@ -1,0 +1,10 @@
+const assert=require('node:assert/strict'),o=require('./client-offer.js'),{r04Totals}=require('./r04_app.js'),d=require('./assets/r04/data.json');
+const state=o.defaults({co:{nm:'SAP Test',addr:'Alamat lama'},cl:{nm:'Klien lama'},sign:{nm:'Penanda tangan'}});
+assert.equal(state.company,'SAP Test');assert.equal(state.client,'Klien lama');assert.deepEqual(state.terms.map(t=>t.pct),[30,40,30]);
+for(const total of [0,1,10001,123456789])assert.equal(o.amounts(total,state.terms).values.reduce((n,x)=>n+x,0),total);
+const t=r04Totals(d.rows,{...d.defaults,rate:6000});state.notes='<script>unsafe</script>';const html=o.html(state,t,d.defaults);
+assert.ok(html.includes('&lt;script&gt;unsafe&lt;/script&gt;'));assert.ok(!html.includes('<script>'));assert.equal((html.match(/class="quote-grand"/g)||[]).length,2);
+for(const r of t.items)assert.ok(html.includes('>'+r.code+'</td>'));
+assert.ok(html.includes(o.rp(t.total)));assert.ok(html.includes('Lampiran — Rincian RAB'));assert.ok(!html.includes('revisi terpilih R04'));
+state.terms[0].pct=20;assert.ok(o.html(state,t,d.defaults).includes('belum sama dengan 100%'));
+console.log('PASS: legacy identity, 30/40/30 terms, exact rupiah totals, complete appendix, escaping and partial-term disclosure.');
