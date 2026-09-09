@@ -2626,4 +2626,49 @@ body{background:radial-gradient(ellipse at 0 8%,#d0d0d0,transparent 35%),radial-
 .sw:has(input:checked){background:#222;color:#fff;border-color:#222}.sw:has(input:checked) input{accent-color:#fff}
 .chip input,.lg input,.sw input{min-width:18px;min-height:18px}.chip,.lg,.sw{font-size:14px;line-height:1.5}.chip:has(input:not(:checked)),.lg:has(input:not(:checked)){opacity:1;color:#555}
 .r04-banner{padding:20px;border:1px solid #777;border-radius:14px;background:#222;color:#fff;font-size:16px}.r04-banner a{color:#fff}
+/* Readable monochrome liquid glass: paired text and surfaces in every state. */
+:root,:root[data-theme=light]{--sunk:#ececec;--rule:#858585}
+.boqbar,.wastebar,.kg-pricing{
+ background:linear-gradient(125deg,#ffffffed,#ffffffb8 48%,#edededdb);
+ border:1px solid #ffffff;border-radius:20px;
+ box-shadow:inset 0 1px 0 #fff,inset 0 -1px 0 #00000014,0 8px 28px #0000000d;
+ backdrop-filter:blur(28px) saturate(0);-webkit-backdrop-filter:blur(28px) saturate(0);
+ color:#222;
+}
+.boqbar .sw,.seg button{
+ background:linear-gradient(145deg,#ffffffed,#e8e8e8d9);color:#292929;
+ border-color:#a0a0a0;min-height:40px;
+}
+.boqbar .sw{border-radius:12px;padding:8px 12px}
+.seg{border-radius:12px;border-color:#a0a0a0}
+.seg button:not(.on):hover,.boqbar .sw:not(:has(input:checked)):hover{background:#fff!important;color:#111}
+.seg button.on,.boqbar .sw:has(input:checked){
+ background:linear-gradient(145deg,#393939,#191919)!important;color:#fff!important;
+ box-shadow:inset 0 1px 0 #ffffff55,0 2px 6px #0002;border-color:#333;
+}
+.boqbar .sw input{accent-color:#222}
+.boqbar .sw:has(input:checked) input{accent-color:#fff}
+#boq input:not([type=checkbox]):not([type=radio]),.wastebar input,
+.kg-pricing input:not([type=checkbox]),.exname input{
+ background:#fffffff2;color:#171717!important;-webkit-text-fill-color:#171717;
+ border:1px solid #888;border-radius:10px!important;min-height:40px;
+ box-shadow:inset 0 1px 3px #0000000d;font-variant-numeric:tabular-nums;caret-color:#111;
+}
+input::placeholder{color:#626262;opacity:1}
+input:disabled,button:disabled{opacity:1;color:#626262;background:#e5e5e5}
+input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid #111;outline-offset:3px}
+select{background:#fff;color:#222;color-scheme:light}
+select option{background:#fff;color:#222}
+.tw{border-radius:16px;border:1px solid #b5b5b5;background:#ffffffed}
+thead th{background:#e9e9e9;color:#222}
+tfoot td,#rekap tfoot td{background:linear-gradient(180deg,#303030,#202020);color:#fff!important}
+tfoot td *{color:inherit}
+@media(max-width:760px){
+ .boqbar,.wastebar,.kg-pricing{backdrop-filter:blur(28px) saturate(0);-webkit-backdrop-filter:blur(28px) saturate(0)}
+ .boqbar .sw,.seg button{min-height:44px}.seg{max-width:100%;flex-wrap:wrap}
+}
+@media print{
+ .boqbar,.wastebar,.kg-pricing{backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;background:#fff}
+ tfoot td,#rekap tfoot td{background:#eee!important;color:#111!important}
+}
 </style></body></html>
