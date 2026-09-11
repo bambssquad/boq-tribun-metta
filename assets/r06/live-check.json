@@ -1,0 +1,99 @@
+{
+  "date": "2026-09-11",
+  "model": "METTA.rvt",
+  "revit": "2027",
+  "expected_framing_column_ids": 340,
+  "matched_ids": 340,
+  "missing_ids": [],
+  "units": "Revit internal feet",
+  "scope": "ID presence and three parameter samples; full node coordinates remain reconciled archived geometry.",
+  "samples": [
+    {
+      "id": 1678295,
+      "parameters": [
+        {
+          "name": "Base Offset",
+          "value": 0.059055
+        },
+        {
+          "name": "Base Offset",
+          "value": 0.059055
+        },
+        {
+          "name": "System Length",
+          "value": 8.143004
+        },
+        {
+          "name": "Top Offset",
+          "value": -4.9213
+        },
+        {
+          "name": "Top Offset",
+          "value": -4.9213
+        },
+        {
+          "name": "Type Id",
+          "value": 1676351
+        }
+      ]
+    },
+    {
+      "id": 1684221,
+      "parameters": [
+        {
+          "name": "Base Offset",
+          "value": 1.6404
+        },
+        {
+          "name": "Base Offset",
+          "value": 1.6404
+        },
+        {
+          "name": "System Length",
+          "value": 3.60886
+        },
+        {
+          "name": "Top Offset",
+          "value": -7.8741
+        },
+        {
+          "name": "Top Offset",
+          "value": -7.8741
+        },
+        {
+          "name": "Type Id",
+          "value": 1684185
+        }
+      ]
+    },
+    {
+      "id": 1686889,
+      "parameters": [
+        {
+          "name": "Cross-Section Rotation",
+          "value": 0
+        },
+        {
+          "name": "Cut Length",
+          "value": 15.912073
+        },
+        {
+          "name": "Elevation at Bottom",
+          "value": 53.792591
+        },
+        {
+          "name": "Elevation at Top",
+          "value": 54.120675
+        },
+        {
+          "name": "System Length",
+          "value": 15.912073
+        },
+        {
+          "name": "Type Id",
+          "value": 1690003
+        }
+      ]
+    }
+  ]
+}

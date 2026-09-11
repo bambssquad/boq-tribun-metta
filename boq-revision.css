@@ -2,3 +2,4 @@
 #boq-revision button[aria-pressed="true"]{background:#161616!important;color:#fff!important;opacity:1;border-color:#161616}
 .br-audit table{min-width:780px;font-size:13px}.br-audit td{padding:8px 12px}#br-stock{padding:8px 0;line-height:1.6}#br-stock a{text-decoration:underline}#br-stock-detail{margin:16px 0;border:1px solid #bbb;padding:12px;border-radius:8px}#br-stock-detail>summary{cursor:pointer;font-weight:600}
 #boq-revision .br-subtotal th,#boq-revision .br-subtotal td{background:#e8edf0;color:#17232d;font-weight:700}#boq-revision input[readonly]{background:#f2f4f5;color:#34424c;border-color:transparent}#br-unit-note{font-size:13px;line-height:1.5}
+.br-component-totals table{min-width:560px}.br-component-totals tbody th{background:#eef3f5;color:#172a36;white-space:normal}.br-component-totals td{text-align:right;font-variant-numeric:tabular-nums}
