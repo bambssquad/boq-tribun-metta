@@ -1,0 +1,142 @@
+{
+  "date": "2026-09-11",
+  "profile": "50x100x2.3 mm",
+  "stock_m": 6,
+  "stock_kg": 32.5,
+  "catalogue_url": "https://www.smsperkasa.com/produk/besi-hollow-hitam",
+  "excel_hollow_50x100_kg": 1620,
+  "excel_equivalent_at_30kg": 54.0,
+  "excel_equivalent_at_catalogue": 49.84615385,
+  "scopes": [
+    {
+      "scope": "native",
+      "cut_count": 245,
+      "cut_length_m": 552.30081075,
+      "stock_count": 97,
+      "stock_length_m": 582,
+      "purchase_kg": 3152.5,
+      "net_section_kg": 2840.73388204,
+      "net_catalogue_kg": 2991.62939156,
+      "kerf_m": 0.735,
+      "offcut_m": 28.96418925,
+      "minimum_by_length": 93
+    },
+    {
+      "scope": "stair_proposal",
+      "cut_count": 116,
+      "cut_length_m": 37.8374,
+      "stock_count": 7,
+      "stock_length_m": 42,
+      "purchase_kg": 227.5,
+      "net_section_kg": 194.61493102,
+      "net_catalogue_kg": 204.95258333,
+      "kerf_m": 0.348,
+      "offcut_m": 3.8146,
+      "minimum_by_length": 7
+    },
+    {
+      "scope": "combined",
+      "cut_count": 361,
+      "cut_length_m": 590.13821075,
+      "stock_count": 101,
+      "stock_length_m": 606,
+      "purchase_kg": 3282.5,
+      "net_section_kg": 3035.34881306,
+      "net_catalogue_kg": 3196.58197489,
+      "kerf_m": 1.083,
+      "offcut_m": 14.77878925,
+      "minimum_by_length": 99
+    }
+  ],
+  "components": [
+    {
+      "id": "X01",
+      "name": "Kolom tribun",
+      "cut_count": 80,
+      "length_m": 133.55979994,
+      "net_section_kg": 686.95870361,
+      "purchase_allocated_kg": 738.94659187,
+      "source_kg": 637,
+      "source_material": "holo 100x50x2,3"
+    },
+    {
+      "id": "X02",
+      "name": "Balok tepi tier",
+      "cut_count": 15,
+      "length_m": 73.71000041,
+      "net_section_kg": 379.12400549,
+      "purchase_allocated_kg": 409.49441845,
+      "source_kg": 416,
+      "source_material": "holo 100x50x2,3"
+    },
+    {
+      "id": "X03",
+      "name": "Pengaku longitudinal dek",
+      "cut_count": 45,
+      "length_m": 226.06900146,
+      "net_section_kg": 1162.77553756,
+      "purchase_allocated_kg": 1243.32282044,
+      "source_kg": 416,
+      "source_material": "holo 100x50x2,3"
+    },
+    {
+      "id": "X04",
+      "name": "Rangka belakang",
+      "cut_count": 4,
+      "length_m": 17.39600006,
+      "net_section_kg": 89.47552821,
+      "purchase_allocated_kg": 95.11486506,
+      "source_kg": 98,
+      "source_material": "holo 100x50x2,3"
+    },
+    {
+      "id": "X05",
+      "name": "Strut ke kolom beton",
+      "cut_count": 16,
+      "length_m": 2.17199931,
+      "net_section_kg": 11.17157882,
+      "purchase_allocated_kg": 11.8546678,
+      "source_kg": 53,
+      "source_material": "holo 100x50x2,3"
+    },
+    {
+      "id": "X06",
+      "name": "Bracing X",
+      "cut_count": 20,
+      "length_m": 42.38799986,
+      "net_section_kg": 218.02073262,
+      "purchase_allocated_kg": 235.69913457,
+      "source_kg": 62,
+      "source_material": "holo 40x40x2"
+    },
+    {
+      "id": "B01",
+      "name": "Balok silang penumpu dek",
+      "cut_count": 65,
+      "length_m": 57.00599846,
+      "net_section_kg": 293.2077378,
+      "purchase_allocated_kg": 314.04168361,
+      "source_kg": null,
+      "source_material": "Tidak ada baris terpisah"
+    },
+    {
+      "id": "B02",
+      "name": "Penyangga tangga / usulan",
+      "cut_count": 116,
+      "length_m": 37.8374,
+      "net_section_kg": 194.61493102,
+      "purchase_allocated_kg": 234.02581821,
+      "source_kg": null,
+      "source_material": "Tidak ada baris terpisah"
+    }
+  ],
+  "duplicate_rhs_groups": [],
+  "collinear_joist_overlaps": [],
+  "limitations": [
+    "Panjang dan ID dicocokkan dengan pembacaan Revit 11 September; geometri duplikat diperiksa pada arsip R04 yang direkonsiliasi.",
+    "Jumlah batang berasal dari pola potong, bukan pembulatan berat tiap komponen.",
+    "97 batang native + 7 batang usulan jika dibeli terpisah; gabungan 101 karena sisa potong dipakai bersama.",
+    "Berat penampang memakai sudut membulat; berat katalog dan berat timbang produk dapat berbeda.",
+    "Pola FFD adalah solusi layak, bukan bukti jumlah batang minimum global."
+  ]
+}

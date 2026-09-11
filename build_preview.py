@@ -112,4 +112,6 @@ import client_offer
 client_offer.build(dist)
 import labor_quote
 labor_quote.build(dist)
+import boq_revision_web
+boq_revision_web.build(dist)
 print(json.dumps(dict(bytes=len(html),frame_count=len(rhs),column_count=len(model['columns']),frame_cut_m=cut,column_m=collen,deck_area_m2=model['deck_area_m2'])))

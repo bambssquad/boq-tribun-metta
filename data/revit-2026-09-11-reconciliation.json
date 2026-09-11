@@ -1,0 +1,9 @@
+{
+  "date": "2026-09-11",
+  "rhs_length_changes": [],
+  "model_same_saved_checkpoint": true,
+  "sha256": "f06ee8b7a04b058ddd414f37fc270e3d3e3ba62326c8f434524fc69d06cbdc56",
+  "plate_native_count": 176,
+  "cover_native_count": 310,
+  "plate_geometry_basis": "Unmodified saved R04 model hash plus archived native creation/audit registry; no new IFC geometry export."
+}

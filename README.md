@@ -1,5 +1,7 @@
 # METTA — arsip desain, BOQ dan penawaran
 
+RAB 11 September 2026: `tools.html#rab-11sep` compares all 50x100 hollow members at 1.6, 2.0 and 2.3 mm. Independent editable quantities/prices, stock audit, original Excel comparison and PDF/XLSX exports are available. The 361-cut schedule uses 101 six-metre bars at every thickness; section changes are budget studies and are not applied to Revit. The 6-mm connection plate uses five 1200x2400 sheets with unchanged connection blanks. `assets/r05/analisis-R05.md` records assumptions, sources and unresolved structural checks.
+
 R04 (9 September 2026): `r04.html` is the selected all-in budget, with material, consumables, labor, logistics, overhead, profit and configurable output tax. Its purchasing-weight basis drives the Rp6,000/kg service toggle. Net theoretical and catalog purchasing weights have separate ledgers; unmeasured backing and concrete ties remain explicit provisional sums. Connections and stair supports are design proposals, not a fabrication release.
 
 The current 3D projection contains 165 RHS members, 80 columns, 20 diagonals (10 X sets), 176 native stair plate parts and 310 native 2-mm cover parts. R04 overlays use saved Revit IDs/cut-length readbacks and common plate geometry; R03 source snapshots are retained unchanged. Rear/bottom covers are excluded. Four concrete columns are clipped from the 2-mm panel layout with 3-mm clearance. The archive opens on six current R04 CAD/PDF sheets followed by twelve clearly labeled R03 sheets. Revit sheet previews are under `assets/r04/revit/`.

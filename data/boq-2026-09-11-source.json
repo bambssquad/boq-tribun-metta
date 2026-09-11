@@ -1,0 +1,255 @@
+{
+  "filename": "BOQ TRIBU METTA 11-09-2026.xlsx",
+  "sheet": "Sheet1",
+  "rows": [
+    {
+      "id": "X01",
+      "excel_row": 8,
+      "name": "Kolom tribun ",
+      "material": "holo 100x50x2,3",
+      "qty": 637,
+      "unit": "Kg",
+      "labor_rate": 6000,
+      "material_rate": 13369.23076923077
+    },
+    {
+      "id": "X02",
+      "excel_row": 9,
+      "name": "Balok tepi tier",
+      "material": "holo 100x50x2,3",
+      "qty": 416,
+      "unit": "Kg",
+      "labor_rate": 6000,
+      "material_rate": 13369.23076923077
+    },
+    {
+      "id": "X03",
+      "excel_row": 10,
+      "name": "Stiffener dek ",
+      "material": "holo 100x50x2,3",
+      "qty": 416,
+      "unit": "Kg",
+      "labor_rate": 6000,
+      "material_rate": 13369.23076923077
+    },
+    {
+      "id": "X04",
+      "excel_row": 11,
+      "name": "Rangka sandaran belakang",
+      "material": "holo 100x50x2,3",
+      "qty": 98,
+      "unit": "Kg",
+      "labor_rate": 6000,
+      "material_rate": 13369.23076923077
+    },
+    {
+      "id": "X05",
+      "excel_row": 12,
+      "name": "Strut anchor",
+      "material": "holo 100x50x2,3",
+      "qty": 53,
+      "unit": "Kg",
+      "labor_rate": 6000,
+      "material_rate": 13369.23076923077
+    },
+    {
+      "id": "X06",
+      "excel_row": 13,
+      "name": "Bracing X",
+      "material": "holo 40x40x2",
+      "qty": 62,
+      "unit": "Kg",
+      "labor_rate": 6000,
+      "material_rate": 12986.666666666666
+    },
+    {
+      "id": "X07",
+      "excel_row": 14,
+      "name": "Rail atas & tengah",
+      "material": "holo 40x40x2",
+      "qty": 435,
+      "unit": "Kg",
+      "labor_rate": 6000,
+      "material_rate": 12986.666666666666
+    },
+    {
+      "id": "X08",
+      "excel_row": 15,
+      "name": "Baluster + pegangan",
+      "material": "holo 40x40x2",
+      "qty": 313,
+      "unit": "Kg",
+      "labor_rate": 6000,
+      "material_rate": 12986.666666666666
+    },
+    {
+      "id": "X09",
+      "excel_row": 16,
+      "name": "Plat dek",
+      "material": "bordes 4 mm",
+      "qty": 2850,
+      "unit": "Kg",
+      "labor_rate": 5000,
+      "material_rate": 12937
+    },
+    {
+      "id": "X10",
+      "excel_row": 17,
+      "name": "Plat riser muka tier",
+      "material": "bordes 2 mm",
+      "qty": 1000,
+      "unit": "Kg",
+      "labor_rate": 6000,
+      "material_rate": 12296.296296296296
+    },
+    {
+      "id": "X11",
+      "excel_row": 18,
+      "name": "Plat tekuk tangga + stringer",
+      "material": "bordes 3 mm",
+      "qty": 982,
+      "unit": "Kg",
+      "labor_rate": 6000,
+      "material_rate": 12285.714285714286
+    },
+    {
+      "id": "X12",
+      "excel_row": 19,
+      "name": "Skirt kolong + toe-board",
+      "material": "bordes 2 mm",
+      "qty": 104,
+      "unit": "Kg",
+      "labor_rate": 6000,
+      "material_rate": 12296.296296296296
+    },
+    {
+      "id": "X13",
+      "excel_row": 20,
+      "name": "Base plate",
+      "material": "Plat 8 mm",
+      "qty": 187,
+      "unit": "Kg",
+      "labor_rate": 6000,
+      "material_rate": 11695.187165775402
+    },
+    {
+      "id": "X14",
+      "excel_row": 21,
+      "name": "Pelat buhul 6 mm 200x200",
+      "material": "",
+      "qty": 700,
+      "unit": "kg",
+      "labor_rate": 5000,
+      "material_rate": 12542.857142857143
+    },
+    {
+      "id": "X15",
+      "excel_row": 22,
+      "name": "Baut M12 gr.4.6 + mur + ring",
+      "material": "",
+      "qty": 693,
+      "unit": "bh",
+      "labor_rate": 1000,
+      "material_rate": 4500
+    },
+    {
+      "id": "X16",
+      "excel_row": 23,
+      "name": "Dynabolt M10 L=80",
+      "material": "",
+      "qty": 32,
+      "unit": "bh",
+      "labor_rate": 1000,
+      "material_rate": 5000
+    },
+    {
+      "id": "X17",
+      "excel_row": 24,
+      "name": "Mur  M12 kelas 8 / rangka dan X",
+      "material": "",
+      "qty": 693,
+      "unit": "bh",
+      "labor_rate": 1000,
+      "material_rate": 1500
+    },
+    {
+      "id": "X18",
+      "excel_row": 25,
+      "name": "Ring datar keras M12 / rangka dan X",
+      "material": "",
+      "qty": 1386,
+      "unit": "bh",
+      "labor_rate": 50,
+      "material_rate": 750
+    },
+    {
+      "id": "X19",
+      "excel_row": 26,
+      "name": "drilling wood ke baja #12 x65 + ring",
+      "material": "",
+      "qty": 500,
+      "unit": "bh",
+      "labor_rate": 300,
+      "material_rate": 1500
+    },
+    {
+      "id": "X20",
+      "excel_row": 27,
+      "name": "Sekrup SDS  #12 x32 + ring EPDM ",
+      "material": "",
+      "qty": 2449,
+      "unit": "bh",
+      "labor_rate": 300,
+      "material_rate": 800
+    },
+    {
+      "id": "X21",
+      "excel_row": 28,
+      "name": "Karet dudukan 10 mm 150x150",
+      "material": "",
+      "qty": 100,
+      "unit": "bh",
+      "labor_rate": 500,
+      "material_rate": 25000
+    },
+    {
+      "id": "X22",
+      "excel_row": 29,
+      "name": "Papan pinus 400×40 (dudukan)",
+      "material": "",
+      "qty": 200,
+      "unit": "m1",
+      "labor_rate": 25000,
+      "material_rate": 90000
+    },
+    {
+      "id": "X23",
+      "excel_row": 30,
+      "name": "Panel kayu sandaran 400 x 40 cm",
+      "material": "",
+      "qty": 20,
+      "unit": "m1",
+      "labor_rate": 25000,
+      "material_rate": 90000
+    },
+    {
+      "id": "X24",
+      "excel_row": 31,
+      "name": "Pekerjaan Cat + Coating",
+      "material": "Cat Besi",
+      "qty": 8253,
+      "unit": "kg",
+      "labor_rate": 1000,
+      "material_rate": 2500
+    }
+  ],
+  "cached_totals": {
+    "labor": 53890000,
+    "material": 136021186.38583642,
+    "total": 218796686.3858364
+  },
+  "computed_totals": {
+    "labor": 62143000,
+    "material": 156653686.3858364
+  }
+}
