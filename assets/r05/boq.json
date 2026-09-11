@@ -113,7 +113,8 @@
           "material_rate": 13369.23076923077,
           "basis": "80 elemen; panjang 133.559800 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang. Estimasi: massa interpolasi katalog 1,5/1,8 mm dan harga/kg Excel 2,3 mm; bukan penawaran 1,6 mm."
         }
-      }
+      },
+      "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
     },
     {
       "id": "X02",
@@ -160,7 +161,8 @@
           "material_rate": 13369.23076923077,
           "basis": "15 elemen; panjang 73.710000 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang. Estimasi: massa interpolasi katalog 1,5/1,8 mm dan harga/kg Excel 2,3 mm; bukan penawaran 1,6 mm."
         }
-      }
+      },
+      "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
     },
     {
       "id": "X03",
@@ -237,7 +239,8 @@
           "material_rate": 13369.23076923077,
           "basis": "45 elemen; panjang 226.069001 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang. Estimasi: massa interpolasi katalog 1,5/1,8 mm dan harga/kg Excel 2,3 mm; bukan penawaran 1,6 mm."
         }
-      }
+      },
+      "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
     },
     {
       "id": "X04",
@@ -273,7 +276,8 @@
           "material_rate": 13369.23076923077,
           "basis": "4 elemen; panjang 17.396000 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang. Estimasi: massa interpolasi katalog 1,5/1,8 mm dan harga/kg Excel 2,3 mm; bukan penawaran 1,6 mm."
         }
-      }
+      },
+      "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
     },
     {
       "id": "X05",
@@ -321,7 +325,8 @@
           "material_rate": 13369.23076923077,
           "basis": "16 elemen; panjang 2.171999 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang. Angkur dan pelat ikatan beton dihitung pada item tersendiri. Estimasi: massa interpolasi katalog 1,5/1,8 mm dan harga/kg Excel 2,3 mm; bukan penawaran 1,6 mm."
         }
-      }
+      },
+      "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
     },
     {
       "id": "X06",
@@ -373,7 +378,8 @@
           "material_rate": 13369.23076923077,
           "basis": "20 elemen; panjang 42.388000 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang. Estimasi: massa interpolasi katalog 1,5/1,8 mm dan harga/kg Excel 2,3 mm; bukan penawaran 1,6 mm."
         }
-      }
+      },
+      "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
     },
     {
       "id": "B01",
@@ -470,7 +476,8 @@
           "material_rate": 13369.23076923077,
           "basis": "65 elemen; panjang 57.005998 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang. Estimasi: massa interpolasi katalog 1,5/1,8 mm dan harga/kg Excel 2,3 mm; bukan penawaran 1,6 mm."
         }
-      }
+      },
+      "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
     },
     {
       "id": "B02",
@@ -501,7 +508,8 @@
           "material_rate": 13369.23076923077,
           "basis": "116 elemen; panjang 37.837400 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang. Penyangga belum menjadi elemen native dan jalur tumpuannya belum final. Estimasi: massa interpolasi katalog 1,5/1,8 mm dan harga/kg Excel 2,3 mm; bukan penawaran 1,6 mm."
         }
-      }
+      },
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "X07",
@@ -565,7 +573,8 @@
           "basis": "8.425400 m; 2 stok ×6m. Berat dan harga katalog SMS Perkasa. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Panjang dari audit Revit.",
           "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
         }
-      }
+      },
+      "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
     },
     {
       "id": "X08",
@@ -704,7 +713,8 @@
           "basis": "97.498388 m; 18 stok ×6m. Berat dan harga katalog SMS Perkasa. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Panjang dari audit Revit.",
           "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
         }
-      }
+      },
+      "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
     },
     {
       "id": "X09",
@@ -719,7 +729,8 @@
       "status": "Model + pembelian",
       "extra": false,
       "revit_ids": [],
-      "source_row": 16
+      "source_row": 16,
+      "verification": "Jumlah/luas/volume model dibaca ulang; stok atau allowance dihitung terpisah"
     },
     {
       "id": "X10",
@@ -727,14 +738,15 @@
       "material": "Pelat polos 2 mm",
       "unit": "kg",
       "net_qty": 733.469236238366,
-      "purchase_qty": 906.4976690183472,
+      "purchase_qty": 872.0893319645444,
       "labor_rate": 6000.0,
       "material_rate": 12296.296296296296,
-      "basis": "Luas 46.717786 m². Alokasi proporsional dari 26 lembar bersama penutup sisi; bukan tambahan terhadap 26 lembar.",
+      "basis": "Luas 46.717786 m². Alokasi proporsional dari 26 lembar bersama penutup sisi; bukan tambahan terhadap 26 lembar. Stok tepat 1200×2400 mm, t=2 mm; 26 lembar bersama = 1175.616 kg teoritis (7850 kg/m³). Bukan berat timbang; bukan lembar 4×8 kaki.",
       "status": "Model + pembelian",
       "extra": false,
       "revit_ids": [],
-      "source_row": 17
+      "source_row": 17,
+      "verification": "Geometri dan pola potong arsip; bukan pembacaan ulang semua pelat native"
     },
     {
       "id": "X11",
@@ -742,14 +754,15 @@
       "material": "Pelat polos 3 mm",
       "unit": "kg",
       "net_qty": 375.8852006520202,
-      "purchase_qty": 560.0,
+      "purchase_qty": 542.592,
       "labor_rate": 6000.0,
       "material_rate": 12285.714285714286,
-      "basis": "56 bidang/176 bagian native;8 lembar. Penyangga RHS dan pengaku SHS dipisah agar tidak terhitung dua kali.",
+      "basis": "56 bidang/176 bagian native;8 lembar. Penyangga RHS dan pengaku SHS dipisah agar tidak terhitung dua kali. Stok tepat 1200×2400 mm, t=3 mm; 8 lembar bersama = 542.592 kg teoritis (7850 kg/m³). Bukan berat timbang; bukan lembar 4×8 kaki.",
       "status": "Model + pembelian",
       "extra": false,
       "revit_ids": [],
-      "source_row": 18
+      "source_row": 18,
+      "verification": "Geometri dan pola potong arsip; bukan pembacaan ulang semua pelat native"
     },
     {
       "id": "B03",
@@ -802,7 +815,8 @@
           "basis": "143.000000 m; 27 stok ×6m. Berat dan harga katalog SMS Perkasa. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Usulan belum menjadi elemen native.",
           "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
         }
-      }
+      },
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "X12",
@@ -810,14 +824,15 @@
       "material": "Pelat polos 2 mm",
       "unit": "kg",
       "net_qty": 255.28058333247998,
-      "purchase_qty": 315.50233098165285,
+      "purchase_qty": 303.5266680354556,
       "labor_rate": 6000.0,
       "material_rate": 12296.296296296296,
-      "basis": "Luas 16.259910 m²; bagian dari total 26 lembar penutup. Belakang dan bawah terbuka.",
+      "basis": "Luas 16.259910 m²; bagian dari total 26 lembar penutup. Belakang dan bawah terbuka. Stok tepat 1200×2400 mm, t=2 mm; 26 lembar bersama = 1175.616 kg teoritis (7850 kg/m³). Bukan berat timbang; bukan lembar 4×8 kaki.",
       "status": "Model + pembelian",
       "extra": false,
       "revit_ids": [],
-      "source_row": 19
+      "source_row": 19,
+      "verification": "Geometri dan pola potong arsip; bukan pembacaan ulang semua pelat native"
     },
     {
       "id": "X13",
@@ -825,14 +840,15 @@
       "material": "Pelat 150×150×8 mm",
       "unit": "kg",
       "net_qty": 113.03999999999999,
-      "purchase_qty": 187.0,
+      "purchase_qty": 180.86399999999998,
       "labor_rate": 6000.0,
       "material_rate": 11695.187165775402,
-      "basis": "80 dudukan; satu stok pelat 8 mm. Berat pembelian 187 kg; sisa stok termasuk sekali.",
+      "basis": "80 dudukan; satu stok 1200×2400×8 mm = 180,864 kg teoritis; sisa stok termasuk sekali. Stok tepat 1200×2400 mm, t=8 mm; 1 lembar bersama = 180.864 kg teoritis (7850 kg/m³). Bukan berat timbang; bukan lembar 4×8 kaki.",
       "status": "Model + pembelian",
       "extra": false,
       "revit_ids": [],
-      "source_row": 20
+      "source_row": 20,
+      "verification": "Jumlah/luas/volume model dibaca ulang; stok atau allowance dihitung terpisah"
     },
     {
       "id": "X14",
@@ -843,11 +859,12 @@
       "purchase_qty": 678.2399999999999,
       "labor_rate": 5000.0,
       "material_rate": 12542.857142857143,
-      "basis": "5 lembar 1200×2400×6 mm = 678,24 kg teoritis. Potongan tetap: 232 pasangan kupingan tangga + 274 pasangan rangka 90×120 mm + 40 buhul 200×200 mm. Pola potong 1052 bagian, tepi 10 mm dan celah potong 3 mm sudah diperiksa. Tarif/kg dari Excel.",
+      "basis": "5 lembar 1200×2400×6 mm = 678,24 kg teoritis. Potongan tetap: 232 pasangan kupingan tangga + 274 pasangan rangka 90×120 mm + 40 buhul 200×200 mm. Pola potong 1052 bagian, tepi 10 mm dan celah potong 3 mm sudah diperiksa. Tarif/kg dari Excel. Stok tepat 1200×2400 mm, t=6 mm; 5 lembar bersama = 678.240 kg teoritis (7850 kg/m³). Bukan berat timbang; bukan lembar 4×8 kaki.",
       "status": "Usulan sambungan / pola stok diperiksa",
       "extra": false,
       "revit_ids": [],
-      "source_row": 21
+      "source_row": 21,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "X15",
@@ -862,7 +879,8 @@
       "status": "Usulan sambungan",
       "extra": false,
       "revit_ids": [],
-      "source_row": 22
+      "source_row": 22,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "X17",
@@ -877,7 +895,8 @@
       "status": "Usulan sambungan",
       "extra": false,
       "revit_ids": [],
-      "source_row": 24
+      "source_row": 24,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "X18",
@@ -892,7 +911,8 @@
       "status": "Usulan sambungan",
       "extra": false,
       "revit_ids": [],
-      "source_row": 25
+      "source_row": 25,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "B04",
@@ -907,7 +927,8 @@
       "status": "Usulan sambungan",
       "extra": false,
       "revit_ids": [],
-      "source_row": null
+      "source_row": null,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "B05",
@@ -922,7 +943,8 @@
       "status": "Usulan sambungan",
       "extra": false,
       "revit_ids": [],
-      "source_row": null
+      "source_row": null,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "B06",
@@ -937,7 +959,8 @@
       "status": "Usulan sambungan",
       "extra": false,
       "revit_ids": [],
-      "source_row": null
+      "source_row": null,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "X16",
@@ -952,7 +975,8 @@
       "status": "Cadangan biaya",
       "extra": false,
       "revit_ids": [],
-      "source_row": 23
+      "source_row": 23,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "X19",
@@ -967,7 +991,8 @@
       "status": "Allowance jumlah",
       "extra": false,
       "revit_ids": [],
-      "source_row": 26
+      "source_row": 26,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "X20",
@@ -982,7 +1007,8 @@
       "status": "Usulan pola sekrup",
       "extra": false,
       "revit_ids": [],
-      "source_row": 27
+      "source_row": 27,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "X21",
@@ -997,7 +1023,8 @@
       "status": "Model + pembelian",
       "extra": false,
       "revit_ids": [],
-      "source_row": 28
+      "source_row": 28,
+      "verification": "Jumlah/luas/volume model dibaca ulang; stok atau allowance dihitung terpisah"
     },
     {
       "id": "X22",
@@ -1012,7 +1039,8 @@
       "status": "Model + pembelian",
       "extra": false,
       "revit_ids": [],
-      "source_row": 29
+      "source_row": 29,
+      "verification": "Jumlah/luas/volume model dibaca ulang; stok atau allowance dihitung terpisah"
     },
     {
       "id": "X23",
@@ -1027,7 +1055,8 @@
       "status": "Geometri arsip / allowance",
       "extra": false,
       "revit_ids": [],
-      "source_row": 30
+      "source_row": 30,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "X24",
@@ -1042,7 +1071,8 @@
       "status": "Estimasi luas / tarif paket",
       "extra": false,
       "revit_ids": [],
-      "source_row": 31
+      "source_row": 31,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "E01",
@@ -1057,7 +1087,8 @@
       "status": "Allowance anggaran",
       "extra": true,
       "revit_ids": [],
-      "source_row": null
+      "source_row": null,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "E02",
@@ -1072,7 +1103,8 @@
       "status": "Allowance anggaran",
       "extra": true,
       "revit_ids": [],
-      "source_row": null
+      "source_row": null,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "E03",
@@ -1087,7 +1119,8 @@
       "status": "Allowance anggaran",
       "extra": true,
       "revit_ids": [],
-      "source_row": null
+      "source_row": null,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "E04",
@@ -1102,7 +1135,8 @@
       "status": "Allowance anggaran",
       "extra": true,
       "revit_ids": [],
-      "source_row": null
+      "source_row": null,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "EL01",
@@ -1117,7 +1151,8 @@
       "status": "Allowance anggaran",
       "extra": true,
       "revit_ids": [],
-      "source_row": null
+      "source_row": null,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "EL02",
@@ -1132,7 +1167,8 @@
       "status": "Allowance anggaran",
       "extra": true,
       "revit_ids": [],
-      "source_row": null
+      "source_row": null,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "EL03",
@@ -1147,7 +1183,8 @@
       "status": "Allowance anggaran",
       "extra": true,
       "revit_ids": [],
-      "source_row": null
+      "source_row": null,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "EL04",
@@ -1162,7 +1199,8 @@
       "status": "Allowance anggaran",
       "extra": true,
       "revit_ids": [],
-      "source_row": null
+      "source_row": null,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "EL05",
@@ -1177,7 +1215,8 @@
       "status": "Allowance anggaran",
       "extra": true,
       "revit_ids": [],
-      "source_row": null
+      "source_row": null,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     },
     {
       "id": "EL06",
@@ -1192,7 +1231,8 @@
       "status": "Allowance anggaran",
       "extra": true,
       "revit_ids": [],
-      "source_row": null
+      "source_row": null,
+      "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
     }
   ],
   "source_rows": [
@@ -9514,17 +9554,17 @@
       "case": "model",
       "basis": "purchase",
       "extras": false,
-      "material": 172993619.0,
-      "labor": 68486661.0,
-      "total": 241480280.0
+      "material": 172137636.0,
+      "labor": 68067093.0,
+      "total": 240204729.0
     },
     {
       "case": "model",
       "basis": "purchase",
       "extras": true,
-      "material": 180268619.0,
-      "labor": 90726661.0,
-      "total": 270995280.0
+      "material": 179412636.0,
+      "labor": 90307093.0,
+      "total": 269719729.0
     },
     {
       "case": "h20",
@@ -9546,17 +9586,17 @@
       "case": "h20",
       "basis": "purchase",
       "extras": false,
-      "material": 166873018.0,
-      "labor": 65917221.0,
-      "total": 232790239.0
+      "material": 166017035.0,
+      "labor": 65497653.0,
+      "total": 231514688.0
     },
     {
       "case": "h20",
       "basis": "purchase",
       "extras": true,
-      "material": 174148018.0,
-      "labor": 88157221.0,
-      "total": 262305239.0
+      "material": 173292035.0,
+      "labor": 87737653.0,
+      "total": 261029688.0
     },
     {
       "case": "h16",
@@ -9578,17 +9618,17 @@
       "case": "h16",
       "basis": "purchase",
       "extras": false,
-      "material": 159639227.0,
-      "labor": 62493320.0,
-      "total": 222132547.0
+      "material": 158783244.0,
+      "labor": 62073752.0,
+      "total": 220856996.0
     },
     {
       "case": "h16",
       "basis": "purchase",
       "extras": true,
-      "material": 166914227.0,
-      "labor": 84733320.0,
-      "total": 251647547.0
+      "material": 166058244.0,
+      "labor": 84313752.0,
+      "total": 250371996.0
     }
   ],
   "source_totals": {
@@ -9756,7 +9796,7 @@
     "rail": 95,
     "deck_area_m2": 82.34504912118528,
     "wood_m3": 1.1970162520117404,
-    "steel_purchase_kg": 9640.393999999998
+    "steel_purchase_kg": 9570.465999999999
   },
   "notes": [
     "Tarif upah dan material mengikuti Excel 11 September kecuali spesifikasi berubah atau item tidak tersedia; pengecualian tertulis pada dasar hitungan.",
@@ -9766,6 +9806,1014 @@
     "Nilai sebelum overhead, laba dan pajak tambahan. Harga/kg dari Excel tidak membuktikan harga pemasok terkini.",
     "Versi 1,6/2,0 mm mengganti seluruh hollow 50×100 pada perbandingan biaya; susunan dan panjang potong tetap. Revit masih 2,3 mm.",
     "Versi 1,6 mm seluruh rangka tidak lolos kasus penyaringan balok silang pada tebal asumsi 1,488 mm. Semua versi belum menjadi desain pelaksanaan; perlu sertifikat baja, analisis rangka, sambungan dan betonLT4.",
-    "Pelat sambungan 6 mm dibeli 5 lembar 120×240 cm; berat 678,24 kg dihitung dari dimensi. Buhul 200×200 mm adalah ukuran potongan, bukan ukuran lembar."
-  ]
+    "Pelat sambungan 6 mm dibeli 5 lembar 120×240 cm; berat 678,24 kg dihitung dari dimensi. Buhul 200×200 mm adalah ukuran potongan, bukan ukuran lembar.",
+    "Audit ulang: 545 elemen model dibaca ulang. Stok pelat 2/3/8 mm dikoreksi ke tepat 120×240 cm. Total baja acuan pembelian 9570,466 kg mencakup usulan dan allowance. 54 batang adalah konversi Excel 1620/30; model RHS saja memakai pola97batang, gabungan usulan101batang. Bukan desain pelaksanaan final."
+  ],
+  "quantity_audit": {
+    "revision": "quantity-reaudit-2026-09-11",
+    "live_elements": 545,
+    "parameter_checks": 945,
+    "confirmed_excel_kg": 1620,
+    "confirmed_excel_kg_per_bar": 30,
+    "confirmed_excel_bars": 54,
+    "native_rhs": {
+      "cuts": 245,
+      "length_m": 552.30079949,
+      "stocks": 97,
+      "purchase_kg": 3152.5
+    },
+    "full_rhs": {
+      "cuts": 361,
+      "length_m": 590.13821075,
+      "stocks": 101,
+      "purchase_kg": 3282.5
+    },
+    "shs_batches": {
+      "X07": {
+        "cuts": 10,
+        "length_m": 8.42540047,
+        "stocks": 2,
+        "kg_per_stock": 15.07,
+        "stocks_plan": [
+          {
+            "cuts": [
+              [
+                "1684190",
+                934.6000104
+              ],
+              [
+                "1684206",
+                934.6000104
+              ],
+              [
+                "1684187",
+                934.500036
+              ],
+              [
+                "1684199",
+                934.500036
+              ],
+              [
+                "1684202",
+                934.500036
+              ],
+              [
+                "1684218",
+                934.500036
+              ]
+            ],
+            "used": 5625.2001648
+          },
+          {
+            "cuts": [
+              [
+                "1684196",
+                766.4000928
+              ],
+              [
+                "1684214",
+                766.4000928
+              ],
+              [
+                "1684193",
+                642.7000608
+              ],
+              [
+                "1684210",
+                642.7000608
+              ]
+            ],
+            "used": 2830.2003072
+          }
+        ]
+      },
+      "X08": {
+        "cuts": 85,
+        "length_m": 97.49838768,
+        "stocks": 18,
+        "kg_per_stock": 21.1,
+        "stocks_plan": [
+          {
+            "cuts": [
+              [
+                "1684226",
+                1599.974448
+              ],
+              [
+                "1684232",
+                1599.974448
+              ],
+              [
+                "1684238",
+                1599.974448
+              ],
+              [
+                "1687159",
+                1100.011008
+              ]
+            ],
+            "used": 5911.934352
+          },
+          {
+            "cuts": [
+              [
+                "1684242",
+                1599.974448
+              ],
+              [
+                "1684259",
+                1599.974448
+              ],
+              [
+                "1684264",
+                1599.974448
+              ],
+              [
+                "1687165",
+                1100.011008
+              ]
+            ],
+            "used": 5911.934352
+          },
+          {
+            "cuts": [
+              [
+                "1684268",
+                1599.974448
+              ],
+              [
+                "1684272",
+                1599.974448
+              ],
+              [
+                "1687169",
+                1100.011008
+              ],
+              [
+                "1684221",
+                1099.980528
+              ]
+            ],
+            "used": 5411.940432
+          },
+          {
+            "cuts": [
+              [
+                "1684248",
+                1099.980528
+              ],
+              [
+                "1684254",
+                1099.980528
+              ],
+              [
+                "1684276",
+                1099.980528
+              ],
+              [
+                "1686132",
+                1099.980528
+              ],
+              [
+                "1686137",
+                1099.980528
+              ]
+            ],
+            "used": 5514.90264
+          },
+          {
+            "cuts": [
+              [
+                "1686141",
+                1099.980528
+              ],
+              [
+                "1686145",
+                1099.980528
+              ],
+              [
+                "1686149",
+                1099.980528
+              ],
+              [
+                "1686153",
+                1099.980528
+              ],
+              [
+                "1686157",
+                1099.980528
+              ]
+            ],
+            "used": 5514.90264
+          },
+          {
+            "cuts": [
+              [
+                "1686161",
+                1099.980528
+              ],
+              [
+                "1686166",
+                1099.980528
+              ],
+              [
+                "1686170",
+                1099.980528
+              ],
+              [
+                "1686174",
+                1099.980528
+              ],
+              [
+                "1686178",
+                1099.980528
+              ]
+            ],
+            "used": 5514.90264
+          },
+          {
+            "cuts": [
+              [
+                "1686182",
+                1099.980528
+              ],
+              [
+                "1686186",
+                1099.980528
+              ],
+              [
+                "1686190",
+                1099.980528
+              ],
+              [
+                "1686195",
+                1099.980528
+              ],
+              [
+                "1686199",
+                1099.980528
+              ]
+            ],
+            "used": 5514.90264
+          },
+          {
+            "cuts": [
+              [
+                "1686203",
+                1099.980528
+              ],
+              [
+                "1686207",
+                1099.980528
+              ],
+              [
+                "1686211",
+                1099.980528
+              ],
+              [
+                "1686215",
+                1099.980528
+              ],
+              [
+                "1686219",
+                1099.980528
+              ]
+            ],
+            "used": 5514.90264
+          },
+          {
+            "cuts": [
+              [
+                "1686224",
+                1099.980528
+              ],
+              [
+                "1686228",
+                1099.980528
+              ],
+              [
+                "1686232",
+                1099.980528
+              ],
+              [
+                "1686236",
+                1099.980528
+              ],
+              [
+                "1686240",
+                1099.980528
+              ]
+            ],
+            "used": 5514.90264
+          },
+          {
+            "cuts": [
+              [
+                "1686244",
+                1099.980528
+              ],
+              [
+                "1686248",
+                1099.980528
+              ],
+              [
+                "1686253",
+                1099.980528
+              ],
+              [
+                "1686257",
+                1099.980528
+              ],
+              [
+                "1686261",
+                1099.980528
+              ]
+            ],
+            "used": 5514.90264
+          },
+          {
+            "cuts": [
+              [
+                "1686265",
+                1099.980528
+              ],
+              [
+                "1686269",
+                1099.980528
+              ],
+              [
+                "1686273",
+                1099.980528
+              ],
+              [
+                "1686277",
+                1099.980528
+              ],
+              [
+                "1686281",
+                1099.980528
+              ]
+            ],
+            "used": 5514.90264
+          },
+          {
+            "cuts": [
+              [
+                "1686285",
+                1099.980528
+              ],
+              [
+                "1686289",
+                1099.980528
+              ],
+              [
+                "1686293",
+                1099.980528
+              ],
+              [
+                "1686297",
+                1099.980528
+              ],
+              [
+                "1686301",
+                1099.980528
+              ]
+            ],
+            "used": 5514.90264
+          },
+          {
+            "cuts": [
+              [
+                "1686305",
+                1099.980528
+              ],
+              [
+                "1686309",
+                1099.980528
+              ],
+              [
+                "1686313",
+                1099.980528
+              ],
+              [
+                "1686317",
+                1099.980528
+              ],
+              [
+                "1686321",
+                1099.980528
+              ]
+            ],
+            "used": 5514.90264
+          },
+          {
+            "cuts": [
+              [
+                "1686325",
+                1099.980528
+              ],
+              [
+                "1686329",
+                1099.980528
+              ],
+              [
+                "1686333",
+                1099.980528
+              ],
+              [
+                "1686337",
+                1099.980528
+              ],
+              [
+                "1686341",
+                1099.980528
+              ]
+            ],
+            "used": 5514.90264
+          },
+          {
+            "cuts": [
+              [
+                "1686345",
+                1099.980528
+              ],
+              [
+                "1686349",
+                1099.980528
+              ],
+              [
+                "1686353",
+                1099.980528
+              ],
+              [
+                "1686357",
+                1099.980528
+              ],
+              [
+                "1686361",
+                1099.980528
+              ]
+            ],
+            "used": 5514.90264
+          },
+          {
+            "cuts": [
+              [
+                "1686365",
+                1099.980528
+              ],
+              [
+                "1686369",
+                1099.980528
+              ],
+              [
+                "1686373",
+                1099.980528
+              ],
+              [
+                "1686377",
+                1099.980528
+              ],
+              [
+                "1686381",
+                1099.980528
+              ]
+            ],
+            "used": 5514.90264
+          },
+          {
+            "cuts": [
+              [
+                "1686385",
+                1099.980528
+              ],
+              [
+                "1686388",
+                1099.980528
+              ],
+              [
+                "1686391",
+                1099.980528
+              ],
+              [
+                "1686394",
+                1099.980528
+              ],
+              [
+                "1686397",
+                1099.980528
+              ]
+            ],
+            "used": 5514.90264
+          },
+          {
+            "cuts": [
+              [
+                "1686400",
+                1099.980528
+              ],
+              [
+                "1686403",
+                1099.980528
+              ],
+              [
+                "1686406",
+                1099.980528
+              ]
+            ],
+            "used": 3308.941584
+          }
+        ]
+      }
+    },
+    "plate_corrections": [
+      {
+        "ids": [
+          "X10",
+          "X12"
+        ],
+        "sheets": 26,
+        "thickness_mm": 2,
+        "previous_kg": 1222,
+        "corrected_kg": 1175.616,
+        "difference_kg": -46.384
+      },
+      {
+        "ids": [
+          "X11"
+        ],
+        "sheets": 8,
+        "thickness_mm": 3,
+        "previous_kg": 560,
+        "corrected_kg": 542.592,
+        "difference_kg": -17.408
+      },
+      {
+        "ids": [
+          "X13"
+        ],
+        "sheets": 1,
+        "thickness_mm": 8,
+        "previous_kg": 187,
+        "corrected_kg": 180.864,
+        "difference_kg": -6.136
+      },
+      {
+        "ids": [
+          "X14"
+        ],
+        "sheets": 5,
+        "thickness_mm": 6,
+        "previous_kg": 678.24,
+        "corrected_kg": 678.24,
+        "difference_kg": -0.0
+      }
+    ],
+    "steel_purchase_kg": 9570.466,
+    "previous_steel_purchase_kg": 9640.394,
+    "ledger": [
+      {
+        "id": "X01",
+        "name": "Kolom tribun",
+        "unit": "kg",
+        "excel_qty": 637,
+        "excel_unit": "Kg",
+        "net_qty": 686.95870361,
+        "purchase_qty": 738.94659187,
+        "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog",
+        "basis": "80 elemen; panjang 133.559800 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang."
+      },
+      {
+        "id": "X02",
+        "name": "Balok tepi tier",
+        "unit": "kg",
+        "excel_qty": 416,
+        "excel_unit": "Kg",
+        "net_qty": 379.12400549,
+        "purchase_qty": 409.49441845,
+        "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog",
+        "basis": "15 elemen; panjang 73.710000 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang."
+      },
+      {
+        "id": "X03",
+        "name": "Pengaku longitudinal dek",
+        "unit": "kg",
+        "excel_qty": 416,
+        "excel_unit": "Kg",
+        "net_qty": 1162.77553756,
+        "purchase_qty": 1243.32282044,
+        "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog",
+        "basis": "45 elemen; panjang 226.069001 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang."
+      },
+      {
+        "id": "X04",
+        "name": "Rangka belakang",
+        "unit": "kg",
+        "excel_qty": 98,
+        "excel_unit": "Kg",
+        "net_qty": 89.47552821,
+        "purchase_qty": 95.11486506,
+        "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog",
+        "basis": "4 elemen; panjang 17.396000 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang."
+      },
+      {
+        "id": "X05",
+        "name": "Strut ke kolom beton",
+        "unit": "kg",
+        "excel_qty": 53,
+        "excel_unit": "Kg",
+        "net_qty": 11.17157882,
+        "purchase_qty": 11.8546678,
+        "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog",
+        "basis": "16 elemen; panjang 2.171999 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang. Angkur dan pelat ikatan beton dihitung pada item tersendiri."
+      },
+      {
+        "id": "X06",
+        "name": "Bracing X",
+        "unit": "kg",
+        "excel_qty": 62,
+        "excel_unit": "Kg",
+        "net_qty": 218.02073262,
+        "purchase_qty": 235.69913457,
+        "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog",
+        "basis": "20 elemen; panjang 42.388000 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang."
+      },
+      {
+        "id": "B01",
+        "name": "Balok silang penumpu dek",
+        "unit": "kg",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 293.2077378,
+        "purchase_qty": 314.04168361,
+        "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog",
+        "basis": "65 elemen; panjang 57.005998 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang."
+      },
+      {
+        "id": "B02",
+        "name": "Penyangga tangga / usulan",
+        "unit": "kg",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 194.61493102,
+        "purchase_qty": 234.02581821,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "116 elemen; panjang 37.837400 m. Berat pembelian dialokasikan dari stok bersama menurut panjang potongan pada setiap batang. Penyangga belum menjadi elemen native dan jalur tumpuannya belum final."
+      },
+      {
+        "id": "X07",
+        "name": "Rail atas / elemen horizontal",
+        "unit": "kg",
+        "excel_qty": 435,
+        "excel_unit": "Kg",
+        "net_qty": 19.4250817,
+        "purchase_qty": 30.14,
+        "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog",
+        "basis": "10 elemen; 8.425400 m; 2 stok ×6 m. Family aktif masih M_W Shapes; volume family tidak dipakai sebagai berat hollow."
+      },
+      {
+        "id": "X08",
+        "name": "Tiang railing dan pegangan",
+        "unit": "kg",
+        "excel_qty": 313,
+        "excel_unit": "Kg",
+        "net_qty": 303.42811106,
+        "purchase_qty": 379.8,
+        "verification": "Panjang model dibaca ulang; kg bersih penampang, kg beli katalog",
+        "basis": "85 elemen; 97.498388 m; 18 stok. Harga 2,8 mm mengikuti katalog R04 karena spesifikasi Excel 2 mm berbeda."
+      },
+      {
+        "id": "X09",
+        "name": "Pelat dek",
+        "unit": "kg",
+        "excel_qty": 2850,
+        "excel_unit": "Kg",
+        "net_qty": 2585.63454241,
+        "purchase_qty": 2893.824,
+        "verification": "Jumlah/luas/volume model dibaca ulang; stok atau allowance dihitung terpisah",
+        "basis": "Area 30 floor=82.345049121 m²; pembelian 32 lembar 1200×2400, allowance 10%. Berat motif bordes belum terukur."
+      },
+      {
+        "id": "X10",
+        "name": "Riser, fascia dan return",
+        "unit": "kg",
+        "excel_qty": 1000,
+        "excel_unit": "Kg",
+        "net_qty": 733.46923624,
+        "purchase_qty": 872.08933196,
+        "verification": "Geometri dan pola potong arsip; bukan pembacaan ulang semua pelat native",
+        "basis": "Luas 46.717786 m². Alokasi proporsional dari 26 lembar bersama penutup sisi; bukan tambahan terhadap 26 lembar. Stok tepat 1200×2400 mm, t=2 mm; 26 lembar bersama = 1175.616 kg teoritis (7850 kg/m³). Bukan berat timbang; bukan lembar 4×8 kaki."
+      },
+      {
+        "id": "X11",
+        "name": "Pelat tekuk tangga",
+        "unit": "kg",
+        "excel_qty": 982,
+        "excel_unit": "Kg",
+        "net_qty": 375.88520065,
+        "purchase_qty": 542.592,
+        "verification": "Geometri dan pola potong arsip; bukan pembacaan ulang semua pelat native",
+        "basis": "56 bidang/176 bagian native;8 lembar. Penyangga RHS dan pengaku SHS dipisah agar tidak terhitung dua kali. Stok tepat 1200×2400 mm, t=3 mm; 8 lembar bersama = 542.592 kg teoritis (7850 kg/m³). Bukan berat timbang; bukan lembar 4×8 kaki."
+      },
+      {
+        "id": "B03",
+        "name": "Pengaku tapak tangga / usulan",
+        "unit": "kg",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 329.69194673,
+        "purchase_qty": 406.89,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "143.000000 m dari usulan pengaku tapak;27 stok. Belum menjadi rangka native."
+      },
+      {
+        "id": "X12",
+        "name": "Penutup kedua sisi",
+        "unit": "kg",
+        "excel_qty": 104,
+        "excel_unit": "Kg",
+        "net_qty": 255.28058333,
+        "purchase_qty": 303.52666804,
+        "verification": "Geometri dan pola potong arsip; bukan pembacaan ulang semua pelat native",
+        "basis": "Luas 16.259910 m²; bagian dari total 26 lembar penutup. Belakang dan bawah terbuka. Stok tepat 1200×2400 mm, t=2 mm; 26 lembar bersama = 1175.616 kg teoritis (7850 kg/m³). Bukan berat timbang; bukan lembar 4×8 kaki."
+      },
+      {
+        "id": "X13",
+        "name": "Base plate",
+        "unit": "kg",
+        "excel_qty": 187,
+        "excel_unit": "Kg",
+        "net_qty": 113.04,
+        "purchase_qty": 180.864,
+        "verification": "Jumlah/luas/volume model dibaca ulang; stok atau allowance dihitung terpisah",
+        "basis": "80 dudukan; satu stok 1200×2400×8 mm = 180,864 kg teoritis; sisa stok termasuk sekali. Stok tepat 1200×2400 mm, t=8 mm; 1 lembar bersama = 180.864 kg teoritis (7850 kg/m³). Bukan berat timbang; bukan lembar 4×8 kaki."
+      },
+      {
+        "id": "X14",
+        "name": "Pelat sambungan rangka, tangga dan buhul",
+        "unit": "kg",
+        "excel_qty": 700,
+        "excel_unit": "kg",
+        "net_qty": 590.14416,
+        "purchase_qty": 678.24,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "5 lembar 1200×2400×6 mm = 678,24 kg teoritis. Potongan tetap: 232 pasangan kupingan tangga + 274 pasangan rangka 90×120 mm + 40 buhul 200×200 mm. Pola potong 1052 bagian, tepi 10 mm dan celah potong 3 mm sudah diperiksa. Tarif/kg dari Excel. Stok tepat 1200×2400 mm, t=6 mm; 5 lembar bersama = 678.240 kg teoritis (7850 kg/m³). Bukan berat timbang; bukan lembar 4×8 kaki."
+      },
+      {
+        "id": "X15",
+        "name": "Baut rangka dan X",
+        "unit": "bh",
+        "excel_qty": 693,
+        "excel_unit": "bh",
+        "net_qty": 660.0,
+        "purchase_qty": 693.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "165 framing termasuk 20 diagonal;2 ujung x 2 baut +5%cadangan. Menggantikan komponen baut paket M14; bagian yang dilas dikurangi setelah joint ditetapkan. Baut, mur dan ring adalah komponen terpisah."
+      },
+      {
+        "id": "X17",
+        "name": "Mur rangka dan X",
+        "unit": "bh",
+        "excel_qty": 693,
+        "excel_unit": "bh",
+        "net_qty": 660.0,
+        "purchase_qty": 693.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Satu mur per baut M14 B; bukan tambahan terhadap paket M14 lama. Baut, mur dan ring adalah komponen terpisah."
+      },
+      {
+        "id": "X18",
+        "name": "Ring rangka dan X",
+        "unit": "bh",
+        "excel_qty": 1386,
+        "excel_unit": "bh",
+        "net_qty": 1320.0,
+        "purchase_qty": 1386.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Dua ring per baut M14 B; paket M14 lama dihapus agar tidak dihitung ganda. Baut, mur dan ring adalah komponen terpisah."
+      },
+      {
+        "id": "B04",
+        "name": "Baut tangga",
+        "unit": "bh",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 464.0,
+        "purchase_qty": 488.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "232 titik x 2 baut +5% cadangan; grip 2 pelat 6 mm, verifikasi panjang. Baut, mur dan ring adalah komponen terpisah."
+      },
+      {
+        "id": "B05",
+        "name": "Mur tangga",
+        "unit": "bh",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 464.0,
+        "purchase_qty": 488.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Satu mur per baut; sudah terpisah dari harga batang baut. Baut, mur dan ring adalah komponen terpisah."
+      },
+      {
+        "id": "B06",
+        "name": "Ring tangga",
+        "unit": "bh",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 928.0,
+        "purchase_qty": 976.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Dua ring per baut. Baut, mur dan ring adalah komponen terpisah."
+      },
+      {
+        "id": "X16",
+        "name": "Ikatan ke kolom beton / cadangan",
+        "unit": "ls",
+        "excel_qty": 32,
+        "excel_unit": "bh",
+        "net_qty": 1.0,
+        "purchase_qty": 1.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Mengganti hitungan 32 dynaboltM10 yang belum terverifikasi. Anggaran R04 untuk 16 titik termasuk desain, pelat, angkur dan pemasangan; bukan jumlah angkur final."
+      },
+      {
+        "id": "X19",
+        "name": "Sekrup kayu ke baja + ring",
+        "unit": "set",
+        "excel_qty": 500,
+        "excel_unit": "bh",
+        "net_qty": 500.0,
+        "purchase_qty": 500.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Papan 40 mm ke RHS2,3 mm;500 set allowance. Tipe wood-to-steel, kapasitas bor dan panjang ulir harus sesuai katalog produsen; ukuran 65 mm adalah usulan pengadaan, bukan stok terkonfirmasi."
+      },
+      {
+        "id": "X20",
+        "name": "Sekrup penutup + ring EPDM",
+        "unit": "set",
+        "excel_qty": 2449,
+        "excel_unit": "bh",
+        "net_qty": 2332.0,
+        "purchase_qty": 2449.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "234 panel vertikal, kisi perimeter<=300 mm, inset 15 mm: 2332 titik +5%cadangan. Return dan potongan kecil dilas. Panel 2 mm + RHS2,3 mm: minta kapasitas bor minimal 4,3 mm dan data pull-out. Ukuran 32 mm usulan, stok belum dikonfirmasi."
+      },
+      {
+        "id": "X21",
+        "name": "Karet dudukan",
+        "unit": "bh",
+        "excel_qty": 100,
+        "excel_unit": "bh",
+        "net_qty": 80.0,
+        "purchase_qty": 80.0,
+        "verification": "Jumlah/luas/volume model dibaca ulang; stok atau allowance dihitung terpisah",
+        "basis": "80 dudukan aktif; satu karet per base plate."
+      },
+      {
+        "id": "X22",
+        "name": "Papan pinus dudukan",
+        "unit": "m",
+        "excel_qty": 200,
+        "excel_unit": "m1",
+        "net_qty": 74.81351575,
+        "purchase_qty": 82.29486733,
+        "verification": "Jumlah/luas/volume model dibaca ulang; stok atau allowance dihitung terpisah",
+        "basis": "Volume 15 floor=1.197016252 m³ ÷(0,4×0,04); pembelian+10%. Bukan 200 m tanpa dasar geometri."
+      },
+      {
+        "id": "X23",
+        "name": "Panel kayu sandaran",
+        "unit": "m",
+        "excel_qty": 20,
+        "excel_unit": "m1",
+        "net_qty": 18.225,
+        "purchase_qty": 20.0475,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Luas 7,29 m² dari geometri arsip, bukan hasil ukur Revit baru. Pembelian+10%. Koreksi label 400×40 cm menjadi lebar 400 mm/tebal 40 mm."
+      },
+      {
+        "id": "X24",
+        "name": "Cat dan coating baja",
+        "unit": "m²",
+        "excel_qty": 8253,
+        "excel_unit": "kg",
+        "net_qty": 626.05615443,
+        "purchase_qty": 626.05615443,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Estimasi permukaan 626.0562 m²; nilai paket cat Excel Rp 28,885,500 dibagi luas. Penipisan hollow tidak mengurangi luas cat. Tarif ini normalisasi paket Excel, bukan harga/m² pemasok."
+      },
+      {
+        "id": "E01",
+        "name": "Backing penutup dan hardware railing",
+        "unit": "ls",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 1.0,
+        "purchase_qty": 1.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Cadangan material backing/tab penutup, kupingan railing dan penyambung rel yang belum terukur. Di luar SDS M16 dan sekrup kayu M15. Berat belum masuk dasar jasa; sesuaikan saat detail dirilis."
+      },
+      {
+        "id": "E02",
+        "name": "Sistem antiselip tangga",
+        "unit": "m2",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 15.0,
+        "purchase_qty": 15.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Sistem agregat antiselip di atas pelat polos; material dan pemasangan spesialis termasuk, pola nosing kontras."
+      },
+      {
+        "id": "E03",
+        "name": "Clear coat kayu",
+        "unit": "L",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 19.0,
+        "purchase_qty": 19.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Dua sisi bidang utama,2 lapis,10 m 2/L,25%loss; belum mengurangi bidang tertutup."
+      },
+      {
+        "id": "E04",
+        "name": "Jasa tekuk pelat",
+        "unit": "tekuk",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 112.0,
+        "purchase_qty": 112.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "112 tekukan; mesin bengkel vendor, di luar tarif las/ereksi."
+      },
+      {
+        "id": "EL01",
+        "name": "Angkut bengkel-lokasi + bongkar",
+        "unit": "rit",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 2.0,
+        "purchase_qty": 2.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Bukan ongkir toko-bengkel; ukuran truk/jam akses diverifikasi."
+      },
+      {
+        "id": "EL02",
+        "name": "Hoist dan alat angkat LT4",
+        "unit": "hari",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 7.0,
+        "purchase_qty": 7.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Allowance 7 hari, kapasitas/jalur angkat ditentukan metode kerja."
+      },
+      {
+        "id": "EL03",
+        "name": "Perancah dan penyangga sementara",
+        "unit": "ls",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 1.0,
+        "purchase_qty": 1.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Sewa, pengiriman dan pembongkaran."
+      },
+      {
+        "id": "EL04",
+        "name": "Pengukuran + kontrol mutu las/cat",
+        "unit": "ls",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 1.0,
+        "purchase_qty": 1.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Allowance ukur, inspeksi visual, DFT dan dokumentasi. Tidak termasuk uji beton laboratorium."
+      },
+      {
+        "id": "EL05",
+        "name": "Pembersihan, APD dan proteksi",
+        "unit": "ls",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 1.0,
+        "purchase_qty": 1.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Area LT4, alat keselamatan kerja dan serah terima."
+      },
+      {
+        "id": "EL06",
+        "name": "Verifikasi desain + investigasi tumpuan",
+        "unit": "ls",
+        "excel_qty": null,
+        "excel_unit": null,
+        "net_qty": 1.0,
+        "purchase_qty": 1.0,
+        "verification": "Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan",
+        "basis": "Provisional sum pemeriksaan insinyur dan pengumpulan data beton; lingkup lab mengikuti temuan."
+      }
+    ],
+    "decision": "Gunakan volume model untuk lingkup model, bukan 54 batang hasil konversi Excel. Pertahankan 101 sebagai pola layak model + usulan, bukan minimum terbukti. Semua usulan tetap berlabel dan belum final.",
+    "limits": "RHS memakai massa katalog 32,5 kg/6 m pada 2,3 mm. Angka30 kg dari Bam adalah pembagi Excel, bukan berat timbang. Pelat120×240 dihitung geometris. Profil railing masih memakai family pengganti; berat family tidak dipakai. Sambungan, backing, angkur, coating, cadangan dan pengaku usulan belum menjadi kebutuhan pelaksanaan final."
+  }
 }

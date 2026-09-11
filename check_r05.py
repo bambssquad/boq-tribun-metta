@@ -23,7 +23,7 @@ assert len(new)==361 and len(s['procurement']['baseline_cuts'])==101
 for key,mass in [('model',3282.5),('h20',2854.26),('h16',2283.61)]:
  assert abs(s['procurement']['variants'][key]['purchase_kg']-mass)<1e-6
  assert abs(sum(({**r,**r.get('variants',{}).get(key,{})})['purchase_qty'] for r in d['rows'][:8])-mass)<1e-6
-assert abs(sum(r['purchase_qty'] for r in d['rows'] if r['unit']=='kg')-9640.394)<1e-6
+assert abs(sum(r['purchase_qty'] for r in d['rows'] if r['unit']=='kg')-9570.466)<1e-6
 plate=d['plate_stock'];assert plate['sheet_count']==5 and abs(plate['purchase_kg']-678.24)<1e-8
 assert len(d['source_rows'])==24
 print('PASS: rounded sections, long-span/thin-bearer boundaries, restraint sensitivity, 361 unique cuts, 101 stocks at all thicknesses, steel and plate masses reconciled.')

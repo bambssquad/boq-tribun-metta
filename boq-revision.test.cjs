@@ -85,3 +85,20 @@ for(const selected of ['model','h20','h16','source']) {
  }
 }
 console.log('PASS: kg explanation, scope distinction, selected thickness, manual quantities and invariant costs.');
+
+{
+ const state=B.defaults();B.edit(state,'X13','qty',187);B.edit(state,'X13','material_rate',12345);
+ B.edit(state,'X01','qty',0);B.profile(state).removed=['X12'];
+ assert(B.auditHtml(d,state).includes('Ada volume edit manual'));
+ B.applyAuditQuantities(d,state);
+ assert(Math.abs(B.rows(d,state).find(r=>r.id==='X13').qty-180.864)<1e-8);
+ assert.equal(B.rows(d,state).find(r=>r.id==='X13').material_rate,12345);
+ assert(!B.rows(d,state).some(r=>r.id==='X12'));
+ assert(B.rows(d,state).find(r=>r.id==='X01').qty>0);
+ assert(B.auditHtml(d,state).includes('9.570,47'));
+ assert.equal(d.quantity_audit.ledger.length,d.rows.length);
+ const ref=B.rows(d,B.defaults());assert(Math.abs(ref.filter(r=>r.unit==='kg').reduce((n,r)=>n+r.qty,0)-9570.466)<1e-6);
+ for(const [id,q] of [['X11',542.592],['X13',180.864]])assert(Math.abs(ref.find(r=>r.id===id).qty-q)<1e-6);
+ state.case='source';B.edit(state,'X01','qty',99);B.applyAuditQuantities(d,state);assert.equal(B.rows(d,state).find(r=>r.id==='X01').qty,99);
+ console.log('PASS: corrected plate masses and quantity restore preserve rates, removed rows and Excel edits.');
+}
