@@ -1,0 +1,117 @@
+{
+  "source_filename": "BOQ TRIBU METTA 11-09-2026.xlsx",
+  "source_sheet": "Sheet1",
+  "source_rows": [
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "excel_rhs_kg": 1620,
+  "example_excel_kg_per_bar": 30,
+  "example_excel_bars": 54.0,
+  "stock_length_m": 6,
+  "model_stocks": 101,
+  "model_purchase_kg": 3282.5,
+  "model_cut_length_m": 590.13821075,
+  "native_length_m": 552.30081075,
+  "proposal_length_m": 37.8374,
+  "native_cuts": 245,
+  "proposal_cuts": 116,
+  "unique_cuts": 361,
+  "kerf_m": 1.083,
+  "offcut_m": 14.77878925,
+  "length_lower_bound": 99,
+  "minimum_proven": false,
+  "example54_available_m": 324,
+  "example54_length_shortfall_m": 266.13821075,
+  "duplicate_solids": [],
+  "collinear_overlaps": [],
+  "aligned_members_checked": 209,
+  "length_mismatches": [],
+  "bridge": [
+    {
+      "id": "X01",
+      "name": "Kolom tribun",
+      "excel_rhs_kg": 637,
+      "model_purchase_kg": 738.94659187,
+      "difference_kg": 101.94659187,
+      "length_m": 133.55979994,
+      "pieces": 80,
+      "note": "Perbandingan label; kesetaraan lingkup belum dikonfirmasi dari daftar potong Excel."
+    },
+    {
+      "id": "X02",
+      "name": "Balok tepi tier",
+      "excel_rhs_kg": 416,
+      "model_purchase_kg": 409.49441845,
+      "difference_kg": -6.50558155,
+      "length_m": 73.71000041,
+      "pieces": 15,
+      "note": "Perbandingan label; kesetaraan lingkup belum dikonfirmasi dari daftar potong Excel."
+    },
+    {
+      "id": "X03",
+      "name": "Pengaku longitudinal dek",
+      "excel_rhs_kg": 416,
+      "model_purchase_kg": 1243.32282044,
+      "difference_kg": 827.32282044,
+      "length_m": 226.06900146,
+      "pieces": 45,
+      "note": "Perbandingan label; kesetaraan lingkup belum dikonfirmasi dari daftar potong Excel."
+    },
+    {
+      "id": "X04",
+      "name": "Rangka belakang",
+      "excel_rhs_kg": 98,
+      "model_purchase_kg": 95.11486506,
+      "difference_kg": -2.88513494,
+      "length_m": 17.39600006,
+      "pieces": 4,
+      "note": "Perbandingan label; kesetaraan lingkup belum dikonfirmasi dari daftar potong Excel."
+    },
+    {
+      "id": "X05",
+      "name": "Strut ke kolom beton",
+      "excel_rhs_kg": 53,
+      "model_purchase_kg": 11.8546678,
+      "difference_kg": -41.1453322,
+      "length_m": 2.17199931,
+      "pieces": 16,
+      "note": "Perbandingan label; kesetaraan lingkup belum dikonfirmasi dari daftar potong Excel."
+    },
+    {
+      "id": "X06",
+      "name": "Bracing X",
+      "excel_rhs_kg": 0,
+      "model_purchase_kg": 235.69913457,
+      "difference_kg": 235.69913457,
+      "length_m": 42.38799986,
+      "pieces": 20,
+      "note": "Excel bracing62kg adalah40x40; bukan bagian1620kg RHS."
+    },
+    {
+      "id": "B01",
+      "name": "Balok silang penumpu dek",
+      "excel_rhs_kg": 0,
+      "model_purchase_kg": 314.04168361,
+      "difference_kg": 314.04168361,
+      "length_m": 57.00599846,
+      "pieces": 65,
+      "note": "Tidak ada baris RHS terpisah di Excel; bukan bukti tidak tercakup dalam pekerjaan lain."
+    },
+    {
+      "id": "B02",
+      "name": "Penyangga tangga / usulan",
+      "excel_rhs_kg": 0,
+      "model_purchase_kg": 234.02581821,
+      "difference_kg": 234.02581821,
+      "length_m": 37.8374,
+      "pieces": 116,
+      "note": "Tidak ada baris RHS terpisah di Excel; bukan bukti tidak tercakup dalam pekerjaan lain."
+    }
+  ],
+  "conclusion": "54 batang dapat benar untuk lingkup Excel/asumsi lain.101 adalah pola layak untuk361potongan pada versi model+usulan ini, bukan lingkup yang sama atau minimum global terbukti.",
+  "provenance": "Sumber Excel adalah ekstraksi tersimpan11Sep; ID/panjang dari audit11Sep. Geometri pemeriksaan duplikat adalah arsipR04 yang direkonsiliasi, bukan pengukuran lapangan."
+}
