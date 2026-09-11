@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1690003,
+    "rows": [
+      {
+        "name": "A",
+        "value": 0.007053,
+        "readOnly": false
+      },
+      {
+        "name": "b",
+        "value": 0.164042,
+        "readOnly": false
+      },
+      {
+        "name": "Code Name",
+        "value": "",
+        "readOnly": true
+      },
+      {
+        "name": "Cost",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Export Type to IFC",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Family Name",
+        "value": "Rectangular and Square Hollow Sections",
+        "readOnly": true
+      },
+      {
+        "name": "Ht",
+        "value": 0.328084,
+        "readOnly": false
+      },
+      {
+        "name": "t",
+        "value": 0.007546,
+        "readOnly": false
+      },
+      {
+        "name": "tr",
+        "value": 0.015092,
+        "readOnly": false
+      },
+      {
+        "name": "Type Comments",
+        "value": "STUDI - 50x100x2.3 mm; Ht 100 vertikal. Berat katalog 32.5 kg/6m; sifat penampang wajib verifikasi sertifikat. Bukan izin fabrikasi.",
+        "readOnly": false
+      },
+      {
+        "name": "Type IfcGUID",
+        "value": "2Or9opkLHDZgmY2Rxe370X",
+        "readOnly": false
+      },
+      {
+        "name": "Type Image",
+        "value": -1,
+        "readOnly": true
+      },
+      {
+        "name": "Type Name",
+        "value": "RHS 50x100x2.3 - STUDI METTA",
+        "readOnly": true
+      },
+      {
+        "name": "W",
+        "value": 0.053119,
+        "readOnly": false
+      }
+    ]
+  },
+  {
+    "id": 1690189,
+    "rows": [
+      {
+        "name": "A",
+        "value": 0.007053,
+        "readOnly": false
+      },
+      {
+        "name": "b",
+        "value": 0.164042,
+        "readOnly": false
+      },
+      {
+        "name": "Code Name",
+        "value": "",
+        "readOnly": true
+      },
+      {
+        "name": "Cost",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Export Type to IFC",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Family Name",
+        "value": "Rectangular and Square Hollow Sections",
+        "readOnly": true
+      },
+      {
+        "name": "Ht",
+        "value": 0.328084,
+        "readOnly": false
+      },
+      {
+        "name": "t",
+        "value": 0.007546,
+        "readOnly": false
+      },
+      {
+        "name": "tr",
+        "value": 0.015092,
+        "readOnly": false
+      },
+      {
+        "name": "Type IfcGUID",
+        "value": "0DaZfdAkrD9vXxtAr5sXvq",
+        "readOnly": false
+      },
+      {
+        "name": "Type Image",
+        "value": -1,
+        "readOnly": true
+      },
+      {
+        "name": "Type Name",
+        "value": "RHS 50x100x2.3 - BALOK SILANG STUDI",
+        "readOnly": true
+      },
+      {
+        "name": "W",
+        "value": 0.053119,
+        "readOnly": false
+      }
+    ]
+  },
+  {
+    "id": 1690183,
+    "rows": [
+      {
+        "name": "A",
+        "value": 0.007053,
+        "readOnly": false
+      },
+      {
+        "name": "b",
+        "value": 0.164042,
+        "readOnly": false
+      },
+      {
+        "name": "Code Name",
+        "value": "",
+        "readOnly": true
+      },
+      {
+        "name": "Cost",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Export Type to IFC",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Family Name",
+        "value": "Rectangular and Square Hollow Sections",
+        "readOnly": true
+      },
+      {
+        "name": "Ht",
+        "value": 0.328084,
+        "readOnly": false
+      },
+      {
+        "name": "t",
+        "value": 0.007546,
+        "readOnly": false
+      },
+      {
+        "name": "tr",
+        "value": 0.015092,
+        "readOnly": false
+      },
+      {
+        "name": "Type Comments",
+        "value": "STUDI: detail sambungan belum untuk fabrikasi. Periksa gaya tarik/tekan, eksentrisitas beda bidang 60mm, leleh/tekuk lokal dinding 2.3mm, gusset, las dan angkur. Jangan anggap crossing X sebagai tumpuan tengah.",
+        "readOnly": false
+      },
+      {
+        "name": "Type IfcGUID",
+        "value": "0DaZfdAkrD9vXxtAr5sXv_",
+        "readOnly": false
+      },
+      {
+        "name": "Type Image",
+        "value": -1,
+        "readOnly": true
+      },
+      {
+        "name": "Type Name",
+        "value": "RHS 50x100x2.3 - BRACING X STUDI",
+        "readOnly": true
+      },
+      {
+        "name": "W",
+        "value": 0.053119,
+        "readOnly": false
+      }
+    ]
+  },
+  {
+    "id": 1676351,
+    "rows": [
+      {
+        "name": "A",
+        "value": 0.04467,
+        "readOnly": false
+      },
+      {
+        "name": "b",
+        "value": 0.164042,
+        "readOnly": false
+      },
+      {
+        "name": "Code Name",
+        "value": "",
+        "readOnly": true
+      },
+      {
+        "name": "Cost",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Export Type to IFC",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Family Name",
+        "value": "M_HSS-Hollow Structural Section-Column",
+        "readOnly": true
+      },
+      {
+        "name": "Ht",
+        "value": 0.328084,
+        "readOnly": false
+      },
+      {
+        "name": "kr",
+        "value": 0.015092,
+        "readOnly": false
+      },
+      {
+        "name": "t",
+        "value": 0.007546,
+        "readOnly": false
+      },
+      {
+        "name": "Type Comments",
+        "value": "Hollow 50x100x2,3 (nama toko: Besi Hollow 50 x 100 x 2,3mm x 6M). Las sudut a=4 mm keliling ke base plate 150x150x8. Kolom duduk lepas di atas karet 10 mm, TANPA dynabolt ke pelat lantai. Gaya 12,8 kN, rasio 0,23.",
+        "readOnly": false
+      },
+      {
+        "name": "Type IfcGUID",
+        "value": "3KHRgooYH5$x6X2043iMIh",
+        "readOnly": false
+      },
+      {
+        "name": "Type Image",
+        "value": -1,
+        "readOnly": true
+      },
+      {
+        "name": "Type Mark",
+        "value": "TR-KOL-50100",
+        "readOnly": false
+      },
+      {
+        "name": "Type Name",
+        "value": "HOLLOW 50x100x2.3 KOLOM",
+        "readOnly": true
+      },
+      {
+        "name": "W",
+        "value": 0.34,
+        "readOnly": false
+      }
+    ]
+  },
+  {
+    "id": 1676072,
+    "rows": [
+      {
+        "name": "Bolt Diameter",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Bolt Spacing",
+        "value": 0.291667,
+        "readOnly": false
+      },
+      {
+        "name": "Centroid Horizontal",
+        "value": 0.0655,
+        "readOnly": false
+      },
+      {
+        "name": "Centroid Vertical",
+        "value": 0.0655,
+        "readOnly": false
+      },
+      {
+        "name": "Clear Web Height",
+        "value": 1.135171,
+        "readOnly": false
+      },
+      {
+        "name": "Code Name",
+        "value": "AISC 15.0",
+        "readOnly": true
+      },
+      {
+        "name": "Cost",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Elastic Modulus strong axis",
+        "value": 0.032701,
+        "readOnly": false
+      },
+      {
+        "name": "Elastic Modulus weak axis",
+        "value": 0.004061,
+        "readOnly": false
+      },
+      {
+        "name": "Export Type to IFC",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Family Name",
+        "value": "M_W Shapes",
+        "readOnly": true
+      },
+      {
+        "name": "Flange Thickness",
+        "value": 0.00919,
+        "readOnly": false
+      },
+      {
+        "name": "Flange Toe of Fillet",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Height",
+        "value": 0.131,
+        "readOnly": false
+      },
+      {
+        "name": "Moment of Inertia strong axis",
+        "value": 0.02155,
+        "readOnly": false
+      },
+      {
+        "name": "Moment of Inertia weak axis",
+        "value": 0.001182,
+        "readOnly": false
+      },
+      {
+        "name": "Nominal Weight",
+        "value": 519.75245,
+        "readOnly": false
+      },
+      {
+        "name": "Perimeter",
+        "value": 4.888451,
+        "readOnly": false
+      },
+      {
+        "name": "Plastic Modulus strong axis",
+        "value": 0.03708,
+        "readOnly": false
+      },
+      {
+        "name": "Plastic Modulus weak axis",
+        "value": 0.006251,
+        "readOnly": false
+      },
+      {
+        "name": "Principal Axes Angle",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Section Area",
+        "value": 0.073625,
+        "readOnly": false
+      },
+      {
+        "name": "Section Name Key",
+        "value": "W410X53",
+        "readOnly": true
+      },
+      {
+        "name": "Shear Area strong axis",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Shear Area weak axis",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Torsional Modulus",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Torsional Moment of Inertia",
+        "value": 0.000026,
+        "readOnly": false
+      },
+      {
+        "name": "Type IfcGUID",
+        "value": "3KHRgooYH5$x6X2043iMEy",
+        "readOnly": false
+      },
+      {
+        "name": "Type Image",
+        "value": -1,
+        "readOnly": true
+      },
+      {
+        "name": "Type Name",
+        "value": "HOLLOW 40x40x2 (RAILING HITAM)",
+        "readOnly": true
+      },
+      {
+        "name": "Warping Constant",
+        "value": 0.000489,
+        "readOnly": false
+      },
+      {
+        "name": "Web Fillet",
+        "value": 0.033465,
+        "readOnly": false
+      },
+      {
+        "name": "Web Thickness",
+        "value": 0.00919,
+        "readOnly": false
+      },
+      {
+        "name": "Web Toe of Fillet",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Width",
+        "value": 0.131,
+        "readOnly": false
+      }
+    ]
+  },
+  {
+    "id": 1684185,
+    "rows": [
+      {
+        "name": "A",
+        "value": 0.04467,
+        "readOnly": false
+      },
+      {
+        "name": "b",
+        "value": 0.131,
+        "readOnly": false
+      },
+      {
+        "name": "Code Name",
+        "value": "",
+        "readOnly": true
+      },
+      {
+        "name": "Cost",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Export Type to IFC",
+        "value": 0,
+        "readOnly": false
+      },
+      {
+        "name": "Family Name",
+        "value": "M_HSS-Hollow Structural Section-Column",
+        "readOnly": true
+      },
+      {
+        "name": "Ht",
+        "value": 0.1312,
+        "readOnly": false
+      },
+      {
+        "name": "kr",
+        "value": 0.018372,
+        "readOnly": false
+      },
+      {
+        "name": "t",
+        "value": 0.009186,
+        "readOnly": false
+      },
+      {
+        "name": "Type Comments",
+        "value": "Tiang railing/pegangan: las sudut a=4 mm keliling ke plat dek atau ke pelat dudukan 6 mm di kolom beton (2x dynabolt M10). Beban rencana 0,74 kN/m horizontal di puncak.",
+        "readOnly": false
+      },
+      {
+        "name": "Type IfcGUID",
+        "value": "2iIOLCylD6De$oCZJnlTKA",
+        "readOnly": false
+      },
+      {
+        "name": "Type Image",
+        "value": -1,
+        "readOnly": true
+      },
+      {
+        "name": "Type Mark",
+        "value": "TR-TIANG-RAIL-40",
+        "readOnly": false
+      },
+      {
+        "name": "Type Name",
+        "value": "HOLLOW 40x40x2.8 TIANG RAILING",
+        "readOnly": true
+      },
+      {
+        "name": "W",
+        "value": 0.34,
+        "readOnly": false
+      }
+    ]
+  }
+]
