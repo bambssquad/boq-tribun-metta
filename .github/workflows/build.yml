@@ -34,6 +34,7 @@ jobs:
           python check_r05.py
           python plate_stock_r05.py
           python audit_stock_r05.py
+          python check_r06.py
           node boq-revision.test.cjs
           node kg_pricing.test.cjs
           node lookback.test.cjs

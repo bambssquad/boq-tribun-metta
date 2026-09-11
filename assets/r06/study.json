@@ -1,0 +1,4653 @@
+{
+  "revision": "R06-STUDI",
+  "params": {
+    "E": 200000.0,
+    "fy": 235.0,
+    "fu": 370.0,
+    "density": 7850.0,
+    "dead_kPa": 1.5,
+    "live_kPa": 5.0,
+    "thickness_factor": 0.93,
+    "joist_pitch_mm": 250.0,
+    "bearer_span_mm": 1060.0,
+    "column_height_mm": 2482.0,
+    "guard_height_mm": 1100.0,
+    "guard_line_kNm": 0.73,
+    "guard_point_kN": 0.89,
+    "step_point_kN": 1.334,
+    "dead_deflection_divisor": 360,
+    "guard_deflection_limit_mm": 11.0,
+    "new_base_allowance_low": 250000,
+    "new_base_allowance_high": 500000,
+    "new_bearer_connection_allowance": 100000
+  },
+  "sources": [
+    {
+      "name": "SNI 1727:2020 — beban; status berlaku",
+      "url": "https://pesta.bsn.go.id/produk/detail/12927-sni17272020"
+    },
+    {
+      "name": "SNI 1729:2020 — baja; adopsi AISC 360-16",
+      "url": "https://pesta.bsn.go.id/produk/detail/12882-sni17292020"
+    },
+    {
+      "name": "SNI 7971:2013 — rute desain baja canai dingin bila produknya relevan",
+      "url": "https://pesta.bsn.go.id/produk/detail/9714-sni79712013"
+    },
+    {
+      "name": "SNI 1726:2019 — gempa; BSN",
+      "url": "https://pesta.bsn.go.id/produk/by_ics/626"
+    },
+    {
+      "name": "BSN — SNI 2847:2019 dan 1726:2019",
+      "url": "https://infopublik.id/kategori/nasional-sosial-budaya/701313/index.html"
+    },
+    {
+      "name": "ICC 300-2017 §303 — pembanding khusus tribun, bukan pengganti SNI",
+      "url": "https://codes.iccsafe.org/content/ICC3002017/chapter-3-construction?site_type=public"
+    },
+    {
+      "name": "AISC — F7 dan contoh penampang efektif",
+      "url": "https://www.aisc.org/globalassets/aisc/manual/v15.1-companion/v15.1_vol-1_design-examples.pdf"
+    },
+    {
+      "name": "STI — batas kelangsingan lentur HSS",
+      "url": "https://steeltubeinstitute.org/resources/width-thickness-requirements-square-rectangular-hss-subject-flexure/"
+    },
+    {
+      "name": "STI — elemen langsing pada kolom HSS",
+      "url": "https://steeltubeinstitute.org/resources/effects-of-slender-elements-in-hss-compression-members/"
+    },
+    {
+      "name": "AISC — faktor tebal menurut standar produk",
+      "url": "https://www.aisc.org/aisc/solutions-center/hss/"
+    },
+    {
+      "name": "STI — sambungan pelat melintang ke hollow",
+      "url": "https://steeltubeinstitute.org/resources/transverse-plate-to-squarerectangular-hss-connections/"
+    },
+    {
+      "name": "STI — batas penerapan rumus sambungan",
+      "url": "https://steeltubeinstitute.org/resources/hss-limits-of-applicability/"
+    },
+    {
+      "name": "AISC — bearing dan tearout lubang baut",
+      "url": "https://www.aisc.org/globalassets/modern-steel/archives/2017/05/ataleoftearouts.pdf"
+    },
+    {
+      "name": "AISC — getaran lantai dan aktivitas ritmis",
+      "url": "https://www.aisc.org/globalassets/aisc/publications/facts-for-steel-buildings-5-vibrations.pdf"
+    },
+    {
+      "name": "SMS Perkasa — katalog 27 Agustus, diperiksa 11 September 2026",
+      "url": "https://www.smsperkasa.com/produk/besi-hollow-hitam"
+    }
+  ],
+  "geometry": {
+    "core_axes_mm": [
+      0,
+      1770,
+      3540,
+      4830,
+      6870,
+      7080,
+      8850,
+      10620,
+      12230,
+      12870,
+      14160,
+      15930,
+      17700
+    ],
+    "columns": [
+      {
+        "id": 1678283,
+        "x": 0,
+        "y": 0,
+        "height": 482.01
+      },
+      {
+        "id": 1678286,
+        "x": 0,
+        "y": 1000,
+        "height": 982.01
+      },
+      {
+        "id": 1678289,
+        "x": 0,
+        "y": 2000,
+        "height": 1482.0
+      },
+      {
+        "id": 1678292,
+        "x": 350,
+        "y": 3000,
+        "height": 1981.99
+      },
+      {
+        "id": 1678295,
+        "x": 0,
+        "y": 4000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678298,
+        "x": 0,
+        "y": 5000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678360,
+        "x": 1770,
+        "y": 0,
+        "height": 482.01
+      },
+      {
+        "id": 1678362,
+        "x": 1770,
+        "y": 1000,
+        "height": 982.01
+      },
+      {
+        "id": 1678364,
+        "x": 1770,
+        "y": 2000,
+        "height": 1482.0
+      },
+      {
+        "id": 1678383,
+        "x": 1770,
+        "y": 3000,
+        "height": 1981.99
+      },
+      {
+        "id": 1678385,
+        "x": 1770,
+        "y": 4000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678387,
+        "x": 1770,
+        "y": 5000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678389,
+        "x": 3540,
+        "y": 0,
+        "height": 482.01
+      },
+      {
+        "id": 1678391,
+        "x": 3540,
+        "y": 1000,
+        "height": 982.01
+      },
+      {
+        "id": 1678393,
+        "x": 3540,
+        "y": 2000,
+        "height": 1482.0
+      },
+      {
+        "id": 1678395,
+        "x": 3540,
+        "y": 3000,
+        "height": 1981.99
+      },
+      {
+        "id": 1678397,
+        "x": 3540,
+        "y": 4000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678399,
+        "x": 3540,
+        "y": 5000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678411,
+        "x": 5310,
+        "y": 5000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678413,
+        "x": 7080,
+        "y": 0,
+        "height": 482.01
+      },
+      {
+        "id": 1678415,
+        "x": 7080,
+        "y": 1000,
+        "height": 982.01
+      },
+      {
+        "id": 1678417,
+        "x": 7080,
+        "y": 2000,
+        "height": 1482.0
+      },
+      {
+        "id": 1678419,
+        "x": 7080,
+        "y": 3000,
+        "height": 1981.99
+      },
+      {
+        "id": 1678421,
+        "x": 7080,
+        "y": 4000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678423,
+        "x": 7080,
+        "y": 5000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678425,
+        "x": 4830,
+        "y": 0,
+        "height": 482.01
+      },
+      {
+        "id": 1678427,
+        "x": 4830,
+        "y": 1000,
+        "height": 982.01
+      },
+      {
+        "id": 1678429,
+        "x": 4830,
+        "y": 2000,
+        "height": 1482.0
+      },
+      {
+        "id": 1678431,
+        "x": 4830,
+        "y": 3000,
+        "height": 1981.99
+      },
+      {
+        "id": 1678433,
+        "x": 4830,
+        "y": 4000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678435,
+        "x": 8850,
+        "y": 5000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678437,
+        "x": 10620,
+        "y": 0,
+        "height": 482.01
+      },
+      {
+        "id": 1678439,
+        "x": 10620,
+        "y": 1000,
+        "height": 982.01
+      },
+      {
+        "id": 1678441,
+        "x": 10620,
+        "y": 2000,
+        "height": 1482.0
+      },
+      {
+        "id": 1678443,
+        "x": 10620,
+        "y": 3000,
+        "height": 1981.99
+      },
+      {
+        "id": 1678445,
+        "x": 10620,
+        "y": 4000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678447,
+        "x": 10620,
+        "y": 5000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678459,
+        "x": 12390,
+        "y": 5000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678461,
+        "x": 14160,
+        "y": 0,
+        "height": 482.01
+      },
+      {
+        "id": 1678463,
+        "x": 14160,
+        "y": 1000,
+        "height": 982.01
+      },
+      {
+        "id": 1678465,
+        "x": 14160,
+        "y": 2000,
+        "height": 1482.0
+      },
+      {
+        "id": 1678467,
+        "x": 14160,
+        "y": 3000,
+        "height": 1981.99
+      },
+      {
+        "id": 1678469,
+        "x": 14160,
+        "y": 4000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678471,
+        "x": 14160,
+        "y": 5000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678473,
+        "x": 15930,
+        "y": 0,
+        "height": 482.01
+      },
+      {
+        "id": 1678475,
+        "x": 15930,
+        "y": 1000,
+        "height": 982.01
+      },
+      {
+        "id": 1678477,
+        "x": 15930,
+        "y": 2000,
+        "height": 1482.0
+      },
+      {
+        "id": 1678479,
+        "x": 15930,
+        "y": 3000,
+        "height": 1981.99
+      },
+      {
+        "id": 1678481,
+        "x": 15930,
+        "y": 4000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678483,
+        "x": 15930,
+        "y": 5000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678485,
+        "x": 17700,
+        "y": 0,
+        "height": 482.01
+      },
+      {
+        "id": 1678487,
+        "x": 17700,
+        "y": 1000,
+        "height": 982.01
+      },
+      {
+        "id": 1678489,
+        "x": 17700,
+        "y": 2000,
+        "height": 1482.0
+      },
+      {
+        "id": 1678491,
+        "x": 17350,
+        "y": 3000,
+        "height": 1981.99
+      },
+      {
+        "id": 1678493,
+        "x": 17700,
+        "y": 4000,
+        "height": 2481.99
+      },
+      {
+        "id": 1678495,
+        "x": 17700,
+        "y": 5000,
+        "height": 2481.99
+      },
+      {
+        "id": 1682244,
+        "x": 6870,
+        "y": 0,
+        "height": 482.01
+      },
+      {
+        "id": 1682249,
+        "x": 6870,
+        "y": 1000,
+        "height": 982.01
+      },
+      {
+        "id": 1682253,
+        "x": 6870,
+        "y": 2000,
+        "height": 1482.0
+      },
+      {
+        "id": 1682257,
+        "x": 6870,
+        "y": 3000,
+        "height": 1981.99
+      },
+      {
+        "id": 1682262,
+        "x": 6870,
+        "y": 4000,
+        "height": 2481.99
+      },
+      {
+        "id": 1682266,
+        "x": 12230,
+        "y": 0,
+        "height": 482.01
+      },
+      {
+        "id": 1682271,
+        "x": 12230,
+        "y": 1000,
+        "height": 982.01
+      },
+      {
+        "id": 1682275,
+        "x": 12230,
+        "y": 2000,
+        "height": 1482.0
+      },
+      {
+        "id": 1682279,
+        "x": 12230,
+        "y": 3000,
+        "height": 1981.99
+      },
+      {
+        "id": 1682284,
+        "x": 12230,
+        "y": 4000,
+        "height": 2481.99
+      },
+      {
+        "id": 1682288,
+        "x": 12870,
+        "y": 0,
+        "height": 482.01
+      },
+      {
+        "id": 1682293,
+        "x": 12870,
+        "y": 1000,
+        "height": 982.01
+      },
+      {
+        "id": 1682297,
+        "x": 12870,
+        "y": 2000,
+        "height": 1482.0
+      },
+      {
+        "id": 1682301,
+        "x": 12870,
+        "y": 3000,
+        "height": 1981.99
+      },
+      {
+        "id": 1682306,
+        "x": 12870,
+        "y": 4000,
+        "height": 2481.99
+      },
+      {
+        "id": 1690193,
+        "x": 8850,
+        "y": 0,
+        "height": 482.01
+      },
+      {
+        "id": 1690197,
+        "x": 8850,
+        "y": 1000,
+        "height": 982.01
+      },
+      {
+        "id": 1690201,
+        "x": 8850,
+        "y": 2000,
+        "height": 1482.0
+      },
+      {
+        "id": 1690205,
+        "x": 8850,
+        "y": 3000,
+        "height": 1981.99
+      },
+      {
+        "id": 1690209,
+        "x": 8850,
+        "y": 4000,
+        "height": 2481.99
+      },
+      {
+        "id": 1690213,
+        "x": 4830,
+        "y": 5000,
+        "height": 2481.99
+      },
+      {
+        "id": 1690217,
+        "x": 6870,
+        "y": 5000,
+        "height": 2481.99
+      },
+      {
+        "id": 1690221,
+        "x": 12230,
+        "y": 5000,
+        "height": 2481.99
+      },
+      {
+        "id": 1690225,
+        "x": 12870,
+        "y": 5000,
+        "height": 2481.99
+      }
+    ],
+    "source": "Arsip R04; 340/340 ID framing/column masih ada pada pemeriksaan live11Sep. Tiga parameter sampel dibaca; koordinat seluruh node belum diukur ulang."
+  },
+  "baseline_total": 241480280.0,
+  "matrix": [
+    {
+      "key": "model-existing",
+      "thickness_mm": 2.3,
+      "target_gap_mm": null,
+      "max_gap_mm": 2040,
+      "new_axes": [],
+      "axes": [
+        0,
+        1770,
+        3540,
+        4830,
+        6870,
+        7080,
+        8850,
+        10620,
+        12230,
+        12870,
+        14160,
+        15930,
+        17700
+      ],
+      "columns": 80,
+      "added_columns": 0,
+      "bearers": 65,
+      "added_bearers": 0,
+      "stocks": 101,
+      "purchase_kg": 3282.5,
+      "cut_count": 361,
+      "added_cut_length_m": 0.0,
+      "stair_conflicts": [],
+      "layout_status": "Belum verifikasi beton/akses/MEP",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 2.3,
+        "span_mm": 2040,
+        "tributary_m": 0.25,
+        "Mu_kNm": 1.322634,
+        "capacity_kNm": 3.36664091,
+        "bending_ratio": 0.39286459,
+        "shear_ratio": 0.04918888,
+        "deflection_mm": 2.30211169,
+        "deflection_limit_mm": 5.66666667,
+        "deflection_ratio": 0.406255,
+        "local_frequency_Hz": 11.53469672,
+        "compact_domain": true,
+        "ratio": 0.406255,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 2.3,
+        "span_mm": 1060,
+        "tributary_m": 2.04,
+        "Mu_kNm": 2.8078764,
+        "capacity_kNm": 3.36664091,
+        "bending_ratio": 0.83402907,
+        "shear_ratio": 0.20856083,
+        "deflection_mm": 1.36936537,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.46506748,
+        "local_frequency_Hz": 15.14412404,
+        "compact_domain": true,
+        "ratio": 0.83402907,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 19.992,
+          "capacity_kN": 64.88349989,
+          "KLr": 117.67271796,
+          "Pe_kN": 87.18809575,
+          "amplification": 1.29751729,
+          "interaction": 0.5585337,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 19.992,
+          "capacity_kN": 17.20439099,
+          "KLr": 235.34543592,
+          "Pe_kN": 21.79702394,
+          "amplification": 12.07575339,
+          "interaction": 3.49256911,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 241480280,
+      "cost_high": 241480280,
+      "delta_low": 0,
+      "delta_high": 0,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "h20-existing",
+      "thickness_mm": 2.0,
+      "target_gap_mm": null,
+      "max_gap_mm": 2040,
+      "new_axes": [],
+      "axes": [
+        0,
+        1770,
+        3540,
+        4830,
+        6870,
+        7080,
+        8850,
+        10620,
+        12230,
+        12870,
+        14160,
+        15930,
+        17700
+      ],
+      "columns": 80,
+      "added_columns": 0,
+      "bearers": 65,
+      "added_bearers": 0,
+      "stocks": 101,
+      "purchase_kg": 2854.26,
+      "cut_count": 361,
+      "added_cut_length_m": 0.0,
+      "stair_conflicts": [],
+      "layout_status": "Belum verifikasi beton/akses/MEP",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 2.0,
+        "span_mm": 2040,
+        "tributary_m": 0.25,
+        "Mu_kNm": 1.322634,
+        "capacity_kNm": 2.9721312,
+        "bending_ratio": 0.44501198,
+        "shear_ratio": 0.05606576,
+        "deflection_mm": 2.60768548,
+        "deflection_limit_mm": 5.66666667,
+        "deflection_ratio": 0.46017979,
+        "local_frequency_Hz": 10.8569243,
+        "compact_domain": true,
+        "ratio": 0.46017979,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 2.0,
+        "span_mm": 1060,
+        "tributary_m": 2.04,
+        "Mu_kNm": 2.8078764,
+        "capacity_kNm": 2.9721312,
+        "bending_ratio": 0.94473501,
+        "shear_ratio": 0.23771881,
+        "deflection_mm": 1.55112986,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.52679882,
+        "local_frequency_Hz": 14.23232103,
+        "compact_domain": true,
+        "ratio": 0.94473501,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 19.992,
+          "capacity_kN": 57.24290484,
+          "KLr": 116.98194093,
+          "Pe_kN": 77.20593614,
+          "amplification": 1.34942536,
+          "interaction": 0.64335035,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 19.992,
+          "capacity_kN": 15.23466135,
+          "KLr": 233.96388187,
+          "Pe_kN": 19.30148403,
+          "amplification": null,
+          "interaction": null,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 232790239,
+      "cost_high": 232790239,
+      "delta_low": -8690041,
+      "delta_high": -8690041,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "h16-existing",
+      "thickness_mm": 1.6,
+      "target_gap_mm": null,
+      "max_gap_mm": 2040,
+      "new_axes": [],
+      "axes": [
+        0,
+        1770,
+        3540,
+        4830,
+        6870,
+        7080,
+        8850,
+        10620,
+        12230,
+        12870,
+        14160,
+        15930,
+        17700
+      ],
+      "columns": 80,
+      "added_columns": 0,
+      "bearers": 65,
+      "added_bearers": 0,
+      "stocks": 101,
+      "purchase_kg": 2283.61,
+      "cut_count": 361,
+      "added_cut_length_m": 0.0,
+      "stair_conflicts": [],
+      "layout_status": "Belum verifikasi beton/akses/MEP",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 2040,
+        "tributary_m": 0.25,
+        "Mu_kNm": 1.322634,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 0.54525502,
+        "shear_ratio": 0.06926354,
+        "deflection_mm": 3.19509061,
+        "deflection_limit_mm": 5.66666667,
+        "deflection_ratio": 0.56383952,
+        "local_frequency_Hz": 9.83180247,
+        "compact_domain": true,
+        "ratio": 0.56383952,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 1060,
+        "tributary_m": 2.04,
+        "Mu_kNm": 2.8078764,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 1.15754526,
+        "shear_ratio": 0.29367739,
+        "deflection_mm": 1.90053613,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.6454651,
+        "local_frequency_Hz": 12.86150505,
+        "compact_domain": true,
+        "ratio": 1.15754526,
+        "passes_member_screen": false
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 19.992,
+          "capacity_kN": 44.41233828,
+          "KLr": 116.07317726,
+          "Pe_kN": 63.26891514,
+          "amplification": 1.46195529,
+          "interaction": 0.8389604,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 19.992,
+          "capacity_kN": 12.48453868,
+          "KLr": 232.14635452,
+          "Pe_kN": 15.81722878,
+          "amplification": null,
+          "interaction": null,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 222132547,
+      "cost_high": 222132547,
+      "delta_low": -19347733,
+      "delta_high": -19347733,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": false,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "model-1770",
+      "thickness_mm": 2.3,
+      "target_gap_mm": 1770,
+      "max_gap_mm": 1770,
+      "new_axes": [
+        5850.0
+      ],
+      "axes": [
+        0,
+        1770,
+        3540,
+        4830,
+        5850.0,
+        6870,
+        7080,
+        8850,
+        10620,
+        12230,
+        12870,
+        14160,
+        15930,
+        17700
+      ],
+      "columns": 86,
+      "added_columns": 6,
+      "bearers": 70,
+      "added_bearers": 5,
+      "stocks": 103,
+      "purchase_kg": 3347.5,
+      "cut_count": 372,
+      "added_cut_length_m": 15.19199,
+      "stair_conflicts": [
+        {
+          "x": 5850.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5850.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 2.3,
+        "span_mm": 1770,
+        "tributary_m": 0.25,
+        "Mu_kNm": 1.12069763,
+        "capacity_kNm": 3.36664091,
+        "bending_ratio": 0.33288303,
+        "shear_ratio": 0.04267858,
+        "deflection_mm": 1.30466432,
+        "deflection_limit_mm": 4.91666667,
+        "deflection_ratio": 0.26535546,
+        "local_frequency_Hz": 15.32215962,
+        "compact_domain": true,
+        "ratio": 0.33288303,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 2.3,
+        "span_mm": 1060,
+        "tributary_m": 1.77,
+        "Mu_kNm": 2.4362457,
+        "capacity_kNm": 3.36664091,
+        "bending_ratio": 0.72364287,
+        "shear_ratio": 0.18095719,
+        "deflection_mm": 1.18812583,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.40351443,
+        "local_frequency_Hz": 16.25381826,
+        "compact_domain": true,
+        "ratio": 0.72364287,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 17.346,
+          "capacity_kN": 64.88349989,
+          "KLr": 117.67271796,
+          "Pe_kN": 87.18809575,
+          "amplification": 1.24836024,
+          "interaction": 0.47637877,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 17.346,
+          "capacity_kN": 17.20439099,
+          "KLr": 235.34543592,
+          "Pe_kN": 21.79702394,
+          "amplification": 4.89708082,
+          "interaction": 1.82824774,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 244739280,
+      "cost_high": 246239280,
+      "delta_low": 3259000,
+      "delta_high": 4759000,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "h20-1770",
+      "thickness_mm": 2.0,
+      "target_gap_mm": 1770,
+      "max_gap_mm": 1770,
+      "new_axes": [
+        5850.0
+      ],
+      "axes": [
+        0,
+        1770,
+        3540,
+        4830,
+        5850.0,
+        6870,
+        7080,
+        8850,
+        10620,
+        12230,
+        12870,
+        14160,
+        15930,
+        17700
+      ],
+      "columns": 86,
+      "added_columns": 6,
+      "bearers": 70,
+      "added_bearers": 5,
+      "stocks": 103,
+      "purchase_kg": 2910.78,
+      "cut_count": 372,
+      "added_cut_length_m": 15.19199,
+      "stair_conflicts": [
+        {
+          "x": 5850.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5850.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 2.0,
+        "span_mm": 1770,
+        "tributary_m": 0.25,
+        "Mu_kNm": 1.12069763,
+        "capacity_kNm": 2.9721312,
+        "bending_ratio": 0.37706869,
+        "shear_ratio": 0.04864529,
+        "deflection_mm": 1.47784064,
+        "deflection_limit_mm": 4.91666667,
+        "deflection_ratio": 0.30057776,
+        "local_frequency_Hz": 14.42183797,
+        "compact_domain": true,
+        "ratio": 0.37706869,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 2.0,
+        "span_mm": 1060,
+        "tributary_m": 1.77,
+        "Mu_kNm": 2.4362457,
+        "capacity_kNm": 2.9721312,
+        "bending_ratio": 0.81969655,
+        "shear_ratio": 0.20625603,
+        "deflection_mm": 1.34583327,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.45707545,
+        "local_frequency_Hz": 15.27571538,
+        "compact_domain": true,
+        "ratio": 0.81969655,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 17.346,
+          "capacity_kN": 57.24290484,
+          "KLr": 116.98194093,
+          "Pe_kN": 77.20593614,
+          "amplification": 1.28977645,
+          "interaction": 0.54692142,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 17.346,
+          "capacity_kN": 15.23466135,
+          "KLr": 233.96388187,
+          "Pe_kN": 19.30148403,
+          "amplification": 9.87043806,
+          "interaction": 3.00508951,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 235877159,
+      "cost_high": 237377159,
+      "delta_low": -5603121,
+      "delta_high": -4103121,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "h16-1770",
+      "thickness_mm": 1.6,
+      "target_gap_mm": 1770,
+      "max_gap_mm": 1770,
+      "new_axes": [
+        5850.0
+      ],
+      "axes": [
+        0,
+        1770,
+        3540,
+        4830,
+        5850.0,
+        6870,
+        7080,
+        8850,
+        10620,
+        12230,
+        12870,
+        14160,
+        15930,
+        17700
+      ],
+      "columns": 86,
+      "added_columns": 6,
+      "bearers": 70,
+      "added_bearers": 5,
+      "stocks": 103,
+      "purchase_kg": 2328.83,
+      "cut_count": 372,
+      "added_cut_length_m": 15.19199,
+      "stair_conflicts": [
+        {
+          "x": 5850.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5850.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 1770,
+        "tributary_m": 0.25,
+        "Mu_kNm": 1.12069763,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 0.46200688,
+        "shear_ratio": 0.0600963,
+        "deflection_mm": 1.81073783,
+        "deflection_limit_mm": 4.91666667,
+        "deflection_ratio": 0.36828566,
+        "local_frequency_Hz": 13.06011337,
+        "compact_domain": true,
+        "ratio": 0.46200688,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 1060,
+        "tributary_m": 1.77,
+        "Mu_kNm": 2.4362457,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 1.00434074,
+        "shear_ratio": 0.25480832,
+        "deflection_mm": 1.64899458,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.5600359,
+        "local_frequency_Hz": 13.80503121,
+        "compact_domain": true,
+        "ratio": 1.00434074,
+        "passes_member_screen": false
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 17.346,
+          "capacity_kN": 44.41233828,
+          "KLr": 116.07317726,
+          "Pe_kN": 63.26891514,
+          "amplification": 1.37771992,
+          "interaction": 0.70848374,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 17.346,
+          "capacity_kN": 12.48453868,
+          "KLr": 232.14635452,
+          "Pe_kN": 15.81722878,
+          "amplification": null,
+          "interaction": null,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 225008424,
+      "cost_high": 226508424,
+      "delta_low": -16471856,
+      "delta_high": -14971856,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": false,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "model-1500",
+      "thickness_mm": 2.3,
+      "target_gap_mm": 1500,
+      "max_gap_mm": 1290,
+      "new_axes": [
+        885.0,
+        2655.0,
+        5850.0,
+        7965.0,
+        9735.0,
+        11425.0,
+        15045.0,
+        16815.0
+      ],
+      "axes": [
+        0,
+        885.0,
+        1770,
+        2655.0,
+        3540,
+        4830,
+        5850.0,
+        6870,
+        7080,
+        7965.0,
+        8850,
+        9735.0,
+        10620,
+        11425.0,
+        12230,
+        12870,
+        14160,
+        15045.0,
+        15930,
+        16815.0,
+        17700
+      ],
+      "columns": 128,
+      "added_columns": 48,
+      "bearers": 105,
+      "added_bearers": 40,
+      "stocks": 121,
+      "purchase_kg": 3932.5,
+      "cut_count": 449,
+      "added_cut_length_m": 121.53592,
+      "stair_conflicts": [
+        {
+          "x": 5850.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5850.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 2.3,
+        "span_mm": 1290,
+        "tributary_m": 0.25,
+        "Mu_kNm": 0.78194962,
+        "capacity_kNm": 3.36664091,
+        "bending_ratio": 0.23226404,
+        "shear_ratio": 0.03110473,
+        "deflection_mm": 0.45974394,
+        "deflection_limit_mm": 3.58333333,
+        "deflection_ratio": 0.12830063,
+        "local_frequency_Hz": 28.84609932,
+        "compact_domain": true,
+        "ratio": 0.23226404,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 2.3,
+        "span_mm": 1060,
+        "tributary_m": 1.29,
+        "Mu_kNm": 1.7755689,
+        "capacity_kNm": 3.36664091,
+        "bending_ratio": 0.52740074,
+        "shear_ratio": 0.13188405,
+        "deflection_mm": 0.86592222,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.29408679,
+        "local_frequency_Hz": 19.0247079,
+        "compact_domain": true,
+        "ratio": 0.52740074,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 12.642,
+          "capacity_kN": 64.88349989,
+          "KLr": 117.67271796,
+          "Pe_kN": 87.18809575,
+          "amplification": 1.16958635,
+          "interaction": 0.25799901,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 12.642,
+          "capacity_kN": 17.20439099,
+          "KLr": 235.34543592,
+          "Pe_kN": 21.79702394,
+          "amplification": 2.38088115,
+          "interaction": 1.02537495,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 270070280,
+      "cost_high": 282070280,
+      "delta_low": 28590000,
+      "delta_high": 40590000,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "h20-1500",
+      "thickness_mm": 2.0,
+      "target_gap_mm": 1500,
+      "max_gap_mm": 1290,
+      "new_axes": [
+        885.0,
+        2655.0,
+        5850.0,
+        7965.0,
+        9735.0,
+        11425.0,
+        15045.0,
+        16815.0
+      ],
+      "axes": [
+        0,
+        885.0,
+        1770,
+        2655.0,
+        3540,
+        4830,
+        5850.0,
+        6870,
+        7080,
+        7965.0,
+        8850,
+        9735.0,
+        10620,
+        11425.0,
+        12230,
+        12870,
+        14160,
+        15045.0,
+        15930,
+        16815.0,
+        17700
+      ],
+      "columns": 128,
+      "added_columns": 48,
+      "bearers": 105,
+      "added_bearers": 40,
+      "stocks": 121,
+      "purchase_kg": 3419.46,
+      "cut_count": 449,
+      "added_cut_length_m": 121.53592,
+      "stair_conflicts": [
+        {
+          "x": 5850.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5850.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 2.0,
+        "span_mm": 1290,
+        "tributary_m": 0.25,
+        "Mu_kNm": 0.78194962,
+        "capacity_kNm": 2.9721312,
+        "bending_ratio": 0.26309391,
+        "shear_ratio": 0.03545335,
+        "deflection_mm": 0.52076865,
+        "deflection_limit_mm": 3.58333333,
+        "deflection_ratio": 0.14533079,
+        "local_frequency_Hz": 27.15111842,
+        "compact_domain": true,
+        "ratio": 0.26309391,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 2.0,
+        "span_mm": 1060,
+        "tributary_m": 1.29,
+        "Mu_kNm": 1.7755689,
+        "capacity_kNm": 2.9721312,
+        "bending_ratio": 0.59740596,
+        "shear_ratio": 0.15032219,
+        "deflection_mm": 0.98086153,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.33312278,
+        "local_frequency_Hz": 17.88154674,
+        "compact_domain": true,
+        "ratio": 0.59740596,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 12.642,
+          "capacity_kN": 57.24290484,
+          "KLr": 116.98194093,
+          "Pe_kN": 77.20593614,
+          "amplification": 1.19580591,
+          "interaction": 0.38565284,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 12.642,
+          "capacity_kN": 15.23466135,
+          "KLr": 233.96388187,
+          "Pe_kN": 19.30148403,
+          "amplification": 2.89834527,
+          "interaction": 1.22926466,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 259659439,
+      "cost_high": 271659439,
+      "delta_low": 18179159,
+      "delta_high": 30179159,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "h16-1500",
+      "thickness_mm": 1.6,
+      "target_gap_mm": 1500,
+      "max_gap_mm": 1290,
+      "new_axes": [
+        885.0,
+        2655.0,
+        5850.0,
+        7965.0,
+        9735.0,
+        11425.0,
+        15045.0,
+        16815.0
+      ],
+      "axes": [
+        0,
+        885.0,
+        1770,
+        2655.0,
+        3540,
+        4830,
+        5850.0,
+        6870,
+        7080,
+        7965.0,
+        8850,
+        9735.0,
+        10620,
+        11425.0,
+        12230,
+        12870,
+        14160,
+        15045.0,
+        15930,
+        16815.0,
+        17700
+      ],
+      "columns": 128,
+      "added_columns": 48,
+      "bearers": 105,
+      "added_bearers": 40,
+      "stocks": 121,
+      "purchase_kg": 2735.81,
+      "cut_count": 449,
+      "added_cut_length_m": 121.53592,
+      "stair_conflicts": [
+        {
+          "x": 5850.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5850.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 1290,
+        "tributary_m": 0.25,
+        "Mu_kNm": 0.78194962,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 0.32235823,
+        "shear_ratio": 0.043799,
+        "deflection_mm": 0.63807657,
+        "deflection_limit_mm": 3.58333333,
+        "deflection_ratio": 0.17806788,
+        "local_frequency_Hz": 24.58748223,
+        "compact_domain": true,
+        "ratio": 0.32235823,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 1060,
+        "tributary_m": 1.29,
+        "Mu_kNm": 1.7755689,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 0.73197715,
+        "shear_ratio": 0.18570776,
+        "deflection_mm": 1.20180961,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.40816175,
+        "local_frequency_Hz": 16.16204894,
+        "compact_domain": true,
+        "ratio": 0.73197715,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 12.642,
+          "capacity_kN": 44.41233828,
+          "KLr": 116.07317726,
+          "Pe_kN": 63.26891514,
+          "amplification": 1.24970907,
+          "interaction": 0.49482397,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 12.642,
+          "capacity_kN": 12.48453868,
+          "KLr": 232.14635452,
+          "Pe_kN": 15.81722878,
+          "amplification": 4.98144539,
+          "interaction": 1.85038111,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 246891313,
+      "cost_high": 258891313,
+      "delta_low": 5411033,
+      "delta_high": 17411033,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "model-1250",
+      "thickness_mm": 2.3,
+      "target_gap_mm": 1250,
+      "max_gap_mm": 1020.0,
+      "new_axes": [
+        885.0,
+        2655.0,
+        4185.0,
+        5850.0,
+        7965.0,
+        9735.0,
+        11425.0,
+        13515.0,
+        15045.0,
+        16815.0
+      ],
+      "axes": [
+        0,
+        885.0,
+        1770,
+        2655.0,
+        3540,
+        4185.0,
+        4830,
+        5850.0,
+        6870,
+        7080,
+        7965.0,
+        8850,
+        9735.0,
+        10620,
+        11425.0,
+        12230,
+        12870,
+        13515.0,
+        14160,
+        15045.0,
+        15930,
+        16815.0,
+        17700
+      ],
+      "columns": 140,
+      "added_columns": 60,
+      "bearers": 115,
+      "added_bearers": 50,
+      "stocks": 126,
+      "purchase_kg": 4095.0,
+      "cut_count": 471,
+      "added_cut_length_m": 151.9199,
+      "stair_conflicts": [
+        {
+          "x": 5850.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5850.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 2.3,
+        "span_mm": 1020.0,
+        "tributary_m": 0.25,
+        "Mu_kNm": 0.6027945,
+        "capacity_kNm": 3.36664091,
+        "bending_ratio": 0.17904924,
+        "shear_ratio": 0.0255235,
+        "deflection_mm": 0.21848359,
+        "deflection_limit_mm": 2.83333333,
+        "deflection_ratio": 0.07711186,
+        "local_frequency_Hz": 46.1387869,
+        "compact_domain": true,
+        "ratio": 0.17904924,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 2.3,
+        "span_mm": 1060,
+        "tributary_m": 1.02,
+        "Mu_kNm": 1.4039382,
+        "capacity_kNm": 3.36664091,
+        "bending_ratio": 0.41701454,
+        "shear_ratio": 0.10428042,
+        "deflection_mm": 0.68468268,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.23253374,
+        "local_frequency_Hz": 21.37922381,
+        "compact_domain": true,
+        "ratio": 0.41701454,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 9.996,
+          "capacity_kN": 64.88349989,
+          "KLr": 117.67271796,
+          "Pe_kN": 87.18809575,
+          "amplification": 1.12949512,
+          "interaction": 0.19964696,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 9.996,
+          "capacity_kN": 17.20439099,
+          "KLr": 235.34543592,
+          "Pe_kN": 21.79702394,
+          "amplification": 1.84704514,
+          "interaction": 0.75924818,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 277217780,
+      "cost_high": 292217780,
+      "delta_low": 35737500,
+      "delta_high": 50737500,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "h20-1250",
+      "thickness_mm": 2.0,
+      "target_gap_mm": 1250,
+      "max_gap_mm": 1020.0,
+      "new_axes": [
+        885.0,
+        2655.0,
+        4185.0,
+        5850.0,
+        7965.0,
+        9735.0,
+        11425.0,
+        13515.0,
+        15045.0,
+        16815.0
+      ],
+      "axes": [
+        0,
+        885.0,
+        1770,
+        2655.0,
+        3540,
+        4185.0,
+        4830,
+        5850.0,
+        6870,
+        7080,
+        7965.0,
+        8850,
+        9735.0,
+        10620,
+        11425.0,
+        12230,
+        12870,
+        13515.0,
+        14160,
+        15045.0,
+        15930,
+        16815.0,
+        17700
+      ],
+      "columns": 140,
+      "added_columns": 60,
+      "bearers": 115,
+      "added_bearers": 50,
+      "stocks": 126,
+      "purchase_kg": 3560.76,
+      "cut_count": 471,
+      "added_cut_length_m": 151.9199,
+      "stair_conflicts": [
+        {
+          "x": 5850.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5850.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 2.0,
+        "span_mm": 1020.0,
+        "tributary_m": 0.25,
+        "Mu_kNm": 0.6027945,
+        "capacity_kNm": 2.9721312,
+        "bending_ratio": 0.20281558,
+        "shear_ratio": 0.02909182,
+        "deflection_mm": 0.2474843,
+        "deflection_limit_mm": 2.83333333,
+        "deflection_ratio": 0.0873474,
+        "local_frequency_Hz": 43.4276972,
+        "compact_domain": true,
+        "ratio": 0.20281558,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 2.0,
+        "span_mm": 1060,
+        "tributary_m": 1.02,
+        "Mu_kNm": 1.4039382,
+        "capacity_kNm": 2.9721312,
+        "bending_ratio": 0.4723675,
+        "shear_ratio": 0.11885941,
+        "deflection_mm": 0.77556493,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.26339941,
+        "local_frequency_Hz": 20.09642722,
+        "compact_domain": true,
+        "ratio": 0.4723675,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 9.996,
+          "capacity_kN": 57.24290484,
+          "KLr": 116.98194093,
+          "Pe_kN": 77.20593614,
+          "amplification": 1.14872801,
+          "interaction": 0.22814,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 9.996,
+          "capacity_kN": 15.23466135,
+          "KLr": 233.96388187,
+          "Pe_kN": 19.30148403,
+          "amplification": 2.07420527,
+          "interaction": 0.88216771,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 266376739,
+      "cost_high": 281376739,
+      "delta_low": 24896459,
+      "delta_high": 39896459,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "h16-1250",
+      "thickness_mm": 1.6,
+      "target_gap_mm": 1250,
+      "max_gap_mm": 1020.0,
+      "new_axes": [
+        885.0,
+        2655.0,
+        4185.0,
+        5850.0,
+        7965.0,
+        9735.0,
+        11425.0,
+        13515.0,
+        15045.0,
+        16815.0
+      ],
+      "axes": [
+        0,
+        885.0,
+        1770,
+        2655.0,
+        3540,
+        4185.0,
+        4830,
+        5850.0,
+        6870,
+        7080,
+        7965.0,
+        8850,
+        9735.0,
+        10620,
+        11425.0,
+        12230,
+        12870,
+        13515.0,
+        14160,
+        15045.0,
+        15930,
+        16815.0,
+        17700
+      ],
+      "columns": 140,
+      "added_columns": 60,
+      "bearers": 115,
+      "added_bearers": 50,
+      "stocks": 126,
+      "purchase_kg": 2848.86,
+      "cut_count": 471,
+      "added_cut_length_m": 151.9199,
+      "stair_conflicts": [
+        {
+          "x": 5850.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5850.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5850.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5850.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5850.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5850.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 1020.0,
+        "tributary_m": 0.25,
+        "Mu_kNm": 0.6027945,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 0.24850165,
+        "shear_ratio": 0.03593999,
+        "deflection_mm": 0.30323241,
+        "deflection_limit_mm": 2.83333333,
+        "deflection_ratio": 0.1070232,
+        "local_frequency_Hz": 39.32720989,
+        "compact_domain": true,
+        "ratio": 0.24850165,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 1060,
+        "tributary_m": 1.02,
+        "Mu_kNm": 1.4039382,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 0.57877263,
+        "shear_ratio": 0.14683869,
+        "deflection_mm": 0.95026806,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.32273255,
+        "local_frequency_Hz": 18.16620605,
+        "compact_domain": true,
+        "ratio": 0.57877263,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 9.996,
+          "capacity_kN": 44.41233828,
+          "KLr": 116.07317726,
+          "Pe_kN": 63.26891514,
+          "amplification": 1.18763756,
+          "interaction": 0.38300203,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 9.996,
+          "capacity_kN": 12.48453868,
+          "KLr": 232.14635452,
+          "Pe_kN": 15.81722878,
+          "amplification": 2.71716323,
+          "interaction": 1.16199276,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 253081005,
+      "cost_high": 268081005,
+      "delta_low": 11600725,
+      "delta_high": 26600725,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "model-1000",
+      "thickness_mm": 2.3,
+      "target_gap_mm": 1000,
+      "max_gap_mm": 885.0,
+      "new_axes": [
+        885.0,
+        2655.0,
+        4185.0,
+        5510.0,
+        6190.0,
+        7965.0,
+        9735.0,
+        11425.0,
+        13515.0,
+        15045.0,
+        16815.0
+      ],
+      "axes": [
+        0,
+        885.0,
+        1770,
+        2655.0,
+        3540,
+        4185.0,
+        4830,
+        5510.0,
+        6190.0,
+        6870,
+        7080,
+        7965.0,
+        8850,
+        9735.0,
+        10620,
+        11425.0,
+        12230,
+        12870,
+        13515.0,
+        14160,
+        15045.0,
+        15930,
+        16815.0,
+        17700
+      ],
+      "columns": 146,
+      "added_columns": 66,
+      "bearers": 120,
+      "added_bearers": 55,
+      "stocks": 129,
+      "purchase_kg": 4192.5,
+      "cut_count": 482,
+      "added_cut_length_m": 167.11189,
+      "stair_conflicts": [
+        {
+          "x": 5510.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5510.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5510.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5510.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5510.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5510.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5510.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5510.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5510.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5510.0,
+          "y": 5000,
+          "stair_id": 1686591
+        },
+        {
+          "x": 6190.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 6190.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 6190.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 6190.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 6190.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 6190.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 6190.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 6190.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 6190.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 6190.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 2.3,
+        "span_mm": 885.0,
+        "tributary_m": 0.25,
+        "Mu_kNm": 0.51629241,
+        "capacity_kNm": 3.36664091,
+        "bending_ratio": 0.15335535,
+        "shear_ratio": 0.02492561,
+        "deflection_mm": 0.13983751,
+        "deflection_limit_mm": 2.45833333,
+        "deflection_ratio": 0.05688305,
+        "local_frequency_Hz": 61.2886385,
+        "compact_domain": true,
+        "ratio": 0.15335535,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 2.3,
+        "span_mm": 1060,
+        "tributary_m": 0.885,
+        "Mu_kNm": 1.21812285,
+        "capacity_kNm": 3.36664091,
+        "bending_ratio": 0.36182144,
+        "shear_ratio": 0.0904786,
+        "deflection_mm": 0.59406292,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.20175722,
+        "local_frequency_Hz": 22.93965358,
+        "compact_domain": true,
+        "ratio": 0.36182144,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 8.673,
+          "capacity_kN": 64.88349989,
+          "KLr": 117.67271796,
+          "Pe_kN": 87.18809575,
+          "amplification": 1.11046283,
+          "interaction": 0.17143044,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 8.673,
+          "capacity_kN": 17.20439099,
+          "KLr": 235.34543592,
+          "Pe_kN": 21.79702394,
+          "amplification": 1.66084915,
+          "interaction": 0.64317018,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 281106280,
+      "cost_high": 297606280,
+      "delta_low": 39626000,
+      "delta_high": 56126000,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "h20-1000",
+      "thickness_mm": 2.0,
+      "target_gap_mm": 1000,
+      "max_gap_mm": 885.0,
+      "new_axes": [
+        885.0,
+        2655.0,
+        4185.0,
+        5510.0,
+        6190.0,
+        7965.0,
+        9735.0,
+        11425.0,
+        13515.0,
+        15045.0,
+        16815.0
+      ],
+      "axes": [
+        0,
+        885.0,
+        1770,
+        2655.0,
+        3540,
+        4185.0,
+        4830,
+        5510.0,
+        6190.0,
+        6870,
+        7080,
+        7965.0,
+        8850,
+        9735.0,
+        10620,
+        11425.0,
+        12230,
+        12870,
+        13515.0,
+        14160,
+        15045.0,
+        15930,
+        16815.0,
+        17700
+      ],
+      "columns": 146,
+      "added_columns": 66,
+      "bearers": 120,
+      "added_bearers": 55,
+      "stocks": 129,
+      "purchase_kg": 3645.54,
+      "cut_count": 482,
+      "added_cut_length_m": 167.11189,
+      "stair_conflicts": [
+        {
+          "x": 5510.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5510.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5510.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5510.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5510.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5510.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5510.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5510.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5510.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5510.0,
+          "y": 5000,
+          "stair_id": 1686591
+        },
+        {
+          "x": 6190.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 6190.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 6190.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 6190.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 6190.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 6190.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 6190.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 6190.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 6190.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 6190.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 2.0,
+        "span_mm": 885.0,
+        "tributary_m": 0.25,
+        "Mu_kNm": 0.51629241,
+        "capacity_kNm": 2.9721312,
+        "bending_ratio": 0.17371118,
+        "shear_ratio": 0.02841035,
+        "deflection_mm": 0.15839902,
+        "deflection_limit_mm": 2.45833333,
+        "deflection_ratio": 0.0644335,
+        "local_frequency_Hz": 57.68735187,
+        "compact_domain": true,
+        "ratio": 0.17371118,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 2.0,
+        "span_mm": 1060,
+        "tributary_m": 0.885,
+        "Mu_kNm": 1.21812285,
+        "capacity_kNm": 2.9721312,
+        "bending_ratio": 0.40984828,
+        "shear_ratio": 0.10312801,
+        "deflection_mm": 0.67291663,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.22853772,
+        "local_frequency_Hz": 21.56466618,
+        "compact_domain": true,
+        "ratio": 0.40984828,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 8.673,
+          "capacity_kN": 57.24290484,
+          "KLr": 116.98194093,
+          "Pe_kN": 77.20593614,
+          "amplification": 1.12655229,
+          "interaction": 0.19558619,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 8.673,
+          "capacity_kN": 15.23466135,
+          "KLr": 233.96388187,
+          "Pe_kN": 19.30148403,
+          "amplification": 1.81601477,
+          "interaction": 0.74099828,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 270007119,
+      "cost_high": 286507119,
+      "delta_low": 28526839,
+      "delta_high": 45026839,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "h16-1000",
+      "thickness_mm": 1.6,
+      "target_gap_mm": 1000,
+      "max_gap_mm": 885.0,
+      "new_axes": [
+        885.0,
+        2655.0,
+        4185.0,
+        5510.0,
+        6190.0,
+        7965.0,
+        9735.0,
+        11425.0,
+        13515.0,
+        15045.0,
+        16815.0
+      ],
+      "axes": [
+        0,
+        885.0,
+        1770,
+        2655.0,
+        3540,
+        4185.0,
+        4830,
+        5510.0,
+        6190.0,
+        6870,
+        7080,
+        7965.0,
+        8850,
+        9735.0,
+        10620,
+        11425.0,
+        12230,
+        12870,
+        13515.0,
+        14160,
+        15045.0,
+        15930,
+        16815.0,
+        17700
+      ],
+      "columns": 146,
+      "added_columns": 66,
+      "bearers": 120,
+      "added_bearers": 55,
+      "stocks": 129,
+      "purchase_kg": 2916.69,
+      "cut_count": 482,
+      "added_cut_length_m": 167.11189,
+      "stair_conflicts": [
+        {
+          "x": 5510.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5510.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5510.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5510.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5510.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5510.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5510.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5510.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5510.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5510.0,
+          "y": 5000,
+          "stair_id": 1686591
+        },
+        {
+          "x": 6190.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 6190.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 6190.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 6190.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 6190.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 6190.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 6190.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 6190.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 6190.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 6190.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 885.0,
+        "tributary_m": 0.25,
+        "Mu_kNm": 0.51629241,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 0.21284122,
+        "shear_ratio": 0.0350981,
+        "deflection_mm": 0.19407985,
+        "deflection_limit_mm": 2.45833333,
+        "deflection_ratio": 0.07894774,
+        "local_frequency_Hz": 52.24045347,
+        "compact_domain": true,
+        "ratio": 0.21284122,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 1060,
+        "tributary_m": 0.885,
+        "Mu_kNm": 1.21812285,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 0.50217037,
+        "shear_ratio": 0.12740416,
+        "deflection_mm": 0.82449729,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.28001795,
+        "local_frequency_Hz": 19.49518814,
+        "compact_domain": true,
+        "ratio": 0.50217037,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 8.673,
+          "capacity_kN": 44.41233828,
+          "KLr": 116.07317726,
+          "Pe_kN": 63.26891514,
+          "amplification": 1.15885804,
+          "interaction": 0.24806159,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 8.673,
+          "capacity_kN": 12.48453868,
+          "KLr": 232.14635452,
+          "Pe_kN": 15.81722878,
+          "amplification": 2.21398688,
+          "interaction": 0.95014422,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 256394820,
+      "cost_high": 272894820,
+      "delta_low": 14914540,
+      "delta_high": 31414540,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "model-885",
+      "thickness_mm": 2.3,
+      "target_gap_mm": 885,
+      "max_gap_mm": 885.0,
+      "new_axes": [
+        885.0,
+        2655.0,
+        4185.0,
+        5510.0,
+        6190.0,
+        7965.0,
+        9735.0,
+        11425.0,
+        13515.0,
+        15045.0,
+        16815.0
+      ],
+      "axes": [
+        0,
+        885.0,
+        1770,
+        2655.0,
+        3540,
+        4185.0,
+        4830,
+        5510.0,
+        6190.0,
+        6870,
+        7080,
+        7965.0,
+        8850,
+        9735.0,
+        10620,
+        11425.0,
+        12230,
+        12870,
+        13515.0,
+        14160,
+        15045.0,
+        15930,
+        16815.0,
+        17700
+      ],
+      "columns": 146,
+      "added_columns": 66,
+      "bearers": 120,
+      "added_bearers": 55,
+      "stocks": 129,
+      "purchase_kg": 4192.5,
+      "cut_count": 482,
+      "added_cut_length_m": 167.11189,
+      "stair_conflicts": [
+        {
+          "x": 5510.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5510.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5510.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5510.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5510.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5510.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5510.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5510.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5510.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5510.0,
+          "y": 5000,
+          "stair_id": 1686591
+        },
+        {
+          "x": 6190.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 6190.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 6190.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 6190.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 6190.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 6190.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 6190.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 6190.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 6190.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 6190.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 2.3,
+        "span_mm": 885.0,
+        "tributary_m": 0.25,
+        "Mu_kNm": 0.51629241,
+        "capacity_kNm": 3.36664091,
+        "bending_ratio": 0.15335535,
+        "shear_ratio": 0.02492561,
+        "deflection_mm": 0.13983751,
+        "deflection_limit_mm": 2.45833333,
+        "deflection_ratio": 0.05688305,
+        "local_frequency_Hz": 61.2886385,
+        "compact_domain": true,
+        "ratio": 0.15335535,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 2.3,
+        "span_mm": 1060,
+        "tributary_m": 0.885,
+        "Mu_kNm": 1.21812285,
+        "capacity_kNm": 3.36664091,
+        "bending_ratio": 0.36182144,
+        "shear_ratio": 0.0904786,
+        "deflection_mm": 0.59406292,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.20175722,
+        "local_frequency_Hz": 22.93965358,
+        "compact_domain": true,
+        "ratio": 0.36182144,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 8.673,
+          "capacity_kN": 64.88349989,
+          "KLr": 117.67271796,
+          "Pe_kN": 87.18809575,
+          "amplification": 1.11046283,
+          "interaction": 0.17143044,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 8.673,
+          "capacity_kN": 17.20439099,
+          "KLr": 235.34543592,
+          "Pe_kN": 21.79702394,
+          "amplification": 1.66084915,
+          "interaction": 0.64317018,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 281106280,
+      "cost_high": 297606280,
+      "delta_low": 39626000,
+      "delta_high": 56126000,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "h20-885",
+      "thickness_mm": 2.0,
+      "target_gap_mm": 885,
+      "max_gap_mm": 885.0,
+      "new_axes": [
+        885.0,
+        2655.0,
+        4185.0,
+        5510.0,
+        6190.0,
+        7965.0,
+        9735.0,
+        11425.0,
+        13515.0,
+        15045.0,
+        16815.0
+      ],
+      "axes": [
+        0,
+        885.0,
+        1770,
+        2655.0,
+        3540,
+        4185.0,
+        4830,
+        5510.0,
+        6190.0,
+        6870,
+        7080,
+        7965.0,
+        8850,
+        9735.0,
+        10620,
+        11425.0,
+        12230,
+        12870,
+        13515.0,
+        14160,
+        15045.0,
+        15930,
+        16815.0,
+        17700
+      ],
+      "columns": 146,
+      "added_columns": 66,
+      "bearers": 120,
+      "added_bearers": 55,
+      "stocks": 129,
+      "purchase_kg": 3645.54,
+      "cut_count": 482,
+      "added_cut_length_m": 167.11189,
+      "stair_conflicts": [
+        {
+          "x": 5510.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5510.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5510.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5510.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5510.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5510.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5510.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5510.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5510.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5510.0,
+          "y": 5000,
+          "stair_id": 1686591
+        },
+        {
+          "x": 6190.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 6190.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 6190.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 6190.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 6190.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 6190.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 6190.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 6190.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 6190.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 6190.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 2.0,
+        "span_mm": 885.0,
+        "tributary_m": 0.25,
+        "Mu_kNm": 0.51629241,
+        "capacity_kNm": 2.9721312,
+        "bending_ratio": 0.17371118,
+        "shear_ratio": 0.02841035,
+        "deflection_mm": 0.15839902,
+        "deflection_limit_mm": 2.45833333,
+        "deflection_ratio": 0.0644335,
+        "local_frequency_Hz": 57.68735187,
+        "compact_domain": true,
+        "ratio": 0.17371118,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 2.0,
+        "span_mm": 1060,
+        "tributary_m": 0.885,
+        "Mu_kNm": 1.21812285,
+        "capacity_kNm": 2.9721312,
+        "bending_ratio": 0.40984828,
+        "shear_ratio": 0.10312801,
+        "deflection_mm": 0.67291663,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.22853772,
+        "local_frequency_Hz": 21.56466618,
+        "compact_domain": true,
+        "ratio": 0.40984828,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 8.673,
+          "capacity_kN": 57.24290484,
+          "KLr": 116.98194093,
+          "Pe_kN": 77.20593614,
+          "amplification": 1.12655229,
+          "interaction": 0.19558619,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 8.673,
+          "capacity_kN": 15.23466135,
+          "KLr": 233.96388187,
+          "Pe_kN": 19.30148403,
+          "amplification": 1.81601477,
+          "interaction": 0.74099828,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 270007119,
+      "cost_high": 286507119,
+      "delta_low": 28526839,
+      "delta_high": 45026839,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    },
+    {
+      "key": "h16-885",
+      "thickness_mm": 1.6,
+      "target_gap_mm": 885,
+      "max_gap_mm": 885.0,
+      "new_axes": [
+        885.0,
+        2655.0,
+        4185.0,
+        5510.0,
+        6190.0,
+        7965.0,
+        9735.0,
+        11425.0,
+        13515.0,
+        15045.0,
+        16815.0
+      ],
+      "axes": [
+        0,
+        885.0,
+        1770,
+        2655.0,
+        3540,
+        4185.0,
+        4830,
+        5510.0,
+        6190.0,
+        6870,
+        7080,
+        7965.0,
+        8850,
+        9735.0,
+        10620,
+        11425.0,
+        12230,
+        12870,
+        13515.0,
+        14160,
+        15045.0,
+        15930,
+        16815.0,
+        17700
+      ],
+      "columns": 146,
+      "added_columns": 66,
+      "bearers": 120,
+      "added_bearers": 55,
+      "stocks": 129,
+      "purchase_kg": 2916.69,
+      "cut_count": 482,
+      "added_cut_length_m": 167.11189,
+      "stair_conflicts": [
+        {
+          "x": 5510.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 5510.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 5510.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 5510.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 5510.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 5510.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 5510.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 5510.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 5510.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 5510.0,
+          "y": 5000,
+          "stair_id": 1686591
+        },
+        {
+          "x": 6190.0,
+          "y": 0,
+          "stair_id": 1686508
+        },
+        {
+          "x": 6190.0,
+          "y": 1000,
+          "stair_id": 1686526
+        },
+        {
+          "x": 6190.0,
+          "y": 1000,
+          "stair_id": 1686538
+        },
+        {
+          "x": 6190.0,
+          "y": 2000,
+          "stair_id": 1686557
+        },
+        {
+          "x": 6190.0,
+          "y": 2000,
+          "stair_id": 1686606
+        },
+        {
+          "x": 6190.0,
+          "y": 3000,
+          "stair_id": 1686482
+        },
+        {
+          "x": 6190.0,
+          "y": 3000,
+          "stair_id": 1686494
+        },
+        {
+          "x": 6190.0,
+          "y": 4000,
+          "stair_id": 1686572
+        },
+        {
+          "x": 6190.0,
+          "y": 4000,
+          "stair_id": 1686640
+        },
+        {
+          "x": 6190.0,
+          "y": 5000,
+          "stair_id": 1686591
+        }
+      ],
+      "layout_status": "KONFLIK POTENSIAL TANGGA; BUKAN GRID SIAP PAKAI",
+      "joist": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 885.0,
+        "tributary_m": 0.25,
+        "Mu_kNm": 0.51629241,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 0.21284122,
+        "shear_ratio": 0.0350981,
+        "deflection_mm": 0.19407985,
+        "deflection_limit_mm": 2.45833333,
+        "deflection_ratio": 0.07894774,
+        "local_frequency_Hz": 52.24045347,
+        "compact_domain": true,
+        "ratio": 0.21284122,
+        "passes_member_screen": true
+      },
+      "bearer": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 1060,
+        "tributary_m": 0.885,
+        "Mu_kNm": 1.21812285,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 0.50217037,
+        "shear_ratio": 0.12740416,
+        "deflection_mm": 0.82449729,
+        "deflection_limit_mm": 2.94444444,
+        "deflection_ratio": 0.28001795,
+        "local_frequency_Hz": 19.49518814,
+        "compact_domain": true,
+        "ratio": 0.50217037,
+        "passes_member_screen": true
+      },
+      "columns_checks": [
+        {
+          "K": 1.0,
+          "Pu_kN": 8.673,
+          "capacity_kN": 44.41233828,
+          "KLr": 116.07317726,
+          "Pe_kN": 63.26891514,
+          "amplification": 1.15885804,
+          "interaction": 0.24806159,
+          "passes_screen": true
+        },
+        {
+          "K": 2.0,
+          "Pu_kN": 8.673,
+          "capacity_kN": 12.48453868,
+          "KLr": 232.14635452,
+          "Pe_kN": 15.81722878,
+          "amplification": 2.21398688,
+          "interaction": 0.95014422,
+          "passes_screen": false
+        }
+      ],
+      "cost_low": 256394820,
+      "cost_high": 272894820,
+      "delta_low": 14914540,
+      "delta_high": 31414540,
+      "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
+      "gravity_screen": true,
+      "compliance": "BELUM DAPAT DITETAPKAN"
+    }
+  ],
+  "profiles": [
+    {
+      "b": 40,
+      "h": 80,
+      "t": 1.6,
+      "span_mm": 2040,
+      "tributary_m": 0.25,
+      "Mu_kNm": 1.322634,
+      "capacity_kNm": 1.52173118,
+      "bending_ratio": 0.86916403,
+      "shear_ratio": 0.08760275,
+      "deflection_mm": 6.36641964,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 1.12348582,
+      "local_frequency_Hz": 6.97958005,
+      "compact_domain": false,
+      "ratio": 1.12348582,
+      "passes_member_screen": false
+    },
+    {
+      "b": 40,
+      "h": 80,
+      "t": 2.0,
+      "span_mm": 2040,
+      "tributary_m": 0.25,
+      "Mu_kNm": 1.322634,
+      "capacity_kNm": 1.85469153,
+      "bending_ratio": 0.71312883,
+      "shear_ratio": 0.07113315,
+      "deflection_mm": 5.22349893,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.92179393,
+      "local_frequency_Hz": 7.69088958,
+      "compact_domain": false,
+      "ratio": 0.92179393,
+      "passes_member_screen": false
+    },
+    {
+      "b": 40,
+      "h": 80,
+      "t": 2.3,
+      "span_mm": 2040,
+      "tributary_m": 0.25,
+      "Mu_kNm": 1.322634,
+      "capacity_kNm": 2.09239987,
+      "bending_ratio": 0.6321134,
+      "shear_ratio": 0.06255851,
+      "deflection_mm": 4.63008022,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.81707298,
+      "local_frequency_Hz": 8.15760019,
+      "compact_domain": false,
+      "ratio": 0.81707298,
+      "passes_member_screen": false
+    },
+    {
+      "b": 50,
+      "h": 100,
+      "t": 1.6,
+      "span_mm": 2040,
+      "tributary_m": 0.25,
+      "Mu_kNm": 1.322634,
+      "capacity_kNm": 2.4257163,
+      "bending_ratio": 0.54525502,
+      "shear_ratio": 0.06926354,
+      "deflection_mm": 3.19509061,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.56383952,
+      "local_frequency_Hz": 9.83180247,
+      "compact_domain": true,
+      "ratio": 0.56383952,
+      "passes_member_screen": true
+    },
+    {
+      "b": 50,
+      "h": 100,
+      "t": 2.0,
+      "span_mm": 2040,
+      "tributary_m": 0.25,
+      "Mu_kNm": 1.322634,
+      "capacity_kNm": 2.9721312,
+      "bending_ratio": 0.44501198,
+      "shear_ratio": 0.05606576,
+      "deflection_mm": 2.60768548,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.46017979,
+      "local_frequency_Hz": 10.8569243,
+      "compact_domain": true,
+      "ratio": 0.46017979,
+      "passes_member_screen": true
+    },
+    {
+      "b": 50,
+      "h": 100,
+      "t": 2.3,
+      "span_mm": 2040,
+      "tributary_m": 0.25,
+      "Mu_kNm": 1.322634,
+      "capacity_kNm": 3.36664091,
+      "bending_ratio": 0.39286459,
+      "shear_ratio": 0.04918888,
+      "deflection_mm": 2.30211169,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.406255,
+      "local_frequency_Hz": 11.53469672,
+      "compact_domain": true,
+      "ratio": 0.406255,
+      "passes_member_screen": true
+    },
+    {
+      "b": 60,
+      "h": 120,
+      "t": 1.6,
+      "span_mm": 2040,
+      "tributary_m": 0.25,
+      "Mu_kNm": 1.322634,
+      "capacity_kNm": 3.53950738,
+      "bending_ratio": 0.37367742,
+      "shear_ratio": 0.06197407,
+      "deflection_mm": 1.82473213,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.32201155,
+      "local_frequency_Hz": 12.98304968,
+      "compact_domain": false,
+      "ratio": 0.37367742,
+      "passes_member_screen": false
+    },
+    {
+      "b": 60,
+      "h": 120,
+      "t": 2.0,
+      "span_mm": 2040,
+      "tributary_m": 0.25,
+      "Mu_kNm": 1.322634,
+      "capacity_kNm": 4.35182587,
+      "bending_ratio": 0.30392622,
+      "shear_ratio": 0.04626577,
+      "deflection_mm": 1.48412483,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.26190438,
+      "local_frequency_Hz": 14.35430134,
+      "compact_domain": true,
+      "ratio": 0.30392622,
+      "passes_member_screen": true
+    },
+    {
+      "b": 60,
+      "h": 120,
+      "t": 2.3,
+      "span_mm": 2040,
+      "tributary_m": 0.25,
+      "Mu_kNm": 1.322634,
+      "capacity_kNm": 4.9424722,
+      "bending_ratio": 0.26760575,
+      "shear_ratio": 0.04052757,
+      "deflection_mm": 1.30676564,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.2306057,
+      "local_frequency_Hz": 15.26478915,
+      "compact_domain": true,
+      "ratio": 0.26760575,
+      "passes_member_screen": true
+    },
+    {
+      "b": 75,
+      "h": 125,
+      "t": 1.6,
+      "span_mm": 2040,
+      "tributary_m": 0.25,
+      "Mu_kNm": 1.322634,
+      "capacity_kNm": 4.33086057,
+      "bending_ratio": 0.3053975,
+      "shear_ratio": 0.06197407,
+      "deflection_mm": 1.43165697,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.25264535,
+      "local_frequency_Hz": 14.63726313,
+      "compact_domain": false,
+      "ratio": 0.3053975,
+      "passes_member_screen": false
+    },
+    {
+      "b": 75,
+      "h": 125,
+      "t": 2.0,
+      "span_mm": 2040,
+      "tributary_m": 0.25,
+      "Mu_kNm": 1.322634,
+      "capacity_kNm": 5.33428786,
+      "bending_ratio": 0.2479495,
+      "shear_ratio": 0.04432866,
+      "deflection_mm": 1.16234948,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.2051205,
+      "local_frequency_Hz": 16.19225492,
+      "compact_domain": false,
+      "ratio": 0.2479495,
+      "passes_member_screen": false
+    },
+    {
+      "b": 75,
+      "h": 125,
+      "t": 2.3,
+      "span_mm": 2040,
+      "tributary_m": 0.25,
+      "Mu_kNm": 1.322634,
+      "capacity_kNm": 6.06651062,
+      "bending_ratio": 0.2180222,
+      "shear_ratio": 0.03881874,
+      "deflection_mm": 1.02205487,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.18036262,
+      "local_frequency_Hz": 17.2267593,
+      "compact_domain": true,
+      "ratio": 0.2180222,
+      "passes_member_screen": true
+    }
+  ],
+  "guard": [
+    {
+      "b": 40,
+      "h": 40,
+      "t": 1.6,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 0.57666895,
+      "ratio": 2.71628982,
+      "deflection_mm": 36.20517236,
+      "passes_member_screen": false,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 40,
+      "h": 40,
+      "t": 1.7,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 0.60672181,
+      "ratio": 2.58174333,
+      "deflection_mm": 34.41181486,
+      "passes_member_screen": false,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 40,
+      "h": 40,
+      "t": 2.0,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 0.69289824,
+      "ratio": 2.26064943,
+      "deflection_mm": 30.13198431,
+      "passes_member_screen": false,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 40,
+      "h": 40,
+      "t": 2.3,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 0.77322747,
+      "ratio": 2.02579455,
+      "deflection_mm": 27.00162564,
+      "passes_member_screen": false,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 40,
+      "h": 40,
+      "t": 2.8,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 0.89455109,
+      "ratio": 1.75104587,
+      "deflection_mm": 23.3395263,
+      "passes_member_screen": false,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 40,
+      "h": 40,
+      "t": 3.2,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 0.98072869,
+      "ratio": 1.59717974,
+      "deflection_mm": 21.28865906,
+      "passes_member_screen": false,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 50,
+      "h": 50,
+      "t": 1.6,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 0.92957423,
+      "ratio": 1.68507253,
+      "deflection_mm": 17.96813907,
+      "passes_member_screen": false,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 50,
+      "h": 50,
+      "t": 1.7,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 0.98004197,
+      "ratio": 1.5982989,
+      "deflection_mm": 17.04286101,
+      "passes_member_screen": false,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 50,
+      "h": 50,
+      "t": 2.0,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 1.12630654,
+      "ratio": 1.39074039,
+      "deflection_mm": 14.8296386,
+      "passes_member_screen": false,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 50,
+      "h": 50,
+      "t": 2.3,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 1.26499104,
+      "ratio": 1.23826964,
+      "deflection_mm": 13.20382393,
+      "passes_member_screen": false,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 50,
+      "h": 50,
+      "t": 2.8,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 1.47972982,
+      "ratio": 1.05857163,
+      "deflection_mm": 11.28768159,
+      "passes_member_screen": false,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 50,
+      "h": 50,
+      "t": 3.2,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 1.63718864,
+      "ratio": 0.95676208,
+      "deflection_mm": 10.2020736,
+      "passes_member_screen": true,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 60,
+      "h": 60,
+      "t": 1.6,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 1.3663986,
+      "ratio": 1.14637119,
+      "deflection_mm": 10.18658279,
+      "passes_member_screen": false,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 60,
+      "h": 60,
+      "t": 1.7,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 1.44252529,
+      "ratio": 1.08587351,
+      "deflection_mm": 9.64900414,
+      "passes_member_screen": false,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 60,
+      "h": 60,
+      "t": 2.0,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 1.66460884,
+      "ratio": 0.94100185,
+      "deflection_mm": 8.36168363,
+      "passes_member_screen": true,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 60,
+      "h": 60,
+      "t": 2.3,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 1.8773767,
+      "ratio": 0.83435573,
+      "deflection_mm": 7.41403284,
+      "passes_member_screen": true,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 60,
+      "h": 60,
+      "t": 2.8,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 2.21173568,
+      "ratio": 0.70822206,
+      "deflection_mm": 6.29321697,
+      "passes_member_screen": true,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    },
+    {
+      "b": 60,
+      "h": 60,
+      "t": 3.2,
+      "spacing_mm": 1000,
+      "height_mm": 1100,
+      "Mu_kNm": 1.5664,
+      "capacity_kNm": 2.46142937,
+      "ratio": 0.6363782,
+      "deflection_mm": 5.65481694,
+      "passes_member_screen": true,
+      "note": "Cantilever tunggal dengan jepit sempurna, beban garis/titik alternatif, limit lendutan 11mm target proyek. Kekakuan base belum dihitung."
+    }
+  ],
+  "stair": [
+    {
+      "b": 40,
+      "h": 40,
+      "t": 1.6,
+      "span_mm": 800,
+      "tributary_m": 0.115,
+      "Mu_kNm": 0.44344,
+      "capacity_kNm": 0.57666895,
+      "bending_ratio": 0.76896805,
+      "shear_ratio": 0.08569091,
+      "deflection_mm": 1.38904826,
+      "deflection_limit_mm": 2.22222222,
+      "deflection_ratio": 0.62507172,
+      "local_frequency_Hz": 29.03108371,
+      "compact_domain": true,
+      "ratio": 0.76896805,
+      "passes_member_screen": true
+    },
+    {
+      "b": 40,
+      "h": 40,
+      "t": 1.7,
+      "span_mm": 800,
+      "tributary_m": 0.115,
+      "Mu_kNm": 0.44344,
+      "capacity_kNm": 0.60672181,
+      "bending_ratio": 0.73087862,
+      "shear_ratio": 0.08128848,
+      "deflection_mm": 1.32024427,
+      "deflection_limit_mm": 2.22222222,
+      "deflection_ratio": 0.59410992,
+      "local_frequency_Hz": 29.75847063,
+      "compact_domain": true,
+      "ratio": 0.73087862,
+      "passes_member_screen": true
+    },
+    {
+      "b": 40,
+      "h": 40,
+      "t": 2.0,
+      "span_mm": 800,
+      "tributary_m": 0.115,
+      "Mu_kNm": 0.44344,
+      "capacity_kNm": 0.69289824,
+      "bending_ratio": 0.63997854,
+      "shear_ratio": 0.07077541,
+      "deflection_mm": 1.15604422,
+      "deflection_limit_mm": 2.22222222,
+      "deflection_ratio": 0.5202199,
+      "local_frequency_Hz": 31.74059891,
+      "compact_domain": true,
+      "ratio": 0.63997854,
+      "passes_member_screen": true
+    },
+    {
+      "b": 40,
+      "h": 40,
+      "t": 2.3,
+      "span_mm": 800,
+      "tributary_m": 0.115,
+      "Mu_kNm": 0.44344,
+      "capacity_kNm": 0.77322747,
+      "bending_ratio": 0.5734923,
+      "shear_ratio": 0.06307771,
+      "deflection_mm": 1.03594483,
+      "deflection_limit_mm": 2.22222222,
+      "deflection_ratio": 0.46617517,
+      "local_frequency_Hz": 33.46755619,
+      "compact_domain": true,
+      "ratio": 0.5734923,
+      "passes_member_screen": true
+    }
+  ],
+  "edge_beams": [
+    {
+      "b": 50,
+      "h": 100,
+      "t": 1.6,
+      "span_mm": 2040,
+      "tributary_m": 0.125,
+      "Mu_kNm": 0.637245,
+      "capacity_kNm": 2.4257163,
+      "bending_ratio": 0.26270384,
+      "shear_ratio": 0.03463177,
+      "deflection_mm": 1.59754531,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.28191976,
+      "local_frequency_Hz": 13.76690947,
+      "compact_domain": true,
+      "ratio": 0.28191976,
+      "passes_member_screen": true
+    },
+    {
+      "b": 50,
+      "h": 100,
+      "t": 1.6,
+      "span_mm": 2040,
+      "tributary_m": 0.5,
+      "Mu_kNm": 2.54898,
+      "capacity_kNm": 2.4257163,
+      "bending_ratio": 1.05081538,
+      "shear_ratio": 0.13852707,
+      "deflection_mm": 6.39018123,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 1.12767904,
+      "local_frequency_Hz": 6.98725391,
+      "compact_domain": true,
+      "ratio": 1.12767904,
+      "passes_member_screen": false
+    },
+    {
+      "b": 50,
+      "h": 100,
+      "t": 1.6,
+      "span_mm": 2040,
+      "tributary_m": 1.0,
+      "Mu_kNm": 5.09796,
+      "capacity_kNm": 2.4257163,
+      "bending_ratio": 2.10163076,
+      "shear_ratio": 0.27705414,
+      "deflection_mm": 12.78036245,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 2.25535808,
+      "local_frequency_Hz": 4.95329329,
+      "compact_domain": true,
+      "ratio": 2.25535808,
+      "passes_member_screen": false
+    },
+    {
+      "b": 50,
+      "h": 100,
+      "t": 2.0,
+      "span_mm": 2040,
+      "tributary_m": 0.125,
+      "Mu_kNm": 0.637245,
+      "capacity_kNm": 2.9721312,
+      "bending_ratio": 0.21440675,
+      "shear_ratio": 0.02803288,
+      "deflection_mm": 1.30384274,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.2300899,
+      "local_frequency_Hz": 15.16754806,
+      "compact_domain": true,
+      "ratio": 0.2300899,
+      "passes_member_screen": true
+    },
+    {
+      "b": 50,
+      "h": 100,
+      "t": 2.0,
+      "span_mm": 2040,
+      "tributary_m": 0.5,
+      "Mu_kNm": 2.54898,
+      "capacity_kNm": 2.9721312,
+      "bending_ratio": 0.85762701,
+      "shear_ratio": 0.11213152,
+      "deflection_mm": 5.21537097,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.92035958,
+      "local_frequency_Hz": 7.72492833,
+      "compact_domain": true,
+      "ratio": 0.92035958,
+      "passes_member_screen": true
+    },
+    {
+      "b": 50,
+      "h": 100,
+      "t": 2.0,
+      "span_mm": 2040,
+      "tributary_m": 1.0,
+      "Mu_kNm": 5.09796,
+      "capacity_kNm": 2.9721312,
+      "bending_ratio": 1.71525402,
+      "shear_ratio": 0.22426303,
+      "deflection_mm": 10.43074194,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 1.84071917,
+      "local_frequency_Hz": 5.47953247,
+      "compact_domain": true,
+      "ratio": 1.84071917,
+      "passes_member_screen": false
+    },
+    {
+      "b": 50,
+      "h": 100,
+      "t": 2.3,
+      "span_mm": 2040,
+      "tributary_m": 0.125,
+      "Mu_kNm": 0.637245,
+      "capacity_kNm": 3.36664091,
+      "bending_ratio": 0.18928214,
+      "shear_ratio": 0.02459444,
+      "deflection_mm": 1.15105584,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.2031275,
+      "local_frequency_Hz": 16.08752161,
+      "compact_domain": true,
+      "ratio": 0.2031275,
+      "passes_member_screen": true
+    },
+    {
+      "b": 50,
+      "h": 100,
+      "t": 2.3,
+      "span_mm": 2040,
+      "tributary_m": 0.5,
+      "Mu_kNm": 2.54898,
+      "capacity_kNm": 3.36664091,
+      "bending_ratio": 0.75712856,
+      "shear_ratio": 0.09837775,
+      "deflection_mm": 4.60422338,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 0.81251001,
+      "local_frequency_Hz": 8.21431252,
+      "compact_domain": true,
+      "ratio": 0.81251001,
+      "passes_member_screen": true
+    },
+    {
+      "b": 50,
+      "h": 100,
+      "t": 2.3,
+      "span_mm": 2040,
+      "tributary_m": 1.0,
+      "Mu_kNm": 5.09796,
+      "capacity_kNm": 3.36664091,
+      "bending_ratio": 1.51425713,
+      "shear_ratio": 0.1967555,
+      "deflection_mm": 9.20844676,
+      "deflection_limit_mm": 5.66666667,
+      "deflection_ratio": 1.62502002,
+      "local_frequency_Hz": 5.82925136,
+      "compact_domain": true,
+      "ratio": 1.62502002,
+      "passes_member_screen": false
+    }
+  ],
+  "connections": [
+    {
+      "t": 1.6,
+      "bearing_tearout_per_bolt_kN": 11.396592,
+      "relative_face_plastification": 0.48393195,
+      "note": "Ilustrasi d12, lubang14, tepi30, Fu370; satu dinding, bukan kapasitas sambungan lengkap. Lubang, jarak, blok geser, las, prying dan deformasi muka belum diperiksa."
+    },
+    {
+      "t": 1.7,
+      "bearing_tearout_per_bolt_kN": 12.108879,
+      "relative_face_plastification": 0.5463138,
+      "note": "Ilustrasi d12, lubang14, tepi30, Fu370; satu dinding, bukan kapasitas sambungan lengkap. Lubang, jarak, blok geser, las, prying dan deformasi muka belum diperiksa."
+    },
+    {
+      "t": 2.0,
+      "bearing_tearout_per_bolt_kN": 14.24574,
+      "relative_face_plastification": 0.75614367,
+      "note": "Ilustrasi d12, lubang14, tepi30, Fu370; satu dinding, bukan kapasitas sambungan lengkap. Lubang, jarak, blok geser, las, prying dan deformasi muka belum diperiksa."
+    },
+    {
+      "t": 2.3,
+      "bearing_tearout_per_bolt_kN": 16.382601,
+      "relative_face_plastification": 1.0,
+      "note": "Ilustrasi d12, lubang14, tepi30, Fu370; satu dinding, bukan kapasitas sambungan lengkap. Lubang, jarak, blok geser, las, prying dan deformasi muka belum diperiksa."
+    },
+    {
+      "t": 2.8,
+      "bearing_tearout_per_bolt_kN": 19.944036,
+      "relative_face_plastification": 1.48204159,
+      "note": "Ilustrasi d12, lubang14, tepi30, Fu370; satu dinding, bukan kapasitas sambungan lengkap. Lubang, jarak, blok geser, las, prying dan deformasi muka belum diperiksa."
+    },
+    {
+      "t": 6.0,
+      "bearing_tearout_per_bolt_kN": 45.954,
+      "relative_face_plastification": 6.80529301,
+      "note": "Ilustrasi d12, lubang14, tepi30, Fu370; satu dinding, bukan kapasitas sambungan lengkap. Lubang, jarak, blok geser, las, prying dan deformasi muka belum diperiksa."
+    }
+  ],
+  "loads": {
+    "area_m2": 82.34504912,
+    "dead_kN": 123.51757368,
+    "live_kN": 411.72524561,
+    "ultimate_kN": 806.98148139,
+    "sway_parallel_kN": 30.975,
+    "sway_perpendicular_kN": 12.921,
+    "sway_moment_parallel_kNm": 46.4625,
+    "sway_moment_perpendicular_kNm": 19.3815,
+    "note": "Sway tiap baris pada z0.5/1/1.5/2/2.5m; angka pembanding dibulatkan 0.350/0.146kN/m. Gempa LT4 memerlukan respons gedung; reaksi tidak boleh dibagi rata ke80base."
+  },
+  "deck": [
+    {
+      "span_mm": 250,
+      "ratio": 0.13574911,
+      "deflection_mm": 0.30994415,
+      "note": "Pelat polos4mm strip1m, UDL satu arah; bukan verifikasi motif bordes, beban titik, sambungan atau diafragma."
+    },
+    {
+      "span_mm": 500,
+      "ratio": 0.54299645,
+      "deflection_mm": 4.95910645,
+      "note": "Pelat polos4mm strip1m, UDL satu arah; bukan verifikasi motif bordes, beban titik, sambungan atau diafragma."
+    },
+    {
+      "span_mm": 1000,
+      "ratio": 2.17198582,
+      "deflection_mm": 79.34570312,
+      "note": "Pelat polos4mm strip1m, UDL satu arah; bukan verifikasi motif bordes, beban titik, sambungan atau diafragma."
+    }
+  ],
+  "mixed": [
+    {
+      "name": "Joist 1.6 mm saja; kolom/balok/bracing2.3",
+      "thin_stocks": 45,
+      "thick_stocks": 63,
+      "stocks": 108,
+      "purchase_kg": 3064.95,
+      "cost": 237266502,
+      "saving": 4213776,
+      "check": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 2040,
+        "tributary_m": 0.25,
+        "Mu_kNm": 1.322634,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 0.54525502,
+        "shear_ratio": 0.06926354,
+        "deflection_mm": 3.19509061,
+        "deflection_limit_mm": 5.66666667,
+        "deflection_ratio": 0.56383952,
+        "local_frequency_Hz": 9.83180247,
+        "compact_domain": true,
+        "ratio": 0.56383952,
+        "passes_member_screen": true
+      },
+      "note": "Stok dipisah menurut tebal; belum biaya detail tambahan atau penguatan railing."
+    },
+    {
+      "name": "Joist 2.0 mm saja; kolom/balok/bracing2.3",
+      "thin_stocks": 45,
+      "thick_stocks": 63,
+      "stocks": 108,
+      "purchase_kg": 3319.2,
+      "cost": 242014978,
+      "saving": -534700,
+      "check": {
+        "b": 50,
+        "h": 100,
+        "t": 2.0,
+        "span_mm": 2040,
+        "tributary_m": 0.25,
+        "Mu_kNm": 1.322634,
+        "capacity_kNm": 2.9721312,
+        "bending_ratio": 0.44501198,
+        "shear_ratio": 0.05606576,
+        "deflection_mm": 2.60768548,
+        "deflection_limit_mm": 5.66666667,
+        "deflection_ratio": 0.46017979,
+        "local_frequency_Hz": 10.8569243,
+        "compact_domain": true,
+        "ratio": 0.46017979,
+        "passes_member_screen": true
+      },
+      "note": "Stok dipisah menurut tebal; belum biaya detail tambahan atau penguatan railing."
+    },
+    {
+      "name": "Joist 1.6 mm + penyangga tangga pendek; kolom/balok/bracing2.3",
+      "thin_stocks": 46,
+      "thick_stocks": 57,
+      "stocks": 103,
+      "purchase_kg": 2892.56,
+      "cost": 233927440,
+      "saving": 7552838,
+      "check": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 2040,
+        "tributary_m": 0.25,
+        "Mu_kNm": 1.322634,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 0.54525502,
+        "shear_ratio": 0.06926354,
+        "deflection_mm": 3.19509061,
+        "deflection_limit_mm": 5.66666667,
+        "deflection_ratio": 0.56383952,
+        "local_frequency_Hz": 9.83180247,
+        "compact_domain": true,
+        "ratio": 0.56383952,
+        "passes_member_screen": true
+      },
+      "note": "Stok dipisah menurut tebal; belum biaya detail tambahan atau penguatan railing. Penyangga tangga: envelope lebar tributari1m, titik1.334kN; detail tumpuan belum ditetapkan.",
+      "stair_support_check": {
+        "b": 50,
+        "h": 100,
+        "t": 1.6,
+        "span_mm": 460.6,
+        "tributary_m": 1.0,
+        "Mu_kNm": 0.29351044,
+        "capacity_kNm": 2.4257163,
+        "bending_ratio": 0.12099949,
+        "shear_ratio": 0.06255448,
+        "deflection_mm": 0.03321377,
+        "deflection_limit_mm": 1.27944444,
+        "deflection_ratio": 0.02595953,
+        "local_frequency_Hz": 97.16425184,
+        "compact_domain": true,
+        "ratio": 0.12099949,
+        "passes_member_screen": true
+      }
+    }
+  ],
+  "bracing": [
+    {
+      "t": 1.6,
+      "active_bays": 1,
+      "tension_kN": 85.7682552,
+      "tension_gross_capacity_kN": 91.33448061,
+      "axial_drift_mm": 3.29015249,
+      "anchor_couple_tension_kN": 70.0,
+      "note": "Bay ilustrasi1.77x2.5m, diagonal tarik saja; distribusi seragam antar bay asumsi. Drift hanya elongasi diagonal, bukan drift rangka total; sambungan/net section/collector belum lulus."
+    },
+    {
+      "t": 1.6,
+      "active_bays": 2,
+      "tension_kN": 42.8841276,
+      "tension_gross_capacity_kN": 91.33448061,
+      "axial_drift_mm": 1.64507624,
+      "anchor_couple_tension_kN": 35.0,
+      "note": "Bay ilustrasi1.77x2.5m, diagonal tarik saja; distribusi seragam antar bay asumsi. Drift hanya elongasi diagonal, bukan drift rangka total; sambungan/net section/collector belum lulus."
+    },
+    {
+      "t": 1.6,
+      "active_bays": 4,
+      "tension_kN": 21.4420638,
+      "tension_gross_capacity_kN": 91.33448061,
+      "axial_drift_mm": 0.82253812,
+      "anchor_couple_tension_kN": 17.5,
+      "note": "Bay ilustrasi1.77x2.5m, diagonal tarik saja; distribusi seragam antar bay asumsi. Drift hanya elongasi diagonal, bukan drift rangka total; sambungan/net section/collector belum lulus."
+    },
+    {
+      "t": 1.6,
+      "active_bays": 8,
+      "tension_kN": 10.7210319,
+      "tension_gross_capacity_kN": 91.33448061,
+      "axial_drift_mm": 0.41126906,
+      "anchor_couple_tension_kN": 8.75,
+      "note": "Bay ilustrasi1.77x2.5m, diagonal tarik saja; distribusi seragam antar bay asumsi. Drift hanya elongasi diagonal, bukan drift rangka total; sambungan/net section/collector belum lulus."
+    },
+    {
+      "t": 2.0,
+      "active_bays": 1,
+      "tension_kN": 85.7682552,
+      "tension_gross_capacity_kN": 113.20587595,
+      "axial_drift_mm": 2.65449444,
+      "anchor_couple_tension_kN": 70.0,
+      "note": "Bay ilustrasi1.77x2.5m, diagonal tarik saja; distribusi seragam antar bay asumsi. Drift hanya elongasi diagonal, bukan drift rangka total; sambungan/net section/collector belum lulus."
+    },
+    {
+      "t": 2.0,
+      "active_bays": 2,
+      "tension_kN": 42.8841276,
+      "tension_gross_capacity_kN": 113.20587595,
+      "axial_drift_mm": 1.32724722,
+      "anchor_couple_tension_kN": 35.0,
+      "note": "Bay ilustrasi1.77x2.5m, diagonal tarik saja; distribusi seragam antar bay asumsi. Drift hanya elongasi diagonal, bukan drift rangka total; sambungan/net section/collector belum lulus."
+    },
+    {
+      "t": 2.0,
+      "active_bays": 4,
+      "tension_kN": 21.4420638,
+      "tension_gross_capacity_kN": 113.20587595,
+      "axial_drift_mm": 0.66362361,
+      "anchor_couple_tension_kN": 17.5,
+      "note": "Bay ilustrasi1.77x2.5m, diagonal tarik saja; distribusi seragam antar bay asumsi. Drift hanya elongasi diagonal, bukan drift rangka total; sambungan/net section/collector belum lulus."
+    },
+    {
+      "t": 2.0,
+      "active_bays": 8,
+      "tension_kN": 10.7210319,
+      "tension_gross_capacity_kN": 113.20587595,
+      "axial_drift_mm": 0.33181181,
+      "anchor_couple_tension_kN": 8.75,
+      "note": "Bay ilustrasi1.77x2.5m, diagonal tarik saja; distribusi seragam antar bay asumsi. Drift hanya elongasi diagonal, bukan drift rangka total; sambungan/net section/collector belum lulus."
+    },
+    {
+      "t": 2.3,
+      "active_bays": 1,
+      "tension_kN": 85.7682552,
+      "tension_gross_capacity_kN": 129.35683844,
+      "axial_drift_mm": 2.32306519,
+      "anchor_couple_tension_kN": 70.0,
+      "note": "Bay ilustrasi1.77x2.5m, diagonal tarik saja; distribusi seragam antar bay asumsi. Drift hanya elongasi diagonal, bukan drift rangka total; sambungan/net section/collector belum lulus."
+    },
+    {
+      "t": 2.3,
+      "active_bays": 2,
+      "tension_kN": 42.8841276,
+      "tension_gross_capacity_kN": 129.35683844,
+      "axial_drift_mm": 1.1615326,
+      "anchor_couple_tension_kN": 35.0,
+      "note": "Bay ilustrasi1.77x2.5m, diagonal tarik saja; distribusi seragam antar bay asumsi. Drift hanya elongasi diagonal, bukan drift rangka total; sambungan/net section/collector belum lulus."
+    },
+    {
+      "t": 2.3,
+      "active_bays": 4,
+      "tension_kN": 21.4420638,
+      "tension_gross_capacity_kN": 129.35683844,
+      "axial_drift_mm": 0.5807663,
+      "anchor_couple_tension_kN": 17.5,
+      "note": "Bay ilustrasi1.77x2.5m, diagonal tarik saja; distribusi seragam antar bay asumsi. Drift hanya elongasi diagonal, bukan drift rangka total; sambungan/net section/collector belum lulus."
+    },
+    {
+      "t": 2.3,
+      "active_bays": 8,
+      "tension_kN": 10.7210319,
+      "tension_gross_capacity_kN": 129.35683844,
+      "axial_drift_mm": 0.29038315,
+      "anchor_couple_tension_kN": 8.75,
+      "note": "Bay ilustrasi1.77x2.5m, diagonal tarik saja; distribusi seragam antar bay asumsi. Drift hanya elongasi diagonal, bukan drift rangka total; sambungan/net section/collector belum lulus."
+    }
+  ],
+  "guard_cost_example": {
+    "profile": "SHS60x60x2.3",
+    "stocks": 18,
+    "stock_kg": 26,
+    "stock_price": 346500,
+    "delta_material_labor": 1780200.0,
+    "note": "Contoh ganti18stok kelompok X08 dengan jumlah/panjang tetap; perlu pemilahan tiang vs pegangan, nesting baru dan tambahan detail base. Bukan BOQ final."
+  },
+  "thickness_note": "0.93 adalah sensitivitas menyerupai produk A500, bukan izin mengasumsikan hollow lokal bersertifikat. Baja lain memerlukan standar produk/rute desain yang benar; Fy235/Fu370 belum diuji.",
+  "unresolved": [
+    "Rangka3D, ketidakstabilan global, imperfection dan P-delta belum diselesaikan.",
+    "Distribusi gaya bracing, diafragma dek, sambungan dan slip belum dimodelkan.",
+    "Gempa pada LT4, mutu/tebal pelat/tulangan beton dan anchor breakout/pullout belum tersedia.",
+    "Getaran global, respons ritmis, damping dan kenyamanan belum diselesaikan.",
+    "Railing dan kasus balok transfer dapat mengendalikan; merapatkan kolom tidak otomatis menyelesaikannya.",
+    "Titik kolom baru harus diperiksa terhadap tangga, jalur akses, balok beton, rebar dan instalasi."
+  ]
+}

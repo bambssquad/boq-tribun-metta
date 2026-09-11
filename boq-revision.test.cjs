@@ -47,6 +47,14 @@ B.edit(shsState,'X08','qty',null);shsState.units='bars';assert.equal(B.totals(B.
 const legacy=B.normalize({case:'model',profiles:{model:{overrides:{X07:{quantities:{purchase:99}}}}}});assert.equal(legacy.shs,'reference');assert.equal(B.rows(d,legacy).find(r=>r.id==='X07').qty,99);
 assert.equal(B.normalize({shs:'bad',units:'bad',subtotals:'false'}).subtotals,false);
 console.log('PASS: 48 SHS/RHS/basis/extras combinations, 148 stocks, unchanged grouped totals, subtotal/export formulas, independent edits and saved legacy state.');
+for(const units of ['components','bars'])for(const subtotals of [false,true])for(const version of ['model','source']){
+ const state={...B.defaults(),units,subtotals,case:version,componentSubtotals:true},total=B.totals(B.rows(d,state)),parts=B.componentTotals(d,state);
+ assert.equal(parts.reduce((n,r)=>n+r.total,0),total.total);assert(parts.some(r=>r.name==='Kolom'));assert(parts.some(r=>r.name==='Balok'));
+ const book=B.sheets(d,state),sheet=book.find(r=>r.name==='SUBTOTAL KOMPONEN');assert.equal(evaluate(book,sheet.name,'D'+sheet.rows.length),total.total);
+ assert(B.html(d,state).includes('Subtotal per komponen'));
+ B.edit(state,'X01','qty',0);const modified=B.componentTotals(d,state);assert.equal(modified.find(r=>r.name==='Kolom').total,0);
+}
+console.log('PASS: column/beam/component subtotals reconcile in all views and exported formulas, including manual edits.');
 
 (async()=>{
  const elements=new Map(),storage=new Map();function element(id){if(!elements.has(id))elements.set(id,{dataset:{},listeners:{},addEventListener(k,fn){this.listeners[k]=fn;},querySelectorAll(){return [];},setAttribute(){},innerHTML:'',textContent:''});return elements.get(id);}
@@ -56,6 +64,7 @@ console.log('PASS: 48 SHS/RHS/basis/extras combinations, 148 stocks, unchanged g
  change('br-shs','s17');assert(element('br-rows').innerHTML.includes('SHS 40×40×1,7 mm'));const before=element('br-total').textContent;
  change('br-units','bars');assert.equal(element('br-total').textContent,before);assert(element('br-rows').innerHTML.includes('btg 6m'));assert(element('br-rows').innerHTML.includes('readonly'));
  const subtotal=element('br-subtotals');subtotal.checked=true;subtotal.listeners.change({target:subtotal});assert(element('br-rows').innerHTML.includes('Subtotal Batang hollow'));assert.equal(element('br-total').textContent,before);
+ const componentSubtotal=element('br-component-subtotals');componentSubtotal.checked=true;componentSubtotal.listeners.change({target:componentSubtotal});assert(element('br-component-summary').innerHTML.includes('Kolom'));assert(element('br-component-summary').innerHTML.includes('Balok'));assert.equal(element('br-total').textContent,before);
  element('boq-revision').listeners.click({target:{dataset:{brComponents:'1'}}});assert.equal(element('br-units').value,'components');assert(!element('br-rows').innerHTML.includes('readonly'));
  const persisted=JSON.parse(storage.get('metta-boq-september11-v1'));assert.equal(persisted.shs,'s17');assert.equal(persisted.subtotals,true);
  change('br-case','source');assert.equal(element('br-shs').disabled,true);assert.equal(element('br-units').disabled,true);
