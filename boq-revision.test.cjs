@@ -66,7 +66,22 @@ console.log('PASS: column/beam/component subtotals reconcile in all views and ex
  const subtotal=element('br-subtotals');subtotal.checked=true;subtotal.listeners.change({target:subtotal});assert(element('br-rows').innerHTML.includes('Subtotal Batang hollow'));assert.equal(element('br-total').textContent,before);
  const componentSubtotal=element('br-component-subtotals');componentSubtotal.checked=true;componentSubtotal.listeners.change({target:componentSubtotal});assert(element('br-component-summary').innerHTML.includes('Kolom'));assert(element('br-component-summary').innerHTML.includes('Balok'));assert.equal(element('br-total').textContent,before);
  element('boq-revision').listeners.click({target:{dataset:{brComponents:'1'}}});assert.equal(element('br-units').value,'components');assert(!element('br-rows').innerHTML.includes('readonly'));
- const persisted=JSON.parse(storage.get('metta-boq-september11-v1'));assert.equal(persisted.shs,'s17');assert.equal(persisted.subtotals,true);
+ const kgToggle=element('br-kg-explanation');kgToggle.checked=true;kgToggle.listeners.change({target:kgToggle});assert.equal(element('br-kg-panel').hidden,false);assert(element('br-kg-panel').innerHTML.includes('54 dibanding 101'));assert.equal(element('br-total').textContent,before);
+ const persisted=JSON.parse(storage.get('metta-boq-september11-v1'));assert.equal(persisted.kgExplanation,true);assert.equal(persisted.shs,'s17');assert.equal(persisted.subtotals,true);
  change('br-case','source');assert.equal(element('br-shs').disabled,true);assert.equal(element('br-units').disabled,true);
  console.log('PASS: controller SHS, stock/component switch, subtotals, persistence and source controls.');
 })().catch(error=>{console.error(error);process.exitCode=1;});
+
+assert.equal(B.kgHtml(d,B.defaults()),'');
+assert.equal(B.normalize({kgExplanation:'false'}).kgExplanation,false);
+for(const selected of ['model','h20','h16','source']) {
+ const state={...B.defaults(),case:selected,kgExplanation:true};
+ const explanation=B.kgHtml(d,state);
+ assert(explanation.includes('590,14'));assert(explanation.includes('minimum global belum terbukti'));assert(!explanation.includes('NaN'));
+ assert(explanation.includes('1.662,5'));
+ if(selected!=='source') {
+  const before=B.totals(B.rows(d,state));state.kgExplanation=false;assert.deepEqual(B.totals(B.rows(d,state)),before);state.kgExplanation=true;
+  B.edit(state,'X01','qty',0);assert(!B.kgHtml(d,state).includes('NaN'));
+ }
+}
+console.log('PASS: kg explanation, scope distinction, selected thickness, manual quantities and invariant costs.');
