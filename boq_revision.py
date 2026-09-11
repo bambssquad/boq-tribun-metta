@@ -85,6 +85,27 @@ def build_data():
         '56bidang/176bagian native;8lembar. Penyangga RHS dan pengaku SHS dipisah agar tidak terhitung dua kali.')
     add('B03','Pengaku tapak tangga / usulan','SHS 40×40×2 mm',old['cross_length']*rhs(2,40,40)['kg_m'],27*15.07,'kg',6000,s['X07']['material_rate'],
         f"{old['cross_length']:.6f}m dari usulan pengaku tapak;27stok. Belum menjadi rangka native.",'Usulan belum dimodelkan')
+    # Same cutting allowances as the reference: 2 + 18 + 27 stocks. No
+    # additional saving is claimed from pooling the three fabrication batches.
+    shs_specs={'s16':(1.6,12.053333333333333,153433.33333333334),
+               's17':(1.7,12.806666666666667,163366.66666666666),
+               's20':(2.,15.07,194800), 's23':(2.3,17.33,229100)}
+    for r in rows:
+        if r['id'] not in ['X07','X08','B03']:continue
+        key=r['id'];L=old['cross_length'] if key=='B03' else lengths[key]
+        count={'X07':2,'X08':18,'B03':27}[key]
+        r['shs_variants']={}
+        for case,(thickness,mass,price) in shs_specs.items():
+            price_basis=('Berat dan harga interpolasi katalog 1,5–1,8 mm; estimasi, bukan penawaran.'
+                         if case in ['s16','s17'] else 'Berat dan harga katalog SMS Perkasa.')
+            r['shs_variants'][case]=dict(material=f"SHS 40×40×{thickness:.1f} mm / studi".replace('.',','),
+                net_qty=L*rhs(thickness,40,40)['kg_m'],purchase_qty=count*mass,
+                material_rate=price/mass,stock_kg=mass,
+                basis=f"{L:.6f} m; {count} stok ×6m. "+price_basis+
+                    ' Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. '
+                    'Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. '+
+                    ('Usulan belum menjadi elemen native.' if key=='B03' else 'Panjang dari audit Revit.'),
+                status='Studi SHS seluruh 40×40; belum untuk fabrikasi')
     add('X12','Penutup kedua sisi','Pelat polos 2 mm',side*15.7,1222*side/cover_total,'kg',6000,s['X12']['material_rate'],
         f"Luas{side:.6f}m²; bagian dari total26lembar penutup. Belakang dan bawah terbuka.")
     add('X13','Base plate','Pelat 150×150×8 mm',80*.15*.15*.008*7850,187,'kg',6000,s['X13']['material_rate'],

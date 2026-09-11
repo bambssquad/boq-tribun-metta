@@ -527,7 +527,45 @@
         1684214,
         1684218
       ],
-      "source_row": 14
+      "source_row": 14,
+      "shs_variants": {
+        "s16": {
+          "material": "SHS 40×40×1,6 mm / studi",
+          "net_qty": 15.818389247932458,
+          "purchase_qty": 24.106666666666666,
+          "material_rate": 12729.53539823009,
+          "stock_kg": 12.053333333333333,
+          "basis": "8.425400 m; 2 stok ×6m. Berat dan harga interpolasi katalog 1,5–1,8 mm; estimasi, bukan penawaran. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Panjang dari audit Revit.",
+          "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
+        },
+        "s17": {
+          "material": "SHS 40×40×1,7 mm / studi",
+          "net_qty": 16.733108793935315,
+          "purchase_qty": 25.613333333333333,
+          "material_rate": 12756.376887038,
+          "stock_kg": 12.806666666666667,
+          "basis": "8.425400 m; 2 stok ×6m. Berat dan harga interpolasi katalog 1,5–1,8 mm; estimasi, bukan penawaran. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Panjang dari audit Revit.",
+          "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
+        },
+        "s20": {
+          "material": "SHS 40×40×2,0 mm / studi",
+          "net_qty": 19.425081703478423,
+          "purchase_qty": 30.14,
+          "material_rate": 12926.343729263437,
+          "stock_kg": 15.07,
+          "basis": "8.425400 m; 2 stok ×6m. Berat dan harga katalog SMS Perkasa. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Panjang dari audit Revit.",
+          "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
+        },
+        "s23": {
+          "material": "SHS 40×40×2,3 mm / studi",
+          "net_qty": 22.03877602032311,
+          "purchase_qty": 34.66,
+          "material_rate": 13219.849971148298,
+          "stock_kg": 17.33,
+          "basis": "8.425400 m; 2 stok ×6m. Berat dan harga katalog SMS Perkasa. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Panjang dari audit Revit.",
+          "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
+        }
+      }
     },
     {
       "id": "X08",
@@ -628,7 +666,45 @@
         1687165,
         1687169
       ],
-      "source_row": 15
+      "source_row": 15,
+      "shs_variants": {
+        "s16": {
+          "material": "SHS 40×40×1,6 mm / studi",
+          "net_qty": 183.04974968174605,
+          "purchase_qty": 216.95999999999998,
+          "material_rate": 12729.53539823009,
+          "stock_kg": 12.053333333333333,
+          "basis": "97.498388 m; 18 stok ×6m. Berat dan harga interpolasi katalog 1,5–1,8 mm; estimasi, bukan penawaran. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Panjang dari audit Revit.",
+          "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
+        },
+        "s17": {
+          "material": "SHS 40×40×1,7 mm / studi",
+          "net_qty": 193.6348466407622,
+          "purchase_qty": 230.52,
+          "material_rate": 12756.376887038,
+          "stock_kg": 12.806666666666667,
+          "basis": "97.498388 m; 18 stok ×6m. Berat dan harga interpolasi katalog 1,5–1,8 mm; estimasi, bukan penawaran. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Panjang dari audit Revit.",
+          "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
+        },
+        "s20": {
+          "material": "SHS 40×40×2,0 mm / studi",
+          "net_qty": 224.7862464146876,
+          "purchase_qty": 271.26,
+          "material_rate": 12926.343729263437,
+          "stock_kg": 15.07,
+          "basis": "97.498388 m; 18 stok ×6m. Berat dan harga katalog SMS Perkasa. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Panjang dari audit Revit.",
+          "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
+        },
+        "s23": {
+          "material": "SHS 40×40×2,3 mm / studi",
+          "net_qty": 255.03180953392595,
+          "purchase_qty": 311.93999999999994,
+          "material_rate": 13219.849971148298,
+          "stock_kg": 17.33,
+          "basis": "97.498388 m; 18 stok ×6m. Berat dan harga katalog SMS Perkasa. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Panjang dari audit Revit.",
+          "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
+        }
+      }
     },
     {
       "id": "X09",
@@ -688,7 +764,45 @@
       "status": "Usulan belum dimodelkan",
       "extra": false,
       "revit_ids": [],
-      "source_row": null
+      "source_row": null,
+      "shs_variants": {
+        "s16": {
+          "material": "SHS 40×40×1,6 mm / studi",
+          "net_qty": 268.4774059074947,
+          "purchase_qty": 325.44,
+          "material_rate": 12729.53539823009,
+          "stock_kg": 12.053333333333333,
+          "basis": "143.000000 m; 27 stok ×6m. Berat dan harga interpolasi katalog 1,5–1,8 mm; estimasi, bukan penawaran. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Usulan belum menjadi elemen native.",
+          "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
+        },
+        "s17": {
+          "material": "SHS 40×40×1,7 mm / studi",
+          "net_qty": 284.0024715127571,
+          "purchase_qty": 345.78,
+          "material_rate": 12756.376887038,
+          "stock_kg": 12.806666666666667,
+          "basis": "143.000000 m; 27 stok ×6m. Berat dan harga interpolasi katalog 1,5–1,8 mm; estimasi, bukan penawaran. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Usulan belum menjadi elemen native.",
+          "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
+        },
+        "s20": {
+          "material": "SHS 40×40×2,0 mm / studi",
+          "net_qty": 329.69194673045973,
+          "purchase_qty": 406.89,
+          "material_rate": 12926.343729263437,
+          "stock_kg": 15.07,
+          "basis": "143.000000 m; 27 stok ×6m. Berat dan harga katalog SMS Perkasa. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Usulan belum menjadi elemen native.",
+          "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
+        },
+        "s23": {
+          "material": "SHS 40×40×2,3 mm / studi",
+          "net_qty": 374.0528395510319,
+          "purchase_qty": 467.90999999999997,
+          "material_rate": 13219.849971148298,
+          "stock_kg": 17.33,
+          "basis": "143.000000 m; 27 stok ×6m. Berat dan harga katalog SMS Perkasa. Katalog 27 Agustus 2026, diperiksa 11 September 2026: https://www.smsperkasa.com/produk/besi-hollow-hitam. Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. Usulan belum menjadi elemen native.",
+          "status": "Studi SHS seluruh 40×40; belum untuk fabrikasi"
+        }
+      }
     },
     {
       "id": "X12",
