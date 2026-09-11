@@ -9,6 +9,7 @@
     12
   ],
   "excel_rhs_kg": 1620,
+  "excel_conversion_confirmed_by_user": true,
   "example_excel_kg_per_bar": 30,
   "example_excel_bars": 54.0,
   "stock_length_m": 6,

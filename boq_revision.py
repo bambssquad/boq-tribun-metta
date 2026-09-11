@@ -79,9 +79,12 @@ def build_data():
         f"85 elemen; {lengths['X08']:.6f} m; 18 stok. Harga 2,8mm mengikuti katalog R04 karena spesifikasi Excel 2mm berbeda.")
     add('X09','Pelat dek','Bordes 4 mm',deck_area*31.4,32*2.88*31.4,'kg',s['X09']['labor_rate'],s['X09']['material_rate'],
         f"Area30floor={deck_area:.9f}m²; pembelian32lembar1200×2400, allowance10%. Berat motif bordes belum terukur.")
-    add('X10','Riser, fascia dan return','Pelat polos 2 mm',front*15.7,1222*front/cover_total,'kg',6000,s['X10']['material_rate'],
+    cover_buy=len(old['enclosure']['nesting'])*1.2*2.4*.002*7850
+    stair_buy=len(old['nesting'])*1.2*2.4*.003*7850
+    base_buy=1.2*2.4*.008*7850
+    add('X10','Riser, fascia dan return','Pelat polos 2 mm',front*15.7,cover_buy*front/cover_total,'kg',6000,s['X10']['material_rate'],
         f"Luas{front:.6f}m². Alokasi proporsional dari26lembar bersama penutup sisi; bukan tambahan terhadap26lembar.")
-    add('X11','Pelat tekuk tangga','Pelat polos 3 mm',old['new_bent_3mm_kg'],560,'kg',6000,s['X11']['material_rate'],
+    add('X11','Pelat tekuk tangga','Pelat polos 3 mm',old['new_bent_3mm_kg'],stair_buy,'kg',6000,s['X11']['material_rate'],
         '56bidang/176bagian native;8lembar. Penyangga RHS dan pengaku SHS dipisah agar tidak terhitung dua kali.')
     add('B03','Pengaku tapak tangga / usulan','SHS 40×40×2 mm',old['cross_length']*rhs(2,40,40)['kg_m'],27*15.07,'kg',6000,s['X07']['material_rate'],
         f"{old['cross_length']:.6f}m dari usulan pengaku tapak;27stok. Belum menjadi rangka native.",'Usulan belum dimodelkan')
@@ -106,10 +109,10 @@ def build_data():
                     'Total tiga kelompok 47 stok; sisa antar kelompok belum dioptimalkan. Berat bersih penampang membulat R=2t/r=t. '+
                     ('Usulan belum menjadi elemen native.' if key=='B03' else 'Panjang dari audit Revit.'),
                 status='Studi SHS seluruh 40×40; belum untuk fabrikasi')
-    add('X12','Penutup kedua sisi','Pelat polos 2 mm',side*15.7,1222*side/cover_total,'kg',6000,s['X12']['material_rate'],
+    add('X12','Penutup kedua sisi','Pelat polos 2 mm',side*15.7,cover_buy*side/cover_total,'kg',6000,s['X12']['material_rate'],
         f"Luas{side:.6f}m²; bagian dari total26lembar penutup. Belakang dan bawah terbuka.")
-    add('X13','Base plate','Pelat 150×150×8 mm',80*.15*.15*.008*7850,187,'kg',6000,s['X13']['material_rate'],
-        '80dudukan; satu stok pelat8mm. Berat pembelian187kg; sisa stok termasuk sekali.')
+    add('X13','Base plate','Pelat 150×150×8 mm',80*.15*.15*.008*7850,base_buy,'kg',6000,s['X13']['material_rate'],
+        '80 dudukan; satu stok 1200×2400×8 mm = 180,864 kg teoritis; sisa stok termasuk sekali.')
     add('X14','Pelat sambungan rangka, tangga dan buhul','Pelat 6 mm; lembar 120×240 cm',plate['net_kg'],plate['purchase_kg'],'kg',5000,s['X14']['material_rate'],
         '5 lembar 1200×2400×6 mm = 678,24 kg teoritis. Potongan tetap: 232 pasangan kupingan tangga + 274 pasangan rangka 90×120 mm + 40 buhul 200×200 mm. Pola potong 1052 bagian, tepi 10 mm dan celah potong 3 mm sudah diperiksa. Tarif/kg dari Excel.','Usulan sambungan / pola stok diperiksa')
     # Existing three rows describe frame hardware only. Stair hardware has its own rows.
@@ -137,7 +140,7 @@ def build_data():
         r=ro[code];add('E'+code,r['name'],'Biaya pelengkap proyek',r['qty'],r['qty'],r['unit'],r['price'],0,r['basis'],r['status'],extra=True)
     # Each profile's stock is allocated exactly once; steel mass before plate rows reconciles.
     stock_mass=sum(r['purchase_qty'] for r in rows if r['unit']=='kg')
-    expected_mass=old['steel_purchase_kg']-700+plate['purchase_kg']
+    expected_mass=old['steel_purchase_kg']-700+plate['purchase_kg']-1222-560-187+cover_buy+stair_buy+base_buy
     assert abs(stock_mass-expected_mass)<1e-6,(stock_mass,expected_mass)
     comparison=[]
     for case in ['model','h20','h16']:
@@ -171,6 +174,9 @@ def build_data():
         for k in ['material','basis','status']:
             r[k]=spaced(r[k])
     result['notes']=[spaced(n) for n in result['notes']]
+    from quantity_reaudit import audit
+    result['quantity_audit']=audit(result)
+    result['notes'].append('Audit ulang: 545 elemen model dibaca ulang. Stok pelat 2/3/8 mm dikoreksi ke tepat 120×240 cm. Total baja acuan pembelian 9570,466 kg mencakup usulan dan allowance. 54 batang adalah konversi Excel 1620/30; model RHS saja memakai pola97batang, gabungan usulan101batang. Bukan desain pelaksanaan final.')
     (out/'boq.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(dict(rows=len(rows),comparison=comparison),indent=2));return result
 

@@ -50,7 +50,7 @@ def build():
             note='Excel bracing62kg adalah40x40; bukan bagian1620kg RHS.' if r['id']=='X06' else 'Tidak ada baris RHS terpisah di Excel; bukan bukti tidak tercakup dalam pekerjaan lain.' if r['id'] in ['B01','B02'] else 'Perbandingan label; kesetaraan lingkup belum dikonfirmasi dari daftar potong Excel.'))
     assert abs(excel_kg+sum(r['difference_kg'] for r in bridge)-len(stocks)*32.5)<1e-5
     data=dict(source_filename=source['filename'],source_sheet=source['sheet'],source_rows=[sr[id]['excel_row'] for id in source_ids],
-      excel_rhs_kg=excel_kg,example_excel_kg_per_bar=30,example_excel_bars=excel_kg/30,
+      excel_rhs_kg=excel_kg,excel_conversion_confirmed_by_user=True,example_excel_kg_per_bar=30,example_excel_bars=excel_kg/30,
       stock_length_m=6,model_stocks=len(stocks),model_purchase_kg=len(stocks)*32.5,
       model_cut_length_m=used/1000,native_length_m=native_length/1000,proposal_length_m=proposal_length/1000,
       native_cuts=len(native),proposal_cuts=len(cuts)-len(native),unique_cuts=len(cuts),
