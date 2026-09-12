@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="760" height="470" preserveAspectRatio="xMinYMin meet" viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="760" height="470"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-470)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="760" height="470" style="stroke: rgb(74%,81%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="20" y="443" style="font-family: Times-Roman; font-size: 17px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,886) scale(1,-1)">F03 - Railing, tangga dan jalur tumpuan</text>
+			<text x="20" y="424" style="font-family: Times-Roman; font-size: 9px;fill: rgb(70%,26%,15%); stroke:none;" transform="translate(0,848) scale(1,-1)">UNTUK PEMERIKSAAN INSINYUR - BELUM UNTUK DIPOTONG / DIFABRIKASI</text>
+			<text x="20" y="391" style="font-family: Times-Roman; font-size: 12px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,782) scale(1,-1)">J05 / RAILING</text>
+			<path d="M 95,205 L 95,353 Z" style="stroke: rgb(8%,19%,26%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<path d="M 95,345 L 325,345 Z" style="stroke: rgb(8%,19%,26%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<path d="M 95,287 L 325,287 Z" style="stroke: rgb(8%,19%,26%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<rect x="70" y="195" width="50" height="10" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(70%,26%,15%); fill-rule: evenodd;"/>
+			<path d="M 35,194 L 345,194 Z" style="stroke: rgb(8%,19%,26%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<text x="20" y="172" style="font-family: Times-Roman; font-size: 9px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,344) scale(1,-1)">h1100 pada studi; tinggi/pagar akhir mengikuti desainakses.</text>
+			<text x="20" y="151" style="font-family: Times-Roman; font-size: 9px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,302) scale(1,-1)">40x40: tidak lolos screen kantilever. Kandidat60x60x2.3.</text>
+			<text x="20" y="130" style="font-family: Times-Roman; font-size: 9px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,260) scale(1,-1)">Base harus memindahkan momen ke rangka, bukan penutup2mm.</text>
+			<text x="410" y="391" style="font-family: Times-Roman; font-size: 12px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,782) scale(1,-1)">J04 / TANGGA</text>
+			<path d="M 425,210 L 505,210 Z" style="stroke: rgb(8%,19%,26%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<path d="M 505,210 L 505,253 Z" style="stroke: rgb(8%,19%,26%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<rect x="437" y="198" width="55" height="7" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(70%,26%,15%); fill-rule: evenodd;"/>
+			<path d="M 505,253 L 585,253 Z" style="stroke: rgb(8%,19%,26%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<path d="M 585,253 L 585,296 Z" style="stroke: rgb(8%,19%,26%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<rect x="517" y="241" width="55" height="7" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(70%,26%,15%); fill-rule: evenodd;"/>
+			<path d="M 585,296 L 665,296 Z" style="stroke: rgb(8%,19%,26%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<path d="M 665,296 L 665,339 Z" style="stroke: rgb(8%,19%,26%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<rect x="597" y="284" width="55" height="7" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(70%,26%,15%); fill-rule: evenodd;"/>
+			<text x="410" y="172" style="font-family: Times-Roman; font-size: 9px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,344) scale(1,-1)">Merah: penyangga perlu detail ke portal utama.</text>
+			<text x="410" y="151" style="font-family: Times-Roman; font-size: 9px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,302) scale(1,-1)">Pelat3mm dan56bidang: arsip; ukur ulang fit-up.</text>
+			<text x="410" y="130" style="font-family: Times-Roman; font-size: 9px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,260) scale(1,-1)">116RHS + pengakuSHS adalah usulan, belum rilis potong.</text>
+			<text x="20" y="70" style="font-family: Times-Roman; font-size: 10px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,140) scale(1,-1)">Beban pengguna -&gt; tapak/dek -&gt; balok/pengaku -&gt; kolom -&gt; lantai gedung.</text>
+			<text x="20" y="49" style="font-family: Times-Roman; font-size: 10px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,98) scale(1,-1)">Gaya lateral -&gt; bracing/ikatan -&gt; struktur gedung. Jalur ini harus diperiksa menyeluruh.</text>
+		</g>
+	</g>
+</svg>

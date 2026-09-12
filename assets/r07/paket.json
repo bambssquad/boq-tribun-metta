@@ -1,0 +1,469 @@
+{
+  "revision": "R07",
+  "date": "12 September 2026",
+  "status": "UNTUK PEMERIKSAAN INSINYUR - BELUM UNTUK DIPOTONG / DIFABRIKASI",
+  "choices": [
+    "1A",
+    "2A",
+    "3A"
+  ],
+  "fabrication_released": false,
+  "sections": [
+    {
+      "title": "01 / Dasar paket dan keputusan",
+      "paragraphs": [
+        "Pilihan Bam:1 A/2 A/3 A. Bentuk, kapasitas dan posisi tangga model METTA tetap; profil dan sambungan boleh diperbaiki. Data lapangan belum lengkap. Insinyur struktur memeriksa sebelum fabrikasi.",
+        "R 07 adalah paket pemeriksaan menuju fabrikasi dan serah terima, bukan gambar yang telah disetujui untuk diproduksi. Jumlah pesanan final menunggu perubahan desain, pengukuran dan persetujuan tertulis.",
+        "Model kuantitas: pembacaan 545 elemen pada 11 September 2026;945 parameter cocok. Geometri penutup/pelat tangga masih arsip. Koordinat gambar memakai sumbu lokal tribun, bukan datum setting-out gedung.",
+        "Angka kapasitas orang tidak ditebak dari luas dek; pemilik/arsitek harus mencatat kapasitas yang disetujui tanpa menaikkannya."
+      ],
+      "headers": [],
+      "rows": []
+    },
+    {
+      "title": "02 / Putusan 54 atau 101 batang",
+      "paragraphs": [
+        "54 batang adalah 1620 kg Excel/30 kg perbatang, bukan daftar potong.54 x 6 m hanya 324 m. Model RHS saja memerlukan 552,30 m dan pola 97 batang; model+usulan 590,14 m memakai pola 101 batang.97 dan 101 adalah pola layak, bukan minimum global terbukti.",
+        "Gunakan 101 hanya sebagai acuan anggaran lingkup lengkap saat ini. Jangan memesan 54 untuk memenuhi model ini. Jangan memotong 101 sebelum revisi sambungan/tangga/railing dikunci.",
+        "Berat katalog RHS 50 x 100 x 2,3:32,5 kg/6 m.30 kg dari Bam adalah pembagi Excel, bukan hasil timbang. Jika produk aktual berbeda, cocokkan sertifikat dan dimensi, lalu revisi berat dan analisis; jangan mengganti kg/batang saja tanpa pemeriksaan produk."
+      ],
+      "headers": [
+        "Lingkup",
+        "Potongan",
+        "Panjang m",
+        "Batang6m",
+        "Kg pembelian"
+      ],
+      "rows": [
+        [
+          "Excel / konversi",
+          "Tidak tersedia",
+          "324",
+          "54",
+          "1620"
+        ],
+        [
+          "Model RHS",
+          "245",
+          "552,30",
+          "97",
+          "3152.5"
+        ],
+        [
+          "Model RHS+usulan",
+          "361",
+          "590,14",
+          "101",
+          "3282.5"
+        ]
+      ]
+    },
+    {
+      "title": "03 / Hitungan struktur dan keputusan profil",
+      "paragraphs": [
+        "Acuan kerja pemeriksaan: RHS 50 x 100 x 2,3 dipertahankan untuk rangka utama. Pilihan 1,6 seluruh rangka tidak diteruskan sebagai desain pelaksanaan karena balok silang tidak lolos screen.2,0 memiliki margin lebih kecil; penghematan campuran tetap alternatif, bukan defaultfabrikasi.",
+        "Asumsi R 06: E 200000 MPa,Fy 235 MPa,Fu 370 MPa,D 1,5 k Pa,L 5 k Pa,faktor tebal 0,93 sebagai sensitivitas. Beban dan faktor tebal harus dikonfirmasi terhadap kategori penggunaan serta standar produk nyata.",
+        "Beam sederhana: Mu=qu L^2/8; Vu=qu L/2; delta=5 q L^4/(384 EI). Untuk titik: Mu=PL/4; delta=PL^3/(48 EI). Rasio adalah maksimum pemeriksaan kapasitas/lendutan yang dihitung. Sambungan/tumpuan ideal pada screen belum membuktikan kekakuan nyata.",
+        "Luasdek 82,35 m 2; D 123,52 k N; L 411,73 k N; kombinasi 1,2 D+1,6 L=806,98 k N untuk asumsi ini. Reaksi tidak boleh dibagi rata ke 80 dudukan.",
+        "Masih wajib diselesaikan: rangka 3 D/stabilitas/P-delta, gaya bracing dan diafragma, gempa LT 4, lantai/angkur beton, getaran global/ritmis, jalur beban tangga dan pagar. R 06 memuat hitungan lokal untuk bahan review; bukan sertifikat kepatuhan menyeluruh."
+      ],
+      "headers": [
+        "Versi",
+        "Rasio pengaku",
+        "Rasio balok silang",
+        "Hasil terbatas"
+      ],
+      "rows": [
+        [
+          "model-existing",
+          "0,406",
+          "0,834",
+          "Lolos screen lokal"
+        ],
+        [
+          "h 20-existing",
+          "0,460",
+          "0,945",
+          "Lolos screen lokal"
+        ],
+        [
+          "h 16-existing",
+          "0,564",
+          "1,158",
+          "Tidak lolos screen lokal"
+        ]
+      ]
+    },
+    {
+      "title": "04 / Revisi kritis sebelum fabrikasi",
+      "paragraphs": [
+        "Tiangrailing 40 x 40 tidak lolos screen kantilever 1,1 m, bahkan 2,8 mm.60 x 60 x 2,3 adalah kandidat lokal untuk dikaji, belum pengganti yang disetujui. Base, isian, railhorizontal, celah dan akses harus diperiksa bersama.",
+        "Jarak kolom tidak otomatis diubah 1770 menjadi 1000. Model memiliki jarak bervariasi sampai 2040 pada sumbu inti; infill dapat bertabrakan dengan tangga dan menambah tumpuan pada lantai. Bentuk/kapasitas tetap, revisi hanya setelah analisis dan cek lapangan.",
+        "Setiap perubahan profil/sambungan mengubah daftar bahan, panjang potong, kg dan harga. Paket ini mempertahankan BOQ acuan agar delta perubahan dapat ditelusuri, bukan menganggap semua item sudah cocok untuk fabrikasi."
+      ],
+      "headers": [
+        "Tiang",
+        "Tebal mm",
+        "Rasio lentur",
+        "Lendutan mm",
+        "Hasil lokal"
+      ],
+      "rows": [
+        [
+          "40 x 40",
+          "2.3",
+          "2,026",
+          "27,00",
+          "Tidak lolos"
+        ],
+        [
+          "40 x 40",
+          "2.8",
+          "1,751",
+          "23,34",
+          "Tidak lolos"
+        ],
+        [
+          "60 x 60",
+          "2.3",
+          "0,834",
+          "7,41",
+          "Kandidat diperiksa"
+        ]
+      ]
+    },
+    {
+      "title": "05 / Daftar data lapangan",
+      "paragraphs": [
+        "Isi formulir CSV atau kolom catatan di halamanweb. Lampirkan foto/sketsa dan identitas pengukur. Kolom kosong berarti belum ada bukti; mengisi formulir tidak menerbitkan persetujuan fabrikasi."
+      ],
+      "headers": [
+        "Kode",
+        "Data",
+        "Cara/isi minimum",
+        "Penanggung jawab",
+        "Dampak"
+      ],
+      "rows": [
+        [
+          "U 01",
+          "Datum dan grid",
+          "Tetapkan titik nol lokal tribun terhadap grid gedung; foto titik referensi; ukur semua 80 lokasi dudukan.",
+          "Surveyor",
+          "F 01 / panjang dan posisi kolom"
+        ],
+        [
+          "U 02",
+          "Geometri jadi",
+          "Ukur batas tribun, elevasi tier, lebar/depth dudukan, dua area tangga, headroom dan jalur keluar.",
+          "Arsitek + surveyor",
+          "Bentuk/kapasitas/akses tetap; koreksi salah ukur dicatat"
+        ],
+        [
+          "U 03",
+          "Struktur LT 4",
+          "Gambar as-built pelat dan balok beton, tebal pelat, mutu beton, tulangan, bukaan dan beban yang sudah bekerja.",
+          "Pemilik + insinyur gedung",
+          "Reaksi tumpuan dan kapasitas lantai"
+        ],
+        [
+          "U 04",
+          "Titik ikatan beton",
+          "Posisi 16 titik usulan, ukuran kolom beton, rebar scan, jarak tepi, kondisi retak, instalasi tertanam.",
+          "Surveyor + insinyur",
+          "Jenis/jumlah angkur; belum boleh mengebor"
+        ],
+        [
+          "U 05",
+          "Baja pemasok",
+          "Sertifikat mutu/standar produk, ukur tebal aktual, dimensi luar, panjang stok dan timbang sampel per profil.",
+          "Pemasok + QC",
+          "Fy/Fu, tebal desain dan kg per batang"
+        ],
+        [
+          "U 06",
+          "Pelat dan kayu",
+          "Pastikan stok tepat 1200 x 2400; tebal dasar bordes tanpa motif; mutu/kadar air kayu dan sistem antiselip.",
+          "Pemasok + QC",
+          "Kg pelat, bentang dek, pengikat kayu"
+        ],
+        [
+          "U 07",
+          "Pemakaian",
+          "Konfirmasi kapasitas orang yang disetujui, jenis acara, kemungkinan lompat/ritmis, lokasi indoor/outdoor.",
+          "Pemilik + arsitek",
+          "Beban, getaran, pagar dan jalur evakuasi"
+        ],
+        [
+          "U 08",
+          "Logistik",
+          "Ukur pintu/lift/koridor, kapasitas lift dan alat angkat, titik bongkar, batas beban tumpukan LT 4.",
+          "Kontraktor + pengelola",
+          "Ukuran modul, berat angkat, urutan kirim"
+        ],
+        [
+          "U 09",
+          "Sistem fabrikasi",
+          "Kemampuan las hollow tipis, prosedur las, welder, alat ukur, kapasitas tekuk dan radius aktual.",
+          "Fabrikator",
+          "Las, allowance tekuk dan uji rakit"
+        ],
+        [
+          "U 10",
+          "Lingkungan dan finishing",
+          "Kondisi korosi, sistem cat yang disetujui, persiapan permukaan, ketebalan film dan waktu curing produk.",
+          "Pemilik + pemasok cat",
+          "Rencana QC finishing dan pemeliharaan"
+        ]
+      ]
+    },
+    {
+      "title": "06 / Register detail sambungan",
+      "paragraphs": [
+        "F 01-F 03 adalah gambar koordinasi revisi R 07. Detail kerja final harus menambahkan gaya desain, potongan, dimensi lubang/tepi, ukuran dan panjang las, gradebaut, metodekencang, toleransi, akses alat serta nomor revisi.",
+        "Tidak menetapkan ukuran las, torsi, panjang tanam angkur atau kapasitas lantai dari allowance harga. Insinyur/fabrikator menetapkannya dari desain dan data produk."
+      ],
+      "headers": [
+        "Kode",
+        "Sambungan",
+        "Acuan saat ini",
+        "Pemeriksaan yang harus selesai",
+        "Data/catatan"
+      ],
+      "rows": [
+        [
+          "J 01",
+          "Kolom - base - lantai",
+          "80 dudukan; pelat nominal 150 x 150 x 8 + karet 10; konsep dudukan lepas.",
+          "N,V,M tiap tumpuan; lentur pelat, bearing beton, punching/shear lantai, geser/guling, karet.",
+          "U 01,U 03; tidak menganggap gesekan cukup atau reaksi terbagi rata"
+        ],
+        [
+          "J 02",
+          "RHS - balok/kolom",
+          "RHS 50 x 100 x 2.3; pelat 6 dan baut M 12 kelas 8.8 masih allowance.",
+          "Gaya ujung, eksentrisitas, las, muka hollow, bolt shear/bearing, tearout, block shear, prying/slip.",
+          "Jangan mengebor/menetapkan las dari allowance; perlu detail akses las/baut"
+        ],
+        [
+          "J 03",
+          "Bracing - buhul",
+          "20 diagonal native; buhul 200 x 200 x 6 adalah usulan anggaran.",
+          "Tarik/tekan diagonal, panjang efektif, gaya pembalikan, tekuk buhul, las/baut, jalur gaya ke gedung.",
+          "Model lateral dan kombinasi gempa/sway; jangan anggap X otomatis efektif"
+        ],
+        [
+          "J 04",
+          "Tangga - penyangga",
+          "116 penyangga RHS + pengaku SHS 143 m masih usulan; pelattekuk 3 mm.",
+          "Jalur tumpuan tiap tapak, beban titik, lendutan/getaran, reaksi ke portal, sambungan tanpa benturan.",
+          "T-01 s.d.T-06 arsip untuk koordinasi; allowance tekuk final mengikuti alat"
+        ],
+        [
+          "J 05",
+          "Tiang railing - rangka",
+          "40 x 40 acuan gagal screen kantilever;60 x 60 x 2.3 kandidat untuk diperiksa.",
+          "Gaya garis/titik, momen dasar, kekakuan base, deformasi muka RHS, sistem rail horizontal dan isian.",
+          "Jangan pesan pengganti sebelum detailbase/ukuran ruang/bukaan disetujui"
+        ],
+        [
+          "J 06",
+          "Strut - kolom beton",
+          "16 titik ikatan; cadangan Rp 5 juta bukan 16/32 angkur terverifikasi.",
+          "Gaya grupangkur, jarak tepi, tanam, breakout/pullout/pryout, beton retak dan rebar.",
+          "U 03,U 04; produk angkur dan prosedur bor dipilih insinyur"
+        ],
+        [
+          "J 07",
+          "Dek/kayu/penutup - rangka",
+          "Bordes 4, pinus 40, penutup 2; pola sekrup masih usulan.",
+          "Bentang dan beban titik, tepi/sambungan dek, cabut/geser sekrup, ekspansi kayu, tepi tajam.",
+          "Tentukan apakah dek dihitung sebagai diafragma; jika tidak, sediakan jalur lateral lain"
+        ]
+      ]
+    },
+    {
+      "title": "07 / Daftar bahan dan RAB sampai jadi",
+      "paragraphs": [
+        "Daftar bahan/RAB disertakan perkomponen. Acuan RHS 2,3;SHS 2,0/2,8;stokpelat 120 x 240 cm. Kg baja 9570,466 mencakup usulan dan allowance. Total ini tidak mencakup kepastian biaya revisirailing/angkur atau penguatan lantai yang belum didesain.",
+        "Dua lingkup biaya ditampilkan untuk mencegah biaya pelengkap hilang. Semua nilai sebelum overhead,laba,pajak tambahan. Penawaran pemasok, transport/alatangkat aktual dan biaya pemeriksaan desain perlu dikonfirmasi; item yang belum berharga harus ditulis BELUM DIHARGAI, bukan dianggap nol.",
+        "Daftar potong memisahkan 245 potongan RHSmodel dari 116 usulan. Angka mm adalah panjang model, belum termasuk keputusan sambungan final. CSV memiliki kolom persetujuan yang kosong; bukan file CNC."
+      ],
+      "headers": [
+        "Lingkup",
+        "Upah Rp",
+        "Material Rp",
+        "Total Rp"
+      ],
+      "rows": [
+        [
+          "BOQ dasar",
+          "68.067.093",
+          "172.137.636",
+          "240.204.729"
+        ],
+        [
+          "Lengkap + pelengkap",
+          "90.307.093",
+          "179.412.636",
+          "269.719.729"
+        ]
+      ]
+    },
+    {
+      "title": "08 / Urutan pekerjaan dan titik pemeriksaan",
+      "paragraphs": [
+        "Urutan berikut berbasis ketergantungan, bukan janji durasi. Durasi, jumlahpekerja, modul dan kapasitas alatangkat ditetapkan setelah U 08 dan gambar final. Modul panjang/berat tidak boleh diangkat atau ditumpuk di LT 4 tanpa rencana yang diperiksa."
+      ],
+      "headers": [
+        "Tahap",
+        "Pekerjaan",
+        "Keluaran",
+        "PIC",
+        "Bukti diterima",
+        "Batas sebelum lanjut"
+      ],
+      "rows": [
+        [
+          "P 01",
+          "Ukur dan cocokkan",
+          "U 01-U 10, daftar selisih model/lapangan",
+          "Pemilik + surveyor",
+          "Foto, sketsa, koordinat dan formulir terisi",
+          "Sebelum finalisasi detail"
+        ],
+        [
+          "P 02",
+          "Pemeriksaan desain",
+          "Analisis rangka 3 D, lantai, railing, sambungan J 01-J 07, gempa/getaran dan akses",
+          "Insinyur + arsitek",
+          "Hitungan dan daftar perubahan tertulis",
+          "Sebelum penetapan gambar fabrikasi"
+        ],
+        [
+          "P 03",
+          "Terbitkan revisi kerja",
+          "Profil, tandaelemen, detail lubang/las, toleransi, daftar potong dan RAB sinkron",
+          "Detailer + insinyur",
+          "Revisi bertanggal dan disetujui; gambar lama ditarik",
+          "Sebelum pemesanan/pemotongan batch"
+        ],
+        [
+          "P 04",
+          "Terima bahan",
+          "Cocokkan sertifikat, ketebalan, panjang, timbang dan kondisi bahan",
+          "QC + fabrikator",
+          "Log bahan dan identitas batch",
+          "Sebelum bahan digunakan"
+        ],
+        [
+          "P 05",
+          "Contoh sambungan dan uji rakit",
+          "Satu modul representatif dengan tangga/railing kritis; prosedur las/tekuk disetujui",
+          "Fabrikator + QC + insinyur",
+          "Dimensi, fit-up dan hasil pemeriksaan diterima",
+          "Sebelum produksi berulang"
+        ],
+        [
+          "P 06",
+          "Fabrikasi batch",
+          "Tandai, potong, deburr, bor/tekuk/las sesuai revisi; catat perubahan dan sisa",
+          "Fabrikator + QC",
+          "Traveler tiap modul, pemeriksaan las dan ukur",
+          "Tidak substitusi profil tanpa persetujuan desain"
+        ],
+        [
+          "P 07",
+          "Finishing dan pengiriman",
+          "Siapkan permukaan, cat sesuai lembarproduk, curing, labelmodul dan perlindungan",
+          "QC + logistik",
+          "Log coating; daftar kemasan dan berat angkat",
+          "Rute dan batas beban LT 4 disetujui"
+        ],
+        [
+          "P 08",
+          "Pemasangan",
+          "Pasang dari area tumpuan yang disetujui; stabilkan tiap modul sebelum melepas alat",
+          "Pelaksana + pengawas",
+          "Metode kerja, bracing sementara dan inspeksi tiap tahap",
+          "Urutan stabilitas dan alatangkat ditetapkan insinyur"
+        ],
+        [
+          "P 09",
+          "Pemeriksaan akhir",
+          "Cek seluruh pengikat, las, kelurusan, railing, tangga, antiselip dan jalur keluar",
+          "QC + insinyur + pemilik",
+          "Daftar temuan ditutup; uji hanya dengan prosedur tertulis",
+          "Sebelum dibuka untuk pengguna"
+        ],
+        [
+          "P 10",
+          "Serah terima dan perawatan",
+          "As-built, sertifikat, log QC, kapasitas penggunaan, panduan inspeksi/perbaikan",
+          "Kontraktor + pemilik",
+          "Berita acara dan dokumen diterima",
+          "Operasi setelah persetujuan akhir penanggung jawab"
+        ]
+      ]
+    },
+    {
+      "title": "09 / QC, serah terima dan penggunaan",
+      "paragraphs": [
+        "Sebelum potong: cocokkan revisi, materialbatch, dimensi dan daftar potong. Saat fabrikasi: catat panjangakhir, orientasi, holepattern, prosedurlas, inspeksi dan perbaikan. Toleransi dan cakupan NDTditentukan dokumen desain/prosedur, bukan ditebak di lapangan.",
+        "Saat pemasangan: periksa dudukan/karet, leveling, bracingsementara, pengikat dan jalur tumpuan. Jangan melepaskan penahan sementara sebelum modul stabil dan diterima pengawas. Catat pemeriksaan baut sesuai jenis sambungan/metode pemasangan yang disetujui.",
+        "Sebelum serah terima: tutup temuan railing/tangga/antiselip/tepi tajam/akses, lengkapi as-built, daftar bahan aktual, logcat/las/baut, sertifikat, kapasitas penggunaan dan panduan perawatan. Uji pembebanan hanya jika ada prosedur tertulis dari insinyur; jangan memakai kerumunan sebagai uji.",
+        "Pemilik menetapkan penanggung jawab inspeksi berkala sesuai petunjukinsinyur/pemasok. Periksa kelonggaran, korosi, deformasi, retaklas, antiselip dan kerusakan kayu; hentikan penggunaan area bermasalah sampai diperiksa.",
+        "Pengesahan final harus memuat nama pemeriksa, revisigambar/hitungan, tanggal dan batas penggunaan. Status R 07 tetap UNTUK PEMERIKSAAN; formulir catatan tidak menggantikan pengesahan."
+      ],
+      "headers": [],
+      "rows": []
+    },
+    {
+      "title": "10 / Rujukan dan keterbatasan",
+      "paragraphs": [
+        "Status katalog BSNdiperiksa 12 September 2026: SNI 1727:2020(beban),SNI 1729:2020(baja;adopsi AISC 360-16),SNI 7971:2013(baja canaidingin). Halaman katalog memastikan identitas/status, bukan akses seluruh pasal. Pilihan jalurdesain mengikuti standar produk aktual dan penanggung jawab desain.",
+        "Gempa SNI 1726 dan beton/angkur SNI 2847 harus dipakai sesuai edisi yang berlaku untuk proyek oleh insinyur. Data situs,kelas tanah,responsgedung LT 4,beton dan detailangkur belum tersedia.",
+        "R 06 tetap sumber hitungan lokal. Pembacaan ulang kuantitas 11 September tidak merupakan surveilapangan atau pemeriksaan mutu. Kg katalog/teoritis tidak sama dengan hasil timbang."
+      ],
+      "headers": [
+        "Rujukan",
+        "Tautan"
+      ],
+      "rows": [
+        [
+          "SNI 1727:2020 - beban; status berlaku",
+          "https://pesta.bsn.go.id/produk/detail/12927-sni17272020"
+        ],
+        [
+          "SNI 1729:2020 - baja; adopsi AISC 360-16",
+          "https://pesta.bsn.go.id/produk/detail/12882-sni17292020"
+        ],
+        [
+          "SNI 7971:2013 - rute desain baja canai dingin bila produknya relevan",
+          "https://pesta.bsn.go.id/produk/detail/9714-sni79712013"
+        ]
+      ]
+    }
+  ],
+  "baseline_steel_kg": 9570.466,
+  "rhs_bars": 101,
+  "native_rhs_bars": 97,
+  "cut_count": 361,
+  "survey_count": 10,
+  "joints_count": 7,
+  "stages_count": 10,
+  "sources": [
+    {
+      "name": "SNI 1727:2020 — beban; status berlaku",
+      "url": "https://pesta.bsn.go.id/produk/detail/12927-sni17272020"
+    },
+    {
+      "name": "SNI 1729:2020 — baja; adopsi AISC 360-16",
+      "url": "https://pesta.bsn.go.id/produk/detail/12882-sni17292020"
+    },
+    {
+      "name": "SNI 7971:2013 — rute desain baja canai dingin bila produknya relevan",
+      "url": "https://pesta.bsn.go.id/produk/detail/9714-sni79712013"
+    }
+  ]
+}

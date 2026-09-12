@@ -1,0 +1,11 @@
+﻿tahap,pekerjaan,keluaran,PIC,bukti,batas,tanggal_rencana,tanggal_aktual,catatan
+P01,Ukur dan cocokkan,"U01-U10, daftar selisih model/lapangan",Pemilik + surveyor,"Foto, sketsa, koordinat dan formulir terisi",Sebelum finalisasi detail,,,
+P02,Pemeriksaan desain,"Analisis rangka3D, lantai, railing, sambunganJ01-J07, gempa/getaran dan akses",Insinyur + arsitek,Hitungan dan daftar perubahan tertulis,Sebelum penetapan gambar fabrikasi,,,
+P03,Terbitkan revisi kerja,"Profil, tandaelemen, detail lubang/las, toleransi, daftar potong dan RAB sinkron",Detailer + insinyur,Revisi bertanggal dan disetujui; gambar lama ditarik,Sebelum pemesanan/pemotongan batch,,,
+P04,Terima bahan,"Cocokkan sertifikat, ketebalan, panjang, timbang dan kondisi bahan",QC + fabrikator,Log bahan dan identitas batch,Sebelum bahan digunakan,,,
+P05,Contoh sambungan dan uji rakit,Satu modul representatif dengan tangga/railing kritis; prosedur las/tekuk disetujui,Fabrikator + QC + insinyur,"Dimensi, fit-up dan hasil pemeriksaan diterima",Sebelum produksi berulang,,,
+P06,Fabrikasi batch,"Tandai, potong, deburr, bor/tekuk/las sesuai revisi; catat perubahan dan sisa",Fabrikator + QC,"Traveler tiap modul, pemeriksaan las dan ukur",Tidak substitusi profil tanpa persetujuan desain,,,
+P07,Finishing dan pengiriman,"Siapkan permukaan, cat sesuai lembarproduk, curing, labelmodul dan perlindungan",QC + logistik,Log coating; daftar kemasan dan berat angkat,Rute dan batas bebanLT4 disetujui,,,
+P08,Pemasangan,Pasang dari area tumpuan yang disetujui; stabilkan tiap modul sebelum melepas alat,Pelaksana + pengawas,"Metode kerja, bracing sementara dan inspeksi tiap tahap",Urutan stabilitas dan alatangkat ditetapkan insinyur,,,
+P09,Pemeriksaan akhir,"Cek seluruh pengikat, las, kelurusan, railing, tangga, antiselip dan jalur keluar",QC + insinyur + pemilik,Daftar temuan ditutup; uji hanya dengan prosedur tertulis,Sebelum dibuka untuk pengguna,,,
+P10,Serah terima dan perawatan,"As-built, sertifikat, logQC, kapasitas penggunaan, panduan inspeksi/perbaikan",Kontraktor + pemilik,Berita acara dan dokumen diterima,Operasi setelah persetujuan akhir penanggung jawab,,,

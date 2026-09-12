@@ -1,0 +1,41 @@
+﻿id,pekerjaan,material,volume_beli,satuan,upah_per_satuan,material_per_satuan,jumlah_upah,jumlah_material,total,kelompok,status_verifikasi
+X01,Kolom tribun,"Hollow 50×100×2,3 mm",738.946591868994,kg,6000.0,13369.23076923077,4433680,9879148,14312828,Dasar,"Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
+X02,Balok tepi tier,"Hollow 50×100×2,3 mm",409.4944184499064,kg,6000.0,13369.23076923077,2456967,5474625,7931592,Dasar,"Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
+X03,Pengaku longitudinal dek,"Hollow 50×100×2,3 mm",1243.3228204402972,kg,6000.0,13369.23076923077,7459937,16622270,24082207,Dasar,"Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
+X04,Rangka belakang,"Hollow 50×100×2,3 mm",95.11486505851849,kg,6000.0,13369.23076923077,570689,1271613,1842302,Dasar,"Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
+X05,Strut ke kolom beton,"Hollow 50×100×2,3 mm",11.854667798418513,kg,6000.0,13369.23076923077,71128,158488,229616,Dasar,"Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
+X06,Bracing X,"Hollow 50×100×2,3 mm",235.69913456623027,kg,6000.0,13369.23076923077,1414195,3151116,4565311,Dasar,"Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
+B01,Balok silang penumpu dek,"Hollow 50×100×2,3 mm",314.04168360872893,kg,6000.0,13369.23076923077,1884250,4198496,6082746,Dasar,"Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
+B02,Penyangga tangga / usulan,"Hollow 50×100×2,3 mm",234.02581820890595,kg,6000.0,13369.23076923077,1404155,3128745,4532900,Dasar,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+X07,Rail atas / elemen horizontal,SHS 40×40×2 mm,30.14,kg,6000.0,12986.666666666666,180840,391418,572258,Dasar,"Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
+X08,Tiang railing dan pegangan,"SHS 40×40×2,8 mm",379.8,kg,6000.0,13127.962085308056,2278800,4986000,7264800,Dasar,"Panjang model dibaca ulang; kg bersih penampang, kg beli katalog"
+X09,Pelat dek,Bordes 4 mm,2893.8239999999996,kg,5000.0,12937.0,14469120,37437401,51906521,Dasar,Jumlah/luas/volume model dibaca ulang; stok atau allowance dihitung terpisah
+X10,"Riser, fascia dan return",Pelat polos 2 mm,872.0893319645444,kg,6000.0,12296.296296296296,5232536,10723469,15956005,Dasar,Geometri dan pola potong arsip; bukan pembacaan ulang semua pelat native
+X11,Pelat tekuk tangga,Pelat polos 3 mm,542.592,kg,6000.0,12285.714285714286,3255552,6666130,9921682,Dasar,Geometri dan pola potong arsip; bukan pembacaan ulang semua pelat native
+B03,Pengaku tapak tangga / usulan,SHS 40×40×2 mm,406.89,kg,6000.0,12986.666666666666,2441340,5284145,7725485,Dasar,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+X12,Penutup kedua sisi,Pelat polos 2 mm,303.5266680354556,kg,6000.0,12296.296296296296,1821160,3732254,5553414,Dasar,Geometri dan pola potong arsip; bukan pembacaan ulang semua pelat native
+X13,Base plate,Pelat 150×150×8 mm,180.86399999999998,kg,6000.0,11695.187165775402,1085184,2115238,3200422,Dasar,Jumlah/luas/volume model dibaca ulang; stok atau allowance dihitung terpisah
+X14,"Pelat sambungan rangka, tangga dan buhul",Pelat 6 mm; lembar 120×240 cm,678.2399999999999,kg,5000.0,12542.857142857143,3391200,8507067,11898267,Dasar,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+X15,Baut rangka dan X,M12×40 kelas 8.8,693.0,bh,1000.0,4500.0,693000,3118500,3811500,Dasar,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+X17,Mur rangka dan X,M12 kelas 8,693.0,bh,1000.0,1500.0,693000,1039500,1732500,Dasar,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+X18,Ring rangka dan X,Ring datar keras M12,1386.0,bh,50.0,750.0,69300,1039500,1108800,Dasar,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+B04,Baut tangga,M12×40 kelas 8.8,488.0,bh,1000.0,4500.0,488000,2196000,2684000,Dasar,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+B05,Mur tangga,M12 kelas 8,488.0,bh,1000.0,1500.0,488000,732000,1220000,Dasar,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+B06,Ring tangga,Ring datar keras M12,976.0,bh,50.0,750.0,48800,732000,780800,Dasar,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+X16,Ikatan ke kolom beton / cadangan,Angkur dan pelat: belum ditetapkan,1.0,ls,0.0,5000000.0,0,5000000,5000000,Dasar,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+X19,Sekrup kayu ke baja + ring,#12×65 / usulan,500.0,set,300.0,1500.0,150000,750000,900000,Dasar,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+X20,Sekrup penutup + ring EPDM,#12×32 / usulan,2449.0,set,300.0,800.0,734700,1959200,2693900,Dasar,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+X21,Karet dudukan,150×150×10 mm,80.0,bh,500.0,25000.0,40000,2000000,2040000,Dasar,Jumlah/luas/volume model dibaca ulang; stok atau allowance dihitung terpisah
+X22,Papan pinus dudukan,Lebar 400 mm; tebal 40 mm,82.29486732580716,m,25000.0,90000.0,2057372,7406538,9463910,Dasar,Jumlah/luas/volume model dibaca ulang; stok atau allowance dihitung terpisah
+X23,Panel kayu sandaran,Lebar 400 mm; tebal 40 mm,20.0475,m,25000.0,90000.0,501188,1804275,2305463,Dasar,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+X24,Cat dan coating baja,Persiapan + cat; luas permukaan,626.0561544325145,m²,13182.523550911963,32956.30887727991,8253000,20632500,28885500,Dasar,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+E01,Backing penutup dan hardware railing,Backing penutup dan hardware railing / provisional sum,1.0,ls,0.0,3500000.0,0,3500000,3500000,Pelengkap,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+E02,Sistem antiselip tangga,Sistem antiselip permukaan tangga,15.0,m2,0.0,125000.0,0,1875000,1875000,Pelengkap,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+E03,Clear coat kayu,Clear coat kayu,19.0,L,0.0,100000.0,0,1900000,1900000,Pelengkap,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+E04,Jasa tekuk pelat,Jasa press brake,112.0,tekuk,20000.0,0.0,2240000,0,2240000,Pelengkap,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+EL01,Angkut bengkel-lokasi + bongkar,Biaya pelengkap proyek,2.0,rit,1500000.0,0.0,3000000,0,3000000,Pelengkap,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+EL02,Hoist dan alat angkat LT4,Biaya pelengkap proyek,7.0,hari,500000.0,0.0,3500000,0,3500000,Pelengkap,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+EL03,Perancah dan penyangga sementara,Biaya pelengkap proyek,1.0,ls,2500000.0,0.0,2500000,0,2500000,Pelengkap,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+EL04,Pengukuran + kontrol mutu las/cat,Biaya pelengkap proyek,1.0,ls,2000000.0,0.0,2000000,0,2000000,Pelengkap,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+EL05,"Pembersihan, APD dan proteksi",Biaya pelengkap proyek,1.0,ls,1500000.0,0.0,1500000,0,1500000,Pelengkap,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"
+EL06,Verifikasi desain + investigasi tumpuan,Biaya pelengkap proyek,1.0,ls,7500000.0,0.0,7500000,0,7500000,Pelengkap,"Usulan atau allowance; aritmetika diperiksa, kebutuhan final belum ditetapkan"

@@ -37,6 +37,7 @@ jobs:
           python kg_reconciliation.py
           python quantity_reaudit.py
           python check_r06.py
+          python check_r07.py
           node boq-revision.test.cjs
           node kg_pricing.test.cjs
           node lookback.test.cjs
