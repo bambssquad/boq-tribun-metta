@@ -17,6 +17,9 @@ for(const scope of ['native','full'])for(const thickness of ['model','h20','h16'
  assert.equal(cuts.length,scope==='native'?245:361);
  assert(Math.abs(cuts.reduce((n,r)=>n+(r[3].n||0),0)-count*mass)<1e-7);
  assert(!B.scopeHtml(d,s).includes('NaN'));
+ assert(B.activeKgHtml(d,s).includes(B.fmt(count*mass,3)));
+ if(scope==='full'){const audit=B.auditHtml(d,s);assert(audit.includes(B.fmt(97*mass,2)));assert(audit.includes(B.fmt(101*mass,2)));assert(audit.includes(B.fmt(rs.filter(r=>r.unit==='kg').reduce((n,r)=>n+r.qty,0),2)));}
+
 }
 const s=B.defaults();B.edit(s,'X01','qty',123);s.scope='native';assert.notEqual(B.rows(d,s)[0].qty,123);
 B.edit(s,'X01','qty',456);assert(B.scopeHtml(d,s).includes('berbeda dari pola stok'));s.scope='full';assert.equal(B.rows(d,s)[0].qty,123);
