@@ -49,6 +49,6 @@ print('PASS: R07 review status, 13 PDF pages, 361 cuts/101 stocks, 80 column IDs
 
 rab=PdfReader(OUT/"METTA-R07-RAB-lengkap.pdf")
 rabtext="\n".join(p.extract_text() for p in rab.pages)
-assert len(rab.pages)==7
-for expected in ["269.719.729","90.307.093","179.412.636","240.204.729","DRAF UNTUK PEMERIKSAAN"]:assert expected in rabtext,expected
-print("PASS: RAB PDF 7 pages and full/base cost reconciliation.")
+assert len(rab.pages)==9
+for expected in ["269.719.729","90.307.093","179.412.636","240.204.729","DRAF UNTUK PEMERIKSAAN","SUBTOTAL KG DAN BATANG PER PROFIL","SUBTOTAL KG DAN ALOKASI BATANG PER KOMPONEN","3.282,5","9.570,466"]:assert expected in rabtext,expected
+print("PASS: RAB PDF 9 pages and full/base cost reconciliation.")

@@ -16,6 +16,7 @@ for(const scope of ['native','full'])for(const thickness of ['model','h20','h16'
  const cuts=sheet.rows.slice(13);
  assert.equal(cuts.length,scope==='native'?245:361);
  assert(Math.abs(cuts.reduce((n,r)=>n+(r[3].n||0),0)-count*mass)<1e-7);
+ const subtotal=B.massSummary(d,s);assert(Math.abs(subtotal.kg-rs.filter(r=>r.unit==='kg').reduce((n,r)=>n+r.qty,0))<1e-7);assert(Math.abs(subtotal.components.reduce((n,r)=>n+r.kg,0)-subtotal.kg)<1e-7);assert(Math.abs(subtotal.components.reduce((n,r)=>n+r.bars,0)-subtotal.bars)<1e-7);assert(Math.abs(subtotal.profiles.filter(r=>r.name.startsWith('Hollow')).reduce((n,r)=>n+r.bars,0)-count)<1e-7);
  assert(!B.scopeHtml(d,s).includes('NaN'));
  assert(B.activeKgHtml(d,s).includes(B.fmt(count*mass,3)));
  if(scope==='full'){const audit=B.auditHtml(d,s);assert(audit.includes(B.fmt(97*mass,2)));assert(audit.includes(B.fmt(101*mass,2)));assert(audit.includes(B.fmt(rs.filter(r=>r.unit==='kg').reduce((n,r)=>n+r.qty,0),2)));}
