@@ -1,0 +1,11 @@
+﻿kode,data,isi_minimum,PIC,dampak,hasil_ukur,tanggal,bukti_foto_gambar,pemeriksa
+U01,Datum dan grid,Tetapkan titik nol lokal tribun terhadap grid gedung; foto titik referensi; ukur semua 80 lokasi dudukan.,Surveyor,F01 / panjang dan posisi kolom,,,,
+U02,Geometri jadi,"Ukur batas tribun, elevasi tier, lebar/depth dudukan, dua area tangga, headroom dan jalur keluar.",Arsitek + surveyor,Bentuk/kapasitas/akses tetap; koreksi salah ukur dicatat,,,,
+U03,Struktur LT4,"Gambar as-built pelat dan balok beton, tebal pelat, mutu beton, tulangan, bukaan dan beban yang sudah bekerja.",Pemilik + insinyur gedung,Reaksi tumpuan dan kapasitas lantai,,,,
+U04,Titik ikatan beton,"Posisi 16 titik usulan, ukuran kolom beton, rebar scan, jarak tepi, kondisi retak, instalasi tertanam.",Surveyor + insinyur,Jenis/jumlah angkur; belum boleh mengebor,,,,
+U05,Baja pemasok,"Sertifikat mutu/standar produk, ukur tebal aktual, dimensi luar, panjang stok dan timbang sampel per profil.",Pemasok + QC,"Fy/Fu, tebal desain dan kg per batang",,,,
+U06,Pelat dan kayu,Pastikan stok tepat 1200x2400; tebal dasar bordes tanpa motif; mutu/kadar air kayu dan sistem antiselip.,Pemasok + QC,"Kg pelat, bentang dek, pengikat kayu",,,,
+U07,Pemakaian,"Konfirmasi kapasitas orang yang disetujui, jenis acara, kemungkinan lompat/ritmis, lokasi indoor/outdoor.",Pemilik + arsitek,"Beban, getaran, pagar dan jalur evakuasi",,,,
+U08,Logistik,"Ukur pintu/lift/koridor, kapasitas lift dan alat angkat, titik bongkar, batas beban tumpukan LT4.",Kontraktor + pengelola,"Ukuran modul, berat angkat, urutan kirim",,,,
+U09,Sistem fabrikasi,"Kemampuan las hollow tipis, prosedur las, welder, alat ukur, kapasitas tekuk dan radius aktual.",Fabrikator,"Las, allowance tekuk dan uji rakit",,,,
+U10,Lingkungan dan finishing,"Kondisi korosi, sistem cat yang disetujui, persiapan permukaan, ketebalan film dan waktu curing produk.",Pemilik + pemasok cat,Rencana QC finishing dan pemeliharaan,,,,

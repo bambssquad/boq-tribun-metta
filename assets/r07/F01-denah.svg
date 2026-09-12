@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="760" height="470" preserveAspectRatio="xMinYMin meet" viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="760" height="470"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-470)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="760" height="470" style="stroke: rgb(74%,81%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="20" y="443" style="font-family: Times-Roman; font-size: 17px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,886) scale(1,-1)">F01 - Denah sumbu lokal dan identitas dudukan</text>
+			<text x="20" y="424" style="font-family: Times-Roman; font-size: 9px;fill: rgb(70%,26%,15%); stroke:none;" transform="translate(0,848) scale(1,-1)">UNTUK PEMERIKSAAN INSINYUR - BELUM UNTUK DIPOTONG / DIFABRIKASI</text>
+			<path d="M 52,160 L 689.2,160 Z" style="stroke: rgb(74%,81%,84%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="15" y="160.0" style="font-family: Times-Roman; font-size: 8px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,320) scale(1,-1)">0</text>
+			<path d="M 52,196 L 689.2,196 Z" style="stroke: rgb(74%,81%,84%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="15" y="196.0" style="font-family: Times-Roman; font-size: 8px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,392) scale(1,-1)">1000</text>
+			<path d="M 52,232 L 689.2,232 Z" style="stroke: rgb(74%,81%,84%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="15" y="232.0" style="font-family: Times-Roman; font-size: 8px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,464) scale(1,-1)">2000</text>
+			<path d="M 52,268 L 689.2,268 Z" style="stroke: rgb(74%,81%,84%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="15" y="268.0" style="font-family: Times-Roman; font-size: 8px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,536) scale(1,-1)">3000</text>
+			<path d="M 52,304 L 689.2,304 Z" style="stroke: rgb(74%,81%,84%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="15" y="304.0" style="font-family: Times-Roman; font-size: 8px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,608) scale(1,-1)">4000</text>
+			<path d="M 52,340 L 689.2,340 Z" style="stroke: rgb(74%,81%,84%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="15" y="340.0" style="font-family: Times-Roman; font-size: 8px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,680) scale(1,-1)">5000</text>
+			<circle cx="52.0" cy="160.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="45.0" y="166.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,332) scale(1,-1)">C01</text>
+			<circle cx="115.72" cy="160.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="108.72" y="175.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,350) scale(1,-1)">C02</text>
+			<circle cx="179.44" cy="160.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="172.44" y="166.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,332) scale(1,-1)">C03</text>
+			<circle cx="225.88" cy="160.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="218.88" y="175.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,350) scale(1,-1)">C04</text>
+			<circle cx="299.32" cy="160.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="292.32" y="166.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,332) scale(1,-1)">C05</text>
+			<circle cx="306.88" cy="160.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="299.88" y="175.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,350) scale(1,-1)">C06</text>
+			<circle cx="370.59999999999997" cy="160.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="363.59999999999997" y="166.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,332) scale(1,-1)">C07</text>
+			<circle cx="434.32" cy="160.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="427.32" y="175.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,350) scale(1,-1)">C08</text>
+			<circle cx="492.28" cy="160.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="485.28" y="166.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,332) scale(1,-1)">C09</text>
+			<circle cx="515.3199999999999" cy="160.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="508.31999999999994" y="175.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,350) scale(1,-1)">C10</text>
+			<circle cx="561.76" cy="160.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="554.76" y="166.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,332) scale(1,-1)">C11</text>
+			<circle cx="625.4799999999999" cy="160.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="618.4799999999999" y="175.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,350) scale(1,-1)">C12</text>
+			<circle cx="689.1999999999999" cy="160.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="682.1999999999999" y="166.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,332) scale(1,-1)">C13</text>
+			<circle cx="52.0" cy="196.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="45.0" y="211.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,422) scale(1,-1)">C14</text>
+			<circle cx="115.72" cy="196.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="108.72" y="202.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,404) scale(1,-1)">C15</text>
+			<circle cx="179.44" cy="196.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="172.44" y="211.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,422) scale(1,-1)">C16</text>
+			<circle cx="225.88" cy="196.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="218.88" y="202.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,404) scale(1,-1)">C17</text>
+			<circle cx="299.32" cy="196.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="292.32" y="211.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,422) scale(1,-1)">C18</text>
+			<circle cx="306.88" cy="196.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="299.88" y="202.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,404) scale(1,-1)">C19</text>
+			<circle cx="370.59999999999997" cy="196.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="363.59999999999997" y="211.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,422) scale(1,-1)">C20</text>
+			<circle cx="434.32" cy="196.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="427.32" y="202.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,404) scale(1,-1)">C21</text>
+			<circle cx="492.28" cy="196.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="485.28" y="211.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,422) scale(1,-1)">C22</text>
+			<circle cx="515.3199999999999" cy="196.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="508.31999999999994" y="202.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,404) scale(1,-1)">C23</text>
+			<circle cx="561.76" cy="196.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="554.76" y="211.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,422) scale(1,-1)">C24</text>
+			<circle cx="625.4799999999999" cy="196.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="618.4799999999999" y="202.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,404) scale(1,-1)">C25</text>
+			<circle cx="689.1999999999999" cy="196.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="682.1999999999999" y="211.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,422) scale(1,-1)">C26</text>
+			<circle cx="52.0" cy="232.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="45.0" y="238.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,476) scale(1,-1)">C27</text>
+			<circle cx="115.72" cy="232.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="108.72" y="247.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,494) scale(1,-1)">C28</text>
+			<circle cx="179.44" cy="232.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="172.44" y="238.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,476) scale(1,-1)">C29</text>
+			<circle cx="225.88" cy="232.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="218.88" y="247.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,494) scale(1,-1)">C30</text>
+			<circle cx="299.32" cy="232.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="292.32" y="238.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,476) scale(1,-1)">C31</text>
+			<circle cx="306.88" cy="232.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="299.88" y="247.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,494) scale(1,-1)">C32</text>
+			<circle cx="370.59999999999997" cy="232.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="363.59999999999997" y="238.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,476) scale(1,-1)">C33</text>
+			<circle cx="434.32" cy="232.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="427.32" y="247.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,494) scale(1,-1)">C34</text>
+			<circle cx="492.28" cy="232.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="485.28" y="238.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,476) scale(1,-1)">C35</text>
+			<circle cx="515.3199999999999" cy="232.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="508.31999999999994" y="247.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,494) scale(1,-1)">C36</text>
+			<circle cx="561.76" cy="232.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="554.76" y="238.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,476) scale(1,-1)">C37</text>
+			<circle cx="625.4799999999999" cy="232.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="618.4799999999999" y="247.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,494) scale(1,-1)">C38</text>
+			<circle cx="689.1999999999999" cy="232.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="682.1999999999999" y="238.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,476) scale(1,-1)">C39</text>
+			<circle cx="64.6" cy="268.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="57.599999999999994" y="283.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,566) scale(1,-1)">C40</text>
+			<circle cx="115.72" cy="268.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="108.72" y="274.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,548) scale(1,-1)">C41</text>
+			<circle cx="179.44" cy="268.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="172.44" y="283.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,566) scale(1,-1)">C42</text>
+			<circle cx="225.88" cy="268.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="218.88" y="274.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,548) scale(1,-1)">C43</text>
+			<circle cx="299.32" cy="268.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="292.32" y="283.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,566) scale(1,-1)">C44</text>
+			<circle cx="306.88" cy="268.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="299.88" y="274.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,548) scale(1,-1)">C45</text>
+			<circle cx="370.59999999999997" cy="268.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="363.59999999999997" y="283.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,566) scale(1,-1)">C46</text>
+			<circle cx="434.32" cy="268.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="427.32" y="274.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,548) scale(1,-1)">C47</text>
+			<circle cx="492.28" cy="268.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="485.28" y="283.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,566) scale(1,-1)">C48</text>
+			<circle cx="515.3199999999999" cy="268.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="508.31999999999994" y="274.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,548) scale(1,-1)">C49</text>
+			<circle cx="561.76" cy="268.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="554.76" y="283.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,566) scale(1,-1)">C50</text>
+			<circle cx="625.4799999999999" cy="268.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="618.4799999999999" y="274.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,548) scale(1,-1)">C51</text>
+			<circle cx="676.5999999999999" cy="268.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="669.5999999999999" y="283.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,566) scale(1,-1)">C52</text>
+			<circle cx="52.0" cy="304.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="45.0" y="310.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,620) scale(1,-1)">C53</text>
+			<circle cx="115.72" cy="304.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="108.72" y="319.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,638) scale(1,-1)">C54</text>
+			<circle cx="179.44" cy="304.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="172.44" y="310.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,620) scale(1,-1)">C55</text>
+			<circle cx="225.88" cy="304.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="218.88" y="319.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,638) scale(1,-1)">C56</text>
+			<circle cx="299.32" cy="304.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="292.32" y="310.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,620) scale(1,-1)">C57</text>
+			<circle cx="306.88" cy="304.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="299.88" y="319.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,638) scale(1,-1)">C58</text>
+			<circle cx="370.59999999999997" cy="304.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="363.59999999999997" y="310.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,620) scale(1,-1)">C59</text>
+			<circle cx="434.32" cy="304.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="427.32" y="319.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,638) scale(1,-1)">C60</text>
+			<circle cx="492.28" cy="304.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="485.28" y="310.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,620) scale(1,-1)">C61</text>
+			<circle cx="515.3199999999999" cy="304.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="508.31999999999994" y="319.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,638) scale(1,-1)">C62</text>
+			<circle cx="561.76" cy="304.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="554.76" y="310.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,620) scale(1,-1)">C63</text>
+			<circle cx="625.4799999999999" cy="304.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="618.4799999999999" y="319.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,638) scale(1,-1)">C64</text>
+			<circle cx="689.1999999999999" cy="304.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="682.1999999999999" y="310.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,620) scale(1,-1)">C65</text>
+			<circle cx="52.0" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="45.0" y="355.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,710) scale(1,-1)">C66</text>
+			<circle cx="115.72" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="108.72" y="346.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,692) scale(1,-1)">C67</text>
+			<circle cx="179.44" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="172.44" y="355.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,710) scale(1,-1)">C68</text>
+			<circle cx="225.88" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="218.88" y="346.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,692) scale(1,-1)">C69</text>
+			<circle cx="243.16" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="236.16" y="355.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,710) scale(1,-1)">C70</text>
+			<circle cx="299.32" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="292.32" y="346.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,692) scale(1,-1)">C71</text>
+			<circle cx="306.88" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="299.88" y="355.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,710) scale(1,-1)">C72</text>
+			<circle cx="370.59999999999997" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="363.59999999999997" y="346.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,692) scale(1,-1)">C73</text>
+			<circle cx="434.32" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="427.32" y="355.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,710) scale(1,-1)">C74</text>
+			<circle cx="492.28" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="485.28" y="346.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,692) scale(1,-1)">C75</text>
+			<circle cx="498.03999999999996" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="491.03999999999996" y="355.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,710) scale(1,-1)">C76</text>
+			<circle cx="515.3199999999999" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="508.31999999999994" y="346.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,692) scale(1,-1)">C77</text>
+			<circle cx="561.76" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="554.76" y="355.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,710) scale(1,-1)">C78</text>
+			<circle cx="625.4799999999999" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="618.4799999999999" y="346.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,692) scale(1,-1)">C79</text>
+			<circle cx="689.1999999999999" cy="340.0" r="2.2" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,19%,26%); fill-rule: evenodd;"/>
+			<text x="682.1999999999999" y="355.0" style="font-family: Times-Roman; font-size: 6px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,710) scale(1,-1)">C80</text>
+			<text x="42.0" y="130" style="font-family: Times-Roman; font-size: 7px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,260) scale(1,-1)">0</text>
+			<text x="105.72" y="142" style="font-family: Times-Roman; font-size: 7px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,284) scale(1,-1)">1770</text>
+			<text x="169.44" y="130" style="font-family: Times-Roman; font-size: 7px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,260) scale(1,-1)">3540</text>
+			<text x="215.88" y="142" style="font-family: Times-Roman; font-size: 7px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,284) scale(1,-1)">4830</text>
+			<text x="289.32" y="130" style="font-family: Times-Roman; font-size: 7px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,260) scale(1,-1)">6870</text>
+			<text x="296.88" y="142" style="font-family: Times-Roman; font-size: 7px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,284) scale(1,-1)">7080</text>
+			<text x="360.59999999999997" y="130" style="font-family: Times-Roman; font-size: 7px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,260) scale(1,-1)">8850</text>
+			<text x="424.32" y="142" style="font-family: Times-Roman; font-size: 7px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,284) scale(1,-1)">10620</text>
+			<text x="482.28" y="130" style="font-family: Times-Roman; font-size: 7px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,260) scale(1,-1)">12230</text>
+			<text x="505.31999999999994" y="142" style="font-family: Times-Roman; font-size: 7px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,284) scale(1,-1)">12870</text>
+			<text x="551.76" y="130" style="font-family: Times-Roman; font-size: 7px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,260) scale(1,-1)">14160</text>
+			<text x="615.4799999999999" y="142" style="font-family: Times-Roman; font-size: 7px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,284) scale(1,-1)">15930</text>
+			<text x="679.1999999999999" y="130" style="font-family: Times-Roman; font-size: 7px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,260) scale(1,-1)">17700</text>
+			<text x="20" y="110" style="font-family: Times-Roman; font-size: 10px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,220) scale(1,-1)">80 dudukan; angka x/y dalam mm lokal. Koordinat lengkap dan ID Revit: register-kolom.csv.</text>
+			<text x="20" y="91" style="font-family: Times-Roman; font-size: 10px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,182) scale(1,-1)">Hubungan titik nol dengan grid gedung harus diukur (U01). Gambar ini bukan setting-out lapangan.</text>
+			<text x="20" y="72" style="font-family: Times-Roman; font-size: 10px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,144) scale(1,-1)">Posisi tangga, bentuk, kapasitas dan jalur keluar tetap. Kapasitas orang perlu dicatat pada U07.</text>
+			<text x="20" y="53" style="font-family: Times-Roman; font-size: 10px;fill: rgb(8%,19%,26%); stroke:none;" transform="translate(0,106) scale(1,-1)">Tidak menambah kolom pada area tangga. Jarak1770 bukan jarak seragam seluruh model.</text>
+		</g>
+	</g>
+</svg>
