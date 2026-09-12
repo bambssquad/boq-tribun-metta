@@ -57,8 +57,8 @@ for(const units of ['components','bars'])for(const subtotals of [false,true])for
 console.log('PASS: column/beam/component subtotals reconcile in all views and exported formulas, including manual edits.');
 
 (async()=>{
- const elements=new Map(),storage=new Map();function element(id){if(!elements.has(id))elements.set(id,{dataset:{},listeners:{},addEventListener(k,fn){this.listeners[k]=fn;},querySelectorAll(){return [];},setAttribute(){},innerHTML:'',textContent:''});return elements.get(id);}
- const context={BoqRevision:B,document:{getElementById:element,querySelectorAll:()=>[]},localStorage:{getItem:k=>storage.get(k),setItem:(k,v)=>storage.set(k,v)},fetch:async()=>({ok:true,json:async()=>d}),console};
+ const elements=new Map(),storage=new Map();function element(id){if(!elements.has(id))elements.set(id,{dataset:{},insertAdjacentHTML(){},listeners:{},addEventListener(k,fn){this.listeners[k]=fn;},querySelectorAll(){return [];},setAttribute(){},innerHTML:'',textContent:''});return elements.get(id);}
+ const context={BoqRevision:B,document:{getElementById:element,querySelectorAll:()=>[]},localStorage:{getItem:k=>storage.get(k),setItem:(k,v)=>storage.set(k,v)},fetch:async url=>({ok:true,json:async()=>url.includes('design-scope')?JSON.parse(fs.readFileSync('assets/r07/design-scope.json','utf8')):d}),console};
  vm.runInNewContext(fs.readFileSync('boq-revision-controller.js','utf8'),context);await new Promise(setImmediate);
  const change=(id,value)=>{const el=element(id);el.value=value;el.listeners.change({target:el});};
  change('br-shs','s17');assert(element('br-rows').innerHTML.includes('SHS 40×40×1,7 mm'));const before=element('br-total').textContent;
@@ -68,7 +68,8 @@ console.log('PASS: column/beam/component subtotals reconcile in all views and ex
  element('boq-revision').listeners.click({target:{dataset:{brComponents:'1'}}});assert.equal(element('br-units').value,'components');assert(!element('br-rows').innerHTML.includes('readonly'));
  const kgToggle=element('br-kg-explanation');kgToggle.checked=true;kgToggle.listeners.change({target:kgToggle});assert.equal(element('br-kg-panel').hidden,false);assert(element('br-kg-panel').innerHTML.includes('54 dibanding 101'));assert.equal(element('br-total').textContent,before);
  const persisted=JSON.parse(storage.get('metta-boq-september11-v1'));assert.equal(persisted.kgExplanation,true);assert.equal(persisted.shs,'s17');assert.equal(persisted.subtotals,true);
- change('br-case','source');assert.equal(element('br-shs').disabled,true);assert.equal(element('br-units').disabled,true);
+ change('br-scope','native');assert(element('br-scope-info').innerHTML.includes('97 batang'));assert.notEqual(element('br-total').textContent,before);change('br-scope','adjusted');assert.equal(element('br-pdf').disabled,true);assert.equal(element('br-table').hidden,true);assert.equal(element('br-total').textContent,'Belum lengkap');change('br-scope','full');assert.equal(element('br-pdf').disabled,false);assert.equal(element('br-total').textContent,before);
+ change('br-case','source');assert.equal(element('br-scope').disabled,true);assert.equal(element('br-shs').disabled,true);assert.equal(element('br-units').disabled,true);
  console.log('PASS: controller SHS, stock/component switch, subtotals, persistence and source controls.');
 })().catch(error=>{console.error(error);process.exitCode=1;});
 
