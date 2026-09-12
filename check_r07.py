@@ -1,5 +1,6 @@
 """Check review issue quantities, references, status and document completeness."""
 import csv,json,math
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from bs4 import BeautifulSoup
 from pypdf import PdfReader
@@ -42,8 +43,8 @@ assert 'https://pesta.bsn.go.id/produk/detail/12927-sni17272020' in '\n'.join(te
 assert 'Kandidat diperiksa' in '\n'.join(texts)
 assert d['sections'][-1]['rows'][0][0].startswith('SNI ')
 for svg in OUT.glob('*.svg'):
-    s=BeautifulSoup(svg.read_text(encoding='utf-8'),'xml')
-    assert 'UNTUK PEMERIKSAAN' in s.get_text()
+    s=ET.parse(svg).getroot()
+    assert 'UNTUK PEMERIKSAAN' in ''.join(s.itertext())
 print('PASS: R07 review status, 13 PDF pages, 361 cuts/101 stocks, 80 column IDs, 40 cost rows, form fields and local links.')
 
 rab=PdfReader(OUT/"METTA-R07-RAB-lengkap.pdf")
