@@ -79,7 +79,7 @@ for(const selected of ['model','h20','h16','source']) {
  const state={...B.defaults(),case:selected,kgExplanation:true};
  const explanation=B.kgHtml(d,state);
  assert(explanation.includes('590,14'));assert(explanation.includes('minimum global belum terbukti'));assert(!explanation.includes('NaN'));
- assert(explanation.includes('1.662,5'));
+ assert(explanation.includes(B.fmt((d.study.procurement.variants[selected]||d.study.procurement.variants.model).purchase_kg-1620,2)));
  if(selected!=='source') {
   const before=B.totals(B.rows(d,state));state.kgExplanation=false;assert.deepEqual(B.totals(B.rows(d,state)),before);state.kgExplanation=true;
   B.edit(state,'X01','qty',0);assert(!B.kgHtml(d,state).includes('NaN'));
