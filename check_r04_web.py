@@ -11,8 +11,8 @@ gallery=json.loads(re.search(r'const METTA_DRAWINGS=(\[.*?\]);',str(home),re.S).
 assert [r['revision'] for r in gallery[:6]]==['R04']*6
 assert all(r['revision']=='R03' and 'Arsip R03' in r['title'] for r in gallery[6:])
 assert len(page.select('[data-sheet]'))==6
-revised=json.loads(re.search(r'const REVISED=(\[.*?\]);',tools,re.S).group(1))
-finishes=json.loads(re.search(r'const FINISH_GEOMETRY=(\[.*?\]);',tools,re.S).group(1))
+revised=json.loads(re.search(r'const REVISED=(\[.*?\]);',(ROOT/'dist/assets/model-native.js').read_text(encoding='utf8'),re.S).group(1))
+finishes=json.loads(re.search(r'const FINISH_GEOMETRY=(\[.*?\]);',(ROOT/'dist/assets/model-finishes.js').read_text(encoding='utf8'),re.S).group(1))
 ids={r['id'] for r in revised};audit=json.loads((ROOT/'data/revit-r04-audit.json').read_text())
 assert not ids & set(audit['removed_ids'])
 assert {r['id'] for r in audit['braces']}<=ids
