@@ -38,6 +38,8 @@ jobs:
           python quantity_reaudit.py
           python check_r06.py
           python check_r07.py
+          python check_r08.py
+          node r08.test.cjs
           node pdf-mass.test.cjs
           node design-scope.test.cjs
           node boq-revision.test.cjs

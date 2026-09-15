@@ -1,0 +1,16 @@
+{
+  "revision": "R08 catalogue study",
+  "checked": "2026-09-15",
+  "purpose": "Outer side cladding only, not an approved crowd barrier or structural bracing",
+  "options": [
+    {"id":"m16_25","label":"Galvanis 25x25 mm / kawat 1.6 mm","wire_mm":1.6,"opening_label_mm":25,"roll_width_m":0.9,"roll_length_m":30,"catalogue_roll_kg":35.8,"source":"https://pbsukses.co.id/product/kawat-loket-galvanize/","price_per_roll":null,"price_status":"Minta penawaran; harga tidak tersedia di katalog yang diperiksa"},
+    {"id":"m20_25","label":"Galvanis 25x25 mm / kawat 2.0 mm","wire_mm":2.0,"opening_label_mm":25,"roll_width_m":1.2,"roll_length_m":30,"catalogue_roll_kg":70,"source":"https://www.pabrikbrc.net/2019/07/jual-wire-mesh-kawat-loket-merk-givro.html","spec_source":"https://pabrikkawatloket.com/kawat-loket-galvanis-2mm-lub-25x25-uk-1-2x30-meter/","price_per_roll":null,"price_status":"Minta penawaran; harga tidak tersedia di katalog yang diperiksa"},
+    {"id":"m20_50","label":"Galvanis 50x50 mm / kawat 2.0 mm","wire_mm":2.0,"opening_label_mm":50,"roll_width_m":1.8,"roll_length_m":30,"catalogue_roll_kg":53,"source":"https://www.pabrikbrc.net/2019/07/jual-wire-mesh-kawat-loket-merk-givro.html","price_per_roll":null,"price_status":"Minta penawaran; harga tidak tersedia di katalog yang diperiksa"}
+  ],
+  "candidate":"m20_25",
+  "candidate_basis":"Diameter lebih besar daripada1.6 dan bukaan lebih kecil daripada50; kandidat koordinasi penutup sisi, bukan penetapan kekuatan atau pilihan biaya termurah.",
+  "purchase_basis":"Gunakan pola potong sesuai lebar dan panjang roll per produk. Kg pembelian=roll utuh x massa katalog. Massa terpasang alokasi luas dari katalog, bukan hasil timbang. Jangan menganggap nominal25 selalu jarak sumbu kawat; perlu konfirmasi lubang bersih/pitch pemasok.",
+  "required_details":["Rangka keliling dan pembagi panel","Penjepit/strip penutup tepi potongan","Pengikat tahan korosi dan jaraknya","Pencegahan tepi tajam dan celah terjepit","Dukungan tepi panel dan pemeriksaan benturan/beban pagar bila dapat dijangkau pengguna","Toleransi ukuran kawat/lubang, jenis galvanis, mutu las mesh dan massa aktual"],
+  "price_rejected":{"url":"https://karyautama-steel.com/kawat-loket/harga-kawat-loket-galvanis-per-roll/","display_price_rp":155000,"reason":"Produk30x30 diameter3mm; ukuran maksimum dan unit harga tidak cukup jelas untuk menjadi harga roll pilihan25/50mm."},
+  "access_sources":[{"url":"https://pesta.bsn.go.id/produk/detail/2092-sni03-1746-2000","status":"BSN catalogue status berlaku checked2026-09-15; full clauses not retrieved"},{"url":"https://peraturan.bpk.go.id/Details/104477/permen-pupr-no-14prtm2017tahun-2017","status":"Official regulation listing; application and full clauses require review before claiming egress compliance"}]
+}
