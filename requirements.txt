@@ -3,3 +3,4 @@ ezdxf>=1.4,<2
 numpy>=2,<3
 reportlab>=4,<5
 pypdf>=5,<7
+shapely>=2.1,<3

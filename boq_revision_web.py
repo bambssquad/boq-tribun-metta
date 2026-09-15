@@ -3,6 +3,10 @@ from bs4 import BeautifulSoup
 ROOT=Path(__file__).parent
 
 def build(dist):
+    from r08 import build as build_r08
+    import shutil
+    build_r08()
+    shutil.copytree(ROOT/'assets/r08',dist/'assets/r08',dirs_exist_ok=True)
     from design_scope import build as build_scope
     build_scope()
     (dist/'assets/r07').mkdir(parents=True,exist_ok=True)

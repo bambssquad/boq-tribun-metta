@@ -58,7 +58,7 @@ console.log('PASS: column/beam/component subtotals reconcile in all views and ex
 
 (async()=>{
  const elements=new Map(),storage=new Map();function element(id){if(!elements.has(id))elements.set(id,{dataset:{},insertAdjacentHTML(){},listeners:{},addEventListener(k,fn){this.listeners[k]=fn;},querySelectorAll(){return [];},setAttribute(){},innerHTML:'',textContent:''});return elements.get(id);}
- const context={BoqRevision:B,document:{getElementById:element,querySelectorAll:()=>[]},localStorage:{getItem:k=>storage.get(k),setItem:(k,v)=>storage.set(k,v)},fetch:async url=>({ok:true,json:async()=>url.includes('design-scope')?JSON.parse(fs.readFileSync('assets/r07/design-scope.json','utf8')):d}),console};
+ const context={BoqRevision:B,document:{getElementById:element,querySelectorAll:()=>[]},localStorage:{getItem:k=>storage.get(k),setItem:(k,v)=>storage.set(k,v)},fetch:async url=>({ok:true,json:async()=>url.includes('r08/data')?JSON.parse(fs.readFileSync('assets/r08/data.json','utf8')):url.includes('design-scope')?JSON.parse(fs.readFileSync('assets/r07/design-scope.json','utf8')):d}),console};
  vm.runInNewContext(fs.readFileSync('boq-revision-controller.js','utf8'),context);await new Promise(setImmediate);
  const change=(id,value)=>{const el=element(id);el.value=value;el.listeners.change({target:el});};
  change('br-shs','s17');assert(element('br-rows').innerHTML.includes('SHS 40×40×1,7 mm'));const before=element('br-total').textContent;
