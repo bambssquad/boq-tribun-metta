@@ -10,6 +10,7 @@ for a in s.select('a[href^="#"]'):
     target=a['href'][1:]
     assert not target or target in ids,target
 script='\n'.join(x.get_text() for x in s.select('script') if not x.get('src'))
+script+='\n'+'\n'.join((p/'dist'/x['src']).read_text(encoding='utf-8') for x in s.select('script[src]') if x['src'].startswith('assets/model-'))
 tmp=p/'check.generated.js';tmp.write_text(script,encoding='utf-8')
 node=shutil.which('node') or r'C:\Users\adigh\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe'
 subprocess.run([node,'--check',str(tmp)],check=True);tmp.unlink()

@@ -39,6 +39,10 @@ jobs:
           python check_r06.py
           python check_r07.py
           python check_r08.py
+          python check_fem.py
+          python check_detail_drawings.py
+          node check_site_version.cjs
+          node check_fem_viewer.cjs
           node r08.test.cjs
           node pdf-mass.test.cjs
           node design-scope.test.cjs

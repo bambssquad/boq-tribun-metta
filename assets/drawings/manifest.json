@@ -1,0 +1,86 @@
+{
+  "status": "LOD 100 / koordinasi konseptual; bukan gambar fabrikasi",
+  "units": "mm",
+  "versions": {
+    "v1": [
+      {
+        "file": "v1-01-plan.svg",
+        "title": "01 · Denah tribun dan akses"
+      },
+      {
+        "file": "v1-02-frame.svg",
+        "title": "02 · Denah rangka dengan ID elemen"
+      },
+      {
+        "file": "v1-03-sections.svg",
+        "title": "03 · Tampak rangka dan potongan A–A"
+      },
+      {
+        "file": "v1-04-joint.svg",
+        "title": "04 · Detail simpul dan batas desain"
+      },
+      {
+        "file": "v1-K01-columns.svg",
+        "title": "K01 · Koordinat kolom 1–24"
+      },
+      {
+        "file": "v1-K02-columns.svg",
+        "title": "K02 · Koordinat kolom 25–48"
+      },
+      {
+        "file": "v1-K03-columns.svg",
+        "title": "K03 · Koordinat kolom 49–72"
+      },
+      {
+        "file": "v1-K04-columns.svg",
+        "title": "K04 · Koordinat kolom 73–80"
+      }
+    ],
+    "v2": [
+      {
+        "file": "v2-01-plan.svg",
+        "title": "01 · Denah tribun dan akses"
+      },
+      {
+        "file": "v2-02-frame.svg",
+        "title": "02 · Denah rangka dengan ID elemen"
+      },
+      {
+        "file": "v2-03-sections.svg",
+        "title": "03 · Tampak rangka dan potongan A–A"
+      },
+      {
+        "file": "v2-04-joint.svg",
+        "title": "04 · Detail simpul dan batas desain"
+      },
+      {
+        "file": "v2-02-infill.svg",
+        "title": "05 · Infill, takikan beton dan lapisan"
+      },
+      {
+        "file": "v2-03-mesh.svg",
+        "title": "06 · Penutup mesh dan penjepit"
+      },
+      {
+        "file": "v2-K01-columns.svg",
+        "title": "K01 · Koordinat kolom 1–24"
+      },
+      {
+        "file": "v2-K02-columns.svg",
+        "title": "K02 · Koordinat kolom 25–48"
+      },
+      {
+        "file": "v2-K03-columns.svg",
+        "title": "K03 · Koordinat kolom 49–72"
+      },
+      {
+        "file": "v2-K04-columns.svg",
+        "title": "K04 · Koordinat kolom 73–96"
+      },
+      {
+        "file": "v2-K05-columns.svg",
+        "title": "K05 · Koordinat kolom 97–100"
+      }
+    ]
+  }
+}

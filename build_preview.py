@@ -55,6 +55,8 @@ build.JS_3D=build.JS_3D.replace('type="checkbox" checked><span class="sw"', 'typ
 build.JS_3D=build.JS_3D.replace("mat:'Baja BJ 37", "mat:'Baja — mutu belum diverifikasi")
 import exploded_explorer
 build.JS_3D,build.HTML_3D=exploded_explorer.apply(build.JS_3D,build.HTML_3D)
+import site_version
+build.JS_3D=site_version.viewer_hook(build.JS_3D)
 # For the unchanged framing row, use the verified combined stock result. User edits
 # deliberately revert to an estimate; column and railing quantities stay separate.
 build.JS=build.JS.replace("const Lw=r.L*(1+S.wH/100), kg=Lw*(r.kg||0), bars=Math.ceil(Lw/(S.bar||6));",f"const verified=r.n===165 && r.nm==='Rangka RHS — hasil model' && Math.abs(r.L-{round(cut,2)})<.005 && S.bar===6 && S.wH===5; const Lw=verified?{frame_stock_m}:r.L*(1+S.wH/100), kg=Lw*(r.kg||0), bars=verified?{frame_bars}:Math.ceil(Lw/(S.bar||6));")
@@ -114,4 +116,5 @@ import labor_quote
 labor_quote.build(dist)
 import boq_revision_web
 boq_revision_web.build(dist)
+site_version.build(dist)
 print(json.dumps(dict(bytes=len(html),frame_count=len(rhs),column_count=len(model['columns']),frame_cut_m=cut,column_m=collen,deck_area_m2=model['deck_area_m2'])))

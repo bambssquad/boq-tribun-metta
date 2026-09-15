@@ -7,7 +7,7 @@ assert.ok(Math.abs(j.kg-240.864)<1e-8);assert.ok(Math.abs(j.cost-1445184)<1e-6);
 assert.equal(computePurchaseService(rows,6,2.88,hb,pb,false,6000).cost,0);
 assert.equal(computePurchaseService(rows,6,2.88,hb,pb,true,-10).cost,0);
 assert.ok(Math.abs(computePurchaseService(rows,6,2.88,hb,pb,true,7000).cost-j.kg*7000)<1e-7);
-const page=fs.readFileSync('dist/tools.html','utf8');
+const page=fs.readFileSync('dist/tools.html','utf8')+'\n'+fs.readFileSync('dist/assets/model-renderer.js','utf8');
 const DATA=JSON.parse(page.match(/const DATA = (\{.*?\});/s)[1]);
 const S={rows:{hollow:DATA.hollow,plate:DATA.plate,other:DATA.other||[]},bar:6,wH:5,wP:10,ohp:10,ppn:0,mode:'satuan',unitAll:'auto',fabrication:{enabled:true,rate:6000}};
 const basisH=page.match(/function basisH\(r\)\{.*?\n\}/s)[0],basisP=page.match(/function basisP\(r\)\{.*?\n\}/s)[0];
