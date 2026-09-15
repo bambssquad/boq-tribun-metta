@@ -3,6 +3,7 @@ import html, json
 from pathlib import Path
 
 def build(d,g,out):
+    width=round(d['params']['x1']-d['params']['x0'])
     def fmt(x,n=0):return f'{x:,.{n}f}'.translate(str.maketrans({',':'.','.':','}))
     def begin(title,subtitle):return ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850"><defs><pattern id="mesh" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 0H9V9" fill="none" stroke="#22866f" stroke-width=".6"/></pattern></defs><rect width="1200" height="850" fill="#faf9f5"/><style>text{font-family:Arial,sans-serif;fill:#183b45;font-size:15px}.small{font-size:12px}.title{font-size:25px;font-weight:bold}.dim{stroke:#52727a;stroke-width:1;fill:none}</style>',f'<text x="40" y="45" class="title">{html.escape(title)}</text><text x="40" y="72">{html.escape(subtitle)}</text>']
     def text(a,x,y,s,cls=''):a.append(f'<text x="{x}" y="{y}" class="{cls}">{html.escape(str(s))}</text>')
@@ -17,7 +18,7 @@ def build(d,g,out):
         a.append('</svg>');(out/name).write_text(''.join(a),encoding='utf-8')
     xf=lambda x:70+x*.059;yf=lambda y:180+(5492-y)*.067
     for mode in ['r07','r08']:
-        a=begin('01 / Denah '+mode.upper(),'Pilihan B: dua zona tetap; panel tengah 800 mm di zona kiri diisi tribun.' if mode=='r08' else 'Acuan sebelum perubahan. Zona kiri 2000 mm dan zona kanan 600 mm.')
+        a=begin('01 / Denah '+mode.upper(),f'Revisi sketsa: dua jalur tetap; infill {width} mm di zona kiri menjadi tribun.' if mode=='r08' else 'Acuan sebelum perubahan. Zona kiri 2000 mm dan zona kanan 600 mm.')
         for t in range(5):
             for x,X in [(0,4850),(6850.0751,12250.0643),(12850.0631,17700)]:
                 rect(a,xf(x),yf((t+1)*1000),(X-x)*.059,1000*.067,'#e4e9e6')
@@ -35,24 +36,24 @@ def build(d,g,out):
             lo,hi=c['lo'],c['hi'];rect(a,xf(lo[0]),yf(hi[1]),(hi[0]-lo[0])*.059,(hi[1]-lo[1])*.067,'#9b9b99')
         for t in range(5):text(a,1130,yf(t*1000+500),f'+{(t+1)*500}','small')
         a.append(f'<path class="dim" d="M70 140H{xf(17700):.2f} M70 130V150 M{xf(17700):.2f} 130V150"/>');text(a,540,128,'17700')
-        text(a,350,590,'Zona kiri: 600 + 800 + 600 mm' if mode=='r07' else 'Zona kiri: 600 / INFILL 800 / 600 mm')
+        text(a,350,590,'Zona kiri: 600 + 800 + 600 mm' if mode=='r07' else f'Zona kiri: 600 / INFILL {width} mm')
         text(a,740,620,'Zona kanan: 600 mm')
         text(a,40,662,'Hijau: infill baru · cokelat: dudukan · biru: tapak tangga · abu-abu gelap: kolom beton')
-        text(a,40,693,'R08 mempertahankan tiga strip jalur nominal 600 mm pada dua zona. Lebar efektif belum dikurangi pegangan.')
-        text(a,40,720,'Tambahan tempat duduk indikatif: '+str(d['changes']['extra_indicative_seats'])+' (modul 500 mm; baris ke-4 terpotong kolom beton).')
+        text(a,40,693,'R08 mempertahankan dua jalur nominal 600 mm pada dua zona. Lebar efektif belum dikurangi pegangan.' if mode=='r08' else 'V1: zona tangga kiri 2000 mm dan kanan 600 mm. Lebar efektif perlu pemeriksaan pegangan.')
+        text(a,40,720,('Tambahan tempat duduk indikatif: '+str(d['changes']['extra_indicative_seats'])+' (modul 500 mm; baris ke-4 terpotong kolom beton).') if mode=='r08' else 'V1: panel tengah zona kiri tetap tangga; tidak ada tambahan dudukan infill.')
         text(a,40,747,'Kapasitas total operasi, aksesibilitas dan jalur evakuasi belum disahkan; jumlah zona bukan jumlah pintu keluar.')
         end(a,'01-denah-'+mode+'.svg')
 
-    a=begin('02 / Infill 800 mm — rangka dan takikan','RHS 50×100; tebal mengikuti RAB. Posisi ini usulan koordinasi, bukan detail sambungan sah.')
-    xx=lambda x:85+(x-d['params']['x0'])*.27; yy=lambda y:140+y*.093
+    a=begin(f'02 / Infill {width} mm — rangka dan takikan','RHS 50×100; tebal mengikuti RAB. Posisi ini usulan koordinasi, bukan detail sambungan sah.')
+    xx=lambda x:85+(x-d['params']['x0'])*(216/width); yy=lambda y:140+y*.093
     for p in g['infill']:polygon(a,p['polygon'],xx,yy,'#e4f2e9')
     for e in g['frame']:
         v=e['vertices'];lo=[min(p[i] for p in v) for i in range(3)];hi=[max(p[i] for p in v) for i in range(3)]
-        rect(a,xx(lo[0]),yy(lo[1]),(hi[0]-lo[0])*.27,(hi[1]-lo[1])*.093,'#478985' if e['group']!='I01' else '#e3a34f')
+        rect(a,xx(lo[0]),yy(lo[1]),(hi[0]-lo[0])*(216/width),(hi[1]-lo[1])*.093,'#478985' if e['group']!='I01' else '#e3a34f')
     for c in g['concrete']:
         lo,hi=c['lo'],c['hi']
-        if d['params']['x0']<lo[0]<d['params']['x1']:rect(a,xx(lo[0]),yy(lo[1]),(hi[0]-lo[0])*.27,(hi[1]-lo[1])*.093,'#969b98')
-    text(a,82,121,'DENAH INFILL / lebar 800')
+        if d['params']['x0']<lo[0]<d['params']['x1']:rect(a,xx(lo[0]),yy(lo[1]),(hi[0]-lo[0])*(216/width),(hi[1]-lo[1])*.093,'#969b98')
+    text(a,82,121,f'DENAH INFILL / lebar {width}')
     for t in range(5):text(a,320,yy(t*1000+500),f'T{t+1} / +{(t+1)*500}','small')
     # Cross section: actual proposed vertical stack, no misleading joist below bearer.
     rect(a,520,170,480,12,'#a2b3bb');text(a,520,153,'POTONGAN MELINTANG / tingkat tipikal')
@@ -95,7 +96,8 @@ def build(d,g,out):
     end(a,'03-mesh.svg')
 
     comparisons=''.join(f'<tr><td>{html.escape(o["label"])}</td><td>{fmt(o["roll_width_m"],1)} × {o["roll_length_m"]}</td><td>{fmt(o["catalogue_roll_kg"],1)}</td><td>{o["rolls"]}</td><td>{fmt(o["purchase_kg"],2)}</td><td>Rp{fmt(o["allowance_cost"])}</td><td><a href="{html.escape(o["source"])}">Katalog</a></td></tr>' for o in d['mesh_options'])
-    page='''<!doctype html><html lang="id"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>METTA R08 — infill dan mesh</title><style>body{margin:0;background:#f4f3ed;color:#203f48;font:16px/1.6 Arial}main{max-width:1150px;margin:auto;padding:30px}h1{font-size:38px;line-height:1.15}a{color:#087663}button{padding:12px 18px;border:1px solid #507977;background:white;border-radius:8px;cursor:pointer}button[aria-pressed=true]{background:#1d665e;color:white}.card{background:white;padding:22px;border-radius:12px;margin:20px 0}.scroll{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:10px;border-bottom:1px solid #ddd;text-align:left}img{width:100%;height:auto}small{color:#64706e}.notice{border-left:5px solid #c38631;padding:15px;background:#fff3d7}</style><main><a href="../../tools.html?design=r08#rab-11sep">← Buka RAB dengan pilihan R08</a><p><a href="METTA-R08-RAB-portrait.pdf" download>PDF RAB portrait acuan tetap</a> — RHS 2,3 / SHS acuan / mesh 25–2,0 / biaya pelengkap aktif. Ekspor pilihan lain melalui RAB.</p><h1>R08 / Infill 800 mm<br>dan penutup mesh</h1><p>Dua zona tangga tetap pada posisi lama. Panel tengah zona kiri menjadi tingkat dan dudukan; bagian sampingnya tetap tangga.</p><p class="notice">Studi koordinasi dan estimasi biaya. Belum untuk fabrikasi atau penetapan kapasitas operasi.</p>'''
+    page='''<!doctype html><html lang="id"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>METTA R08 — infill dan mesh</title><style>body{margin:0;background:#f4f3ed;color:#203f48;font:16px/1.6 Arial}main{max-width:1150px;margin:auto;padding:30px}h1{font-size:38px;line-height:1.15}a{color:#087663}button{padding:12px 18px;border:1px solid #507977;background:white;border-radius:8px;cursor:pointer}button[aria-pressed=true]{background:#1d665e;color:white}.card{background:white;padding:22px;border-radius:12px;margin:20px 0}.scroll{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:10px;border-bottom:1px solid #ddd;text-align:left}img{width:100%;height:auto}small{color:#64706e}.notice{border-left:5px solid #c38631;padding:15px;background:#fff3d7}</style><main><a href="../../tools.html?design=r08#rab-11sep">← Buka RAB dengan pilihan R08</a><p><a href="METTA-R08-RAB-portrait.pdf" download>PDF RAB portrait acuan tetap</a> — RHS 2,3 / SHS acuan / mesh 25–2,0 / biaya pelengkap aktif. Ekspor pilihan lain melalui RAB.</p><h1>R08 / Infill WIDTH mm<br>dan penutup mesh</h1><p>Dua zona tangga tetap pada posisi lama. Bidang tengah dan kanan zona kiri menjadi tingkat dan dudukan; strip kiri tetap tangga.</p><p class="notice">Studi koordinasi dan estimasi biaya. Belum untuk fabrikasi atau penetapan kapasitas operasi.</p>'''
+    page=page.replace('WIDTH',str(width))
     c=d['changes'];page+=f'<div class="card"><b>{d["rhs"]["stock_count"]} batang RHS 6 m</b> · {d["rhs"]["cut_count"]} potongan · {fmt(d["rhs"]["length_m"],3)} m<br>{len(g["stairs"])} panel tangga tersisa · {c["extra_indicative_seats"]} tambahan tempat duduk indikatif · {fmt(c["mesh_area_m2"],3)} m² mesh bersih<br><small>RHS R07 101 batang tidak menjadi target R08. Berat berubah mengikuti tebal. SHS tangga + mesh {d["shs"]["stock_count"]} batang; railing lama 20 batang terpisah.</small></div>'
     page+='''<div class="card"><button data-plan="r08" aria-pressed="true">Gambar R08</button> <button data-plan="r07" aria-pressed="false">Bandingkan R07</button><img id="plan" src="01-denah-r08.svg" alt="Denah R08 infill tengah dan jalur tangga"><p><a href="01-denah-r08.svg" download>Unduh denah R08</a> · <a href="daftar-potong.csv" download>Daftar potong RHS, SHS dan strip</a></p></div><div class="card"><img src="02-infill.svg" alt="Rangka infill dan takikan beton"><img src="03-mesh.svg" alt="Kedua sisi mesh dan detail penjepit"></div><div class="card"><h2>Perbandingan mesh</h2><p>Massa roll dari katalog. Harga di bawah adalah allowance Rp30.000/kg untuk perencanaan, bukan penawaran pemasok. Angka belum mencakup rangka, penjepit dan upah; seluruhnya masuk tabel RAB.</p><div class="scroll"><table><thead><tr><th>Produk</th><th>Roll / m</th><th>Kg/roll</th><th>Roll beli</th><th>Kg beli</th><th>Allowance mesh</th><th>Sumber</th></tr></thead><tbody>'''+comparisons+'</tbody></table></div></div>'
     page+='<div class="card"><h2>Dasar dan urutan pelaksanaan</h2><ol>'+''.join('<li>'+html.escape(n)+'</li>' for n in d['notes'])+'</ol><p><a href="data.json">Kuantitas RAB</a> · <a href="audit.json">Seluruh pola potong dan nesting</a> · <a href="geometry.json">Geometri terkoordinasi</a></p></div>'

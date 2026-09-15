@@ -1,0 +1,541 @@
+{
+  "revision": "native-axis-correction-1",
+  "items": [
+    {
+      "id": 1690235,
+      "group": "stiffener",
+      "a": [
+        22.5602904850505,
+        2064.413950753208,
+        1346.0
+      ],
+      "b": [
+        327.4997095149495,
+        2935.586049246791,
+        1346.0
+      ],
+      "vertices": [
+        [
+          46.1565029085413,
+          2056.1544859239652,
+          1296.0
+        ],
+        [
+          351.09592193844026,
+          2927.326584417548,
+          1296.0
+        ],
+        [
+          303.9034970914587,
+          2943.845514076034,
+          1296.0
+        ],
+        [
+          -1.0359219384402962,
+          2072.673415582451,
+          1296.0
+        ],
+        [
+          46.1565029085413,
+          2056.1544859239652,
+          1396.0
+        ],
+        [
+          351.09592193844026,
+          2927.326584417548,
+          1396.0
+        ],
+        [
+          303.9034970914587,
+          2943.845514076034,
+          1396.0
+        ],
+        [
+          -1.0359219384402962,
+          2072.673415582451,
+          1396.0
+        ]
+      ],
+      "cutLengthMm": 922.999932,
+      "systemLengthMm": 1058.9998632000002,
+      "sourceBoundingBoxMatchMm": 0.015921938440296213,
+      "evidence": {
+        "columnSourceIds": [
+          1678289,
+          1678292
+        ],
+        "systemSpanPlanMm": 1059.4814774218564,
+        "method": "Native adjacent outer column centres define plan direction; source Cut Length defines clear axis length"
+      },
+      "limitation": "Axis reconstruction from audited dimensions and adjacent geometry; joint fixity/capacity remains unverified. Not a physical design change."
+    },
+    {
+      "id": 1690238,
+      "group": "stiffener",
+      "a": [
+        327.4969929804503,
+        3064.462999884638,
+        1846.0
+      ],
+      "b": [
+        22.563007019549758,
+        3935.6370001153623,
+        1846.0
+      ],
+      "vertices": [
+        [
+          351.09325691361823,
+          3072.722317555988,
+          1796.0
+        ],
+        [
+          46.15927095271775,
+          3943.896317786712,
+          1796.0
+        ],
+        [
+          -1.0332569136182315,
+          3927.3776824440124,
+          1796.0
+        ],
+        [
+          303.9007290472823,
+          3056.203682213288,
+          1796.0
+        ],
+        [
+          351.09325691361823,
+          3072.722317555988,
+          1896.0
+        ],
+        [
+          46.15927095271775,
+          3943.896317786712,
+          1896.0
+        ],
+        [
+          -1.0332569136182315,
+          3927.3776824440124,
+          1896.0
+        ],
+        [
+          303.9007290472823,
+          3056.203682213288,
+          1896.0
+        ]
+      ],
+      "cutLengthMm": 922.999932,
+      "systemLengthMm": 1058.9998632000002,
+      "sourceBoundingBoxMatchMm": 0.013256913618249655,
+      "evidence": {
+        "columnSourceIds": [
+          1678292,
+          1678295
+        ],
+        "systemSpanPlanMm": 1059.5003544124004,
+        "method": "Native adjacent outer column centres define plan direction; source Cut Length defines clear axis length"
+      },
+      "limitation": "Axis reconstruction from audited dimensions and adjacent geometry; joint fixity/capacity remains unverified. Not a physical design change."
+    },
+    {
+      "id": 1690358,
+      "group": "stiffener",
+      "a": [
+        17677.50478393126,
+        2064.4017272005885,
+        1346.0
+      ],
+      "b": [
+        17372.63521606874,
+        2935.5982727994106,
+        1346.0
+      ],
+      "vertices": [
+        [
+          17701.10165851908,
+          2072.659300069579,
+          1296.0
+        ],
+        [
+          17396.23209065656,
+          2943.855845668401,
+          1296.0
+        ],
+        [
+          17349.03834148092,
+          2927.34069993042,
+          1296.0
+        ],
+        [
+          17653.90790934344,
+          2056.144154331598,
+          1296.0
+        ],
+        [
+          17701.10165851908,
+          2072.659300069579,
+          1396.0
+        ],
+        [
+          17396.23209065656,
+          2943.855845668401,
+          1396.0
+        ],
+        [
+          17349.03834148092,
+          2927.34069993042,
+          1396.0
+        ],
+        [
+          17653.90790934344,
+          2056.144154331598,
+          1396.0
+        ]
+      ],
+      "cutLengthMm": 922.999932,
+      "systemLengthMm": 1058.9998632000002,
+      "sourceBoundingBoxMatchMm": 0.0183414809180249,
+      "evidence": {
+        "columnSourceIds": [
+          1678489,
+          1678491
+        ],
+        "systemSpanPlanMm": 1059.4517467539501,
+        "method": "Native adjacent outer column centres define plan direction; source Cut Length defines clear axis length"
+      },
+      "limitation": "Axis reconstruction from audited dimensions and adjacent geometry; joint fixity/capacity remains unverified. Not a physical design change."
+    },
+    {
+      "id": 1690361,
+      "group": "stiffener",
+      "a": [
+        17372.6379321334,
+        3064.450776740921,
+        1846.0
+      ],
+      "b": [
+        17677.5020678666,
+        3935.6492232590795,
+        1846.0
+      ],
+      "vertices": [
+        [
+          17396.234858208747,
+          3056.1933510043714,
+          1796.0
+        ],
+        [
+          17701.09899394195,
+          3927.39179752253,
+          1796.0
+        ],
+        [
+          17653.905141791252,
+          3943.906648995629,
+          1796.0
+        ],
+        [
+          17349.04100605805,
+          3072.7082024774704,
+          1796.0
+        ],
+        [
+          17396.234858208747,
+          3056.1933510043714,
+          1896.0
+        ],
+        [
+          17701.09899394195,
+          3927.39179752253,
+          1896.0
+        ],
+        [
+          17653.905141791252,
+          3943.906648995629,
+          1896.0
+        ],
+        [
+          17349.04100605805,
+          3072.7082024774704,
+          1896.0
+        ]
+      ],
+      "cutLengthMm": 922.999932,
+      "systemLengthMm": 1058.9998632000002,
+      "sourceBoundingBoxMatchMm": 0.021006058050261345,
+      "evidence": {
+        "columnSourceIds": [
+          1678491,
+          1678493
+        ],
+        "systemSpanPlanMm": 1059.4706242742168,
+        "method": "Native adjacent outer column centres define plan direction; source Cut Length defines clear axis length"
+      },
+      "limitation": "Axis reconstruction from audited dimensions and adjacent geometry; joint fixity/capacity remains unverified. Not a physical design change."
+    },
+    {
+      "id": 1690386,
+      "group": "bracing",
+      "a": [
+        1800.0,
+        4100.827080737473,
+        251.91904952488892
+      ],
+      "b": [
+        1800.0,
+        4899.052919262528,
+        2008.015950475111
+      ],
+      "vertices": [
+        [
+          1825.0,
+          4146.345404860019,
+          231.22890285854373
+        ],
+        [
+          1825.0,
+          4944.571243385074,
+          1987.3258038087658
+        ],
+        [
+          1775.0,
+          4944.571243385074,
+          1987.3258038087658
+        ],
+        [
+          1775.0,
+          4146.345404860019,
+          231.22890285854373
+        ],
+        [
+          1825.0,
+          4055.308756614927,
+          272.6091961912341
+        ],
+        [
+          1825.0,
+          4853.534595139982,
+          2028.706097141456
+        ],
+        [
+          1775.0,
+          4853.534595139982,
+          2028.706097141456
+        ],
+        [
+          1775.0,
+          4055.308756614927,
+          272.6091961912341
+        ]
+      ],
+      "cutLengthMm": 1928.9999520000001,
+      "systemLengthMm": 2416.999992,
+      "sourceBoundingBoxMatchMm": 2.711097141456264,
+      "evidence": {
+        "startLevelOffsetMm": 150.0000048,
+        "endLevelOffsetMm": 2350.0000752,
+        "bayDepthMm": 1000.0,
+        "method": "Native Start/End Level Offset defines slope sign; measured rear bay depth 1000 mm; source Cut Length defines clear axis"
+      },
+      "limitation": "Axis reconstruction from audited dimensions and adjacent geometry; joint fixity/capacity remains unverified. Not a physical design change."
+    },
+    {
+      "id": 1690391,
+      "group": "bracing",
+      "a": [
+        1740.0,
+        4101.153992300927,
+        2007.9932450209435
+      ],
+      "b": [
+        1740.0,
+        4898.966007699072,
+        252.80675497905656
+      ],
+      "vertices": [
+        [
+          1765.0,
+          4055.635668178381,
+          1987.3030983545984
+        ],
+        [
+          1765.0,
+          4853.447683576526,
+          232.11660831271138
+        ],
+        [
+          1715.0,
+          4853.447683576526,
+          232.11660831271138
+        ],
+        [
+          1715.0,
+          4055.635668178381,
+          1987.3030983545984
+        ],
+        [
+          1765.0,
+          4146.672316423473,
+          2028.6833916872886
+        ],
+        [
+          1765.0,
+          4944.484331821618,
+          273.49690164540175
+        ],
+        [
+          1715.0,
+          4944.484331821618,
+          273.49690164540175
+        ],
+        [
+          1715.0,
+          4146.672316423473,
+          2028.6833916872886
+        ]
+      ],
+      "cutLengthMm": 1927.9999032000003,
+      "systemLengthMm": 2415.9999432,
+      "sourceBoundingBoxMatchMm": 2.2533916872886266,
+      "evidence": {
+        "startLevelOffsetMm": 2350.0000752,
+        "endLevelOffsetMm": 150.0000048,
+        "bayDepthMm": 1000.0,
+        "method": "Native Start/End Level Offset defines slope sign; measured rear bay depth 1000 mm; source Cut Length defines clear axis"
+      },
+      "limitation": "Axis reconstruction from audited dimensions and adjacent geometry; joint fixity/capacity remains unverified. Not a physical design change."
+    },
+    {
+      "id": 1690396,
+      "group": "bracing",
+      "a": [
+        15960.100000000002,
+        4100.827080737473,
+        251.91904952488892
+      ],
+      "b": [
+        15960.100000000002,
+        4899.052919262528,
+        2008.015950475111
+      ],
+      "vertices": [
+        [
+          15985.100000000002,
+          4146.345404860019,
+          231.22890285854373
+        ],
+        [
+          15985.100000000002,
+          4944.571243385074,
+          1987.3258038087658
+        ],
+        [
+          15935.100000000002,
+          4944.571243385074,
+          1987.3258038087658
+        ],
+        [
+          15935.100000000002,
+          4146.345404860019,
+          231.22890285854373
+        ],
+        [
+          15985.100000000002,
+          4055.308756614927,
+          272.6091961912341
+        ],
+        [
+          15985.100000000002,
+          4853.534595139982,
+          2028.706097141456
+        ],
+        [
+          15935.100000000002,
+          4853.534595139982,
+          2028.706097141456
+        ],
+        [
+          15935.100000000002,
+          4055.308756614927,
+          272.6091961912341
+        ]
+      ],
+      "cutLengthMm": 1928.9999520000001,
+      "systemLengthMm": 2416.999992,
+      "sourceBoundingBoxMatchMm": 2.711097141456264,
+      "evidence": {
+        "startLevelOffsetMm": 150.0000048,
+        "endLevelOffsetMm": 2350.0000752,
+        "bayDepthMm": 1000.0,
+        "method": "Native Start/End Level Offset defines slope sign; measured rear bay depth 1000 mm; source Cut Length defines clear axis"
+      },
+      "limitation": "Axis reconstruction from audited dimensions and adjacent geometry; joint fixity/capacity remains unverified. Not a physical design change."
+    },
+    {
+      "id": 1690400,
+      "group": "bracing",
+      "a": [
+        15900.100000000002,
+        4101.153992300927,
+        2007.9932450209435
+      ],
+      "b": [
+        15900.100000000002,
+        4898.966007699072,
+        252.80675497905656
+      ],
+      "vertices": [
+        [
+          15925.100000000002,
+          4055.635668178381,
+          1987.3030983545984
+        ],
+        [
+          15925.100000000002,
+          4853.447683576526,
+          232.11660831271138
+        ],
+        [
+          15875.100000000002,
+          4853.447683576526,
+          232.11660831271138
+        ],
+        [
+          15875.100000000002,
+          4055.635668178381,
+          1987.3030983545984
+        ],
+        [
+          15925.100000000002,
+          4146.672316423473,
+          2028.6833916872886
+        ],
+        [
+          15925.100000000002,
+          4944.484331821618,
+          273.49690164540175
+        ],
+        [
+          15875.100000000002,
+          4944.484331821618,
+          273.49690164540175
+        ],
+        [
+          15875.100000000002,
+          4146.672316423473,
+          2028.6833916872886
+        ]
+      ],
+      "cutLengthMm": 1927.9999032000003,
+      "systemLengthMm": 2415.9999432,
+      "sourceBoundingBoxMatchMm": 2.2533916872886266,
+      "evidence": {
+        "startLevelOffsetMm": 2350.0000752,
+        "endLevelOffsetMm": 150.0000048,
+        "bayDepthMm": 1000.0,
+        "method": "Native Start/End Level Offset defines slope sign; measured rear bay depth 1000 mm; source Cut Length defines clear axis"
+      },
+      "limitation": "Axis reconstruction from audited dimensions and adjacent geometry; joint fixity/capacity remains unverified. Not a physical design change."
+    }
+  ]
+}

@@ -6,6 +6,8 @@ def build(dist):
     from r08 import build as build_r08
     import shutil
     build_r08()
+    from r08_options import build as build_options
+    build_options()
     shutil.copytree(ROOT/'assets/r08',dist/'assets/r08',dirs_exist_ok=True)
     from design_scope import build as build_scope
     build_scope()

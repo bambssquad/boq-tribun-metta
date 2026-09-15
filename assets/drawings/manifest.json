@@ -81,6 +81,110 @@
         "file": "v2-K05-columns.svg",
         "title": "K05 · Koordinat kolom 97–100"
       }
+    ],
+    "v2-a": [
+      {
+        "file": "v2-a-01-plan.svg",
+        "title": "01 · Denah tribun dan akses"
+      },
+      {
+        "file": "v2-a-02-frame.svg",
+        "title": "02 · Denah rangka dengan ID elemen"
+      },
+      {
+        "file": "v2-a-03-sections.svg",
+        "title": "03 · Tampak rangka dan potongan A–A"
+      },
+      {
+        "file": "v2-a-04-joint.svg",
+        "title": "04 · Detail simpul dan batas desain"
+      },
+      {
+        "file": "v2-a-02-infill.svg",
+        "title": "05 · Infill, takikan beton dan lapisan"
+      },
+      {
+        "file": "v2-a-03-mesh.svg",
+        "title": "06 · Penutup mesh dan penjepit"
+      },
+      {
+        "file": "v2-a-K01-columns.svg",
+        "title": "K01 · Koordinat kolom 1–24"
+      },
+      {
+        "file": "v2-a-K02-columns.svg",
+        "title": "K02 · Koordinat kolom 25–48"
+      },
+      {
+        "file": "v2-a-K03-columns.svg",
+        "title": "K03 · Koordinat kolom 49–72"
+      },
+      {
+        "file": "v2-a-K04-columns.svg",
+        "title": "K04 · Koordinat kolom 73–96"
+      },
+      {
+        "file": "v2-a-K05-columns.svg",
+        "title": "K05 · Koordinat kolom 97–100"
+      },
+      {
+        "file": "v2-a-S01-supports.svg",
+        "title": "S01 · Titik tumpuan dan angkur penguatan"
+      }
+    ],
+    "v2-c": [
+      {
+        "file": "v2-c-01-plan.svg",
+        "title": "01 · Denah tribun dan akses"
+      },
+      {
+        "file": "v2-c-02-frame.svg",
+        "title": "02 · Denah rangka dengan ID elemen"
+      },
+      {
+        "file": "v2-c-03-sections.svg",
+        "title": "03 · Tampak rangka dan potongan A–A"
+      },
+      {
+        "file": "v2-c-04-joint.svg",
+        "title": "04 · Detail simpul dan batas desain"
+      },
+      {
+        "file": "v2-c-02-infill.svg",
+        "title": "05 · Infill, takikan beton dan lapisan"
+      },
+      {
+        "file": "v2-c-03-mesh.svg",
+        "title": "06 · Penutup mesh dan penjepit"
+      },
+      {
+        "file": "v2-c-K01-columns.svg",
+        "title": "K01 · Koordinat kolom 1–24"
+      },
+      {
+        "file": "v2-c-K02-columns.svg",
+        "title": "K02 · Koordinat kolom 25–48"
+      },
+      {
+        "file": "v2-c-K03-columns.svg",
+        "title": "K03 · Koordinat kolom 49–72"
+      },
+      {
+        "file": "v2-c-K04-columns.svg",
+        "title": "K04 · Koordinat kolom 73–96"
+      },
+      {
+        "file": "v2-c-K05-columns.svg",
+        "title": "K05 · Koordinat kolom 97–120"
+      },
+      {
+        "file": "v2-c-K06-columns.svg",
+        "title": "K06 · Koordinat kolom 121–140"
+      },
+      {
+        "file": "v2-c-S01-supports.svg",
+        "title": "S01 · Titik tumpuan dan angkur penguatan"
+      }
     ]
   }
 }

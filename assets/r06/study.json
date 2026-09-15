@@ -583,7 +583,7 @@
     ],
     "source": "Arsip R04; 340/340 ID framing/column masih ada pada pemeriksaan live11Sep. Tiga parameter sampel dibaca; koordinat seluruh node belum diukur ulang."
   },
-  "baseline_total": 241480280.0,
+  "baseline_total": 240204729.0,
   "matrix": [
     {
       "key": "model-existing",
@@ -674,8 +674,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 241480280,
-      "cost_high": 241480280,
+      "cost_low": 240204729,
+      "cost_high": 240204729,
       "delta_low": 0,
       "delta_high": 0,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -771,8 +771,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 232790239,
-      "cost_high": 232790239,
+      "cost_low": 231514688,
+      "cost_high": 231514688,
       "delta_low": -8690041,
       "delta_high": -8690041,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -868,8 +868,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 222132547,
-      "cost_high": 222132547,
+      "cost_low": 220856996,
+      "cost_high": 220856996,
       "delta_low": -19347733,
       "delta_high": -19347733,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -1019,8 +1019,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 244739280,
-      "cost_high": 246239280,
+      "cost_low": 243463729,
+      "cost_high": 244963729,
       "delta_low": 3259000,
       "delta_high": 4759000,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -1170,8 +1170,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 235877159,
-      "cost_high": 237377159,
+      "cost_low": 234601608,
+      "cost_high": 236101608,
       "delta_low": -5603121,
       "delta_high": -4103121,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -1321,8 +1321,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 225008424,
-      "cost_high": 226508424,
+      "cost_low": 223732873,
+      "cost_high": 225232873,
       "delta_low": -16471856,
       "delta_high": -14971856,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -1486,8 +1486,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 270070280,
-      "cost_high": 282070280,
+      "cost_low": 268794729,
+      "cost_high": 280794729,
       "delta_low": 28590000,
       "delta_high": 40590000,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -1651,8 +1651,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 259659439,
-      "cost_high": 271659439,
+      "cost_low": 258383888,
+      "cost_high": 270383888,
       "delta_low": 18179159,
       "delta_high": 30179159,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -1816,8 +1816,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 246891313,
-      "cost_high": 258891313,
+      "cost_low": 245615762,
+      "cost_high": 257615762,
       "delta_low": 5411033,
       "delta_high": 17411033,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -1985,8 +1985,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 277217780,
-      "cost_high": 292217780,
+      "cost_low": 275942229,
+      "cost_high": 290942229,
       "delta_low": 35737500,
       "delta_high": 50737500,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -2154,8 +2154,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 266376739,
-      "cost_high": 281376739,
+      "cost_low": 265101188,
+      "cost_high": 280101188,
       "delta_low": 24896459,
       "delta_high": 39896459,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -2323,8 +2323,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 253081005,
-      "cost_high": 268081005,
+      "cost_low": 251805454,
+      "cost_high": 266805454,
       "delta_low": 11600725,
       "delta_high": 26600725,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -2544,8 +2544,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 281106280,
-      "cost_high": 297606280,
+      "cost_low": 279830729,
+      "cost_high": 296330729,
       "delta_low": 39626000,
       "delta_high": 56126000,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -2765,8 +2765,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 270007119,
-      "cost_high": 286507119,
+      "cost_low": 268731568,
+      "cost_high": 285231568,
       "delta_low": 28526839,
       "delta_high": 45026839,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -2986,8 +2986,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 256394820,
-      "cost_high": 272894820,
+      "cost_low": 255119269,
+      "cost_high": 271619269,
       "delta_low": 14914540,
       "delta_high": 31414540,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -3207,8 +3207,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 281106280,
-      "cost_high": 297606280,
+      "cost_low": 279830729,
+      "cost_high": 296330729,
       "delta_low": 39626000,
       "delta_high": 56126000,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -3428,8 +3428,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 270007119,
-      "cost_high": 286507119,
+      "cost_low": 268731568,
+      "cost_high": 285231568,
       "delta_low": 28526839,
       "delta_high": 45026839,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -3649,8 +3649,8 @@
           "passes_screen": false
         }
       ],
-      "cost_low": 256394820,
-      "cost_high": 272894820,
+      "cost_low": 255119269,
+      "cost_high": 271619269,
       "delta_low": 14914540,
       "delta_high": 31414540,
       "price_status": "Estimasi RAB, SHS acuan tetap. Tambahan base/angkur dan sambungan allowance, belum penawaran. Bracing baru, tulangan beton, relokasi jalur dan redesain belum terukur.",
@@ -4426,7 +4426,7 @@
       "thick_stocks": 63,
       "stocks": 108,
       "purchase_kg": 3064.95,
-      "cost": 237266502,
+      "cost": 235990951,
       "saving": 4213776,
       "check": {
         "b": 50,
@@ -4454,7 +4454,7 @@
       "thick_stocks": 63,
       "stocks": 108,
       "purchase_kg": 3319.2,
-      "cost": 242014978,
+      "cost": 240739427,
       "saving": -534700,
       "check": {
         "b": 50,
@@ -4482,7 +4482,7 @@
       "thick_stocks": 57,
       "stocks": 103,
       "purchase_kg": 2892.56,
-      "cost": 233927440,
+      "cost": 232651889,
       "saving": 7552838,
       "check": {
         "b": 50,

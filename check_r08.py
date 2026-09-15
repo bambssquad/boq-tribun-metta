@@ -10,9 +10,12 @@ d=read('assets/r08/data.json');g=read('assets/r08/geometry.json');old=read('asse
 audit=read('assets/r08/audit.json');d['cuts']=audit['cuts'];d['nesting']=audit['nesting'];d['shs']['stocks']=audit['shs_stocks'];d['clamps']['stocks']=audit['clamp_stocks']
 for opt in d['mesh_options']:opt['nesting']=audit['mesh_nesting'][opt['id']]
 strip=box(d['params']['x0'],-10,d['params']['x1'],5000)
+assert abs(d['params']['x0']-5450.0373)<1e-6 and abs(d['params']['x1']-6850.0751)<1e-6
+assert not any('-SIDE-R' in p['id'] for p in g['plate2']), 'No stair-side closure on seating join'
+assert abs(sum(p['area_m2'] for p in g['infill'])-6.693557291672703)<1e-8
 rc=unary_union([box(c['lo'][0]-3,c['lo'][1]-3,c['hi'][0]+3,c['hi'][1]+3) for c in g['concrete']])
-assert len(g['stairs'])==45
-assert len(set(s['id'] for s in g['stairs']))==45
+assert len(g['stairs'])==30
+assert len(set(s['id'] for s in g['stairs']))==30
 old_area=sum(s['profile']['area_m2'] for s in old['stairs'])
 removed=sum(s['before_m2']-s['after_m2'] for s in d['changes']['stair_delta'])
 assert abs(old_area-removed-sum(s['area_m2'] for s in g['stairs']))<1e-5
@@ -20,8 +23,8 @@ for s in g['stairs']:assert shape(s['polygon']).intersection(strip).area<.01
 for p in g['infill']+g['wood']:
     polygon=shape(p['polygon']);assert polygon.intersection(rc).area<.01
     assert abs(polygon.area/1e6-p['area_m2'])<1e-9
-assert sum(w['seats'] for w in g['wood'])==4
-assert d['changes']['clear_passages_mm']==[600,600,600]
+assert sum(w['seats'] for w in g['wood'])==9
+assert d['changes']['clear_passages_mm']==[600,600]
 assert len(d['changes']['removed_native_rhs_ids'])==8
 assert len(d['changes']['removed_deck_ids'])==6
 for e in g['frame']:
@@ -46,8 +49,8 @@ for kind in ['rhs','shs','clamps']:
         for ident,L in b['cuts']:assert abs(L-byid[ident]['length_mm'])<1e-9
     assert abs(sum(summary['allocated_bars'].values())-summary['stock_count'])<1e-8
     assert abs(sum(L for _,L in packed)/1000-summary['length_m'])<1e-8
-assert d['rhs']['stock_count']==109
-assert d['rhs']['cut_count']==245-8+90+54
+assert d['rhs']['stock_count']==110
+assert d['rhs']['cut_count']==245-8+60+54
 native={str(e['id']):e['props'] for e in read('data/quantity-reaudit-live.json')['members']}
 for c in d['cuts']['rhs']:
     if c['origin']=='native archive':
@@ -76,6 +79,7 @@ assert abs(rows['X13']['purchase_qty']+rows['I04']['purchase_qty']-len(d['nestin
 assert 'X12' not in rows and all(k in rows for k in ['M01','M02','M03','M04','M05','I01','I02','I03','I04','I05','I06'])
 assert abs(rows['X10']['net_qty']-sum(p['area_m2'] for p in g['plate2'])*15.7)<1e-8
 assert abs(rows['X11']['net_qty']-sum(p['net_flat_area'] for p in g['stairs'])*23.55)<1e-8
+assert rows['I07']['net_qty']==320 and rows['I07']['purchase_qty']==336
 assert rows['X18']['purchase_qty']==2*rows['X15']['purchase_qty']
 assert rows['B06']['purchase_qty']==2*rows['B04']['purchase_qty']
 from pypdf import PdfReader
@@ -96,5 +100,53 @@ for r in d['rows']:
     assert fmt(q,4) in table_text,(r['id'],'PDF qty')
     assert fmt(labor+material) in table_text,(r['id'],'PDF row total')
 assert fmt(total) in text and fmt(mass,3) in text
-assert '109' in text and '3.542,5' in text and 'Rp30.000/kg' in text
-print('PASS: R08 geometry, RC/base clearance, 45 stairs, 4 indicative seats, native deltas, 109 RHS, all cuts/nesting and row mass reconciliation.')
+assert str(d['rhs']['stock_count']) in text and fmt(d['rhs']['stock_count']*32.5,1) in text and 'Rp30.000/kg' in text
+print('PASS: R08 geometry, RC/base clearance, 30 stairs, 9 indicative seats, native deltas, 110 RHS, all cuts/nesting and row mass reconciliation.')
+
+# A/C quantities must originate in the physical proposal, including removed rows.
+options=read('assets/r08/options.json');specs=read('assets/structural-study/options-spec.json')
+baseline_cuts={str(c['id']):c for c in audit['cuts']['rhs']}
+rhs_owners=set(d['rhs']['lengths_m'])
+for key in ['a','c']:
+    option=options[key];spec=specs[key];a=read(f'assets/r08/audit-{key}.json');geo=read(f'assets/r08/geometry-{key}.json')
+    remove={str(i) for i in spec['remove_ids']};added={m['id']:m for m in spec['added_members']}
+    cs={str(c['id']):c for c in a['cuts']['rhs']}
+    assert set(cs)==(set(baseline_cuts)-remove)|set(added)
+    assert len(cs)==len(a['cuts']['rhs'])
+    for ident,c in cs.items():
+        expected=added[ident]['length_mm'] if ident in added else baseline_cuts[ident]['length_mm']
+        assert abs(c['length_mm']-expected)<1e-7
+    packed=[i for b in option['rhs']['stocks'] for i,L in b['cuts']]
+    assert len(packed)==len(cs) and set(packed)==set(cs)
+    assert all(sum(L+3 for i,L in b['cuts'])<=6000+1e-7 for b in option['rhs']['stocks'])
+    rs={r['id']:r for r in option['rows']}
+    for case,stockkg in [('model',32.5),('h20',28.26),('h16',22.61)]:
+        # Obtain the catalogue weight independently of this optional BOQ.
+        stockkg=read('assets/r05/boq.json')['study']['procurement']['variants'][case]['stock_kg']
+        mass=sum((r if case=='model' else r['variants'][case])['purchase_qty'] for ident,r in rs.items() if ident in rhs_owners)
+        assert abs(mass-option['rhs']['stock_count']*stockkg)<1e-7,(key,case,mass)
+    assert rs['X05']['net_qty']==rs['X05']['purchase_qty']==0, 'All obsolete RC struts removed'
+    posts=sum(m['group']=='kolom' for m in added.values())
+    assert option['changes']['new_posts']==20+posts
+    assert rs['I05']['net_qty']==4*(20+posts)
+    assert rs['X16']['purchase_qty']==0
+    assert rs['I07']['net_qty']==320 and rs['I07']['purchase_qty']==336
+    assert rs['B04']['net_qty']==rows['B04']['net_qty']-2*spec.get('welded_existing_stair_ends',0)
+    assert rs['B06']['purchase_qty']==2*rs['B04']['purchase_qty']
+    assert (rs.get('S01',{}).get('net_qty',0))==spec['anchor_count']
+    assert sum(i['group']=='baseplate' for i in geo['added_native_items'])==2*posts
+    assert not remove.intersection(map(str,geo['retained_native_ids']))
+    assert geo['stairs']==g['stairs'] and geo['infill']==g['infill'] and geo['wood']==g['wood']
+    for name,sheets in a['nesting'].items():nesting(sheets,2400,1200)
+    pdf=PdfReader(ROOT/f'assets/r08/METTA-R08-{key.upper()}-RAB-portrait.pdf')
+    assert all(float(p.mediabox.height)>float(p.mediabox.width) for p in pdf.pages)
+    txt=' '.join(p.extract_text() for p in pdf.pages)
+    total=0;mass=0
+    for r in option['rows']:
+        v=r.get('mesh_variants',{}).get('m20_25',r);q=v['purchase_qty']
+        subtotal=math.floor(q*r['labor_rate']+.5)+math.floor(q*r['material_rate']+.5)
+        total+=subtotal
+        if r['unit']=='kg':mass+=q
+        assert fmt(q,4) in txt and fmt(subtotal) in txt,(key,r['id'],'PDF row mismatch')
+    assert fmt(total) in txt and fmt(mass,3) in txt
+print('PASS: A/C physical cut deltas, all thickness purchase masses, removed struts, base/anchor counts, nesting, portrait PDF quantities and totals.')
