@@ -33,11 +33,11 @@ window.MettaModelVersion={
     put([clampX,y+20,z+20,3,30,H-40]);put([clampX,Y-50,z+20,3,30,H-40]);
    }
    Object.assign(G.skirt,{name:'Mesh sisi + rangka panel',mat:'Kawat loket galvanis; rangka SHS dan strip penjepit',prof:`Lubang ${mesh.opening_label_mm} / kawat ${wire} mm`,note:'R08: penutup sisi, bukan pengganti railing atau bracing.'});
-   G.tangga.prof='R08 / 45 panel tekuk 3 mm';G.baseplate.note='V2: 80 dudukan lama + 20 base dan angkur infill usulan. Kapasitas lantai belum disahkan.';
+   G.tangga.prof=`R08 / ${data.stair_panels} panel tekuk 3 mm`;G.baseplate.note=`V2: 80 dudukan lama + ${data.new_posts} base dan angkur infill usulan. Kapasitas lantai belum disahkan.`;
    for(const k of ['kolom','balok','stiffener'])G[k].note='V2 / geometri arsip + rangka R08 usulan. Penyangga tangga termasuk; profil tiap komponen mengikuti RAB.';
   }
   GROUPS.forEach((g,i)=>{const label=leg.children[i];if(label)label.lastElementChild.textContent=g.name;});
-  cv.dataset.siteVersion=version;cv.dataset.stairPanels=version==='v2'?'45':'56';cv.dataset.infillColumns=version==='v2'?'20':'0';
+  cv.dataset.siteVersion=version;cv.dataset.stairPanels=String(version==='v2'?data.stair_panels:data.old_stair_panels);cv.dataset.infillColumns=String(version==='v2'?data.new_posts:0);
   dirty=true;if(booted){resize();draw();}
  }
 };

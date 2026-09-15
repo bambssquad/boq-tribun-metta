@@ -6,6 +6,15 @@ from fem_model import E,G,section,local_stiffness,element,solve,source_hashes
 
 def close(a,b,tol=1e-7):assert abs(a-b)<=tol*max(abs(b),1), (a,b)
 def main():
+ from geometry_axes import corrections
+ expected=corrections();stored=json.loads((Path(__file__).parent/'data/member-axis-corrections.json').read_text())['items']
+ assert [x['id'] for x in expected]==[x['id'] for x in stored]
+ for a,b in zip(expected,stored):
+  for field in ['a','b','vertices']:assert np.allclose(a[field],b[field],rtol=0,atol=1e-7),(a['id'],field)
+  for field in ['cutLengthMm','systemLengthMm','sourceBoundingBoxMatchMm']:close(a[field],b[field],1e-8)
+  for key,value in a['evidence'].items():
+   if isinstance(value,float):close(value,b['evidence'][key],1e-9)
+   else:assert value==b['evidence'][key]
  t=2.;L=3000.;P=1000.;s=section(t);k=local_stiffness(L,t)
  assert np.allclose(k,k.T)
  # Free single element has exactly six rigid body modes after diagonal scaling.
@@ -31,7 +40,7 @@ def main():
  assert solve(fixture,t,1)['status']=='unstable'
  root=Path(__file__).parent/'assets/fem';model=json.loads(gzip.decompress((root/'model.json.gz').read_bytes()));manifest=json.loads((root/'results.json').read_text());cases=manifest['cases']
  assert model['sourceHashes']==source_hashes(), 'Stale FEM assets: rerun python fem_model.py'
- assert len(cases)==24
+ assert len(cases)==48
  for c in cases:
   sol=json.loads(gzip.decompress((Path(__file__).parent/manifest['solutions'][c['solutionId']]['url']).read_bytes()))
   for key in ['displacements','reactions','loads']:c[key]={k:[x*c['resultScale'] for x in v] for k,v in sol[key].items()}
@@ -53,15 +62,28 @@ def main():
     nd=m['nodes'][int(nid)];pos=np.array([nd['x'],nd['y'],nd['z']]);balance+=np.cross(pos,v[:3])+v[3:]
   assert np.linalg.norm(balance)<100.,balance
   assert set(c['memberForces'])==set(b['id'] for b in m['members'])
- for v in ['v1','v2']:
+ for v in ['v1','v2','v2-a','v2-c']:
   ms=model['versions'][v];sens=ms['discretizationSensitivity']
   assert sens['coarseStatus']==sens['fineStatus']=='solved'
   close(sens['fineAreaM2'],ms['areaM2'],1e-9)
   close(sens['relativeChange'],abs(sens['fineMaxDisplacementMm']-sens['coarseMaxDisplacementMm'])/sens['fineMaxDisplacementMm'],1e-10)
   assert sens['fineEquilibriumError']<1e-6
-  print(v,'200/100 mm displacement sensitivity:',round(sens['relativeChange']*100,4),'percent; not a capacity check')
+  print(v,'100/50 mm displacement sensitivity:',round(sens['relativeChange']*100,4),'percent; not a capacity check')
   d=[next(c['summary']['maxDisplacementMm'] for c in cases if c['version']==v and c['rhsThickness']==t and c['loadCase']=='service') for t in [1.6,2,2.3]]
   assert d[0]>d[1]>d[2],d
+ geom=json.loads((Path(__file__).parent/'assets/r08/geometry.json').read_text())
+ stair_area=sum(x['area_m2'] for x in geom['stairs'])
+ for name in ['v2-a','v2-c']:
+  mm=model['versions'][name];assert not mm['excludedSourceIds']
+  assert len(set(b['sourceId'] for b in mm['members'] if b['group']=='stair_b02'))==60
+  assert len(set(b['sourceId'] for b in mm['members'] if b['sourceId'].startswith('SR-')))==40
+  close(mm['stairAreaM2'],stair_area,1e-9)
+  close(mm['areaM2']-model['versions']['v2']['areaM2'],stair_area,1e-9)
+ study=json.loads((Path(__file__).parent/'assets/structural-study/analysis.json').read_text())
+ assert study['sourceHashes']==source_hashes(), 'Stale structural study; regenerate --analyse'
+ for option in study['options'].values():
+  assert not option['collisionCheck']['collisions']
+  assert all(c['equilibriumError']<1e-6 for c in option['cases'])
  assert model['versions']['v2']['sourceMemberCount']>model['versions']['v1']['sourceMemberCount']
- print('PASS: stiffness symmetry; six rigid modes; axial/torsion/biaxial cantilever; simply supported beam; exact rigid offset; mechanism refusal; 24 cases; force and moment equilibrium; load-area reconciliation; thickness trend; V1/V2 geometry difference.')
+ print('PASS: stiffness symmetry; six rigid modes; axial/torsion/biaxial cantilever; simply supported beam; exact rigid offset; mechanism refusal; 48 cases; force and moment equilibrium; load-area reconciliation; thickness trend; V1/V2 geometry difference.')
 if __name__=='__main__':main()

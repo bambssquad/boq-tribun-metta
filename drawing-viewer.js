@@ -10,7 +10,7 @@
   function fit(){zoom=1;x=y=0;paint();}
   function scale(f){zoom=Math.max(.5,Math.min(12,zoom*f));paint();}
   function sheet(){const item=manifest.versions[version][select.selectedIndex];img.src='assets/drawings/'+item.file;img.alt=item.title+' / '+version.toUpperCase();link.href=img.src;fit();}
-  function setVersion(v){version=v==='v2'?'v2':'v1';root.dataset.version=version;if(!manifest)return;const old=select.selectedIndex;select.replaceChildren(...manifest.versions[version].map(s=>{const o=document.createElement('option');o.textContent=version.toUpperCase()+' · '+s.title;return o;}));select.selectedIndex=Math.max(0,Math.min(old,select.options.length-1));sheet();}
+  function setVersion(v){version=['v2','v2-a','v2-c'].includes(v)?v:'v1';root.dataset.version=version;if(!manifest)return;if(!manifest.versions[version])version='v2';const old=select.selectedIndex;select.replaceChildren(...manifest.versions[version].map(s=>{const o=document.createElement('option');o.textContent=version.toUpperCase()+' · '+s.title;return o;}));select.selectedIndex=Math.max(0,Math.min(old,select.options.length-1));sheet();}
   select.addEventListener('change',sheet);
   root.addEventListener('click',e=>{const a=e.target.closest('[data-act]')?.dataset.act;if(a==='in')scale(1.3);if(a==='out')scale(1/1.3);if(a==='fit')fit();if(a==='full'){if(document.fullscreenElement)document.exitFullscreen();else root.requestFullscreen?.().catch(()=>{status.textContent='Layar penuh tidak tersedia';});}});
   stage.addEventListener('wheel',e=>{e.preventDefault();scale(e.deltaY<0?1.12:1/1.12);},{passive:false});
@@ -18,6 +18,7 @@
   stage.addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;x=drag.ox+e.clientX-drag.x;y=drag.oy+e.clientY-drag.y;paint();});
   ['pointerup','pointercancel','lostpointercapture'].forEach(n=>stage.addEventListener(n,()=>drag=null));
   stage.addEventListener('keydown',e=>{if(['+','=','-','0'].includes(e.key)){e.preventDefault();if(e.key==='0')fit();else scale(e.key==='-'?1/1.3:1.3);}});
-  window.MettaDrawings={setVersion};window.addEventListener('metta:version',e=>setVersion(e.detail.version));
-  fetch('assets/drawings/manifest.json').then(r=>{if(!r.ok)throw Error('manifest');return r.json();}).then(m=>{manifest=m;setVersion(document.documentElement.dataset.mettaVersion||document.documentElement.dataset.siteVersion||version);}).catch(()=>{status.textContent='Gambar belum berhasil dimuat. Muat ulang halaman.';});
+  function selected(){const v=document.documentElement.dataset.siteVersion||'v1',s=document.documentElement.dataset.mettaStructure||'baseline';return v==='v2'&&s!=='baseline'?'v2-'+s:v;}
+  window.MettaDrawings={setVersion};window.addEventListener('metta:version',()=>setVersion(selected()));window.addEventListener('metta:structure',()=>setVersion(selected()));
+  fetch('assets/drawings/manifest.json').then(r=>{if(!r.ok)throw Error('manifest');return r.json();}).then(m=>{manifest=m;setVersion(selected());}).catch(()=>{status.textContent='Gambar belum berhasil dimuat. Muat ulang halaman.';});
 })();

@@ -13,7 +13,7 @@ from r04_nesting import pack
 
 ROOT = Path(__file__).parent
 OUT = ROOT/'assets/r08'
-PARAMS = dict(revision='R08', x0=5450.0373, x1=6250.0763, depth=5000,
+PARAMS = dict(revision='R08', x0=5450.0373, x1=6850.0751, depth=5000,
               tier_depth=1000, tier_rise=500, tiers=5, concrete_gap=3,
               stock_length=6000, kerf=3, seat_module=500, mesh_panel_max=800)
 
@@ -85,7 +85,7 @@ def build():
     def member(ident,owner,bd,L):
         frame.append(dict(id=ident,group=owner,vertices=box(bd)))
         c=dict(id=ident,owner=owner,length_mm=L,origin='R08 proposed infill');cuts.append(c);new_cuts.append(c)
-    # Twenty new posts on the floor below. Base plates stay within the 800 mm strip.
+    # Twenty new posts on the floor below. Base plates stay within the infill strip.
     # RC avoidance forces an asymmetric support position at tiers 3/4; engineer
     # must verify cantilevers, floor reactions, connections and temporary stability.
     post_ys=[[100,900],[1100,1900],[2100,2550],[3300,3900],[4100,4850]]
@@ -142,8 +142,8 @@ def build():
                 if A-a<1:continue
                 bd2=bd.copy();bd2[0]=a;bd2[3]=A;ds=sorted([A-a,bd2[4]-bd2[1],bd2[5]-bd2[2]],reverse=True)
                 plate2.append(dict(id=f'I{t+1}-{label}-{j}',bounds=bd2,width=ds[0],height=ds[1],area_m2=ds[0]*ds[1]/1e6))
-        # Two vertical side infill closures follow stair top: 333/167/0 mm exposure.
-        for side,x in [('L',x0),('R',x1)]:
+        # Only the left edge meets retained stairs. The right edge joins seating.
+        for side,x in [('L',x0)]:
             for j,(start,end,h) in enumerate([(0,266.7,333.33),(266.7,533.4,166.67)]):
                 bd=[x,y+start,z-h,x+2,y+end,z]
                 plate2.append(dict(id=f'I{t+1}-SIDE-{side}{j}',bounds=bd,width=end-start,height=h,area_m2=(end-start)*h/1e6))
@@ -230,6 +230,7 @@ def build():
     add('I04','Base plate infill','Pelat 8 mm / 140×150 mm','kg',new_base_area*62.8,base_buy*new_base_area/(1.8+new_base_area),6000,byid['X13']['material_rate'],f'{newpost} pelat baru; berbagi {len(baseplates)} lembar 1200×2400 dengan 80 base lama, bukan dibulatkan terpisah. Tebal/dimensi dan tumpuan harus dihitung.')
     add('I05','Angkur lantai infill','M12 / allowance sambungan, mutu dan penanaman belum dipilih','set',80,84,15000,35000,'4 angkur per 20 base plate + 5%; Rp35.000 material + Rp15.000 pemasangan/set adalah allowance, bukan harga katalog atau kapasitas sah.')
     add('I06','Karet dudukan infill','Karet 140×150×3 mm / allowance','bh',20,20,500,25000,'20 alas baru; lantai/tumpuan dan tekanan kontak belum diverifikasi.')
+    add('I07','Angkur lantai kolom utama','M12 / allowance; spesifikasi dan kapasitas belum ditetapkan','set',320,336,15000,35000,'80 base kolom utama × 4 angkur + 5%. Baut M12×40 rangka bukan angkur beton. Cadangan ini melengkapi jalur tumpuan FEM; kekakuan base, karet 10 mm, lantai, mutu beton dan produk angkur harus diverifikasi.')
     seat_L=sum(p['area_m2'] for p in wood)/.4
     setqty('X22',byid['X22']['net_qty']+seat_L,(byid['X22']['net_qty']+seat_L)*1.1,f'Papan baru setara {seat_L:.6f} m × 400×40 mm setelah takikan RC; allowance potong 10%.')
     setqty('X19',500+40,500+40,'500 set lama + 8 set per 5 tingkat infill; pola pengikat kayu harus dirinci.')
@@ -257,9 +258,9 @@ def build():
                  new_rhs_cuts=len(new_cuts),old_side_plate_area_m2=sum(p['area_m2'] for p in mesh_surfaces),
                  mesh_area_m2=mesh_area,mesh_panels=len(mesh_panels),infill_deck_area_m2=sum(p['area_m2'] for p in infill),
                  extra_wood_equivalent_m=seat_L,extra_indicative_seats=sum(p['seats'] for p in wood),
-                 indicative_seats_by_tier=[p['seats'] for p in wood],clear_passages_mm=[600,600,600],stair_zones=2)
+                 indicative_seats_by_tier=[p['seats'] for p in wood],clear_passages_mm=[600,600],stair_zones=2)
     notes=[
-      'R08 pilihan B: dua zona tangga tetap. Hanya strip x5450–6250 mm pada zona kiri 2 m menjadi tribun. Tersisa tiga strip jalur nominal 600 mm pada dua zona; bukan bukti dua pintu keluar.',
+      'R08 koreksi sketsa: strip x5450–6850 mm pada zona kiri 2 m menjadi dek dan dudukan selebar sekitar 1400 mm. Tangga kanan yang ditandai dihapus; tersisa dua jalur nominal 600 mm pada dua zona. Jumlah jalur bukan pengesahan kapasitas evakuasi.',
       'Lebar 600 mm belum dikurangi pegangan/finishing. Kapasitas evakuasi dan aksesibilitas belum lulus pemeriksaan. Tambahan kursi hanya studi modul 500 mm, bukan kapasitas operasi yang disahkan.',
       'Rangka infill baru 20 kolom, balok, pengaku, base plate, karet dan angkur adalah usulan. RC ditakik dengan celah 3 mm. Tumpuan lantai, lendutan, stabilitas, las/baut dan akses pemasangan belum disahkan.',
       'Mesh hanya penutup luar kanan/kiri. Riser depan tetap pelat. Mesh bukan pengganti railing, penahan kerumunan atau bracing; rangka panel dan penjepit tepi dihitung.',

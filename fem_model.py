@@ -17,16 +17,18 @@ ASSUMPTIONS=[
  'Kontak sumbu dalam 110 mm diidealkan sebagai sambungan kaku dengan offset eksak. Daftar offset dan sumber elemen tersedia; kedekatan geometri bukan bukti sambungan.',
  'Profil RHS 50x100: tebal nominal, sudut tajam, E=200000 MPa, nu=0.3. Sumbu kuat mengikuti tinggi 100 mm untuk batang horizontal; orientasi kolom 50 mm arah X dan 100 mm arah Y.',
  'Beban D=1.5 kPa adalah allowance total beban mati, termasuk berat sendiri; tidak ditambah dua kali. L=5 kPa adalah skenario studi dari R06, bukan penetapan beban lokasi.',
- 'Tekanan pada dek: sel dipisah di batas tributari tengah antar batang kontak langsung (sumbu sekitar 54 mm di bawah dek), lalu diteruskan sebagai gaya dan kopel dari centroid sel ke sumbu. Pelat kecil tanpa kontak memakai sumbu terdekat. Ukuran sel sepanjang batang maksimum 100 mm untuk keluaran utama. Tangga, pagar, mesh dan SHS tidak masuk model primer ini; toggle SHS tidak mengubah FEM.',
+ 'Tekanan pada dek: sel dipisah di batas tributari tengah antar batang kontak langsung (sumbu sekitar 54 mm di bawah dek), lalu diteruskan sebagai gaya dan kopel dari centroid sel ke sumbu. Pelat kecil tanpa kontak memakai sumbu terdekat. Ukuran sel sepanjang batang maksimum 100 mm untuk keluaran utama. V1/V2 dasar hanya primer; A/C memasukkan 60girder sisi B02 dan semua30tapak. SHS B03 memindahkan beban secara statik tanpa kekakuan global; toggle SHS tidak mengubah FEM primer.',
  'Sumbu lokal x dari ujung a ke b; z sedekat mungkin global Z (kolom: global Y); y = z silang x. N,Vy,Vz,T,My,Mz memakai N dan Nmm; i/j adalah gaya nodal lokal elemen.',
- 'Studi ukuran sel beban 400, 200 dan 100 mm tersedia; keluaran utama memakai 100 mm. Sensitivitas perpindahan numerik tidak membuktikan asumsi sambungan atau kapasitas.',
+ 'Studi ukuran sel beban 200, 100 dan 50 mm tersedia; keluaran utama memakai 100 mm. Sensitivitas perpindahan numerik tidak membuktikan asumsi sambungan atau kapasitas.',
  'Luas tekanan berasal dari union proyeksi dek per elevasi dikurangi lubang beton dengan celah 3 mm; berbeda dari kuantitas RAB dan tidak menggantikannya.',
- 'Matriks rangka penuh singular: 14 elemen V1 / 6 elemen V2 tanpa jalur ke kolom dikeluarkan dari submodel. Luas tributari yang terlewat dicatat terpisah; bukan beban total bangunan.',
+ 'Bagian tanpa jalur ke tumpuan dikeluarkan dari submodel; IDs dan jumlah aktual dicatat tiap versi. A/C mengganti delapan pengikat lama dengan usulan rangka landing. Luas tributari yang terlewat dicatat terpisah; bukan beban total bangunan.',
+ 'Seluruh kaki lantai, termasuk80kolom utama, memerlukan angkur dan verifikasi lantai; padkaret10mm tidak membuktikan jepit, geser atau kapasitas tekan.',
  'Tidak menghitung P-delta, tekuk, pelat lokal, kapasitas sambungan, getaran kerumunan, gempa, angin, pondasi atau interaksi beton. Tidak ada rasio aman/lulus struktur.',
+ 'Delapan sumbu native dikoreksi dari bounding box ke arah batang menurut panjang audit, grid kolom dan offset ujung; data/member-axis-corrections.json menyimpan bukti. Nilai sekitar 24 mm versi lama berasal dari putus sambungan numerik pada empat balok diagonal, bukan deformasi terverifikasi bangunan.',
  'V1 = rangka native R04. Tambahan allowance RAB V1 tidak dianggap memiliki sambungan yang sudah terbukti. V2 = rangka native tersisa dan 54 batang infill R08.'
 ]
 
-SOURCE_FILES=['fem_model.py','r04_model.py','data/model.json','data/revit-r04-audit.json','data/r04-rear-braces.json','assets/r08/geometry.json']
+SOURCE_FILES=['fem_model.py','r04_model.py','data/model.json','data/revit-r04-audit.json','data/r04-rear-braces.json','assets/r08/geometry.json','geometry_axes.py','data/member-axis-corrections.json','assets/structural-study/options-spec.json']
 def source_hashes():
  hashes={}
  for name in SOURCE_FILES:
@@ -67,6 +69,7 @@ def element(a,b,ma,mb,t):
  k=local_stiffness(L,t);return T.T@k@T,k,T
 
 def centerline(item):
+ if 'a' in item and 'b' in item:return np.array(item['a'],float),np.array(item['b'],float)
  v=np.array(item['vertices'],float);c=v.mean(0)
  _,_,vh=np.linalg.svd(v-c,full_matrices=False);d=vh[0]
  if item['group']=='kolom' or item['group']=='I01':d=np.array([0.,0.,1.])
@@ -82,10 +85,17 @@ def closest(a,b,c,d):
   s=np.clip((B*t-D)/A,0,1);t=np.clip((B*s+F)/C,0,1)
  return float(s),float(t),float(np.linalg.norm(a+s*u-c-t*v))
 
-def create_model(version,cell_mm=400.):
+def create_model(version,cell_mm=400.,structure="baseline"):
  m=load_model();g=json.loads((ROOT/'assets/r08/geometry.json').read_text());keep=set(g['retained_native_ids'])
  raw=[i for i in m['items'] if i['group'] in ('kolom','balok','stiffener','bracing') and (version=='v1' or i['id'] in keep)]
  if version=='v2':raw+=g['frame']
+ option=None
+ if version=='v2' and structure in ('a','c'):
+  option=json.loads((ROOT/'assets/structural-study/options-spec.json').read_text())[structure]
+  raw=[i for i in raw if i['id'] not in option['remove_ids']]+option['added_members']
+  for step in g['stairs']:
+   for edge,x in enumerate([step['x']+25,step['x']+step['width']-25]):
+    raw.append(dict(id=step['id']+'S'+str(edge),group='stair_b02',a=[x,step['y']+3,step['z']-93],b=[x,step['y']+step['depth']-3,step['z']-93]))
  beams=[]
  for i in raw:
   a,b=centerline(i);beams.append(dict(id=str(i['id']),group=i['group'],a=a,b=b,ts=[0.,1.]))
@@ -126,6 +136,22 @@ def create_model(version,cell_mm=400.):
      u=b['b']-b['a'];t=float(np.clip((p-b['a'])@u/(u@u),0,1));dist=np.linalg.norm(p-b['a']-t*u)
      if best is None or dist<best[0]:best=(dist,i,t)
     _,i,t=best;beams[i]['ts'].append(t);samples.append((i,t,cell.area,p));area+=cell.area;ff=np.array([0.,0.,-cell.area/1000]);pressure_resultant[:3]+=ff;pressure_resultant[3:]+=np.cross(p,ff)
+ # SHS cross-bearers transfer each stair patch to the two B02 side girders by simple-support statics.
+ stair_area=0.
+ if option:
+  ids={b['id']:i for i,b in enumerate(beams)}
+  for step in g['stairs']:
+   poly=shape(step['polygon']);x,y,X,Y=poly.bounds;indices=[ids[step['id']+'S'+str(k)] for k in [0,1]]
+   xx=[beams[k]['a'][0] for k in indices]
+   for yy in np.arange(y,Y,cell_mm):
+    cell=poly.intersection(box(x,yy,X,min(yy+cell_mm,Y)))
+    if cell.area<1e-8:continue
+    p=np.array([cell.centroid.x,cell.centroid.y,step['z']]);w=(p[0]-xx[0])/(xx[1]-xx[0])
+    for i,weight in zip(indices,[1-w,w]):
+     b=beams[i];u=b['b']-b['a'];t=float(np.clip((p-b['a'])@u/(u@u),0,1));projected=b['a']+t*u
+     # Keep centroid y for exact vertical-load moment. x is statically distributed; no invented SHS end torsion.
+     projected[1]=p[1];b['ts'].append(t);samples.append((i,t,cell.area*weight,projected))
+    area+=cell.area;stair_area+=cell.area/1e6;f=np.array([0.,0.,-cell.area/1000]);pressure_resultant[:3]+=f;pressure_resultant[3:]+=np.cross(p,f)
  # Split at all contacts/load locations then enforce rigid offsets with exact DOF transformation.
  points=[];lookup={}
  for i,b in enumerate(beams):
@@ -152,6 +178,13 @@ def create_model(version,cell_mm=400.):
  for i,b in enumerate(beams):
   if b['group'] in ('kolom','I01'):
    t=0. if b['a'][2]<b['b'][2] else 1.;nodes[pn[lookup[i,t]]]['support']=[0,1,2,3,4,5]
+ if option:
+  for anchor in option['anchor_groups']:
+   if anchor['type']!='existing_rc':continue
+   p=np.array(anchor['point']);near=min(range(len(nodes)),key=lambda i:np.linalg.norm(np.array([nodes[i][k] for k in ('x','y','z')])-p))
+   distance=np.linalg.norm(np.array([nodes[near][k] for k in ('x','y','z')])-p)
+   assert distance<.2,(anchor,distance)
+   nodes[near]['support']=anchor['restraints'];nodes[near]['supportKind']='assumed_rc_anchor';nodes[near]['anchorId']=anchor['id']
  members=[]
  for i,b in enumerate(beams):
   for no,(s,t) in enumerate(zip(b['ts'],b['ts'][1:])):
@@ -178,7 +211,7 @@ def create_model(version,cell_mm=400.):
  members=[b for b in members if int(b['start']) in active]
  for b in members:b['start']=str(mapping[int(b['start'])]);b['end']=str(mapping[int(b['end'])])
  nodes=selected;loads=loads[sorted(active)]
- return dict(pressureResultantPerKPa=pressure_resultant.tolist(),loadCellMm=cell_mm,nodes=nodes,members=members,loadPerKPa=loads.tolist(),areaM2=-float(loads[:,2].sum())/1000,grossDeckAreaM2=area/1e6,excludedTributaryAreaM2=excluded_load/1000,rawAssemblyStatus='singular: unsupported disconnected members',excludedMembers=omitted,excludedSourceIds=sorted(set(b['sourceId'] for b in omitted)),sourceMemberCount=len(beams),analysedSourceMemberCount=len(set(b['sourceId'] for b in members)),rigidOffsets=[dict(sourceA=beams[i]['id'],sourceB=beams[j]['id'],distanceMm=round(d,4)) for i,s,j,t,d in contacts],modelScope='Connected primary RHS subassembly only; unsupported concrete ties excluded; fully rigid joints / fixed bases assumed')
+ return dict(stairAreaM2=stair_area,stairLoadPath='60 B02 side girders + 40 welded riser links; SHS cross-bearer force transfer assumed simply supported' if option else 'Stairs not included in baseline primary model',structure=structure,pressureResultantPerKPa=pressure_resultant.tolist(),loadCellMm=cell_mm,nodes=nodes,members=members,loadPerKPa=loads.tolist(),areaM2=-float(loads[:,2].sum())/1000,grossDeckAreaM2=area/1e6,excludedTributaryAreaM2=excluded_load/1000,rawAssemblyStatus='singular: unsupported disconnected members' if omitted else 'connected; solver status evaluated for each case',excludedMembers=omitted,excludedSourceIds=sorted(set(b['sourceId'] for b in omitted)),sourceMemberCount=len(beams),analysedSourceMemberCount=len(set(b['sourceId'] for b in members)),rigidOffsets=[dict(sourceA=beams[i]['id'],sourceB=beams[j]['id'],distanceMm=round(d,4)) for i,s,j,t,d in contacts],modelScope=('Primary RHS plus full two-stair B02/riser/support frame; SHS transverse transfer assumed simply supported' if option else 'Connected primary RHS subassembly only; stairs excluded')+'; rigid joints and fixed floor bases assumed')
 
 def solve(model,t,pressure):
  nodes=model['nodes']; n=len(nodes)*6;ii=[];jj=[];vv=[];elements=[]
@@ -204,7 +237,7 @@ def solve(model,t,pressure):
 
 def build():
  out=ROOT/'assets/fem';out.mkdir(exist_ok=True)
- versions={v:create_model(v,100.) for v in ('v1','v2')}
+ versions={v:create_model('v1' if v=='v1' else 'v2',100.,v.split('-')[1] if '-' in v else 'baseline') for v in ('v1','v2','v2-a','v2-c')}
  for v,m in versions.items():
   pin=json.loads(json.dumps(m))
   for n in pin['nodes']:
@@ -212,12 +245,12 @@ def build():
   trial=solve(pin,2.3,6.5)
   m['boundarySensitivity']=dict(support='Translations fixed, rotations free: still assumes anchored bases',rhsThickness=2.3,pressureKPa=6.5,status=trial['status'],summary=trial.get('summary'),reason=trial.get('reason'))
  for v,m in versions.items():
-  coarse=create_model(v,200.);initial=create_model(v,400.)
-  coarse_result=solve(coarse,2.3,6.5);fine_result=solve(m,2.3,6.5);initial_result=solve(initial,2.3,6.5)
-  m['discretizationSensitivity']=dict(initialCellMm=400,initialMaxDisplacementMm=initial_result.get('summary',{}).get('maxDisplacementMm'),coarseCellMm=200,fineCellMm=100,rhsThickness=2.3,pressureKPa=6.5,coarseStatus=coarse_result['status'],fineStatus=fine_result['status'])
+  coarse=m;fine=create_model('v1' if v=='v1' else 'v2',50.,m['structure']);initial=create_model('v1' if v=='v1' else 'v2',200.,m['structure'])
+  coarse_result=solve(coarse,2.3,6.5);fine_result=solve(fine,2.3,6.5);initial_result=solve(initial,2.3,6.5)
+  m['discretizationSensitivity']=dict(productionCellMm=100,initialCellMm=200,initialMaxDisplacementMm=initial_result.get('summary',{}).get('maxDisplacementMm'),coarseCellMm=100,fineCellMm=50,rhsThickness=2.3,pressureKPa=6.5,coarseStatus=coarse_result['status'],fineStatus=fine_result['status'])
   if coarse_result['status']==fine_result['status']=='solved':
    a=coarse_result['summary']['maxDisplacementMm'];b=fine_result['summary']['maxDisplacementMm']
-   m['discretizationSensitivity'].update(coarseMaxDisplacementMm=a,fineMaxDisplacementMm=b,relativeChange=abs(b-a)/max(abs(b),1e-12),fineEquilibriumError=fine_result['summary']['equilibriumError'],fineAreaM2=m['areaM2'])
+   m['discretizationSensitivity'].update(coarseMaxDisplacementMm=a,fineMaxDisplacementMm=b,relativeChange=abs(b-a)/max(abs(b),1e-12),fineEquilibriumError=fine_result['summary']['equilibriumError'],fineAreaM2=fine['areaM2'])
   print(v,'discretization',m['discretizationSensitivity'],flush=True)
  model=dict(schemaVersion=1,sourceHashes=source_hashes(),units=dict(length='mm',force='N',moment='Nmm',rotation='rad'),versions=versions,assumptions=ASSUMPTIONS)
  cases=[];solutions={}

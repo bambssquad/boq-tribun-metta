@@ -28,6 +28,12 @@ def load_model():
  for ids,x0,x1 in [([1694599,1694607],3540,4830),([1694611,1694615],12870,14160)]:
   member(ids[0],[x0,2000,1350],[x1,3000,1350],True)
   member(ids[1],[x0,3000,1290],[x1,2000,1290],True)
+ # Restore oriented solids from independently reconstructed member axes.
+ # Archived source JSON remains unchanged; the same interpretation serves drawings and FEM.
+ corrections={e['id']:e for e in read('member-axis-corrections.json')['items']}
+ for e in m['items']:
+  if e['id'] in corrections:
+   c=corrections[e['id']];e['vertices']=copy.deepcopy(c['vertices']);e['axisProvenance']='member-axis-corrections.json / '+str(e['id'])
  m['revision']='R04';m['provenance']='R03 geometry plus R04 native ID/cut-length readback. External solids at LOD200; connections remain design proposals.'
  assert len(m['rhs'])==165 and len([e for e in m['items'] if e['group']=='bracing'])==20
  return m

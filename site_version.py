@@ -12,9 +12,9 @@ def viewer_hook(js):
     js=js.replace("const add=(label,value)=>", "if(!source&&window.MettaModelVersion)source=window.MettaModelVersion.source(piece.box);\n    const add=(label,value)=>")
     return js.replace(marker,bridge+'\n'+marker)
 
-def build(dist):
+def build_payload(g,d):
     read=lambda p:json.loads((ROOT/p).read_text(encoding='utf-8'))
-    g=read('assets/r08/geometry.json');d=read('assets/r08/data.json');items=[]
+    items=[]
     def add(ident,group,b):
         if all(b[i+3]>b[i] for i in range(3)):items.append(dict(id=ident,group=group,box=b[:3]+[b[i+3]-b[i] for i in range(3)]))
     def extrude(ident,group,poly,z,t):
@@ -26,6 +26,8 @@ def build(dist):
                 for j,(y,Y) in enumerate(zip(ys,ys[1:])):
                     cell=box(x,y,X,Y)
                     if cell.area>.1 and q.covers(cell.representative_point()):add(f'{ident}-{ni}-{i}-{j}',group,[x,y,z-t,X,Y,z])
+    for e in g.get('added_native_items',[]):
+        items.append(dict(id=e['id'],group=e['group'],box=[v for p in e['vertices'] for v in p]))
     for e in g['frame']:
         items.append(dict(id=e['id'],group={'I01':'kolom','I02':'balok','I03':'stiffener'}[e['group']],box=[v for p in e['vertices'] for v in p]))
         if e['group']=='I01':
@@ -54,8 +56,23 @@ def build(dist):
         v=e['vertices'];a,b,z=[min(p[i] for p in v) for i in range(3)];A,B,Z=[max(p[i] for p in v) for i in range(3)]
         spans=[(a,A)] if B<=0 or b>=5000 else [(a,min(A,x0)),(max(a,x1),A)]
         for i,(aa,AA) in enumerate(spans):add(f'{e["id"]}-N{i}','nosing',[aa,b,z,AA,B,Z])
-    payload=dict(remove_ids=d['changes']['removed_native_rhs_ids']+d['changes']['removed_deck_ids'],clear_groups=['dek','tangga','riser','skirt','nosing'],items=items,mesh=g['mesh'],revision='R08',stair_panels=45,rhs_stocks=d['rhs']['stock_count'])
+    payload=dict(remove_ids=d['changes']['removed_native_rhs_ids']+d['changes']['removed_deck_ids'],clear_groups=['dek','tangga','riser','skirt','nosing'],items=items,mesh=g['mesh'],revision='R08',stair_panels=len(g['stairs']),rhs_stocks=d['rhs']['stock_count'],shs_stocks=d['shs']['stock_count'],infill_width_mm=round(x1-x0),new_posts=d['changes']['new_posts'],old_stair_panels=d['changes']['old_stair_panels'],extra_seats=d['changes']['extra_indicative_seats'])
+    return payload
+
+def build(dist):
+    read=lambda p:json.loads((ROOT/p).read_text(encoding='utf-8'))
+    g=read('assets/r08/geometry.json');d=read('assets/r08/data.json')
+    payload=build_payload(g,d)
     (ROOT/'assets/r08/viewer.json').write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
+    options=read('assets/r08/options.json') if (ROOT/'assets/r08/options.json').exists() else {}
+    for mode,option in options.items():
+        if mode not in ('a','c'):continue
+        geometry=ROOT/f'assets/r08/geometry-{mode}.json'
+        if not geometry.exists():continue
+        result=build_payload(json.loads(geometry.read_text(encoding='utf-8')),option)
+        target=f'viewer-{mode}.json'
+        (ROOT/'assets/r08'/target).write_text(json.dumps(result,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
+        shutil.copyfile(ROOT/'assets/r08'/target,dist/'assets/r08'/target)
     for name in ['site-version.js','site-version.css']:
         shutil.copyfile(ROOT/name,dist/'assets'/name)
     shutil.copyfile(ROOT/'assets/r08/viewer.json',dist/'assets/r08/viewer.json')
